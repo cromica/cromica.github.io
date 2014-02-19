@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: blog
 title:  "Welcome to Jekyll!"
 date:   2014-02-13 18:04:21
-categories: jekyll update
+category: "jekyll update1"
 summary: "You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
 To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext."
 ---
@@ -12,7 +12,7 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 Jekyll also offers powerful support for code snippets:
 
-{% highlight ruby %}
+{% highlight C# %}
 def print_hi(name)
   puts "Hi, #{name}"
 end
