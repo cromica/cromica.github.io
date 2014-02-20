@@ -3,7 +3,7 @@
     <div class="item-title">
         <h2><a href="{{ post.url }}">{{post.title}}</a></h2>
         <a href="{{ post.url }}" class="label label-default light"><i class="fa fa-dot-circle-o"></i> {{ post.categories }}</a>
-        <!-- <a href="{{ post.url }}#comments" class="scrollTo label label-default light"><i class="fa fa-comment-o"></i> 3 Comments - TO REMOVE</a> -->
+        <a href="{{ post.url }}#disqus_thread" class="label label-default light">0 Comments</a>
         <span class="label label-default light">{{post.date | date:"%-d %B %Y" }}</span>
     </div>
     <p>{{ post.summary }}</p>
