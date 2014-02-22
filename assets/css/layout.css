@@ -940,7 +940,7 @@ footer {
 	footer .copyright a:hover {
 		text-decoration:underline;
 	}
-	footer a.social {
+	footer span.social {
 		width:40px; height:40px;
 		line-height:42px;
 	}

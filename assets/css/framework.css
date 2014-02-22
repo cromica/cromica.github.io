@@ -117,19 +117,19 @@
 
 /**	04. Social Icons
 *************************************************** **/
-a.social								{ display:inline-block; width:36px; height:36px; line-height:38px; font-size:20px; text-align:center; background:rgba(0,0,0,0.3); color:#fff; margin:10px 1px; }
-a.social.fa-twitter:hover				{ background:#41b7d8!important; color:#fff!important; }
-a.social.fa-facebook:hover 				{ background:#3b5997!important; color:#fff!important; }
-a.social.fa-google-plus:hover 			{ background:#d64937!important; color:#fff!important; }
-a.social.fa-linkedin:hover 				{ background:#0073b2!important; color:#fff!important; }
-a.social.fa-vimeo-square:hover 			{ background:#388fc5!important; color:#fff!important; }
-a.social.fa-youtube-square:hover 		{ background:#A40F09!important; color:#fff!important; }
-a.social.fa-flickr:hover 				{ background:#ff0084!important; color:#fff!important; }
-a.social.fa-pinterest:hover 				{ background:#cb2027!important; color:#fff!important; }
-a.social.fa-skype:hover 					{ background:#00aff0!important; color:#fff!important; }
-a.social.fa-rss:hover					{ background:#e0812a!important; color:#fff!important; }
-a.social.default:hover					{ background:#37353A!important; color:#fff!important; }
-a.social.rounded 						{ width:35px; height:35px; line-height:37px; }
+span.social								{ display:inline-block; width:36px; height:36px; line-height:38px; font-size:20px; text-align:center; background:rgba(0,0,0,0.3); color:#fff; margin:10px 1px; }
+span.social.fa-twitter:hover				{ background:#41b7d8!important; color:#fff!important; }
+span.social.fa-facebook:hover 				{ background:#3b5997!important; color:#fff!important; }
+span.social.fa-google-plus:hover 			{ background:#d64937!important; color:#fff!important; }
+span.social.fa-linkedin:hover 				{ background:#0073b2!important; color:#fff!important; }
+span.social.fa-vimeo-square:hover 			{ background:#388fc5!important; color:#fff!important; }
+span.social.fa-youtube-square:hover 		{ background:#A40F09!important; color:#fff!important; }
+span.social.fa-flickr:hover 				{ background:#ff0084!important; color:#fff!important; }
+span.social.fa-pinterest:hover 				{ background:#cb2027!important; color:#fff!important; }
+span.social.fa-skype:hover 					{ background:#00aff0!important; color:#fff!important; }
+span.social.fa-rss:hover					{ background:#e0812a!important; color:#fff!important; }
+span.social.default:hover					{ background:#37353A!important; color:#fff!important; }
+span.social.rounded 						{ width:35px; height:35px; line-height:37px; }
 
 
 
