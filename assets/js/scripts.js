@@ -1,8 +1,4 @@
 /** ********************************************** **
-	@Author			Dorin Grigoras
-	@Website		www.stepofweb.com
-	@Last Update	10:05 AM Sunday, January 12, 2014
-
 	TABLE CONTENTS
 	-------------------------------
 		01. SCROLL TO
