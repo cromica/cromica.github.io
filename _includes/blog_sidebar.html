@@ -14,7 +14,7 @@
     <div class="widget">
         <h3>Recent Posts</h3>
         <ul>
-            {% for post in site.posts offset:1 limit:5 %}
+            {% for post in site.posts offset:0 limit:5 %}
             <li><a href="{{ post.url }}"><i class="fa fa-sign-out"></i> {{post.title}}</a> <small>{{post.date | date:"%-d %B %Y" }}</small></li>
             {% endfor %}
 

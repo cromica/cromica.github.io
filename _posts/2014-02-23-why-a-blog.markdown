@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Why a blog?"
+date:   2014-02-23 20:54:21
+category: "Blog"
+tags: Blogging
+summary: "I was thinking to start a blog for sometime but never find the right time but now and here it is."
+---
+
+<p class="dropcap">I was thinking to start a blog for some while but never find the right time. There are lots of ways to share information and knowledge but blog allows to share information in detail and also provide thorough explanations. Besides this I intend to use it as a personal knowledge base. Quite often I realize that I've done something similar in the past but I can't remember or find the information. So finally here it is.</p>
+
+### The Journey ###
+
+There are quite a few things to think about when deciding to have a blog, like: 
+
+- What will I write about?
+ 
+- What blogging platform should I use?
+
+- Since I'm a developer should I build something of my own? 
+
+- Where I will host it?
+
+- What's the design of the blog ?
+
+There some other smaller things but those where the main questions for me. For the first one I've answered in the first paragraph but let's see a bit about the other questions. First of all I'm not a big [Wordpress](http://wordpress.com/ "Wordpress") fan although I've used it in the past. This is not because it's bad rather it's a mater of taste. Next I had a look at [Ghost](https://ghost.org/ "Ghost") which is really interesting and nice. There are some other good blogging platforms like [Blogger](https://www.blogger.com/features "Blogger") or [Tumblr](https://www.tumblr.com/ "Tumblr") and I have to admit that it's hard to decide between them but I wanted to have more control so just a blogging platform was a no go for me. Building something of my own was interesting enough but I quickly realize that I don't have enough time to do it so I abandoned the idea. Looking for other option I read [David Ebbo](http://blog.davidebbo.com/about/ "David Ebbo") was [moving his site to Github pages](http://blog.davidebbo.com/2014/01/moving-to-github-pages.html "Moving to GitHub pages") and decided to have a look. I really liked the way Github pages is working and I will tell more about this on future posts.
+
+So at this point my blog is hosted by Github pages and this is just the first version of it. I will add some other features in the next weeks. 
+
