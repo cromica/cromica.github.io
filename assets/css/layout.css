@@ -1,25 +1,3 @@
-/** ************************************* **
-	@Author			Dorin Grigoras
-	@Website		www.stepofweb.com
-	@Last Update	10:05 AM Sunday, January 12, 2014
-
-	TABLE CONTENTS
-	---------------------------
-		01. Globals
-		02. Nav Bar
-		03. Slider
-		04. Content
-		05. Contact
-		06. About Me
-		07. Util
-		09. Price Table
-		10. Tabs
-		11. Footer
-		12. Portfolio
-		13. Services
-		14. Responsive
- ** ************************************* **/
-
 
 /** 01. Globals
  **************************************************************** **/
@@ -377,19 +355,17 @@ section .btn {
 	#home .image-caption h1,
 	#home .image-caption h2 {
 		font-family: 'Open Sans', sans-serif;
-		font-weight:800;
-		font-size:600%;
+		font-weight:600;
+		font-size:250%;
 		line-height:95%;
-		text-transform:uppercase;
 		text-shadow:none;
 		color:#fff;	display:block;
 	}
 	#home .image-caption p {
 		font-family: 'Open Sans', sans-serif;
-		font-size: 200%; line-height:100%;
-		font-weight: 300;
+		font-size: 150%; line-height:100%;
+		font-weight: 200;
 		color: #fff;
-		text-transform: uppercase;
 		text-shadow:none;
 	}
 	#home .image-caption .inner {
