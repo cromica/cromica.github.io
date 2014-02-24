@@ -5,10 +5,10 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Romulus Crisan</title>
- <link href="http://cromica.github.io/atom.xml" rel="self"/>
- <link href="http://cromica.github.io/"/>
+ <link href="http://www.romuluscrisan.com/atom.xml" rel="self"/>
+ <link href="http://www.romuluscrisan.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://cromica.github.io</id>
+ <id>http://www.romuluscrisan.com</id>
  <author>
    <name>Romulus Crisan</name>
  </author>
@@ -16,7 +16,7 @@ layout: nil
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://cromica.github.io{{ post.url }}"/>
+   <link href="http://http://www.romuluscrisan.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://cromica.github.io{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
