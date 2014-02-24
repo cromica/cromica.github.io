@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Why a blog?"
+title:  "Why a blog"
 date:   2014-02-23 20:54:21
 category: "Blog"
 tags: Blogging
