@@ -147,12 +147,12 @@ form input.err {
 	section header p {
 		font-family: 'Dosis';
 	}
-	section ul,
+	/*section ul,
 	section ul li {
 		margin:0;
 		padding:0;
 		list-style:none;
-	}
+	}*/
 /* ---------- /SECTION ---------- */
 
 /* dropcap */

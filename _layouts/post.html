@@ -21,8 +21,20 @@
                <!--      <p class="fsize16">Tags: {{% for tag in page.tags %}}
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> {{tag}}</a> {{% endfor %}}
                     </p> -->
+                    <br/>
+                     {% if page.previous %}
+                        <div class="nav-previous">
+                          <a class="" href="{{ site.url }}{{ page.previous.url }}" rel="prev"><i class="fa fa-long-arrow-left nav-previous-link"></i>{{ page.previous.title }}</a>
+                        </div>
+                      {% endif %}
+                    {% if page.next %}
+                        <div class="nav-next">
+                          <a class="" href="{{ site.url }}{{ page.next.url }}" rel="next">{{ page.next.title }}<i class="fa fa-long-arrow-right nav-next-link"></i></a>
+                        </div>
+                       {% endif %}
+                     
+                      <br/>
                     <hr/>
-                    <div id="disqus_thread"></div>
                     <script type="text/javascript">
                     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
                     var disqus_shortname = 'romuluscrisan'; // required: replace example with your forum shortname

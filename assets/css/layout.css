@@ -90,6 +90,9 @@ h1.big-title {
 .big-icons-demo i {
 	font-size:50px;
 }
+.clearfix{
+	clear:both;
+}
 
 section header h1,
 section header h2,
@@ -199,6 +202,21 @@ section .btn {
 .fa-hover a span {
 	color:#000;
 	font-size:16px;
+}
+
+.nav-previous{
+	float:left;
+}
+.nav-next{
+	float:right;
+}
+
+.nav-next-link{
+	margin-left: 4px;
+}
+
+.nav-previous-link{
+	margin-right: 4px;
 }
 
 /** 02. Nav Bar
