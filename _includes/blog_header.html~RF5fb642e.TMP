@@ -15,7 +15,6 @@
             <img src="/../assets/images/logo/100x100/white.png" alt="" width="50" height="50" />
             <span class="">ROMULUS CRISAN</span>
             </a>
-            <a class="rssfeed" href="http://feeds.romuluscrisan.com/romuluscrisan"><span class="social fa fa-rss"></span></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -219,6 +219,11 @@ section .btn {
 	margin-right: 4px;
 }
 
+.rssfeed{
+	float: left;
+	margin-top: 3px;
+}
+
 /** 02. Nav Bar
  **************************************************************** **/
 #header {
