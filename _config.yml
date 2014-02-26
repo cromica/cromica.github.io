@@ -1,10 +1,12 @@
 paginate: 5
 paginate_path: "blog/page:num"
-name: Romulus Crisan Site
+name: Romulus Crisan 
 markdown: redcarpet
 pygments: true
 
+title: Software developer, trainer, speaker and more by Romulus Crisan
 author: Romulus Crisan
+description: Romulus Crisan is a software developer, trainer, speaker, agile.
 email: contact@romuluscrisan.com
 url: http://www.romuluscrisan.com
 
