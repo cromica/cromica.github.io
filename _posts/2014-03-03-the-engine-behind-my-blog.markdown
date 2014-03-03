@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Engine behind my blog"
+title:  "The engine behind my blog"
 date:   2014-03-03 21:52:21
 category: "Blog"
 tags: "Jekyll, Blogging, Github pages"
