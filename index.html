@@ -52,8 +52,8 @@ sitemap:
     <meta content="{{ site.url }}/index.html#about" property="article:author">{% endif %} {% if page.image %}
     <meta property="og:image" content="{{ site.url }}/assets/images/posts/{{ page.image }}">
     <meta name="twitter:image:src" content="{{ site.url }}/assets/images/posts/{{ page.image }}">{% else %}
-    <meta property="og:image" content="{{ site.url }}/assets/images/logo/455x455/white.png">
-    <meta name="twitter:image:src" content="{{ site.url }}/assets/images/logo/455x455/white.png">{% endif %} {% if page.categories %} {% for category in page.categories limit:1 %}
+    <meta property="og:image" content="{{ site.url }}/assets/images/preview/content/people/1.jpg">
+    <meta name="twitter:image:src" content="{{ site.url }}/assets/images/preview/content/people/1.jpg">{% endif %} {% if page.categories %} {% for category in page.categories limit:1 %}
     <meta property="article:section" content="{{ category }}">{% endfor %} {% endif %} {% if page.tags %} {% for tag in page.tags %}
     <meta property="article:tag" content="{{ tag }}">{% endfor %} {% endif %}
     <!--[if lt IE 9]>
@@ -150,7 +150,7 @@ sitemap:
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <a class="navbar-brand scrollTo" href="#home">
-                        <img src="assets/images/logo/100x100/white.png" alt="" width="50" height="50" />
+                        <img src="assets/images/preview/content/people/1.jpg" alt="" width="50" height="50" style="border-radius:50%" />
                         <span class="">Romulus Crisan</span>
                     </a>
                     <a class="rssfeed" href="http://feeds.romuluscrisan.com/romuluscrisan"><span class="social fa fa-rss"></span></a>
@@ -185,7 +185,7 @@ sitemap:
             </article>
             <div class="me-picture text-center">
                 <div class="item">
-                    <img class="img-responsive" src="assets/images/preview/content/people/1.jpg" width="200" height="200" alt="" />
+                    <img class="img-responsive" src="assets/images/preview/content/people/1.jpg" width="200" height="200" alt="Romulus Crisan" />
                 </div>
                 <hr />
             </div>
