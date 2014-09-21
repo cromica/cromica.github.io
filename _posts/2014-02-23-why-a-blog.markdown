@@ -5,6 +5,7 @@ date:   2014-02-23 20:54:21
 category: "Blog"
 tags: Blogging
 summary: "I was thinking to start a blog for sometime but never find the right time but now and here it is."
+image: ""
 ---
 
 <p class="dropcap">I was thinking to start a blog for some while but never find the right time. There are lots of ways to share information and knowledge but blog allows to share information in detail and also provide thorough explanations. Besides this I intend to use it as a personal knowledge base. Quite often I realize that I've done something similar in the past but I can't remember or find the information. So finally here it is.</p>
