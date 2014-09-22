@@ -20,4 +20,4 @@ Certainly I will miss my colleagues from Endava with which I shared so many grea
 
 But because I'm leaving it doesn't mean that we can't stay in touch. For sure I'm going to post more often on this blog so you can leave a comment or find me on Twitter, Linkedin, Facebook, Gmail.
 
-Thanks Endava for all this great years.  
+Thanks Endava for all this great years.. 
