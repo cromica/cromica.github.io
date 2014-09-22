@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Romulus Crisan</title>
+ <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
+ <link href="http://www.romuluscrisan.com/"/>
+ <updated>2014-09-22T15:05:45+03:00</updated>
+ <id>http://www.romuluscrisan.com/</id>
+ <author>
+   <name>Romulus Crisan</name>
+   <email>cromica@gmail.com</email>
+ </author>
+ 
+ 
+ <entry>
+   <title>Thank you Endava</title>
+   <link href="http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html"/>
+   <updated>2014-09-20T21:53:00+03:00</updated>
+   <id>http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/endava.jpg&quot; alt=&quot;Thank you Endava&quot; title=&quot;Thank you Endava&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;This week I had my last day as an Endava employee since I&#39;ve accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with Endava.&lt;/p&gt;
+
+&lt;p&gt;My journey with Endava was about 7 years and a half. All this years had a great impact on my career and who am I today. When I joined the company I was a naive developer who was just interested in writing some code but slowly that changed because the company was constantly taking care of my growth and career path. I really think that Endava provides a great working environment where you can learn, grow and expand your skills regardless of the fact that you are just starting your career or you have several years of experience.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/endava_colleagues.jpg&quot; alt=&quot;Thank you Endava&quot; title=&quot;Thank you Endava&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Certainly I will miss my colleagues from Endava with which I shared so many great experiences, but I&amp;#39;m still going to be around so don&amp;#39;t be a stranger suddenly. I want to thank you all for your great support and help during all this years.&lt;/p&gt;
+
+&lt;p&gt;But because I&amp;#39;m leaving it doesn&amp;#39;t mean that we can&amp;#39;t stay in touch. For sure I&amp;#39;m going to post more often on this blog so you can leave a comment or find me on Twitter, Linkedin, Facebook, Gmail.&lt;/p&gt;
+
+&lt;p&gt;Thanks Endava for all this great years.  &lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>My Journey to start a blog</title>
+   <link href="http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog.html"/>
+   <updated>2014-03-15T09:40:00+02:00</updated>
+   <id>http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog</id>
+   <content type="html">&lt;p class=&quot;dropcap&quot;&gt;Now that I written some articles around my journey to start a blog I think it might be very useful to have a short summary of my journey.&lt;/p&gt;
+
+&lt;h3&gt;The Journey&lt;/h3&gt;
+
+&lt;p&gt;Well I was thinking to start a blog for sometime because of the reasons I&amp;#39;ve pointed in my first article &lt;a href=&quot;http://romuluscrisan.com/blog/2014/02/23/why-a-blog.html&quot;&gt;Why a blog ?&lt;/a&gt;. This is a technical blog since I will write most of the time about software development and various technologies in an attempt to share my knowledge and experience but also because I want to us it as a brain dump. From time to time I might write about  some other things but probably still around technology. &lt;/p&gt;
+
+&lt;p&gt;Finally this year I started looking for various options to host a blog and I ended up using &lt;a href=&quot;http://pages.github.com/&quot;&gt;Github pages&lt;/a&gt;. Why I made this option I&amp;#39;ve detailed in my blog post &lt;a href=&quot;http://romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html&quot;&gt;Why I choose Github pages&lt;/a&gt;. Github pages is powered by a very nice and interesting framework called Jekyll for which I wrote an introduction  in my article &lt;a href=&quot;http://romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html&quot;&gt;The engine behing my blog&lt;/a&gt;. Since my work is most of the time in Microsoft world I had to install Jekyll on Windows which is not necessarily straight forward so I described an easier alternative using chocolatey in my article &lt;a href=&quot;http://romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html&quot;&gt;Install Jekyll using chocolatey&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m really glad that finally I manage to start this blog but I guess the real challenge comes now when I will need to actually use it and keep it alive. I hope you will find my journey useful to decide start a blog or if you are already decided to assist in your steps to get the blog started.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Install Jekyll using Chocolatey</title>
+   <link href="http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html"/>
+   <updated>2014-03-06T21:14:00+02:00</updated>
+   <id>http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey</id>
+   <content type="html">&lt;p class=&quot;dropcap&quot;&gt;As you probably already know this website and blog are created using github pages which behind the scene uses Jekyll. More on this you can read on my &lt;a href=&quot;http://romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html&quot;&gt;blog post&lt;/a&gt;.Every time I write a new article or make a change I would like to preview it before publishing it to live website.When this get published to my website repository, Github builds it almost instantly so I&#39;m able to see my change really fast, but this is still done on the public website. This can work pretty well but I prefer to see my changes locally and only if I&#39;m ok to publish them on my &lt;a href=&quot;https://github.com/cromica/cromica.github.io&quot;&gt;repository&lt;/a&gt;. So in order to do that I need to install jekyll on my local machine and use `jekyll serve` to build and serve the website.&lt;/p&gt;
+
+&lt;h3&gt;Install Jekyll on a Windows machine&lt;/h3&gt;
+
+&lt;p&gt;Jekyll is build with Ruby and uses some Python libraries so we need to install them in order to run Jekyll. Since most the work I do is around Microsoft .Net platform I need to use Windows operating system . My source of inspiration was this &lt;a href=&quot;http://blog.davidebbo.com/2014/01/converting-my-old-blog.html&quot;&gt;article&lt;/a&gt; by David Ebbo. In his artcile he points to this &lt;a href=&quot;http://yizeng.me/2013/05/10/setup-jekyll-on-windows/&quot;&gt;article&lt;/a&gt; which explains all the steps in detail. The information is perfectly valid at this moment so you can follow that too but I would like to show you a simple way using &lt;a href=&quot;https://chocolatey.org/&quot;&gt;Chocolatey&lt;/a&gt;. The steps are pretty much the same with the article, the only difference is in the way you install the applications.&lt;/p&gt;
+
+&lt;h3&gt;What is Chocolatey ?&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Chocolatey is a global PowerShell execution engine using the NuGet packaging infrastructure. Think of it as the ultimate automation tool for Windows.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It is very simple to install Chocolatey you just have to run this script on your command prompt:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;@powershell&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-NoProfile&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ExecutionPolicy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unrestricted&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-Command&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;iex ((new-object net.webclient).DownloadString(&amp;#39;https://chocolatey.org/install.ps1&amp;#39;))&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;systemdrive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chocolatey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If this doesn&amp;#39;t work for you there are other ways to install chocolatey &lt;a href=&quot;https://github.com/chocolatey/chocolatey/wiki/Installation&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now that we have chocolatey installed we can open a command prompt and using &lt;code&gt;cinst&lt;/code&gt; we can install what we need. &lt;/p&gt;
+
+&lt;h3&gt;Install Ruby&lt;/h3&gt;
+
+&lt;p&gt;Run the following command on the command prompt:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cinst ruby&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To check if it was installed with success close then open a new command prompt and run:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ruby --version&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Install Ruby Devkit&lt;/h3&gt;
+
+&lt;p&gt;Here are the steps required to install and configure Devkit:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cinst ruby2.devkit&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Initialize and configure by updating &lt;code&gt;config.yml&lt;/code&gt; file from the devkit folder. In the command prompt type the following:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cd &amp;quot;C:\DevKit2&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;ruby dk.rb init&lt;/p&gt;
+
+&lt;p&gt;notepad config.yml&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This will open notepad where you need to add &lt;code&gt;- C:\tools\ruby200&lt;/code&gt; at the end of the file. This path represents the location where ruby was installed and it might be different than the one I&amp;#39;ve specified.&lt;/p&gt;
+
+&lt;p&gt;After this step you need to go back to the command prompt and install &lt;a href=&quot;http://guides.rubygems.org/what-is-a-gem/&quot;&gt;gem&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ruby dk.rb review&lt;/p&gt;
+
+&lt;p&gt;ruby dk.rb install&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;At this point you should have gem installed. You can check it this way:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;gem --version&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If it&amp;#39;s not working try to close and then open a new command prompt.&lt;/p&gt;
+
+&lt;h3&gt;Install Jekyll&lt;/h3&gt;
+
+&lt;p&gt;Run the following command on the command prompt:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;gem install jekyll&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;What is Pygments ?&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Pygments is a generic syntax highlighter for general use in all kinds of software such as forum systems, wikis or other applications that need to prettify source code.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pygments is written in python so we need to install Python&lt;/p&gt;
+
+&lt;h3&gt;Install Python&lt;/h3&gt;
+
+&lt;p&gt;Run the following command on the command prompt:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cinst python2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Run the following command in a new command prompt to verify installation:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;python --version&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Install &amp;#39;Easy Install&amp;#39;&lt;/h3&gt;
+
+&lt;p&gt;Easy Install is a mechanism similar with ruby gems or chocolatey for python packages. In order to install it follow the steps:&lt;/p&gt;
+
+&lt;p&gt;1.Download &lt;a href=&quot;https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py&quot;&gt;ez_setup.py&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.Run the following command from the location where you saved ez_setup.py&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;python ez_setup.py&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;3.Set the  &amp;#39;Python Scripts&amp;#39; directory (e.g. &lt;code&gt;C:\tools\python2\Scripts&lt;/code&gt;) to PATH&lt;/p&gt;
+
+&lt;p&gt;4.Verify that easy_install is installed properly:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;easy_install --help&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Install Pygments&lt;/h3&gt;
+
+&lt;p&gt;Now that we have python and easy install all we just need to run the following commnad to install pygments:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;easy_install pygments&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Start Jekyll&lt;/h3&gt;
+
+&lt;p&gt;You can now create a new Jekyll blog which can be browsed on &lt;a href=&quot;http://localhost:4000&quot;&gt;localhost:4000&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;jekyll new myblog&lt;/p&gt;
+
+&lt;p&gt;cd myblog&lt;/p&gt;
+
+&lt;p&gt;jekyll serve&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I found it much easier to install all this using Chocolatey. I&amp;#39;m keen to get your feedback on this.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The engine behind my blog</title>
+   <link href="http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html"/>
+   <updated>2014-03-03T23:52:21+02:00</updated>
+   <id>http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog</id>
+   <content type="html">&lt;p class=&quot;dropcap&quot;&gt;I guess it&#39;s time to dive a bit more on what technology stands behind my blog. In the previous posts I&#39;ve talked about the &lt;a href=&quot;http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog.html&quot;&gt;reasons to start a blog&lt;/a&gt;, &lt;a href=&quot;http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html&quot;&gt;why I choose github pages&lt;/a&gt; to host it and now I will talk about Jekyll, the engine behind my blog.&lt;/p&gt;
+
+&lt;h3&gt;What is Jekyll ?&lt;/h3&gt;
+
+&lt;p&gt;Jekyll is a parsing engine which generates static html pages from dynamic components like template or markdown files. It uses a simple inline syntax which at build time is evaluated and replaced resulting a static page. Here is a short and very simple example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Content-type&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/html; charset=utf-8&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;{{ page.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In the above example the value for the title tag will be set with the value of the title property of the page object. Jekyll has a simple and limited syntax so it&amp;#39;s quit easy to learn it, but it has great flexibility with lots of options on how to build the site. Also you can have partial files which Jekyll will combine at build time.&lt;/p&gt;
+
+&lt;p&gt;Jekyll has a special folder structure which is used in order to generate the static website:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;_includes&lt;/strong&gt; folder is used to define partial files which can then be added to various pages. Some possible partial files might be the footer or header which for sure will be nice to define in one place and use on all pages.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;_layout&lt;/strong&gt; folder is pretty self explanatory and is the location where you will define the layouts of your pages.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;_posts&lt;/strong&gt; folder is the location from where dynamic content/posts will be saved. Jekyll uses a markup language like Markdown for this kind of files.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;_drafts&lt;/strong&gt; folder is where the working in progress stuff will be held since this location will not be evaluated at build unless &lt;code&gt;--draft&lt;/code&gt; is specified.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;_site&lt;/strong&gt; folder is the location from where Jekyll will serve the static pages. During the build process Jekyll will combine partial files and evaluate the syntax producing a static html file which will be saved in this folder.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Jekyll and Github pages&lt;/h3&gt;
+
+&lt;p&gt;Jekyll can be installed locally and since it has a small static webserver embedded it can be used in lots of ways to serve the website. Using &lt;code&gt;jekyll serve&lt;/code&gt; you can build and browse the site. Beside this option you can use the site developed with Jekyll directly with Github pages since behind the scenes it uses Jekyll. So all you have to do is push your site developed with jekyll to a repository and Github will do the trick almost instant. Please be aware that this is not true for all Github repositories, it&amp;#39;s only valid for Github pages repositories which must be created according to this &lt;a href=&quot;http://pages.github.com/&quot;&gt;steps&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;p&gt;My intention with this article was to give a high overview of what Jekyll means and some basic principles. If you are looking for more details please have a look &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;http://jekyllbootstrap.com/lessons/jekyll-introduction.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions please don&amp;#39;t hesitate and leave a comment.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Why I choose Github pages</title>
+   <link href="http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html"/>
+   <updated>2014-02-24T23:52:21+02:00</updated>
+   <id>http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages</id>
+   <content type="html">&lt;p class=&quot;dropcap&quot;&gt;Github pages is something I&#39;ve recently heard of and I really like it from the begging although I didn&#39;t exactly knew how is working. The main idea is that you will use a github repository to serve your site or blog.&lt;/p&gt;
+
+&lt;h3&gt;Main benefits&lt;/h3&gt;
+
+&lt;p&gt;For me these are the main benefits in using github pages:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I have complete control of my site not being constrained in any way by a blogging platform.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;No database is involved since github pages will serve only static html. Pages will be produced using &lt;a href=&quot;http://jekyllrb.com/&quot; title=&quot;jekyll&quot;&gt;Jekyll&lt;/a&gt; (more on this in future post).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It&amp;#39;s completely free so I don&amp;#39;t need to bother looking for hosting options. And it has very &lt;a href=&quot;http://www.jeremymorgan.com/blog/programming/how-fast-are-github-pages/&quot; title=&quot;good performance&quot;&gt;good performance&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It uses &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; title=&quot;markdown&quot;&gt;markdown&lt;/a&gt; for create and edit posts. Beside that github offers in-browser support for markdown which means that I can create or edit posts directly from browser.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Since github pages uses github &lt;a href=&quot;http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1&quot;&gt;repositories&lt;/a&gt; it means that anyone can contribute to the website by sending a &lt;a href=&quot;https://help.github.com/articles/using-pull-requests&quot; title=&quot;pull request&quot;&gt;pull request&lt;/a&gt;. So please fell free to send any changes or if you see any spelling errors you can directly correct them, all you need to do is go to the &lt;a href=&quot;https://github.com/cromica/cromica.github.io&quot; title=&quot;repository&quot;&gt;repository&lt;/a&gt; and submit a &lt;a href=&quot;https://help.github.com/articles/using-pull-requests&quot; title=&quot;pull request&quot;&gt;pull request&lt;/a&gt; .&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If anyone has any suggestions on various features I can add or any changes please let me know by creating an &lt;a href=&quot;https://github.com/cromica/cromica.github.io/issues&quot;&gt;issue&lt;/a&gt; or &lt;a href=&quot;http://romuluscrisan.com/index.html#contact&quot;&gt;drop me a line&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I really like github pages because it&amp;#39;s very simple to use and it&amp;#39;s emphasizes collaboration so anyone can become a contributor to the blog.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Why a blog</title>
+   <link href="http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog.html"/>
+   <updated>2014-02-23T22:54:21+02:00</updated>
+   <id>http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog</id>
+   <content type="html">&lt;p class=&quot;dropcap&quot;&gt;I was thinking to start a blog for some while but never find the right time. There are lots of ways to share information and knowledge but blog allows to share information in detail and also provide thorough explanations. Besides this I intend to use it as a personal knowledge base. Quite often I realize that I&#39;ve done something similar in the past but I can&#39;t remember or find the information. So finally here it is.&lt;/p&gt;
+
+&lt;h3&gt;The Journey&lt;/h3&gt;
+
+&lt;p&gt;There are quite a few things to think about when deciding to have a blog, like: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;What will I write about?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What blogging platform should I use?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Since I&amp;#39;m a developer should I build something of my own? &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Where I will host it?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What&amp;#39;s the design of the blog ?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There some other smaller things but those where the main questions for me. For the first one I&amp;#39;ve answered in the first paragraph but let&amp;#39;s see a bit about the other questions. First of all I&amp;#39;m not a big &lt;a href=&quot;http://wordpress.com/&quot; title=&quot;Wordpress&quot;&gt;Wordpress&lt;/a&gt; fan although I&amp;#39;ve used it in the past. This is not because it&amp;#39;s bad rather it&amp;#39;s a mater of taste. Next I had a look at &lt;a href=&quot;https://ghost.org/&quot; title=&quot;Ghost&quot;&gt;Ghost&lt;/a&gt; which is really interesting and nice. There are some other good blogging platforms like &lt;a href=&quot;https://www.blogger.com/features&quot; title=&quot;Blogger&quot;&gt;Blogger&lt;/a&gt; or &lt;a href=&quot;https://www.tumblr.com/&quot; title=&quot;Tumblr&quot;&gt;Tumblr&lt;/a&gt; and I have to admit that it&amp;#39;s hard to decide between them but I wanted to have more control so just a blogging platform was a no go for me. Building something of my own was interesting enough but I quickly realize that I don&amp;#39;t have enough time to do it so I abandoned the idea. Looking for other option I read &lt;a href=&quot;http://blog.davidebbo.com/about/&quot; title=&quot;David Ebbo&quot;&gt;David Ebbo&lt;/a&gt; was &lt;a href=&quot;http://blog.davidebbo.com/2014/01/moving-to-github-pages.html&quot; title=&quot;Moving to GitHub pages&quot;&gt;moving his site to Github pages&lt;/a&gt; and decided to have a look. I really liked the way Github pages is working and I will tell more about this on future posts.&lt;/p&gt;
+
+&lt;p&gt;So at this point my blog is hosted by Github pages and this is just the first version of it. I will add some other features in the next weeks. &lt;/p&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>
