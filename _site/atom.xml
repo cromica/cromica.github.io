@@ -4,7 +4,7 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2014-10-01T15:44:49+03:00</updated>
+ <updated>2014-10-01T18:19:35+03:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
@@ -23,7 +23,25 @@
 
 &lt;h3&gt;Who is SDL?&lt;/h3&gt;
 
-&lt;p&gt;First off all let me tell you a few words about SDL and what is the company doing. It started as language translation service company and quickly become also a company providing software for language translation. The company growth facilitated various company and product acquires across the years. Acquisitions where on different domains which allowed SDL to re-position itself recently as a customer experience company. If you are looking for more details please have a look &lt;a href=&quot;http://www.sdl.com/aboutus/aboutsdl/history.html&quot;&gt;here&lt;/a&gt; for the history of the company and &lt;a href=&quot;http://www.sdl.com/aboutus/aboutsdl/vision-mission.html&quot;&gt;here&lt;/a&gt; for the new vision and mission.  &lt;/p&gt;
+&lt;p&gt;First off all let me tell you a few words about SDL and what is the company doing. It started as language translation service company and quickly become also a company providing software for language translation. For many years this was the only domain where SDL activated but new interesting opportunities arise and the company made new acquisitions on domains like e-commerce, social media monitoring, web content management, analytics and so on. All this new products allowed SDL to re-position itself recently as a &lt;a href=&quot;http://www.sdl.com/solutions/business-need/global-customer-experience-management/&quot;&gt;global customer experience management&lt;/a&gt; company. If you are looking for more details please have a look &lt;a href=&quot;http://www.sdl.com/aboutus/aboutsdl/history.html&quot;&gt;here&lt;/a&gt; for the history of the company and &lt;a href=&quot;http://www.sdl.com/aboutus/aboutsdl/vision-mission.html&quot;&gt;here&lt;/a&gt; for the new vision and mission.&lt;/p&gt;
+
+&lt;h3&gt;What I&amp;#39;m going to do at SDL?&lt;/h3&gt;
+
+&lt;p&gt;As I previously said SDL is offering now &lt;a href=&quot;http://www.sdl.com/solutions/business-need/global-customer-experience-management/&quot;&gt;global customer experience management&lt;/a&gt; and as you might already think when you say global you immediately think of multiple languages, which means translation. &lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m going to be closely involved in &lt;a href=&quot;http://www.sdl.com/products/sdl-trados-studio/&quot;&gt;SDL Trados Studio&lt;/a&gt; and &lt;a href=&quot;https://languagecloud.sdl.com/&quot;&gt;Language Cloud&lt;/a&gt; and probably some other products depending on the needs. Most of my work will be around creating and growing the development community for this products, but I will also offer support and consultancy to clients and help the sale process when is necessary. Growing the development community can mean many things but here are some of they key things I will do:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Explain better the current Studio API&amp;#39;s and in what product areas it can be used.&lt;/li&gt;
+&lt;li&gt;Improve and simplify the current API based on community and clients feedback.&lt;/li&gt;
+&lt;li&gt;Contribute to the new Language Cloud SDK.&lt;/li&gt;
+&lt;li&gt;Simplify how we can use develop against the API&amp;#39;s. The most important bit will be to have them open to all possible developers.&lt;/li&gt;
+&lt;li&gt;Speak at developer conferences and discuss about the API&amp;#39;s and SDK&amp;#39;s. If you have any suggestion or you want me at a conference just leave a comment.&lt;/li&gt;
+&lt;li&gt;Contribute and help develop the new community platform which we will launch in the near future.&lt;/li&gt;
+&lt;li&gt;Develop plugins based on customer needs. This will also act as examples for other developers.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I think this is very interesting and I&amp;#39;m really keen to see how things will evolve since there are many other things that I would like to do as part of my new role. Also SDL has some interesting plans around the community so stay tuned.&lt;/p&gt;
 </content>
  </entry>
  
