@@ -4,13 +4,28 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2014-09-22T22:11:51+03:00</updated>
+ <updated>2014-10-01T15:44:49+03:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>Hello SDL</title>
+   <link href="http://www.romuluscrisan.com/career/2014/10/01/hello-sdl.html"/>
+   <updated>2014-10-01T17:15:00+03:00</updated>
+   <id>http://www.romuluscrisan.com/career/2014/10/01/hello-sdl</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/sdl.jpg&quot; alt=&quot;Hello SDL&quot; title=&quot;Hello SDL&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;I now have two weeks since I joined SDL as a &lt;i&gt;Language Platform Evangelist Developer&lt;/i&gt;. Almost everyone asked me what does that mean and what will I do so I decided that I better explain here in detail. If you are looking for a general definition of the position you can find one on wikipedia but it won&#39;t help you too much. In order to understand it better you really need to understand the context.&lt;/p&gt;
+
+&lt;h3&gt;Who is SDL?&lt;/h3&gt;
+
+&lt;p&gt;First off all let me tell you a few words about SDL and what is the company doing. It started as language translation service company and quickly become also a company providing software for language translation. The company growth facilitated various company and product acquires across the years. Acquisitions where on different domains which allowed SDL to re-position itself recently as a customer experience company. If you are looking for more details please have a look &lt;a href=&quot;http://www.sdl.com/aboutus/aboutsdl/history.html&quot;&gt;here&lt;/a&gt; for the history of the company and &lt;a href=&quot;http://www.sdl.com/aboutus/aboutsdl/vision-mission.html&quot;&gt;here&lt;/a&gt; for the new vision and mission.  &lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Thank you Endava</title>

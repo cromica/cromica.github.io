@@ -2,10 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://www.romuluscrisan.com/</loc>
-    <lastmod>2014-09-22T22:11:51+03:00</lastmod>
+    <lastmod>2014-10-01T15:44:49+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+    <url>
+      <loc>http://www.romuluscrisan.com/career/2014/10/01/hello-sdl.html</loc>
+      
+        <lastmod>2014-10-01T17:15:00+03:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
   
     <url>
       <loc>http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html</loc>
@@ -89,7 +102,7 @@
   <url>
     <loc>http://www.romuluscrisan.com/atom.xml</loc>
     
-      <lastmod>2014-09-22T22:11:51+03:00</lastmod>
+      <lastmod>2014-10-01T15:44:49+03:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -128,7 +141,7 @@
   <url>
     <loc>http://www.romuluscrisan.com/sitemap.xml</loc>
     
-      <lastmod>2014-09-22T22:11:51+03:00</lastmod>
+      <lastmod>2014-10-01T15:44:49+03:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
