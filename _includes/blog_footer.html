@@ -46,6 +46,18 @@
   ga('create', 'UA-48447672-1', 'romuluscrisan.com');
   ga('send', 'pageview');
     </script>
+     {% raw %}
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h3>
+        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+        <a href="{{url}}">{{title}}</a>
+      </h3>
+    </article>
+  {{/entries}}
+</script>
+{% endraw %}
     <!-- AddThis Smart Layers END -->
 <script type="text/javascript" src="/../assets/plugins/jquery/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -57,7 +69,8 @@
 <script type="text/javascript" src="/../assets/plugins/jquery-countTo/jquery.countTo.js"></script>
 <script type="text/javascript" src="/../assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="/../assets/plugins/holder.js"></script><!-- delete on production -->
-<script async type="text/javascript" src="/../assets/js/scripts.js"></script>
+<script type="text/javascript" src="/../assets/js/search.min.js"></script>
+<script async type="text/javascript" src="/../assets/js/blog.search.js"></script>
 <script async type="text/javascript" src="/../assets/plugins/styleswitcher/styleswitcher.js"></script>
 <!-- Change UA-XXXXX-X with your site ID -->
 <!--<script>

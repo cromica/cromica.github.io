@@ -3,6 +3,9 @@ paginate_path: "/blog/page/:num"
 name: Romulus Crisan 
 markdown: redcarpet
 highlighter: pygments
+gems: ['jekyll-lunr-js-search']
+lunr_search:
+  excludes: [atom.xml, sitemap.xml, index.html]
 
 title: Software developer, trainer, speaker and more by Romulus Crisan
 author: Romulus Crisan

@@ -64,6 +64,7 @@
     <link rel="shortcut icon" href="/../assets/images/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
     <script type="text/javascript" src="/../assets/plugins/modernizr.min.js"></script>
+   
 </head>
 
 
@@ -281,11 +282,11 @@
                 </div>
                 <div class="right col-md-3">
     <!-- blog search -->
-    <div class="widget" style="display:none">
+    <div class="widget">
         <h3>Blog Search</h3>
-        <form action="#" method="get" class="blog-search col-lg-12 nomargin nopadding">
+        <form action="/search" method="get" class="blog-search col-lg-12 nomargin nopadding">
             <div class="input-group input-group-lg">
-                <input type="text" class="form-control" name="s" id="s" placeholder="..." />
+                <input type="text" class="form-control" name="q" id="search-query" placeholder="Search" autocomplete="off" />
                 <span class="input-group-btn">
                 <button class="btn btn-primary"><i class="fa fa-search"></i></button>
                 </span>
@@ -361,6 +362,18 @@
   ga('create', 'UA-48447672-1', 'romuluscrisan.com');
   ga('send', 'pageview');
     </script>
+     
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h3>
+        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+        <a href="{{url}}">{{title}}</a>
+      </h3>
+    </article>
+  {{/entries}}
+</script>
+
     <!-- AddThis Smart Layers END -->
 <script type="text/javascript" src="/../assets/plugins/jquery/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -372,7 +385,8 @@
 <script type="text/javascript" src="/../assets/plugins/jquery-countTo/jquery.countTo.js"></script>
 <script type="text/javascript" src="/../assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="/../assets/plugins/holder.js"></script><!-- delete on production -->
-<script async type="text/javascript" src="/../assets/js/scripts.js"></script>
+<script type="text/javascript" src="/../assets/js/search.min.js"></script>
+<script async type="text/javascript" src="/../assets/js/blog.search.js"></script>
 <script async type="text/javascript" src="/../assets/plugins/styleswitcher/styleswitcher.js"></script>
 <!-- Change UA-XXXXX-X with your site ID -->
 <!--<script>
