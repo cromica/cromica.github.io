@@ -4,7 +4,7 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2014-10-30T21:38:04+02:00</updated>
+ <updated>2014-10-30T22:02:08+02:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
@@ -19,19 +19,19 @@
    <id>http://www.romuluscrisan.com/speaker/2014/10/29/Codecamp-2014</id>
    <content type="html">&lt;div class=&quot;owl-carousel text-left&quot; data-navigation=&quot;true&quot; data-singleitem=&quot;true&quot; data-autoplay=&quot;true&quot; data-transition=&quot;fade&quot;&gt;
     &lt;div class=&quot;item dragCursor&quot;&gt;
-        &lt;img src=&quot;/assets/images/posts/codecamp-2014/1.jpg&quot; class=&quot;img-responsive&quot;  alt=&quot;img&quot; /&gt;
+        &lt;img src=&quot;/assets/images/posts/codecamp2014/1.jpg&quot; class=&quot;img-responsive&quot;  alt=&quot;img&quot; /&gt;
     &lt;/div&gt;
     &lt;div class=&quot;item dragCursor&quot;&gt;
-        &lt;img src=&quot;/assets/images/posts/codecamp-2014/2.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
+        &lt;img src=&quot;/assets/images/posts/codecamp2014/2.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
     &lt;/div&gt;
     &lt;div class=&quot;item dragCursor&quot;&gt;
-        &lt;img src=&quot;/assets/images/posts/codecamp-2014/3.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
+        &lt;img src=&quot;/assets/images/posts/codecamp2014/3.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
     &lt;/div&gt;
     &lt;div class=&quot;item dragCursor&quot;&gt;
-        &lt;img src=&quot;/assets/images/posts/codecamp-2014/4.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
+        &lt;img src=&quot;/assets/images/posts/codecamp2014/4.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
     &lt;/div&gt;
     &lt;div class=&quot;item dragCursor&quot;&gt;
-        &lt;img src=&quot;/assets/images/posts/codecamp-2014/5.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
+        &lt;img src=&quot;/assets/images/posts/codecamp2014/5.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
     &lt;/div&gt;
 &lt;/div&gt;                  
 
