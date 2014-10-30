@@ -116,6 +116,7 @@
 		<div class="item dragCursor">#item N</div>
 	</div>
 *************************************************** **/
+jQuery(document).ready(function(){
 	if(jQuery().owlCarousel) {
 		owlCarouselInit(".owl-carousel");
 	}
@@ -173,7 +174,7 @@
 			}
 		});
 	}
-
+});
 
 
 
