@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>The engine behind my blog</title>
+    <title>3rd party assemblies and SDL Studio plugins</title>
     
 
-    <meta content="The engine behind my blog" property="og:title">
-    <meta content="The engine behind my blog" name="twitter:title">
+    <meta content="3rd party assemblies and SDL Studio plugins" property="og:title">
+    <meta content="3rd party assemblies and SDL Studio plugins" name="twitter:title">
     <meta content="Software developer, trainer, speaker and more by Romulus Crisan" property="og:site_name">
-    <meta content="I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the reasons to start a blog, why I choose github pages to host it and now I will talk about Jekyll, the engine behind my blog." name="description">
-    <meta content="I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the reasons to start a blog, why I choose github pages to host it and now I will talk about Jekyll, the engine behind my blog." property="og:description">
-    <meta content="I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the reasons to start a blog, why I choose github pages to host it and now I will talk about Jekyll, the engine behind my blog." name="twitter:description">
+    <meta content="Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies." name="description">
+    <meta content="Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies." property="og:description">
+    <meta content="Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies." name="twitter:description">
 
 
     <meta name="Author" content="Romulus Crisan" />
@@ -21,21 +21,21 @@
 
     <link href="/atom.xml" rel="alternate" title="Atom" type="application/atom+xml">
     <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
-    <link href="http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html" rel="canonical">
+    <link href="http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html" rel="canonical">
     <meta content="article" property="og:type">
     <meta content="summary" name="twitter:card">
-    <meta content="http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html" property="og:url">
-    <meta content="http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html" name="twitter:url"> 
-    <meta content="2014-03-03T23:52:21+02:00" property="article:published_time">
+    <meta content="http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html" property="og:url">
+    <meta content="http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html" name="twitter:url"> 
+    <meta content="2014-11-07T18:18:00+02:00" property="article:published_time">
     <meta content="http://www.romuluscrisan.com/index.html#about" property="article:author"> 
     
     
-    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts/">
-    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts/">  
-    <meta property="article:section" content="blog">   
-    <meta property="article:tag" content="Jekyll">
-    <meta property="article:tag" content="Blogging">
-    <meta property="article:tag" content="Github"> 
+    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts//3rdparty/3rdpartyassemblies.png">
+    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts//3rdparty/3rdpartyassemblies.png">  
+    <meta property="article:section" content="sdl studio">   
+    <meta property="article:tag" content="Studio">
+    <meta property="article:tag" content="plugins">
+    <meta property="article:tag" content="OpenExchange"> 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="assets/plugins/lt-ie9/html5.js"></script>
     <script type="text/javascript" src="assets/plugins/lt-ie9/respond.min.js"></script>
@@ -103,42 +103,63 @@
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>The engine behind my blog</h1>
+                        <h1>3rd party assemblies and SDL Studio plugins</h1>
                         <small class="fsize13">
-                            <a href="/blog/2014/03/03/the-engine-behind-my-blog.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> blog</a>
-                            <a href="/blog/2014/03/03/the-engine-behind-my-blog.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">3 March 2014</span>
+                            <a href="/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> sdl studio</a>
+                            <a href="/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html#disqus_thread" class="label label-default light">0 Comments</a>
+                            <span class="label label-default light">7 November 2014</span>
                         </small>
                     </header>
 
-                    <p class="dropcap">I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the <a href="http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog.html">reasons to start a blog</a>, <a href="http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html">why I choose github pages</a> to host it and now I will talk about Jekyll, the engine behind my blog.</p>
+                    <p><img src="/assets/images/posts/3rdparty/3rdpartyassemblies.png" alt="Hello SDL" title="Hello SDL" class="img-responsive"></p>
 
-<h3>What is Jekyll ?</h3>
+<p class="dropcap">Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is <a href="http://james.newtonking.com/json" target="_blank">Json.NET</a>. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies.</p>
 
-<p>Jekyll is a parsing engine which generates static html pages from dynamic components like template or markdown files. It uses a simple inline syntax which at build time is evaluated and replaced resulting a static page. Here is a short and very simple example:</p>
+<h3>SDL Studio plugins</h3>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;title&gt;</span>{{ page.title }}<span class="nt">&lt;/title&gt;</span></code></pre></div>
+<p>This is not a detailed look at what SDL Studio plugins are but I want to give a bit of context on how they are working. First of all each plugin has to be packed in a package with extension <code>.sldplugin</code> (this a zip file in essence). If you use the SDL Studio templates from Visual Studio this done for you automatically. Once you have the package you need to deploy it in one of the three location where SDL Studio is expecting plugins:</p>
 
-<p>In the above example the value for the title tag will be set with the value of the title property of the page object. Jekyll has a simple and limited syntax so it&#39;s quit easy to learn it, but it has great flexibility with lots of options on how to build the site. Also you can have partial files which Jekyll will combine at build time.</p>
+<blockquote>
+<ol>
+<li><p>$(CurrentUser)\AppData\Local\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\</p></li>
+<li><p>$(CurrentUser)\AppData\Roaming\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\</p></li>
+<li><p>$(ProgramData)\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\</p></li>
+</ol>
+</blockquote>
 
-<p>Jekyll has a special folder structure which is used in order to generate the static website:</p>
+<p>There is no difference between this locations so you can choose whatever you prefer. Once the package is in one of this locations when SDL Studio starts it will unpack the package, drop the content into a dedicated location and load the plugin assembly. This depends on where you deployed your package and can be one of this locations:</p>
 
-<ul>
-<li><p><strong>_includes</strong> folder is used to define partial files which can then be added to various pages. Some possible partial files might be the footer or header which for sure will be nice to define in one place and use on all pages.</p></li>
-<li><p><strong>_layout</strong> folder is pretty self explanatory and is the location where you will define the layouts of your pages.</p></li>
-<li><p><strong>_posts</strong> folder is the location from where dynamic content/posts will be saved. Jekyll uses a markup language like Markdown for this kind of files.</p></li>
-<li><p><strong>_drafts</strong> folder is where the working in progress stuff will be held since this location will not be evaluated at build unless <code>--draft</code> is specified.</p></li>
-<li><p><strong>_site</strong> folder is the location from where Jekyll will serve the static pages. During the build process Jekyll will combine partial files and evaluate the syntax producing a static html file which will be saved in this folder.</p></li>
-</ul>
+<blockquote>
+<ol>
+<li><p>$(CurrentUser)\AppData\Local\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\</p></li>
+<li><p>$(CurrentUser)\AppData\Roaming\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\</p></li>
+<li><p>$(ProgramData)\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\</p></li>
+</ol>
+</blockquote>
 
-<h3>Jekyll and Github pages</h3>
+<h3>Deploy 3rd party assemblies</h3>
 
-<p>Jekyll can be installed locally and since it has a small static webserver embedded it can be used in lots of ways to serve the website. Using <code>jekyll serve</code> you can build and browse the site. Beside this option you can use the site developed with Jekyll directly with Github pages since behind the scenes it uses Jekyll. So all you have to do is push your site developed with jekyll to a repository and Github will do the trick almost instant. Please be aware that this is not true for all Github repositories, it&#39;s only valid for Github pages repositories which must be created according to this <a href="http://pages.github.com/">steps</a>.  </p>
+<p>Now that we have a brief understanding on how SDL Studio handles plugins let&#39;s see what options we have to deploy 3rd party plugins:</p>
 
-<p>My intention with this article was to give a high overview of what Jekyll means and some basic principles. If you are looking for more details please have a look <a href="http://jekyllrb.com/">here</a> and <a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html">here</a>.</p>
+<blockquote>
+<ol>
+<li><p>Include the assemblies in the plugin package</p></li>
+<li><p>Create an installer which will copy the 3rd party assemblies into SDL Studio folder under $(ProgramFiles)</p></li>
+</ol>
+</blockquote>
 
-<p>If you have any questions please don&#39;t hesitate and leave a comment.</p>
+<p>Although the second option can work I don&#39;t like it because it requires more work, administrative rights to deploy the assemblies and might intefere with Studio installation. This was also suggest by <a href="https://community.sdl.com/members/davidfritch/default.aspx">David Fritch</a> in this <a href="https://community.sdl.com/phase_2_groups/sdl_openexchange_developers/f/39/t/3149.aspx">thread</a> as a possible way to do it.</p>
+
+<p>I consider the first option the right way to do it since it&#39;s very simple and clean. All you have to do is change the <code>pluginpackage.manifest.xml</code> which has to be part of the solution in order to generate the <code>.sdlplugin</code> file. By default this xml file contains some tags to specify the plugin name, version, description, author and required SDL Studio product. You will need to add an <code>&lt;Include&gt;</code> tag which in my case, for <a href="http://james.newtonking.com/json">Json.NET</a>, looked something like this:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;Include&gt;</span>
+    <span class="nt">&lt;File&gt;</span>Newtonsoft.Json.dll<span class="nt">&lt;/File&gt;</span>
+<span class="nt">&lt;/Include&gt;</span></code></pre></div>
+ 
+
+<p>You can have a look at my entire xml file <a href="https://github.com/sdl/SDL-Community/blob/master/Controlled%20Machine%20Translation%20Providers/Sdl.Community.ControlledMTProviders/pluginpackage.manifest.xml#L9">here</a>.</p>
+
+<p>Please leave a comment if you have any questions or feedback.</p>
 
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
@@ -146,14 +167,10 @@
                     <br/>
                      
                         <div class="nav-previous">
-                          <a class="" href="http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html" rel="prev"><i class="fa fa-long-arrow-left nav-previous-link"></i>Why I choose Github pages</a>
+                          <a class="" href="http://www.romuluscrisan.com/speaker/2014/10/31/Codecamp-2014.html" rel="prev"><i class="fa fa-long-arrow-left nav-previous-link"></i>Codecamp 2014</a>
                         </div>
                       
                     
-                        <div class="nav-next">
-                          <a class="" href="http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html" rel="next">Install Jekyll using Chocolatey<i class="fa fa-long-arrow-right nav-next-link"></i></a>
-                        </div>
-                       
                      
                       <br/>
                     <hr/>

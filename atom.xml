@@ -4,13 +4,70 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2014-10-31T09:25:19+02:00</updated>
+ <updated>2014-11-07T17:29:44+02:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>3rd party assemblies and SDL Studio plugins</title>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html"/>
+   <updated>2014-11-07T18:18:00+02:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/3rdparty/3rdpartyassemblies.png&quot; alt=&quot;Hello SDL&quot; title=&quot;Hello SDL&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is &lt;a href=&quot;http://james.newtonking.com/json&quot; target=&quot;_blank&quot;&gt;Json.NET&lt;/a&gt;. It made perfect sense to use it but until now I didn&#39;t use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies.&lt;/p&gt;
+
+&lt;h3&gt;SDL Studio plugins&lt;/h3&gt;
+
+&lt;p&gt;This is not a detailed look at what SDL Studio plugins are but I want to give a bit of context on how they are working. First of all each plugin has to be packed in a package with extension &lt;code&gt;.sldplugin&lt;/code&gt; (this a zip file in essence). If you use the SDL Studio templates from Visual Studio this done for you automatically. Once you have the package you need to deploy it in one of the three location where SDL Studio is expecting plugins:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;$(CurrentUser)\AppData\Local\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$(CurrentUser)\AppData\Roaming\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$(ProgramData)\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There is no difference between this locations so you can choose whatever you prefer. Once the package is in one of this locations when SDL Studio starts it will unpack the package, drop the content into a dedicated location and load the plugin assembly. This depends on where you deployed your package and can be one of this locations:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;$(CurrentUser)\AppData\Local\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$(CurrentUser)\AppData\Roaming\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$(ProgramData)\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Deploy 3rd party assemblies&lt;/h3&gt;
+
+&lt;p&gt;Now that we have a brief understanding on how SDL Studio handles plugins let&amp;#39;s see what options we have to deploy 3rd party plugins:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Include the assemblies in the plugin package&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create an installer which will copy the 3rd party assemblies into SDL Studio folder under $(ProgramFiles)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Although the second option can work I don&amp;#39;t like it because it requires more work, administrative rights to deploy the assemblies and might intefere with Studio installation. This was also suggest by &lt;a href=&quot;https://community.sdl.com/members/davidfritch/default.aspx&quot;&gt;David Fritch&lt;/a&gt; in this &lt;a href=&quot;https://community.sdl.com/phase_2_groups/sdl_openexchange_developers/f/39/t/3149.aspx&quot;&gt;thread&lt;/a&gt; as a possible way to do it.&lt;/p&gt;
+
+&lt;p&gt;I consider the first option the right way to do it since it&amp;#39;s very simple and clean. All you have to do is change the &lt;code&gt;pluginpackage.manifest.xml&lt;/code&gt; which has to be part of the solution in order to generate the &lt;code&gt;.sdlplugin&lt;/code&gt; file. By default this xml file contains some tags to specify the plugin name, version, description, author and required SDL Studio product. You will need to add an &lt;code&gt;&amp;lt;Include&amp;gt;&lt;/code&gt; tag which in my case, for &lt;a href=&quot;http://james.newtonking.com/json&quot;&gt;Json.NET&lt;/a&gt;, looked something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Include&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;File&amp;gt;&lt;/span&gt;Newtonsoft.Json.dll&lt;span class=&quot;nt&quot;&gt;&amp;lt;/File&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Include&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+ 
+
+&lt;p&gt;You can have a look at my entire xml file &lt;a href=&quot;https://github.com/sdl/SDL-Community/blob/master/Controlled%20Machine%20Translation%20Providers/Sdl.Community.ControlledMTProviders/pluginpackage.manifest.xml#L9&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Please leave a comment if you have any questions or feedback.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Codecamp 2014</title>
