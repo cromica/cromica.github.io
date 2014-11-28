@@ -4,11 +4,11 @@ title:  "SDL Studio standalone plugin assembly resolver"
 date:   2014-11-28 12:20:00
 category: "SDL Studio"
 tags: "Studio plugins OpenExchange assembly standalone"
-summary: "Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies."
-image: "/3rdparty/3rdpartyassemblies.png"
+summary: "SDL Studio plugin system allows developers to develop new features on top of the standard functionality. There are 2 types of plugins that can be developed, one which behaves like a Studio add-in and another one which behaves as a standalone application. Both plugin types require to run inside Studio installation folder. This is because the public Studio SDK is using other assemblies that are located in Studio folder. While this is perfectly fine for add-in type plugins for standalone plugins this adds limitation on where and how you can deploy your application."
+image: "/assemblyresolver/assemblyresolver.jpg"
 ---
 
-<img src="/assets/images/posts/assemblyresolver/assemblyresolver.jpg" alt="Hello SDL" title="Hello SDL" class="img-responsive">
+<img src="/assets/images/posts/assemblyresolver/assemblyresolver.jpg" alt="Assembly Resolver" title="Assembly Resolver" class="img-responsive">
 
 <p class="dropcap">SDL Studio plugin system allows developers to develop new features on top of the standard functionality. There are 2 types of plugins that can be developed, one which behaves like a Studio add-in and another one which behaves as a standalone application. Both plugin types require to run inside Studio installation folder. This is because the public Studio SDK is using other assemblies that are located in Studio folder. While this is perfectly fine for add-in type plugins for standalone plugins this adds limitation on where and how you can deploy your application.</p>
 
