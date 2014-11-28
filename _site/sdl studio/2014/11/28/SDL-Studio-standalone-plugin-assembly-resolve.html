@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Thank you Endava</title>
+    <title>SDL Studio standalone plugin assembly resolver</title>
     
 
-    <meta content="Thank you Endava" property="og:title">
-    <meta content="Thank you Endava" name="twitter:title">
+    <meta content="SDL Studio standalone plugin assembly resolver" property="og:title">
+    <meta content="SDL Studio standalone plugin assembly resolver" name="twitter:title">
     <meta content="Software developer, trainer, speaker and more by Romulus Crisan" property="og:site_name">
-    <meta content="This week I had my last day as an Endava employee since I've accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback, so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with  Endava." name="description">
-    <meta content="This week I had my last day as an Endava employee since I've accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback, so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with  Endava." property="og:description">
-    <meta content="This week I had my last day as an Endava employee since I've accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback, so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with  Endava." name="twitter:description">
+    <meta content="Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies." name="description">
+    <meta content="Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies." property="og:description">
+    <meta content="Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies." name="twitter:description">
 
 
     <meta name="Author" content="Romulus Crisan" />
@@ -21,20 +21,23 @@
 
     <link href="/atom.xml" rel="alternate" title="Atom" type="application/atom+xml">
     <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
-    <link href="http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html" rel="canonical">
+    <link href="http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html" rel="canonical">
     <meta content="article" property="og:type">
     <meta content="summary" name="twitter:card">
-    <meta content="http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html" property="og:url">
-    <meta content="http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html" name="twitter:url"> 
-    <meta content="2014-09-20T21:53:00+03:00" property="article:published_time">
+    <meta content="http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html" property="og:url">
+    <meta content="http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html" name="twitter:url"> 
+    <meta content="2014-11-28T14:20:00+02:00" property="article:published_time">
     <meta content="http://www.romuluscrisan.com/index.html#about" property="article:author"> 
     
     
-    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts/endava.jpg">
-    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts/endava.jpg">  
-    <meta property="article:section" content="career">   
-    <meta property="article:tag" content="Career">
-    <meta property="article:tag" content="Endava"> 
+    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts//3rdparty/3rdpartyassemblies.png">
+    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts//3rdparty/3rdpartyassemblies.png">  
+    <meta property="article:section" content="sdl studio">   
+    <meta property="article:tag" content="Studio">
+    <meta property="article:tag" content="plugins">
+    <meta property="article:tag" content="OpenExchange">
+    <meta property="article:tag" content="assembly">
+    <meta property="article:tag" content="standalone"> 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="assets/plugins/lt-ie9/html5.js"></script>
     <script type="text/javascript" src="assets/plugins/lt-ie9/respond.min.js"></script>
@@ -102,27 +105,53 @@
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>Thank you Endava</h1>
+                        <h1>SDL Studio standalone plugin assembly resolver</h1>
                         <small class="fsize13">
-                            <a href="/career/2014/09/20/thank-you-endava.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> career</a>
-                            <a href="/career/2014/09/20/thank-you-endava.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">20 September 2014</span>
+                            <a href="/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> sdl studio</a>
+                            <a href="/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html#disqus_thread" class="label label-default light">0 Comments</a>
+                            <span class="label label-default light">28 November 2014</span>
                         </small>
                     </header>
 
-                    <p><img src="/assets/images/posts/endava.jpg" alt="Thank you Endava" title="Thank you Endava" class="img-responsive"></p>
+                    <p><img src="/assets/images/posts/assemblyresolver/assemblyresolver.jpg" alt="Hello SDL" title="Hello SDL" class="img-responsive"></p>
 
-<p class="dropcap">This week I had my last day as an Endava employee since I've accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with Endava.</p>
+<p class="dropcap">SDL Studio plugin system allows developers to develop new features on top of the standard functionality. There are 2 types of plugins that can be developed, one which behaves like a Studio add-in and another one which behaves as a standalone application. Both plugin types require to run inside Studio installation folder. This is because the public Studio SDK is using other assemblies that are located in Studio folder. While this is perfectly fine for add-in type plugins for standalone plugins this adds limitation on where and how you can deploy your application.</p>
 
-<p>My journey with Endava was about 7 years and a half. All this years had a great impact on my career and who am I today. When I joined the company I was a naive developer who was just interested in writing some code but slowly that changed because the company was constantly taking care of my growth and career path. I really think that Endava provides a great working environment where you can learn, grow and expand your skills regardless of the fact that you are just starting your career or you have several years of experience.</p>
+<h3>Why not GAC ?</h3>
 
-<p><img src="/assets/images/posts/endava_colleagues.jpg" alt="Thank you Endava" title="Thank you Endava" class="img-responsive"></p>
+<p>Many developers have asked us to register Studio assemblies in <a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">GAC</a> in order to solve the issue on where and how you can deploy your standalone Studio plugins. Having Studio assemblies registered in <a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">GAC</a> means that those assembly can be shared across the entire system. Although registering assemblies in GAC might had seem to be a good solution there are many implications when doing it. The main reason why Studio is not using <a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">GAC</a> is because of the following scenario:</p>
 
-<p>Certainly I will miss my colleagues from Endava with which I shared so many great experiences, but I&#39;m still going to be around so don&#39;t be a stranger suddenly. I want to thank you all for your great support and help during all this years.</p>
+<blockquote>
+<p><strong>GAC supports multiple version of an assembly. This means that when an assembly is updated to a newer version both versions will be saved. You might say that the old version should be removed, but this is not always possible since for example there are customers that have multiple version of Studio that are used on the same machine. Keeping multiple version of the same assembly will lead to unexpected behavior and errors from the application.</strong></p>
+</blockquote>
 
-<p>But because I&#39;m leaving it doesn&#39;t mean that we can&#39;t stay in touch. For sure I&#39;m going to post more often on this blog so you can leave a comment or find me on Twitter, Linkedin, Facebook, Gmail.</p>
+<p>You can read more about why to avoid GAC <a href="http://www.sellsbrothers.com/Posts/Details/12503">here</a>.   </p>
 
-<p>Thanks Endava for all this great years.</p>
+<h3>Got it ... no GAC, but we want solutions!</h3>
+
+<p>To solve this problem I&#39;ve developed a small library called <strong>Studio AssemblyResolver</strong>. Basically every time an dll is not found in the current application location the library will look after the dll in the Studio folder. The library comes with 2 mechanism for looking after Studio folder but you can add your own resolve mechanism. If you are interested about more details please have a look <a href="https://github.com/cromica/Studio-AssemblyResolver">here</a>. The library is also published in the <a href="https://www.nuget.org/packages/Studio.AssemblyResolver/0.1.1">Nuget package repository</a> which allows to be easily added to your project.</p>
+
+<h3>How to use Studio AssemblyResolver</h3>
+
+<p>There are 2 simple steps to get your Studio assemblies resolved:</p>
+
+<ul>
+<li>Add a reference to the <strong>Studio.AssemblyResolver</strong> library from Visual Studio using NuGet</li>
+</ul>
+
+<p><img src="/assets/images/posts/assemblyresolver/managenuget.png" alt="Manage Nuget" title="Manage Nuget" class="img-responsive"></p>
+
+<p><img src="/assets/images/posts/assemblyresolver/nugetassemblyresolver.png" alt="Nuget assembly resolver" title="Nuget assembly resolver" class="img-responsive"></p>
+
+<ul>
+<li>Add the following line of code in you application entry point</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">AssemblyResolver</span><span class="p">.</span><span class="n">Resolve</span><span class="p">();</span></code></pre></div>
+
+<p>I&#39;ve already included the <strong>Studio AssemblyResolver</strong> library in <a href="https://github.com/sdl/SDL-Community/tree/master/Reindex%20Translation%20Memories">Reindex Translation Memories</a> plugin. You can have a look <a href="https://github.com/sdl/SDL-Community/blob/master/Reindex%20Translation%20Memories/Sdl.Community.ReindexTms/Program.cs#L18">here</a> if you are interested to see how I&#39;ve included the library.</p>
+
+<p>Please leave a comment if you have any questions or feedback.</p>
 
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
@@ -130,14 +159,10 @@
                     <br/>
                      
                         <div class="nav-previous">
-                          <a class="" href="http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog.html" rel="prev"><i class="fa fa-long-arrow-left nav-previous-link"></i>My Journey to start a blog</a>
+                          <a class="" href="http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html" rel="prev"><i class="fa fa-long-arrow-left nav-previous-link"></i>3rd party assemblies and SDL Studio plugins</a>
                         </div>
                       
                     
-                        <div class="nav-next">
-                          <a class="" href="http://www.romuluscrisan.com/career/2014/10/01/hello-sdl.html" rel="next">Hello SDL<i class="fa fa-long-arrow-right nav-next-link"></i></a>
-                        </div>
-                       
                      
                       <br/>
                     <hr/>
