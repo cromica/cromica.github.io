@@ -4,13 +4,64 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2014-11-28T17:15:38+02:00</updated>
+ <updated>2015-01-05T14:34:19+02:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>How to access segment tags using Studio File Type Framework</title>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/01/05/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html"/>
+   <updated>2015-01-05T18:20:00+02:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2015/01/05/How to access segment tags using Studio File Type Framework </id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/assemblyresolver/assemblyresolver.jpg&quot; alt=&quot;Assembly Resolver&quot; title=&quot;Assembly Resolver&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the formatting tags of your segments. This can be done using Studio File Type Support Framework which is part of the Studio SDK. The documentation is not touching this particular scenario so I will detail it as part of this article. &lt;/p&gt;
+
+&lt;h3&gt;Visitor Pattern&lt;/h3&gt;
+
+&lt;p&gt;Before jumping into the problem I recommend you to get familiarized with the visitor pattern since this is used as part of the Studio File Type Framework and you will need apply it in order to get the tags. To get familiarized you can read the theory on &lt;a href=&quot;http://en.wikipedia.org/wiki/Visitor_pattern&quot;&gt;wikipedia&lt;/a&gt; or if you want a practical example you can have a look &lt;a href=&quot;http://www.codeproject.com/Articles/588882/TheplusVisitorplusPatternplusExplained&quot;&gt;here&lt;/a&gt;. &lt;/p&gt;
+
+&lt;h3&gt;Paragraphs and Segments&lt;/h3&gt;
+
+&lt;p&gt;When a document is opened for translation Studio brakes it into segments. This is done by the segmentation engine using the segmentation rules defined in Studio. A segment can be a paragraph or a sentence length but what is important to understand is that for Studio a segment represents a piece of localizable content for which existing translations can possibly be used. Besides localizable content there are other elements, like formatting, that Studio needs to take into considerations.&lt;/p&gt;
+
+&lt;p&gt;Now that we have a better understanding of how Studio is handling the content let me highlight how this is reflected in the File Type Framework:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;IParagraph&lt;/code&gt; explain paragraph&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;IParagraphUnit&lt;/code&gt; explain paragraphunit&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ISegment&lt;/code&gt; explain segment&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ISegmentPair&lt;/code&gt; explain segment pair &lt;/p&gt;
+
+&lt;h3&gt;How to use Studio AssemblyResolver&lt;/h3&gt;
+
+&lt;p&gt;There are 2 simple steps to get your Studio assemblies resolved:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add a reference to the &lt;strong&gt;Studio.AssemblyResolver&lt;/strong&gt; library from Visual Studio using NuGet&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/assemblyresolver/managenuget.png&quot; alt=&quot;Manage Nuget&quot; title=&quot;Manage Nuget&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/assemblyresolver/nugetassemblyresolver.png&quot; alt=&quot;Nuget assembly resolver&quot; title=&quot;Nuget assembly resolver&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add the following line of code in you application entry point&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;n&quot;&gt;AssemblyResolver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I&amp;#39;ve already included the &lt;strong&gt;Studio AssemblyResolver&lt;/strong&gt; library in &lt;a href=&quot;https://github.com/sdl/SDL-Community/tree/master/Reindex%20Translation%20Memories&quot;&gt;Reindex Translation Memories&lt;/a&gt; plugin. You can have a look &lt;a href=&quot;https://github.com/sdl/SDL-Community/blob/master/Reindex%20Translation%20Memories/Sdl.Community.ReindexTms/Program.cs#L18&quot;&gt;here&lt;/a&gt; if you are interested to see how I&amp;#39;ve included the library.&lt;/p&gt;
+
+&lt;p&gt;Please leave a comment if you have any questions or feedback.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>SDL Studio standalone plugin assembly resolver</title>
