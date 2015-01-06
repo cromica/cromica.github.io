@@ -4,7 +4,7 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-01-06T16:26:37+02:00</updated>
+ <updated>2015-01-06T17:33:34+02:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>How to access segment tags using Studio File Type Framework</title>
-   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/01/05/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html"/>
-   <updated>2015-01-05T18:20:00+02:00</updated>
-   <id>http://www.romuluscrisan.com/sdl%20studio/2015/01/05/How to access segment tags using Studio File Type Framework </id>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html"/>
+   <updated>2015-01-06T18:20:00+02:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How to access segment tags using Studio File Type Framework </id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/segmentTags/segments.png&quot; alt=&quot;Assembly Resolver&quot; title=&quot;Assembly Resolver&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
 
 &lt;p class=&quot;dropcap&quot;&gt;Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I&#39;m going to discuss in this article. &lt;/p&gt;

@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "How to access segment tags using Studio File Type Framework"
-date:   2015-01-05 16:20:00
+date:   2015-01-06 16:20:00
 category: "SDL Studio"
 tags: "Studio plugins OpenExchange Framework File "
-summary: "SDL Studio plugin system allows developers to develop new features on top of the standard functionality. There are 2 types of plugins that can be developed, one which behaves like a Studio add-in and another one which behaves as a standalone application. Both plugin types require to run inside Studio installation folder. This is because the public Studio SDK is using other assemblies that are located in Studio folder. While this is perfectly fine for add-in type plugins for standalone plugins this adds limitation on where and how you can deploy your application."
+summary: Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I'm going to discuss in this article."
 image: "/segmentTags/segments.png"
 ---
 
