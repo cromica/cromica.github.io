@@ -4,7 +4,7 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-01-05T14:34:19+02:00</updated>
+ <updated>2015-01-06T16:26:37+02:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
@@ -17,47 +17,130 @@
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/01/05/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html"/>
    <updated>2015-01-05T18:20:00+02:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/01/05/How to access segment tags using Studio File Type Framework </id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/assemblyresolver/assemblyresolver.jpg&quot; alt=&quot;Assembly Resolver&quot; title=&quot;Assembly Resolver&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/segmentTags/segments.png&quot; alt=&quot;Assembly Resolver&quot; title=&quot;Assembly Resolver&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
 
-&lt;p class=&quot;dropcap&quot;&gt;Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the formatting tags of your segments. This can be done using Studio File Type Support Framework which is part of the Studio SDK. The documentation is not touching this particular scenario so I will detail it as part of this article. &lt;/p&gt;
+&lt;p class=&quot;dropcap&quot;&gt;Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I&#39;m going to discuss in this article. &lt;/p&gt;
 
 &lt;h3&gt;Visitor Pattern&lt;/h3&gt;
 
-&lt;p&gt;Before jumping into the problem I recommend you to get familiarized with the visitor pattern since this is used as part of the Studio File Type Framework and you will need apply it in order to get the tags. To get familiarized you can read the theory on &lt;a href=&quot;http://en.wikipedia.org/wiki/Visitor_pattern&quot;&gt;wikipedia&lt;/a&gt; or if you want a practical example you can have a look &lt;a href=&quot;http://www.codeproject.com/Articles/588882/TheplusVisitorplusPatternplusExplained&quot;&gt;here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Before jumping into the problem I recommend you to get familiarized with the visitor pattern since this is used as part of the Studio File Type Framework and you will need apply it in order to get the tags. To get familiarized you can read the theory on &lt;a href=&quot;http://en.wikipedia.org/wiki/Visitor_pattern&quot;&gt;wikipedia&lt;/a&gt; or if you want a practical example you can have a look &lt;a href=&quot;http://www.codeproject.com/Articles/588882/TheplusVisitorplusPatternplusExplained&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3&gt;Paragraphs and Segments&lt;/h3&gt;
+&lt;p&gt;In Studio File Type Framework visitor pattern is made available via &lt;em&gt;IMarkupDataVisitor&lt;/em&gt; interface. &lt;/p&gt;
+
+&lt;h3&gt;Paragraphs, Segments and more&lt;/h3&gt;
 
 &lt;p&gt;When a document is opened for translation Studio brakes it into segments. This is done by the segmentation engine using the segmentation rules defined in Studio. A segment can be a paragraph or a sentence length but what is important to understand is that for Studio a segment represents a piece of localizable content for which existing translations can possibly be used. Besides localizable content there are other elements, like formatting, that Studio needs to take into considerations.&lt;/p&gt;
 
 &lt;p&gt;Now that we have a better understanding of how Studio is handling the content let me highlight how this is reflected in the File Type Framework:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;IParagraph&lt;/code&gt; explain paragraph&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;IParagraph&lt;/code&gt; represents the entire content that is displayed on one Studio editor row. This can contain multiple elements like tags or segments.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;IParagraphUnit&lt;/code&gt; explain paragraphunit&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;IParagraphUnit&lt;/code&gt; a unit of source language content and the localized target language content. Source and Target can be accessed using the corresponding properties which will return an &lt;em&gt;IParagraph&lt;/em&gt; object instance with the information described above. One thing to keep in mind is that there are two type of paragraph units:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;ISegment&lt;/code&gt; explain segment&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Structure paragraph units will contain only structure tags that are not localizable. In this case the Target will be null.&lt;/li&gt;
+&lt;li&gt;Localizable paragraph units will contain localizable content.&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;&lt;code&gt;ISegmentPair&lt;/code&gt; explain segment pair &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ISegment&lt;/code&gt; represents a piece of localizable content.&lt;/p&gt;
 
-&lt;h3&gt;How to use Studio AssemblyResolver&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;ISegmentPair&lt;/code&gt; segments exists in source and target language versions which are bot accessible using &lt;em&gt;ISegmentPair&lt;/em&gt;. &lt;/p&gt;
 
-&lt;p&gt;There are 2 simple steps to get your Studio assemblies resolved:&lt;/p&gt;
+&lt;p&gt;Segments and Paragraphs are considered containers of other elements like text, comments, revisions and so on. All containers share common behavior and that&amp;#39;s why in the File Type Framework both are abstracted using &lt;em&gt;IAbstractMarkupDataContainer&lt;/em&gt;. An &lt;em&gt;IAbstractMarkupDataContainer&lt;/em&gt; contains multiple &lt;em&gt;IAbstractMarkupData&lt;/em&gt; elements. This means that text, comments and other similar elements are represented in the framework using &lt;em&gt;IAbstractMarkupData&lt;/em&gt; interface. One very important aspect of this structure is the fact that a segment can be considered as an element of the paragraph but also as a container for other elements which means that it can be manipulated as an &lt;em&gt;IAbstractMarkupDataContainer&lt;/em&gt; or as an &lt;em&gt;IAbstractMarkupData&lt;/em&gt;.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Add a reference to the &lt;strong&gt;Studio.AssemblyResolver&lt;/strong&gt; library from Visual Studio using NuGet&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Here&amp;#39;s a diagram which describes the structure:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/assemblyresolver/managenuget.png&quot; alt=&quot;Manage Nuget&quot; title=&quot;Manage Nuget&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/segmentTags/abstractmarkupdatacontainer.png&quot; alt=&quot;Abstract Markup Data Container&quot; title=&quot;Abstract Markup Data Container&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/assemblyresolver/nugetassemblyresolver.png&quot; alt=&quot;Nuget assembly resolver&quot; title=&quot;Nuget assembly resolver&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+&lt;h3&gt;Access segment tags&lt;/h3&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Add the following line of code in you application entry point&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;All paragraph elements are like a tree structure that must be traversed using visitor pattern. For each paragraph unit we can look at the Source property which is an &lt;em&gt;IParagraph&lt;/em&gt;. Thinking at the abstraction I was talking earlier an &lt;em&gt;IParagraph&lt;/em&gt; is in essence an &lt;em&gt;IAbstractMarkupDataContainer&lt;/em&gt; which in turn is an enumeration of &lt;em&gt;IAbstractMarkupData&lt;/em&gt;. Here&amp;#39;s a sample code on how you can iterate paragraph unit elements:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;n&quot;&gt;AssemblyResolver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;n&quot;&gt;IEnumerable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IAbstractMarkupData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paragraphUnit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ 
+&lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contentItem&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//structure tag is not supported by IMarkupDataVisitor and you should ignore it&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;IStructureTag&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contentItem&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IStructureTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                       
+      &lt;span class=&quot;n&quot;&gt;contentItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AcceptVisitor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MarkupDataVisitor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;I&amp;#39;ve already included the &lt;strong&gt;Studio AssemblyResolver&lt;/strong&gt; library in &lt;a href=&quot;https://github.com/sdl/SDL-Community/tree/master/Reindex%20Translation%20Memories&quot;&gt;Reindex Translation Memories&lt;/a&gt; plugin. You can have a look &lt;a href=&quot;https://github.com/sdl/SDL-Community/blob/master/Reindex%20Translation%20Memories/Sdl.Community.ReindexTms/Program.cs#L18&quot;&gt;here&lt;/a&gt; if you are interested to see how I&amp;#39;ve included the library.&lt;/p&gt;
+&lt;p&gt;There is one new thing in the above sample which I didn&amp;#39;t discuss about.This is &lt;em&gt;MarkupDataVisitor&lt;/em&gt; which is an implementation of the interface &lt;em&gt;IMarkupDataVisitor&lt;/em&gt; I was mentioning in the visitor pattern section. Here&amp;#39;s how the interface looks like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;c1&quot;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;/// Interface for the visitor in the visitor pattern implementation for translatable source / target &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;/// content items in a localizable paragraph unit.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IMarkupDataVisitor&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// Called by tag pair instances.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;param name=&amp;quot;tagPair&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VisitTagPair&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ITagPair&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tagPair&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// Called by placeholder tag instances.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;param name=&amp;quot;tag&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VisitPlaceholderTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IPlaceholderTag&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// Called by text instances.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;param name=&amp;quot;text&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VisitText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IText&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// Called by segment instances.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;param name=&amp;quot;segment&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VisitSegment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ISegment&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;segment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// Called by location marker instances.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;param name=&amp;quot;location&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VisitLocationMarker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ILocationMarker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// Called by comment marker instances.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;param name=&amp;quot;commentMarker&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VisitCommentMarker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ICommentMarker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commentMarker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// Called by other marker instances.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;param name=&amp;quot;marker&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VisitOtherMarker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IOtherMarker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;marker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// Called by locked content instances.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;param name=&amp;quot;lockedContent&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VisitLockedContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ILockedContent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lockedContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// Called by revision marker instances.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;/// &amp;lt;param name=&amp;quot;revisionMarker&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VisitRevisionMarker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IRevisionMarker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;revisionMarker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see you are now able manipulate each element type. For example if you need formatting information you can get it from the &lt;em&gt;ITagPair&lt;/em&gt; interface. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Don&amp;#39;t forget&lt;/strong&gt; that segments are containers as well so on &lt;em&gt;VisitSegement&lt;/em&gt; method you need to traverse his structure in the same way as for the paragraph unit.&lt;/p&gt;
 
 &lt;p&gt;Please leave a comment if you have any questions or feedback.&lt;/p&gt;
 </content>

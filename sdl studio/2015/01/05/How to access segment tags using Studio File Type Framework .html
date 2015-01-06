@@ -30,8 +30,8 @@
     <meta content="http://www.romuluscrisan.com/index.html#about" property="article:author"> 
     
     
-    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts//assemblyresolver/assemblyresolver.jpg">
-    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts//assemblyresolver/assemblyresolver.jpg">  
+    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts//segmentTags/segments.png">
+    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts//segmentTags/segments.png">  
     <meta property="article:section" content="sdl studio">   
     <meta property="article:tag" content="Studio">
     <meta property="article:tag" content="plugins">
@@ -113,47 +113,130 @@
                         </small>
                     </header>
 
-                    <p><img src="/assets/images/posts/assemblyresolver/assemblyresolver.jpg" alt="Assembly Resolver" title="Assembly Resolver" class="img-responsive"></p>
+                    <p><img src="/assets/images/posts/segmentTags/segments.png" alt="Assembly Resolver" title="Assembly Resolver" class="img-responsive"></p>
 
-<p class="dropcap">Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the formatting tags of your segments. This can be done using Studio File Type Support Framework which is part of the Studio SDK. The documentation is not touching this particular scenario so I will detail it as part of this article. </p>
+<p class="dropcap">Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I'm going to discuss in this article. </p>
 
 <h3>Visitor Pattern</h3>
 
-<p>Before jumping into the problem I recommend you to get familiarized with the visitor pattern since this is used as part of the Studio File Type Framework and you will need apply it in order to get the tags. To get familiarized you can read the theory on <a href="http://en.wikipedia.org/wiki/Visitor_pattern">wikipedia</a> or if you want a practical example you can have a look <a href="http://www.codeproject.com/Articles/588882/TheplusVisitorplusPatternplusExplained">here</a>. </p>
+<p>Before jumping into the problem I recommend you to get familiarized with the visitor pattern since this is used as part of the Studio File Type Framework and you will need apply it in order to get the tags. To get familiarized you can read the theory on <a href="http://en.wikipedia.org/wiki/Visitor_pattern">wikipedia</a> or if you want a practical example you can have a look <a href="http://www.codeproject.com/Articles/588882/TheplusVisitorplusPatternplusExplained">here</a>.</p>
 
-<h3>Paragraphs and Segments</h3>
+<p>In Studio File Type Framework visitor pattern is made available via <em>IMarkupDataVisitor</em> interface. </p>
+
+<h3>Paragraphs, Segments and more</h3>
 
 <p>When a document is opened for translation Studio brakes it into segments. This is done by the segmentation engine using the segmentation rules defined in Studio. A segment can be a paragraph or a sentence length but what is important to understand is that for Studio a segment represents a piece of localizable content for which existing translations can possibly be used. Besides localizable content there are other elements, like formatting, that Studio needs to take into considerations.</p>
 
 <p>Now that we have a better understanding of how Studio is handling the content let me highlight how this is reflected in the File Type Framework:</p>
 
-<p><code>IParagraph</code> explain paragraph</p>
+<p><code>IParagraph</code> represents the entire content that is displayed on one Studio editor row. This can contain multiple elements like tags or segments.</p>
 
-<p><code>IParagraphUnit</code> explain paragraphunit</p>
+<p><code>IParagraphUnit</code> a unit of source language content and the localized target language content. Source and Target can be accessed using the corresponding properties which will return an <em>IParagraph</em> object instance with the information described above. One thing to keep in mind is that there are two type of paragraph units:</p>
 
-<p><code>ISegment</code> explain segment</p>
+<ol>
+<li>Structure paragraph units will contain only structure tags that are not localizable. In this case the Target will be null.</li>
+<li>Localizable paragraph units will contain localizable content.</li>
+</ol>
 
-<p><code>ISegmentPair</code> explain segment pair </p>
+<p><code>ISegment</code> represents a piece of localizable content.</p>
 
-<h3>How to use Studio AssemblyResolver</h3>
+<p><code>ISegmentPair</code> segments exists in source and target language versions which are bot accessible using <em>ISegmentPair</em>. </p>
 
-<p>There are 2 simple steps to get your Studio assemblies resolved:</p>
+<p>Segments and Paragraphs are considered containers of other elements like text, comments, revisions and so on. All containers share common behavior and that&#39;s why in the File Type Framework both are abstracted using <em>IAbstractMarkupDataContainer</em>. An <em>IAbstractMarkupDataContainer</em> contains multiple <em>IAbstractMarkupData</em> elements. This means that text, comments and other similar elements are represented in the framework using <em>IAbstractMarkupData</em> interface. One very important aspect of this structure is the fact that a segment can be considered as an element of the paragraph but also as a container for other elements which means that it can be manipulated as an <em>IAbstractMarkupDataContainer</em> or as an <em>IAbstractMarkupData</em>.</p>
 
-<ul>
-<li>Add a reference to the <strong>Studio.AssemblyResolver</strong> library from Visual Studio using NuGet</li>
-</ul>
+<p>Here&#39;s a diagram which describes the structure:</p>
 
-<p><img src="/assets/images/posts/assemblyresolver/managenuget.png" alt="Manage Nuget" title="Manage Nuget" class="img-responsive"></p>
+<p><img src="/assets/images/posts/segmentTags/abstractmarkupdatacontainer.png" alt="Abstract Markup Data Container" title="Abstract Markup Data Container" class="img-responsive"></p>
 
-<p><img src="/assets/images/posts/assemblyresolver/nugetassemblyresolver.png" alt="Nuget assembly resolver" title="Nuget assembly resolver" class="img-responsive"></p>
+<h3>Access segment tags</h3>
 
-<ul>
-<li>Add the following line of code in you application entry point</li>
-</ul>
+<p>All paragraph elements are like a tree structure that must be traversed using visitor pattern. For each paragraph unit we can look at the Source property which is an <em>IParagraph</em>. Thinking at the abstraction I was talking earlier an <em>IParagraph</em> is in essence an <em>IAbstractMarkupDataContainer</em> which in turn is an enumeration of <em>IAbstractMarkupData</em>. Here&#39;s a sample code on how you can iterate paragraph unit elements:</p>
 
-<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">AssemblyResolver</span><span class="p">.</span><span class="n">Resolve</span><span class="p">();</span></code></pre></div>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">IAbstractMarkupData</span><span class="p">&gt;</span> <span class="n">container</span> <span class="p">=</span> <span class="n">paragraphUnit</span><span class="p">.</span><span class="n">Source</span><span class="p">;</span>
+ 
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">contentItem</span> <span class="k">in</span> <span class="n">container</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">//structure tag is not supported by IMarkupDataVisitor and you should ignore it</span>
+    <span class="n">IStructureTag</span> <span class="n">stag</span> <span class="p">=</span> <span class="n">contentItem</span> <span class="k">as</span> <span class="n">IStructureTag</span><span class="p">;</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">stag</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+                       
+      <span class="n">contentItem</span><span class="p">.</span><span class="n">AcceptVisitor</span><span class="p">(</span><span class="k">new</span> <span class="n">MarkupDataVisitor</span><span class="p">());</span>
+<span class="p">}</span></code></pre></div>
 
-<p>I&#39;ve already included the <strong>Studio AssemblyResolver</strong> library in <a href="https://github.com/sdl/SDL-Community/tree/master/Reindex%20Translation%20Memories">Reindex Translation Memories</a> plugin. You can have a look <a href="https://github.com/sdl/SDL-Community/blob/master/Reindex%20Translation%20Memories/Sdl.Community.ReindexTms/Program.cs#L18">here</a> if you are interested to see how I&#39;ve included the library.</p>
+<p>There is one new thing in the above sample which I didn&#39;t discuss about.This is <em>MarkupDataVisitor</em> which is an implementation of the interface <em>IMarkupDataVisitor</em> I was mentioning in the visitor pattern section. Here&#39;s how the interface looks like:</p>
+
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Interface for the visitor in the visitor pattern implementation for translatable source / target </span>
+<span class="c1">/// content items in a localizable paragraph unit.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="n">IMarkupDataVisitor</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by tag pair instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;tagPair&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitTagPair</span><span class="p">(</span><span class="n">ITagPair</span> <span class="n">tagPair</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by placeholder tag instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;tag&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitPlaceholderTag</span><span class="p">(</span><span class="n">IPlaceholderTag</span> <span class="n">tag</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by text instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;text&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitText</span><span class="p">(</span><span class="n">IText</span> <span class="n">text</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by segment instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;segment&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitSegment</span><span class="p">(</span><span class="n">ISegment</span> <span class="n">segment</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by location marker instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;location&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitLocationMarker</span><span class="p">(</span><span class="n">ILocationMarker</span> <span class="n">location</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by comment marker instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;commentMarker&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitCommentMarker</span><span class="p">(</span><span class="n">ICommentMarker</span> <span class="n">commentMarker</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by other marker instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;marker&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitOtherMarker</span><span class="p">(</span><span class="n">IOtherMarker</span> <span class="n">marker</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by locked content instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;lockedContent&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitLockedContent</span><span class="p">(</span><span class="n">ILockedContent</span> <span class="n">lockedContent</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by revision marker instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;revisionMarker&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitRevisionMarker</span><span class="p">(</span><span class="n">IRevisionMarker</span> <span class="n">revisionMarker</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<p>As you can see you are now able manipulate each element type. For example if you need formatting information you can get it from the <em>ITagPair</em> interface. </p>
+
+<p><strong>Don&#39;t forget</strong> that segments are containers as well so on <em>VisitSegement</em> method you need to traverse his structure in the same way as for the paragraph unit.</p>
 
 <p>Please leave a comment if you have any questions or feedback.</p>
 
