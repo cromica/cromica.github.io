@@ -4,7 +4,7 @@ title:  "SDL Studio standalone plugin assembly resolver"
 date:   2014-11-28 12:20:00
 category: "SDL Studio"
 tags: "Studio plugins OpenExchange assembly standalone"
-summary: "SDL Studio plugin system allows developers to develop new features on top of the standard functionality. There are 2 types of plugins that can be developed, one which behaves like a Studio add-in and another one which behaves as a standalone application. Both plugin types require to run inside Studio installation folder. This is because the public Studio SDK is using other assemblies that are located in Studio folder. While this is perfectly fine for add-in type plugins for standalone plugins this adds limitation on where and how you can deploy your application."
+excerpt: "SDL Studio plugin system allows developers to develop new features on top of the standard functionality. There are 2 types of plugins that can be developed, one which behaves like a Studio add-in and another one which behaves as a standalone application. Both plugin types require to run inside Studio installation folder. This is because the public Studio SDK is using other assemblies that are located in Studio folder. While this is perfectly fine for add-in type plugins for standalone plugins this adds limitation on where and how you can deploy your application."
 image: "/assemblyresolver/assemblyresolver.jpg"
 ---
 

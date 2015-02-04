@@ -4,7 +4,7 @@ title:  "Why I choose Github pages"
 date:   2014-02-24 21:52:21
 category: "Blog"
 tags: "Blogging"
-summary: "Github pages is something I've recently heard of but really like it from the begging although I didn't exactly knew how is working."
+excerpt: "Github pages is something I've recently heard of and I really like it from the begging although I didn't exactly knew how is working. The main idea is that you will use a github repository to serve your site or blog."
 image: ""
 ---
 

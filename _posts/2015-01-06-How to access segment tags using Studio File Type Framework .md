@@ -4,7 +4,7 @@ title:  "How to access segment tags using Studio File Type Framework"
 date:   2015-01-06 16:20:00
 category: "SDL Studio"
 tags: "Studio plugins OpenExchange Framework File "
-summary: Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I'm going to discuss in this article."
+excerpt: Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I'm going to discuss in this article."
 image: "/segmentTags/segments.png"
 ---
 

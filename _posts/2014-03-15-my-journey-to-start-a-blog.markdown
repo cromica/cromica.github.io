@@ -4,7 +4,7 @@ title:  "My Journey to start a blog"
 date:   2014-03-15 07:40:00
 category: "Blog"
 tags: "Jekyll Chocolatey Blogging Github"
-summary: "Now that I written some articles around my journey to start a blog I think it might be very useful to have a short summary of my journey."
+excerpt: "Now that I written some articles around my journey to start a blog I think it might be very useful to have a short summary of my journey."
 image: ""
 ---
 <p class="dropcap">Now that I written some articles around my journey to start a blog I think it might be very useful to have a short summary of my journey.</p>

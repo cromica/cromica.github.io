@@ -4,7 +4,7 @@ title:  "Install Jekyll using Chocolatey"
 date:   2014-03-06 19:14:00
 category: "Jekyll"
 tags: "Jekyll Chocolatey Ruby Python Windows Blogging Github"
-summary: "As you probably already know this website and blog is created using github pages which behind the scene uses Jekyll. More on this you can read on my blog post.Every time I write a new article or make a change I would like to preview it before publishing it to live website."
+excerpt: "As you probably already know this website and blog is created using github pages which behind the scene uses Jekyll. More on this you can read on my blog post.Every time I write a new article or make a change I would like to preview it before publishing it to live website."
 image: ""
 ---
 <p class="dropcap">As you probably already know this website and blog are created using github pages which behind the scene uses Jekyll. More on this you can read on my <a href="http://romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html">blog post</a>.Every time I write a new article or make a change I would like to preview it before publishing it to live website.When this get published to my website repository, Github builds it almost instantly so I'm able to see my change really fast, but this is still done on the public website. This can work pretty well but I prefer to see my changes locally and only if I'm ok to publish them on my <a href="https://github.com/cromica/cromica.github.io">repository</a>. So in order to do that I need to install jekyll on my local machine and use `jekyll serve` to build and serve the website.</p>

@@ -4,7 +4,7 @@ title:  "Thank you Endava"
 date:   2014-09-20 18:53:00
 category: "Career"
 tags: "Career Endava"
-summary: "This week I had my last day as an Endava employee since I've accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback, so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with  Endava."
+excerpt: "This week I had my last day as an Endava employee since I've accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback, so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with  Endava."
 image: "endava.jpg"
 ---
 

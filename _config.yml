@@ -12,4 +12,5 @@ author: Romulus Crisan
 description: Romulus Crisan is a software developer, trainer, speaker, agile.
 email: contact@romuluscrisan.com
 url: http://www.romuluscrisan.com
-
+rss_name: feed.xml
+rss_post_limit: 10

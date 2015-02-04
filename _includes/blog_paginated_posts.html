@@ -10,7 +10,7 @@
     {% if post.image != '' %}
         <img src="/assets/images/posts/{{ post.image }}" alt="post image" title="post image" class="img-responsive">
     {% endif%}
-    <p>{{ post.summary }}</p>
+    <p>{{ post.excerpt }}</p>
     <a href="{{ post.url }}" class="btn btn-xs"><i class="fa fa-sign-out"></i> READ MORE</a>
 </div>
 {% endfor %}

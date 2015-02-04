@@ -4,7 +4,7 @@ title:  "3rd party assemblies and SDL Studio plugins"
 date:   2014-11-07 16:18:00
 category: "SDL Studio"
 tags: "Studio plugins OpenExchange"
-summary: "Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies."
+excerpt: "Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies."
 image: "/3rdparty/3rdpartyassemblies.png"
 ---
 

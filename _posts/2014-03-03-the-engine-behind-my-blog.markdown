@@ -4,7 +4,7 @@ title:  "The engine behind my blog"
 date:   2014-03-03 21:52:21
 category: "Blog"
 tags: "Jekyll Blogging Github"
-summary: "I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the reasons to start a blog, why I choose github pages to host it and now I will talk about Jekyll, the engine behind my blog."
+excerpt: "I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the reasons to start a blog, why I choose github pages to host it and now I will talk about Jekyll, the engine behind my blog."
 image: ""
 ---
 

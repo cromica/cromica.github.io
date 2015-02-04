@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Romulus Crisan</title>
+    <link>http://www.romuluscrisan.com</link>
+    <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
+    <pubDate>Tue, 06 Jan 2015 18:20:00 +0200</pubDate>
+    <item>
+      <title>How to access segment tags using Studio File Type Framework</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html</link>
+      <description><![CDATA[Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I'm going to discuss in this article."]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html#disqus_thread</comments>
+      <pubDate>Tue, 06 Jan 2015 18:20:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/segmentTags/segments.png" alt="Assembly Resolver" title="Assembly Resolver" class="img-responsive"></p>
+
+<p class="dropcap">Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I'm going to discuss in this article. </p>
+
+<h3>Visitor Pattern</h3>
+
+<p>Before jumping into the problem I recommend you to get familiarized with the visitor pattern since this is used as part of the Studio File Type Framework and you will need apply it in order to get the tags. To get familiarized you can read the theory on <a href="http://en.wikipedia.org/wiki/Visitor_pattern">wikipedia</a> or if you want a practical example you can have a look <a href="http://www.codeproject.com/Articles/588882/TheplusVisitorplusPatternplusExplained">here</a>.</p>
+
+<p>In Studio File Type Framework visitor pattern is made available via <em>IMarkupDataVisitor</em> interface. </p>
+
+<h3>Paragraphs, Segments and more</h3>
+
+<p>When a document is opened for translation Studio brakes it into segments. This is done by the segmentation engine using the segmentation rules defined in Studio. A segment can be a paragraph or a sentence length but what is important to understand is that for Studio a segment represents a piece of localizable content for which existing translations can possibly be used. Besides localizable content there are other elements, like formatting, that Studio needs to take into considerations.</p>
+
+<p>Now that we have a better understanding of how Studio is handling the content let me highlight how this is reflected in the File Type Framework:</p>
+
+<p><code>IParagraph</code> represents the entire content that is displayed on one Studio editor row. This can contain multiple elements like tags or segments.</p>
+
+<p><code>IParagraphUnit</code> a unit of source language content and the localized target language content. Source and Target can be accessed using the corresponding properties which will return an <em>IParagraph</em> object instance with the information described above. One thing to keep in mind is that there are two type of paragraph units:</p>
+
+<ol>
+<li>Structure paragraph units will contain only structure tags that are not localizable. In this case the Target will be null.</li>
+<li>Localizable paragraph units will contain localizable content.</li>
+</ol>
+
+<p><code>ISegment</code> represents a piece of localizable content.</p>
+
+<p><code>ISegmentPair</code> segments exists in source and target language versions which are bot accessible using <em>ISegmentPair</em>. </p>
+
+<p>Segments and Paragraphs are considered containers of other elements like text, comments, revisions and so on. All containers share common behavior and that&#39;s why in the File Type Framework both are abstracted using <em>IAbstractMarkupDataContainer</em>. An <em>IAbstractMarkupDataContainer</em> contains multiple <em>IAbstractMarkupData</em> elements. This means that text, comments and other similar elements are represented in the framework using <em>IAbstractMarkupData</em> interface. One very important aspect of this structure is the fact that a segment can be considered as an element of the paragraph but also as a container for other elements which means that it can be manipulated as an <em>IAbstractMarkupDataContainer</em> or as an <em>IAbstractMarkupData</em>.</p>
+
+<p>Here&#39;s a diagram which describes the structure:</p>
+
+<p><img src="/assets/images/posts/segmentTags/abstractmarkupdatacontainer.png" alt="Abstract Markup Data Container" title="Abstract Markup Data Container" class="img-responsive"></p>
+
+<h3>Access segment tags</h3>
+
+<p>All paragraph elements are like a tree structure that must be traversed using visitor pattern. For each paragraph unit we can look at the Source property which is an <em>IParagraph</em>. Thinking at the abstraction I was talking earlier an <em>IParagraph</em> is in essence an <em>IAbstractMarkupDataContainer</em> which in turn is an enumeration of <em>IAbstractMarkupData</em>. Here&#39;s a sample code on how you can iterate paragraph unit elements:</p>
+
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">IAbstractMarkupData</span><span class="p">&gt;</span> <span class="n">container</span> <span class="p">=</span> <span class="n">paragraphUnit</span><span class="p">.</span><span class="n">Source</span><span class="p">;</span>
+ 
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">contentItem</span> <span class="k">in</span> <span class="n">container</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">//structure tag is not supported by IMarkupDataVisitor and you should ignore it</span>
+    <span class="n">IStructureTag</span> <span class="n">stag</span> <span class="p">=</span> <span class="n">contentItem</span> <span class="k">as</span> <span class="n">IStructureTag</span><span class="p">;</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">stag</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+                       
+      <span class="n">contentItem</span><span class="p">.</span><span class="n">AcceptVisitor</span><span class="p">(</span><span class="k">new</span> <span class="n">MarkupDataVisitor</span><span class="p">());</span>
+<span class="p">}</span></code></pre></div>
+
+<p>There is one new thing in the above sample which I didn&#39;t discuss about.This is <em>MarkupDataVisitor</em> which is an implementation of the interface <em>IMarkupDataVisitor</em> I was mentioning in the visitor pattern section. Here&#39;s how the interface looks like:</p>
+
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Interface for the visitor in the visitor pattern implementation for translatable source / target </span>
+<span class="c1">/// content items in a localizable paragraph unit.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="n">IMarkupDataVisitor</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by tag pair instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;tagPair&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitTagPair</span><span class="p">(</span><span class="n">ITagPair</span> <span class="n">tagPair</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by placeholder tag instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;tag&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitPlaceholderTag</span><span class="p">(</span><span class="n">IPlaceholderTag</span> <span class="n">tag</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by text instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;text&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitText</span><span class="p">(</span><span class="n">IText</span> <span class="n">text</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by segment instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;segment&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitSegment</span><span class="p">(</span><span class="n">ISegment</span> <span class="n">segment</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by location marker instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;location&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitLocationMarker</span><span class="p">(</span><span class="n">ILocationMarker</span> <span class="n">location</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by comment marker instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;commentMarker&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitCommentMarker</span><span class="p">(</span><span class="n">ICommentMarker</span> <span class="n">commentMarker</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by other marker instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;marker&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitOtherMarker</span><span class="p">(</span><span class="n">IOtherMarker</span> <span class="n">marker</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by locked content instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;lockedContent&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitLockedContent</span><span class="p">(</span><span class="n">ILockedContent</span> <span class="n">lockedContent</span><span class="p">);</span>
+
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Called by revision marker instances.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="c1">/// &lt;param name=&quot;revisionMarker&quot;&gt;&lt;/param&gt;</span>
+    <span class="k">void</span> <span class="nf">VisitRevisionMarker</span><span class="p">(</span><span class="n">IRevisionMarker</span> <span class="n">revisionMarker</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<p>As you can see you are now able manipulate each element type. For example if you need formatting information you can get it from the <em>ITagPair</em> interface. </p>
+
+<p><strong>Don&#39;t forget</strong> that segments are containers as well so on <em>VisitSegement</em> method you need to traverse his structure in the same way as for the paragraph unit.</p>
+
+<p>Please leave a comment if you have any questions or feedback.</p>
+]]></content:encoded>
+      <dc:date>2015-01-06T18:20:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>SDL Studio standalone plugin assembly resolver</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html</link>
+      <description><![CDATA[SDL Studio plugin system allows developers to develop new features on top of the standard functionality. There are 2 types of plugins that can be developed, one which behaves like a Studio add-in and another one which behaves as a standalone application. Both plugin types require to run inside Studio installation folder. This is because the public Studio SDK is using other assemblies that are located in Studio folder. While this is perfectly fine for add-in type plugins for standalone plugins this adds limitation on where and how you can deploy your application.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html#disqus_thread</comments>
+      <pubDate>Fri, 28 Nov 2014 14:20:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/assemblyresolver/assemblyresolver.jpg" alt="Assembly Resolver" title="Assembly Resolver" class="img-responsive"></p>
+
+<p class="dropcap">SDL Studio plugin system allows developers to develop new features on top of the standard functionality. There are 2 types of plugins that can be developed, one which behaves like a Studio add-in and another one which behaves as a standalone application. Both plugin types require to run inside Studio installation folder. This is because the public Studio SDK is using other assemblies that are located in Studio folder. While this is perfectly fine for add-in type plugins for standalone plugins this adds limitation on where and how you can deploy your application.</p>
+
+<h3>Why not GAC ?</h3>
+
+<p>Many developers have asked us to register Studio assemblies in <a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">GAC</a> in order to solve the issue on where and how you can deploy your standalone Studio plugins. Having Studio assemblies registered in <a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">GAC</a> means that those assembly can be shared across the entire system. Although registering assemblies in GAC might had seem to be a good solution there are many implications when doing it. The main reason why Studio is not using <a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">GAC</a> is because of the following scenario:</p>
+
+<blockquote>
+<p><strong>GAC supports multiple version of an assembly. This means that when an assembly is updated to a newer version both versions will be saved. You might say that the old version should be removed, but this is not always possible since for example there are customers that have multiple version of Studio that are used on the same machine. Keeping multiple version of the same assembly will lead to unexpected behavior and errors from the application.</strong></p>
+</blockquote>
+
+<p>You can read more about why to avoid GAC <a href="http://www.sellsbrothers.com/Posts/Details/12503">here</a>.   </p>
+
+<h3>Got it ... no GAC, but we want solutions!</h3>
+
+<p>To solve this problem I&#39;ve developed a small library called <strong>Studio AssemblyResolver</strong>. Basically every time an dll is not found in the current application location the library will look after the dll in the Studio folder. The library comes with 2 mechanism for looking after Studio folder but you can add your own resolve mechanism. If you are interested about more details please have a look <a href="https://github.com/cromica/Studio-AssemblyResolver">here</a>. The library is also published in the <a href="https://www.nuget.org/packages/Studio.AssemblyResolver/0.1.1">Nuget package repository</a> which allows to be easily added to your project.</p>
+
+<h3>How to use Studio AssemblyResolver</h3>
+
+<p>There are 2 simple steps to get your Studio assemblies resolved:</p>
+
+<ul>
+<li>Add a reference to the <strong>Studio.AssemblyResolver</strong> library from Visual Studio using NuGet</li>
+</ul>
+
+<p><img src="/assets/images/posts/assemblyresolver/managenuget.png" alt="Manage Nuget" title="Manage Nuget" class="img-responsive"></p>
+
+<p><img src="/assets/images/posts/assemblyresolver/nugetassemblyresolver.png" alt="Nuget assembly resolver" title="Nuget assembly resolver" class="img-responsive"></p>
+
+<ul>
+<li>Add the following line of code in you application entry point</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">AssemblyResolver</span><span class="p">.</span><span class="n">Resolve</span><span class="p">();</span></code></pre></div>
+
+<p>I&#39;ve already included the <strong>Studio AssemblyResolver</strong> library in <a href="https://github.com/sdl/SDL-Community/tree/master/Reindex%20Translation%20Memories">Reindex Translation Memories</a> plugin. You can have a look <a href="https://github.com/sdl/SDL-Community/blob/master/Reindex%20Translation%20Memories/Sdl.Community.ReindexTms/Program.cs#L18">here</a> if you are interested to see how I&#39;ve included the library.</p>
+
+<p>Please leave a comment if you have any questions or feedback.</p>
+]]></content:encoded>
+      <dc:date>2014-11-28T14:20:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>3rd party assemblies and SDL Studio plugins</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html</link>
+      <description><![CDATA[Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html#disqus_thread</comments>
+      <pubDate>Fri, 07 Nov 2014 18:18:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/3rdparty/3rdpartyassemblies.png" alt="Hello SDL" title="Hello SDL" class="img-responsive"></p>
+
+<p class="dropcap">Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is <a href="http://james.newtonking.com/json" target="_blank">Json.NET</a>. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies.</p>
+
+<h3>SDL Studio plugins</h3>
+
+<p>This is not a detailed look at what SDL Studio plugins are but I want to give a bit of context on how they are working. First of all each plugin has to be packed in a package with extension <code>.sldplugin</code> (this a zip file in essence). If you use the SDL Studio templates from Visual Studio this done for you automatically. Once you have the package you need to deploy it in one of the three location where SDL Studio is expecting plugins:</p>
+
+<blockquote>
+<ol>
+<li><p>$(CurrentUser)\AppData\Local\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\</p></li>
+<li><p>$(CurrentUser)\AppData\Roaming\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\</p></li>
+<li><p>$(ProgramData)\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\</p></li>
+</ol>
+</blockquote>
+
+<p>There is no difference between this locations so you can choose whatever you prefer. Once the package is in one of this locations when SDL Studio starts it will unpack the package, drop the content into a dedicated location and load the plugin assembly. This depends on where you deployed your package and can be one of this locations:</p>
+
+<blockquote>
+<ol>
+<li><p>$(CurrentUser)\AppData\Local\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\</p></li>
+<li><p>$(CurrentUser)\AppData\Roaming\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\</p></li>
+<li><p>$(ProgramData)\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\</p></li>
+</ol>
+</blockquote>
+
+<h3>Deploy 3rd party assemblies</h3>
+
+<p>Now that we have a brief understanding on how SDL Studio handles plugins let&#39;s see what options we have to deploy 3rd party plugins:</p>
+
+<blockquote>
+<ol>
+<li><p>Include the assemblies in the plugin package</p></li>
+<li><p>Create an installer which will copy the 3rd party assemblies into SDL Studio folder under $(ProgramFiles)</p></li>
+</ol>
+</blockquote>
+
+<p>Although the second option can work I don&#39;t like it because it requires more work, administrative rights to deploy the assemblies and might intefere with Studio installation. This was also suggest by <a href="https://community.sdl.com/members/davidfritch/default.aspx">David Fritch</a> in this <a href="https://community.sdl.com/phase_2_groups/sdl_openexchange_developers/f/39/t/3149.aspx">thread</a> as a possible way to do it.</p>
+
+<p>I consider the first option the right way to do it since it&#39;s very simple and clean. All you have to do is change the <code>pluginpackage.manifest.xml</code> which has to be part of the solution in order to generate the <code>.sdlplugin</code> file. By default this xml file contains some tags to specify the plugin name, version, description, author and required SDL Studio product. You will need to add an <code>&lt;Include&gt;</code> tag which in my case, for <a href="http://james.newtonking.com/json">Json.NET</a>, looked something like this:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;Include&gt;</span>
+    <span class="nt">&lt;File&gt;</span>Newtonsoft.Json.dll<span class="nt">&lt;/File&gt;</span>
+<span class="nt">&lt;/Include&gt;</span></code></pre></div>
+ 
+
+<p>You can have a look at my entire xml file <a href="https://github.com/sdl/SDL-Community/blob/master/Controlled%20Machine%20Translation%20Providers/Sdl.Community.ControlledMTProviders/pluginpackage.manifest.xml#L9">here</a>.</p>
+
+<p>Please leave a comment if you have any questions or feedback.</p>
+]]></content:encoded>
+      <dc:date>2014-11-07T18:18:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Codecamp 2014</title>
+      <link>http://www.romuluscrisan.com/speaker/2014/10/31/Codecamp-2014.html</link>
+      <description><![CDATA[One of my personal objectives for this year was to attend as a speaker to local community developer conferences. Most known,at least by me, are ITCamp and Codecamp. ITCamp is held once a year in Cluj-Napoca and Codecamp is held twice a year in Iasi, although there are some smaller Codecamp events in Cluj those are not related. I'm really happy that this year I had the opportunity to participate at all 3 events, so a big big thanks to the organizers for having me.]]></description>
+      <comments>http://www.romuluscrisan.com/speaker/2014/10/31/Codecamp-2014.html#disqus_thread</comments>
+      <pubDate>Fri, 31 Oct 2014 11:07:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/speaker/2014/10/31/Codecamp-2014.html</guid>
+      <content:encoded><![CDATA[<div class="owl-carousel text-left" data-navigation="true" data-singleitem="true" data-autoplay="true" data-transition="fade">
+    <div class="item dragCursor">
+        <img src="/assets/images/posts/codecamp2014/1.jpg" class="img-responsive"  alt="img" />
+    </div>
+    <div class="item dragCursor">
+        <img src="/assets/images/posts/codecamp2014/2.jpg" class="img-responsive" alt="img" />
+    </div>
+    <div class="item dragCursor">
+        <img src="/assets/images/posts/codecamp2014/3.jpg" class="img-responsive" alt="img" />
+    </div>
+    <div class="item dragCursor">
+        <img src="/assets/images/posts/codecamp2014/4.jpg" class="img-responsive" alt="img" />
+    </div>
+    <div class="item dragCursor">
+        <img src="/assets/images/posts/codecamp2014/5.jpg" class="img-responsive" alt="img" />
+    </div>
+</div>                  
+
+<p class="dropcap">One of my personal objectives for this year was to attend as a speaker to local community developer conferences. Most known,at least by me, are ITCamp and Codecamp. ITCamp is held once a year in Cluj-Napoca and Codecamp is held twice a year in Iasi, although there are some smaller Codecamp events in Cluj those are not related. I'm really happy that this year I had the opportunity to participate at all 3 events, so a big big thanks to the organizers for having me.</p>
+
+<h3>Codecamp</h3>
+
+<p>I&#39;ve never been to Iasi until this year and I can&#39;t say that I&#39;ve seen too much of it since both times I&#39;ve been there I was caught up with <a href="http://iasi.codecamp.ro/">Codecamp</a> event. Although I&#39;ve haven&#39;t seen much of the city I&#39;ve met really nice people which are really passionate about software industry. Each event had more than 1400 participants which I believe it&#39;s a really big achievement. The fact that there is no fee to participate at the conference opened the door even to students which had a great opportunity to get in touch with the industry and basically their future. The event is also for seniors who can find lots interesting topics and a good place to network.</p>
+
+<p>For me <a href="http://iasi.codecamp.ro/">Codecamp</a> was a nice experience and I can&#39;t wait for the next edition which will probably happen in spring 2015. Kudos to <a href="https://ro.linkedin.com/in/cardasim">Florin Cardasim</a>, <a href="https://www.linkedin.com/in/gabrielenea">Gabriel Enea</a> and <a href="http://ro.linkedin.com/in/dannicola">Dan Nicola</a> who believed in their ideas and made this possible.</p>
+
+<h3>My sessions</h3>
+
+<p>I had two session which I presented this year at <a href="http://iasi.codecamp.ro/">Codecamp</a>. The first one which I&#39;ve done in may is <strong>Information Exchange using Hybrid Azure Integration</strong>. In this session I&#39;m talking about ways we can integrate on-premise LOB applications with azure cloud solutions based on messaging pattern. The second session which I had last weekend is <strong>Click&#39;n&#39;Deploy</strong>. This one was done together with <a href="http://www.radupascal.com/">Radu Pascal</a> and it was my first duet session. In this talk we present our approach on enabling continuous integration and continuous deployment using <a href="http://www.visualstudio.com/en-us/get-started/build-your-apps-vs.aspx">TFS Build</a>, <a href="http://gulpjs.com/">Gulp</a> and <a href="https://octopusdeploy.com/">Octopus Deploy</a>. During the session we showed how we&#39;ve implemented it in a real life example.</p>
+
+<p>If want to see more pictures have a look <a href="https://plus.google.com/photos/107459365520380827818/albums/6076078203903397409">here</a>.</p>
+
+<h3>Information Exchange using Hybrid Azure Integration slides</h3>
+
+<p><script async class="speakerdeck-embed" data-id="6ed4e240af78013157f156ebe6298001" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script></p>
+
+<h3>Click&#39;n&#39;Deploy slides</h3>
+
+<p><script async class="speakerdeck-embed" data-id="b0db24f042710132bd3a62fe72f26203" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script></p>
+
+<p>Please leave a comment if you have any questions or feedback. If you are interested in presenting this sessions just send me an email.</p>
+]]></content:encoded>
+      <dc:date>2014-10-31T11:07:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Hello SDL</title>
+      <link>http://www.romuluscrisan.com/career/2014/10/01/hello-sdl.html</link>
+      <description><![CDATA[I now have two weeks since I joined SDL as a Language Platform Evangelist Developer. Almost everyone asked me what does that mean and what will I do so I decided that I better explain here in detail. If you are looking for a general definition of the position you can find one on wikipedia but it won't help you too much. In order to understand it better you really need to understand the context.]]></description>
+      <comments>http://www.romuluscrisan.com/career/2014/10/01/hello-sdl.html#disqus_thread</comments>
+      <pubDate>Wed, 01 Oct 2014 17:15:00 +0300</pubDate>
+      <guid>http://www.romuluscrisan.com/career/2014/10/01/hello-sdl.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/sdl.jpg" alt="Hello SDL" title="Hello SDL" class="img-responsive"></p>
+
+<p class="dropcap">I now have two weeks since I joined SDL as a <i>Language Platform Evangelist Developer</i>. Almost everyone asked me what does that mean and what will I do so I decided that I better explain here in detail. If you are looking for a general definition of the position you can find one on wikipedia but it won't help you too much. In order to understand it better you really need to understand the context.</p>
+
+<h3>Who is SDL?</h3>
+
+<p>First off all let me tell you a few words about SDL and what is the company doing. It started as language translation service company and quickly become also a company providing software for language translation. For many years this was the only domain where SDL activated but new interesting opportunities arise and the company made new acquisitions on domains like e-commerce, social media monitoring, web content management, analytics and so on. All this new products allowed SDL to re-position itself recently as a <a href="http://www.sdl.com/solutions/business-need/global-customer-experience-management/">global customer experience management</a> company. If you are looking for more details please have a look <a href="http://www.sdl.com/aboutus/aboutsdl/history.html">here</a> for the history of the company and <a href="http://www.sdl.com/aboutus/aboutsdl/vision-mission.html">here</a> for the new vision and mission.</p>
+
+<h3>What I&#39;m going to do at SDL?</h3>
+
+<p>As I previously said SDL is offering now <a href="http://www.sdl.com/solutions/business-need/global-customer-experience-management/">global customer experience management</a> and as you might already think when you say global you immediately think of multiple languages, which means translation. </p>
+
+<p>I&#39;m going to be closely involved in <a href="http://www.sdl.com/products/sdl-trados-studio/">SDL Trados Studio</a> and <a href="https://languagecloud.sdl.com/">Language Cloud</a> and probably some other products depending on the needs. Most of my work will be around creating and growing the development community for this products, but I will also offer support and consultancy to clients and help the sale process when is necessary. Growing the development community can mean many things but here are some of they key things I will do:</p>
+
+<ol>
+<li>Explain better the current Studio API&#39;s and in what product areas it can be used.</li>
+<li>Improve and simplify the current API based on community and clients feedback.</li>
+<li>Contribute to the new Language Cloud SDK.</li>
+<li>Simplify how we can use develop against the API&#39;s. The most important bit will be to have them open to all possible developers.</li>
+<li>Speak at developer conferences and discuss about the API&#39;s and SDK&#39;s. If you have any suggestion or you want me at a conference just leave a comment.</li>
+<li>Contribute and help develop the new community platform which we will launch in the near future.</li>
+<li>Develop plugins based on customer needs. This will also act as examples for other developers.</li>
+</ol>
+
+<p>I think this is very interesting and I&#39;m really keen to see how things will evolve since there are many other things that I would like to do as part of my new role. Also SDL has some interesting plans around the community so stay tuned.</p>
+]]></content:encoded>
+      <dc:date>2014-10-01T17:15:00+03:00</dc:date>
+    </item>
+    <item>
+      <title>Thank you Endava</title>
+      <link>http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html</link>
+      <description><![CDATA[This week I had my last day as an Endava employee since I've accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback, so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with  Endava.]]></description>
+      <comments>http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html#disqus_thread</comments>
+      <pubDate>Sat, 20 Sep 2014 21:53:00 +0300</pubDate>
+      <guid>http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/endava.jpg" alt="Thank you Endava" title="Thank you Endava" class="img-responsive"></p>
+
+<p class="dropcap">This week I had my last day as an Endava employee since I've accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with Endava.</p>
+
+<p>My journey with Endava was about 7 years and a half. All this years had a great impact on my career and who am I today. When I joined the company I was a naive developer who was just interested in writing some code but slowly that changed because the company was constantly taking care of my growth and career path. I really think that Endava provides a great working environment where you can learn, grow and expand your skills regardless of the fact that you are just starting your career or you have several years of experience.</p>
+
+<p><img src="/assets/images/posts/endava_colleagues.jpg" alt="Thank you Endava" title="Thank you Endava" class="img-responsive"></p>
+
+<p>Certainly I will miss my colleagues from Endava with which I shared so many great experiences, but I&#39;m still going to be around so don&#39;t be a stranger suddenly. I want to thank you all for your great support and help during all this years.</p>
+
+<p>But because I&#39;m leaving it doesn&#39;t mean that we can&#39;t stay in touch. For sure I&#39;m going to post more often on this blog so you can leave a comment or find me on Twitter, Linkedin, Facebook, Gmail.</p>
+
+<p>Thanks Endava for all this great years.</p>
+]]></content:encoded>
+      <dc:date>2014-09-20T21:53:00+03:00</dc:date>
+    </item>
+    <item>
+      <title>My Journey to start a blog</title>
+      <link>http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog.html</link>
+      <description><![CDATA[Now that I written some articles around my journey to start a blog I think it might be very useful to have a short summary of my journey.]]></description>
+      <comments>http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog.html#disqus_thread</comments>
+      <pubDate>Sat, 15 Mar 2014 09:40:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog.html</guid>
+      <content:encoded><![CDATA[<p class="dropcap">Now that I written some articles around my journey to start a blog I think it might be very useful to have a short summary of my journey.</p>
+
+<h3>The Journey</h3>
+
+<p>Well I was thinking to start a blog for sometime because of the reasons I&#39;ve pointed in my first article <a href="http://romuluscrisan.com/blog/2014/02/23/why-a-blog.html">Why a blog ?</a>. This is a technical blog since I will write most of the time about software development and various technologies in an attempt to share my knowledge and experience but also because I want to us it as a brain dump. From time to time I might write about  some other things but probably still around technology. </p>
+
+<p>Finally this year I started looking for various options to host a blog and I ended up using <a href="http://pages.github.com/">Github pages</a>. Why I made this option I&#39;ve detailed in my blog post <a href="http://romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html">Why I choose Github pages</a>. Github pages is powered by a very nice and interesting framework called Jekyll for which I wrote an introduction  in my article <a href="http://romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html">The engine behing my blog</a>. Since my work is most of the time in Microsoft world I had to install Jekyll on Windows which is not necessarily straight forward so I described an easier alternative using chocolatey in my article <a href="http://romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html">Install Jekyll using chocolatey</a>.</p>
+
+<p>I&#39;m really glad that finally I manage to start this blog but I guess the real challenge comes now when I will need to actually use it and keep it alive. I hope you will find my journey useful to decide start a blog or if you are already decided to assist in your steps to get the blog started.</p>
+]]></content:encoded>
+      <dc:date>2014-03-15T09:40:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Install Jekyll using Chocolatey</title>
+      <link>http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html</link>
+      <description><![CDATA[As you probably already know this website and blog is created using github pages which behind the scene uses Jekyll. More on this you can read on my blog post.Every time I write a new article or make a change I would like to preview it before publishing it to live website.]]></description>
+      <comments>http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html#disqus_thread</comments>
+      <pubDate>Thu, 06 Mar 2014 21:14:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html</guid>
+      <content:encoded><![CDATA[<p class="dropcap">As you probably already know this website and blog are created using github pages which behind the scene uses Jekyll. More on this you can read on my <a href="http://romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html">blog post</a>.Every time I write a new article or make a change I would like to preview it before publishing it to live website.When this get published to my website repository, Github builds it almost instantly so I'm able to see my change really fast, but this is still done on the public website. This can work pretty well but I prefer to see my changes locally and only if I'm ok to publish them on my <a href="https://github.com/cromica/cromica.github.io">repository</a>. So in order to do that I need to install jekyll on my local machine and use `jekyll serve` to build and serve the website.</p>
+
+<h3>Install Jekyll on a Windows machine</h3>
+
+<p>Jekyll is build with Ruby and uses some Python libraries so we need to install them in order to run Jekyll. Since most the work I do is around Microsoft .Net platform I need to use Windows operating system . My source of inspiration was this <a href="http://blog.davidebbo.com/2014/01/converting-my-old-blog.html">article</a> by David Ebbo. In his artcile he points to this <a href="http://yizeng.me/2013/05/10/setup-jekyll-on-windows/">article</a> which explains all the steps in detail. The information is perfectly valid at this moment so you can follow that too but I would like to show you a simple way using <a href="https://chocolatey.org/">Chocolatey</a>. The steps are pretty much the same with the article, the only difference is in the way you install the applications.</p>
+
+<h3>What is Chocolatey ?</h3>
+
+<blockquote>
+<p>Chocolatey is a global PowerShell execution engine using the NuGet packaging infrastructure. Think of it as the ultimate automation tool for Windows.</p>
+</blockquote>
+
+<p>It is very simple to install Chocolatey you just have to run this script on your command prompt:</p>
+
+<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nv">@powershell</span> <span class="n">-NoProfile</span> <span class="n">-ExecutionPolicy</span> <span class="n">unrestricted</span> <span class="n">-Command</span> <span class="s2">&quot;iex ((new-object net.webclient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))&quot;</span> <span class="p">&amp;&amp;</span> <span class="n">SET</span> <span class="n">PATH</span><span class="p">=</span><span class="k">%</span><span class="n">PATH</span><span class="p">%;</span><span class="k">%</span><span class="n">systemdrive</span><span class="p">%\</span><span class="n">chocolatey</span><span class="p">\</span><span class="n">bin</span></code></pre></div>
+
+<p>If this doesn&#39;t work for you there are other ways to install chocolatey <a href="https://github.com/chocolatey/chocolatey/wiki/Installation">here</a>.</p>
+
+<p>Now that we have chocolatey installed we can open a command prompt and using <code>cinst</code> we can install what we need. </p>
+
+<h3>Install Ruby</h3>
+
+<p>Run the following command on the command prompt:</p>
+
+<blockquote>
+<p>cinst ruby</p>
+</blockquote>
+
+<p>To check if it was installed with success close then open a new command prompt and run:</p>
+
+<blockquote>
+<p>ruby --version</p>
+</blockquote>
+
+<h3>Install Ruby Devkit</h3>
+
+<p>Here are the steps required to install and configure Devkit:</p>
+
+<blockquote>
+<p>cinst ruby2.devkit</p>
+</blockquote>
+
+<p>Initialize and configure by updating <code>config.yml</code> file from the devkit folder. In the command prompt type the following:</p>
+
+<blockquote>
+<p>cd &quot;C:\DevKit2&quot;</p>
+
+<p>ruby dk.rb init</p>
+
+<p>notepad config.yml</p>
+</blockquote>
+
+<p>This will open notepad where you need to add <code>- C:\tools\ruby200</code> at the end of the file. This path represents the location where ruby was installed and it might be different than the one I&#39;ve specified.</p>
+
+<p>After this step you need to go back to the command prompt and install <a href="http://guides.rubygems.org/what-is-a-gem/">gem</a>:</p>
+
+<blockquote>
+<p>ruby dk.rb review</p>
+
+<p>ruby dk.rb install</p>
+</blockquote>
+
+<p>At this point you should have gem installed. You can check it this way:</p>
+
+<blockquote>
+<p>gem --version</p>
+</blockquote>
+
+<p>If it&#39;s not working try to close and then open a new command prompt.</p>
+
+<h3>Install Jekyll</h3>
+
+<p>Run the following command on the command prompt:</p>
+
+<blockquote>
+<p>gem install jekyll</p>
+</blockquote>
+
+<h3>What is Pygments ?</h3>
+
+<blockquote>
+<p>Pygments is a generic syntax highlighter for general use in all kinds of software such as forum systems, wikis or other applications that need to prettify source code.</p>
+</blockquote>
+
+<p>Pygments is written in python so we need to install Python</p>
+
+<h3>Install Python</h3>
+
+<p>Run the following command on the command prompt:</p>
+
+<blockquote>
+<p>cinst python2</p>
+</blockquote>
+
+<p>Run the following command in a new command prompt to verify installation:</p>
+
+<blockquote>
+<p>python --version</p>
+</blockquote>
+
+<h3>Install &#39;Easy Install&#39;</h3>
+
+<p>Easy Install is a mechanism similar with ruby gems or chocolatey for python packages. In order to install it follow the steps:</p>
+
+<p>1.Download <a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py">ez_setup.py</a></p>
+
+<p>2.Run the following command from the location where you saved ez_setup.py</p>
+
+<blockquote>
+<p>python ez_setup.py</p>
+</blockquote>
+
+<p>3.Set the  &#39;Python Scripts&#39; directory (e.g. <code>C:\tools\python2\Scripts</code>) to PATH</p>
+
+<p>4.Verify that easy_install is installed properly:</p>
+
+<blockquote>
+<p>easy_install --help</p>
+</blockquote>
+
+<h3>Install Pygments</h3>
+
+<p>Now that we have python and easy install all we just need to run the following commnad to install pygments:</p>
+
+<blockquote>
+<p>easy_install pygments</p>
+</blockquote>
+
+<h3>Start Jekyll</h3>
+
+<p>You can now create a new Jekyll blog which can be browsed on <a href="http://localhost:4000">localhost:4000</a>:</p>
+
+<blockquote>
+<p>jekyll new myblog</p>
+
+<p>cd myblog</p>
+
+<p>jekyll serve</p>
+</blockquote>
+
+<p>I found it much easier to install all this using Chocolatey. I&#39;m keen to get your feedback on this.</p>
+]]></content:encoded>
+      <dc:date>2014-03-06T21:14:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>The engine behind my blog</title>
+      <link>http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html</link>
+      <description><![CDATA[I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the reasons to start a blog, why I choose github pages to host it and now I will talk about Jekyll, the engine behind my blog.]]></description>
+      <comments>http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html#disqus_thread</comments>
+      <pubDate>Mon, 03 Mar 2014 23:52:21 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html</guid>
+      <content:encoded><![CDATA[<p class="dropcap">I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the <a href="http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog.html">reasons to start a blog</a>, <a href="http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html">why I choose github pages</a> to host it and now I will talk about Jekyll, the engine behind my blog.</p>
+
+<h3>What is Jekyll ?</h3>
+
+<p>Jekyll is a parsing engine which generates static html pages from dynamic components like template or markdown files. It uses a simple inline syntax which at build time is evaluated and replaced resulting a static page. Here is a short and very simple example:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;title&gt;</span><span class="nt">&lt;/title&gt;</span></code></pre></div>
+
+<p>In the above example the value for the title tag will be set with the value of the title property of the page object. Jekyll has a simple and limited syntax so it&#39;s quit easy to learn it, but it has great flexibility with lots of options on how to build the site. Also you can have partial files which Jekyll will combine at build time.</p>
+
+<p>Jekyll has a special folder structure which is used in order to generate the static website:</p>
+
+<ul>
+<li><p><strong>_includes</strong> folder is used to define partial files which can then be added to various pages. Some possible partial files might be the footer or header which for sure will be nice to define in one place and use on all pages.</p></li>
+<li><p><strong>_layout</strong> folder is pretty self explanatory and is the location where you will define the layouts of your pages.</p></li>
+<li><p><strong>_posts</strong> folder is the location from where dynamic content/posts will be saved. Jekyll uses a markup language like Markdown for this kind of files.</p></li>
+<li><p><strong>_drafts</strong> folder is where the working in progress stuff will be held since this location will not be evaluated at build unless <code>--draft</code> is specified.</p></li>
+<li><p><strong>_site</strong> folder is the location from where Jekyll will serve the static pages. During the build process Jekyll will combine partial files and evaluate the syntax producing a static html file which will be saved in this folder.</p></li>
+</ul>
+
+<h3>Jekyll and Github pages</h3>
+
+<p>Jekyll can be installed locally and since it has a small static webserver embedded it can be used in lots of ways to serve the website. Using <code>jekyll serve</code> you can build and browse the site. Beside this option you can use the site developed with Jekyll directly with Github pages since behind the scenes it uses Jekyll. So all you have to do is push your site developed with jekyll to a repository and Github will do the trick almost instant. Please be aware that this is not true for all Github repositories, it&#39;s only valid for Github pages repositories which must be created according to this <a href="http://pages.github.com/">steps</a>.  </p>
+
+<p>My intention with this article was to give a high overview of what Jekyll means and some basic principles. If you are looking for more details please have a look <a href="http://jekyllrb.com/">here</a> and <a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html">here</a>.</p>
+
+<p>If you have any questions please don&#39;t hesitate and leave a comment.</p>
+]]></content:encoded>
+      <dc:date>2014-03-03T23:52:21+02:00</dc:date>
+    </item>
+    <item>
+      <title>Why I choose Github pages</title>
+      <link>http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html</link>
+      <description><![CDATA[Github pages is something I've recently heard of and I really like it from the begging although I didn't exactly knew how is working. The main idea is that you will use a github repository to serve your site or blog.]]></description>
+      <comments>http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html#disqus_thread</comments>
+      <pubDate>Mon, 24 Feb 2014 23:52:21 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html</guid>
+      <content:encoded><![CDATA[<p class="dropcap">Github pages is something I've recently heard of and I really like it from the begging although I didn't exactly knew how is working. The main idea is that you will use a github repository to serve your site or blog.</p>
+
+<h3>Main benefits</h3>
+
+<p>For me these are the main benefits in using github pages:</p>
+
+<ul>
+<li><p>I have complete control of my site not being constrained in any way by a blogging platform.</p></li>
+<li><p>No database is involved since github pages will serve only static html. Pages will be produced using <a href="http://jekyllrb.com/" title="jekyll">Jekyll</a> (more on this in future post).</p></li>
+<li><p>It&#39;s completely free so I don&#39;t need to bother looking for hosting options. And it has very <a href="http://www.jeremymorgan.com/blog/programming/how-fast-are-github-pages/" title="good performance">good performance</a>.</p></li>
+<li><p>It uses <a href="http://daringfireball.net/projects/markdown/" title="markdown">markdown</a> for create and edit posts. Beside that github offers in-browser support for markdown which means that I can create or edit posts directly from browser.</p></li>
+<li><p>Since github pages uses github <a href="http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1">repositories</a> it means that anyone can contribute to the website by sending a <a href="https://help.github.com/articles/using-pull-requests" title="pull request">pull request</a>. So please fell free to send any changes or if you see any spelling errors you can directly correct them, all you need to do is go to the <a href="https://github.com/cromica/cromica.github.io" title="repository">repository</a> and submit a <a href="https://help.github.com/articles/using-pull-requests" title="pull request">pull request</a> .</p></li>
+<li><p>If anyone has any suggestions on various features I can add or any changes please let me know by creating an <a href="https://github.com/cromica/cromica.github.io/issues">issue</a> or <a href="http://romuluscrisan.com/index.html#contact">drop me a line</a>.</p></li>
+</ul>
+
+<p>I really like github pages because it&#39;s very simple to use and it&#39;s emphasizes collaboration so anyone can become a contributor to the blog.</p>
+]]></content:encoded>
+      <dc:date>2014-02-24T23:52:21+02:00</dc:date>
+    </item>
+    <dc:date>2015-01-06T18:20:00+02:00</dc:date>
+  </channel>
+</rss>
