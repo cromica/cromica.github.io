@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://www.romuluscrisan.com/</loc>
-    <lastmod>2015-02-04T11:28:13+02:00</lastmod>
+    <lastmod>2015-02-13T13:49:04+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -154,7 +154,7 @@
   <url>
     <loc>http://www.romuluscrisan.com/atom.xml</loc>
     
-      <lastmod>2015-02-04T11:28:13+02:00</lastmod>
+      <lastmod>2015-02-13T13:49:04+02:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -165,9 +165,22 @@
   </url>
   
   <url>
-    <loc>http://www.romuluscrisan.com/index.html</loc>
+    <loc>http://www.romuluscrisan.com/blog/index.html</loc>
     
       <lastmod>2014-02-24</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.romuluscrisan.com/ask-on-openexchange/index.html</loc>
+    
+      <lastmod>2015-02-14</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -191,7 +204,7 @@
   </url>
   
   <url>
-    <loc>http://www.romuluscrisan.com/blog/index.html</loc>
+    <loc>http://www.romuluscrisan.com/index.html</loc>
     
       <lastmod>2014-02-24</lastmod>
     
@@ -206,7 +219,7 @@
   <url>
     <loc>http://www.romuluscrisan.com/sitemap.xml</loc>
     
-      <lastmod>2015-02-04T11:28:13+02:00</lastmod>
+      <lastmod>2015-02-13T13:49:04+02:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -219,7 +232,7 @@
   <url>
     <loc>http://www.romuluscrisan.com//feed.xml</loc>
     
-      <lastmod>2015-02-04T11:28:13+02:00</lastmod>
+      <lastmod>2015-02-13T13:49:04+02:00</lastmod>
     
     
       <changefreq>monthly</changefreq>

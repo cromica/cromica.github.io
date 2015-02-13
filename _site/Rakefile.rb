@@ -38,7 +38,6 @@ desc "Build _site/ for development"
     puts "\n## Building Jekyll to _site/"
     status = system("jekyll build")
     puts status ? "Success" : "Failed"
-    Rake::Task["minify"].invoke
   end
 
   desc "Commit _site/"
