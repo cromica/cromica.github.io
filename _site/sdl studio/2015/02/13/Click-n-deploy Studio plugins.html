@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>SDL Studio standalone plugin assembly resolver</title>
+    <title>Click'n'Deploy Studio plugins</title>
     
 
-    <meta content="SDL Studio standalone plugin assembly resolver" property="og:title">
-    <meta content="SDL Studio standalone plugin assembly resolver" name="twitter:title">
+    <meta content="Click'n'Deploy Studio plugins" property="og:title">
+    <meta content="Click'n'Deploy Studio plugins" name="twitter:title">
     <meta content="Software developer, trainer, speaker and more by Romulus Crisan" property="og:site_name">
     <meta content="Romulus Crisan is a software developer, trainer, speaker, agile." name="description">
     <meta content="Romulus Crisan is a software developer, trainer, speaker, agile." property="og:description">
@@ -21,23 +21,22 @@
 
     <link href="/atom.xml" rel="alternate" title="Atom" type="application/atom+xml">
     <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
-    <link href="http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html" rel="canonical">
+    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html" rel="canonical">
     <meta content="article" property="og:type">
     <meta content="summary" name="twitter:card">
-    <meta content="http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html" property="og:url">
-    <meta content="http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html" name="twitter:url"> 
-    <meta content="2014-11-28T14:20:00+02:00" property="article:published_time">
+    <meta content="http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html" property="og:url">
+    <meta content="http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html" name="twitter:url"> 
+    <meta content="2015-02-13T01:20:00+02:00" property="article:published_time">
     <meta content="http://www.romuluscrisan.com/index.html#about" property="article:author"> 
     
     
-    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts//assemblyresolver/assemblyresolver.jpg">
-    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts//assemblyresolver/assemblyresolver.jpg">  
+    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts//click-n-deploy/click-n-deploy.png">
+    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts//click-n-deploy/click-n-deploy.png">  
     <meta property="article:section" content="sdl studio">   
     <meta property="article:tag" content="Studio">
     <meta property="article:tag" content="plugins">
     <meta property="article:tag" content="OpenExchange">
-    <meta property="article:tag" content="assembly">
-    <meta property="article:tag" content="standalone"> 
+    <meta property="article:tag" content="Deploy"> 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="assets/plugins/lt-ie9/html5.js"></script>
     <script type="text/javascript" src="assets/plugins/lt-ie9/respond.min.js"></script>
@@ -105,51 +104,42 @@
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>SDL Studio standalone plugin assembly resolver</h1>
+                        <h1>Click'n'Deploy Studio plugins</h1>
                         <small class="fsize13">
-                            <a href="/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> sdl studio</a>
-                            <a href="/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">28 November 2014</span>
+                            <a href="/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> sdl studio</a>
+                            <a href="/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html#disqus_thread" class="label label-default light">0 Comments</a>
+                            <span class="label label-default light">13 February 2015</span>
                         </small>
                     </header>
 
-                    <p><img src="/assets/images/posts/assemblyresolver/assemblyresolver.jpg" alt="Assembly Resolver" title="Assembly Resolver" class="img-responsive"></p>
+                    <p><a href="https://speakerdeck.com/cromica/clickn-deploy" taget="_blank"><img src="/assets/images/posts//click-n-deploy/click-n-deploy.png" alt="Click'n'Deploy" title="Click'n'Deploy" class="img-responsive"></a></p>
 
-<p class="dropcap">SDL Studio plugin system allows developers to develop new features on top of the standard functionality. There are 2 types of plugins that can be developed, one which behaves like a Studio add-in and another one which behaves as a standalone application. Both plugin types require to run inside Studio installation folder. This is because the public Studio SDK is using other assemblies that are located in Studio folder. While this is perfectly fine for add-in type plugins for standalone plugins this adds limitation on where and how you can deploy your application.</p>
+<p class="dropcap">App stores changed the way we install and maintain software on our devices. You now have a single centralized place where you go and search for what you need, click a button and in a matter of minutes you have the app working on your device. In a similar way you can extend SDL Studio by going on <a href="http://www.translationzone.com/openexchange/">OpenExchange</a> store and download a plugin you would like or need. Now this works just fine for most of the Studio plugins or apps but there are situations when you need to develop something that is specific for your company and doesn't make sense to be public to everyone since it's probably irrelevant for them and it might also contain confidential information. It would be nice if you would be able to create your private store inside <a href="http://www.translationzone.com/openexchange/">OpenExchange</a> where you can have you apps centralized and search-able just by you  but such a feature is not available at the moment. This article and video is about an alternate solution for this type of scenarios.</p>
 
-<h3>Why not GAC ?</h3>
+<h3>The solution</h3>
 
-<p>Many developers have asked us to register Studio assemblies in <a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">GAC</a> in order to solve the issue on where and how you can deploy your standalone Studio plugins. Having Studio assemblies registered in <a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">GAC</a> means that those assembly can be shared across the entire system. Although registering assemblies in GAC might had seem to be a good solution there are many implications when doing it. The main reason why Studio is not using <a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">GAC</a> is because of the following scenario:</p>
+<p>The solution is very simple and is based on the idea to automate as much as possible the process of releasing you plugin. The exact same thing is promoted by <a href="http://en.wikipedia.org/wiki/Continuous_delivery">Continuous Delivery</a>  practice and together with the evolution of this a couple of release management tools like <a href="https://octopusdeploy.com/">Octopus Deploy</a> or <a href="http://www.thoughtworks.com/products/go-continuous-delivery">GO</a> appeared in order to ease the adoption of such a practice. In our case since Studio plugins are developed using <a href="http://www.microsoft.com/net">Microsoft .Net</a> and it makes perfect sense to use <a href="https://octopusdeploy.com/">Octopus Deploy</a> since is dedicated for .Net solutions. Of course you can try and use <a href="http://www.thoughtworks.com/products/go-continuous-delivery">GO</a> or any other release management tool you prefer. If it&#39;s not clear by now the solution I&#39;m talking about is to automate your Studio plugin release management using <a href="https://octopusdeploy.com/">Octopus Deploy</a>.   </p>
 
-<blockquote>
-<p><strong>GAC supports multiple version of an assembly. This means that when an assembly is updated to a newer version both versions will be saved. You might say that the old version should be removed, but this is not always possible since for example there are customers that have multiple version of Studio that are used on the same machine. Keeping multiple version of the same assembly will lead to unexpected behavior and errors from the application.</strong></p>
-</blockquote>
+<h3>Octopus Deploy</h3>
 
-<p>You can read more about why to avoid GAC <a href="http://www.sellsbrothers.com/Posts/Details/12503">here</a>.   </p>
+<p>I&#39;m not going to cover in detail <a href="https://octopusdeploy.com/">Octopus Deploy</a> since it comes with a very good documentation, rather I&#39;m going to present a higher level overview of how is going to work with Studio plugins. Octopus comes with a central server component which is called <a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Octopus Deploy Server</a> that you need to install somewhere where all your users machines will be able to access it. It can be an internal private server, a public server or somewhere in a cloud platform, there is no limitation as long as it&#39;s accessible. <a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Octopus Deploy Server</a> comes with web user interface which you can use once you have the server installed. Besides the server component Octopus comes with a client component called <a href="http://docs.octopusdeploy.com/display/OD/Installing+Tentacles">Tentacle Deploy agent</a>. This has to be installed on each user machine and it will be used to deploy your software, in our case the Studio plugins. This is a one time operation and once it&#39;s done you will only use the web user interface that comes with the server. There is a third component called <a href="http://docs.octopusdeploy.com/display/OD/Using+OctoPack">OctoPack</a> that is used to push the software/Studio plugin from you development or build machine to <a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Octopus Deploy Server</a>.  </p>
 
-<h3>Got it ... no GAC, but we want solutions!</h3>
+<h3>Click&#39;n&#39;Deploy Studio plugins</h3>
 
-<p>To solve this problem I&#39;ve developed a small library called <strong>Studio AssemblyResolver</strong>. Basically every time an dll is not found in the current application location the library will look after the dll in the Studio folder. The library comes with 2 mechanism for looking after Studio folder but you can add your own resolve mechanism. If you are interested about more details please have a look <a href="https://github.com/cromica/Studio-AssemblyResolver">here</a>. The library is also published in the <a href="https://www.nuget.org/packages/Studio.AssemblyResolver/0.1.1">Nuget package repository</a> which allows to be easily added to your project.</p>
+<p>There are quit a few moving parts when you first setup <a href="https://octopusdeploy.com/">Octopus Deploy</a> and some of the steps might not that obvious so instead off writing them in this article I decided that it would be better if just create a video to show you exactly how you configure Octopus to release Studio plugins to the user machine. </p>
 
-<h3>How to use Studio AssemblyResolver</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mMDnY73D1x8" frameborder="0" allowfullscreen></iframe>
 
-<p>There are 2 simple steps to get your Studio assemblies resolved:</p>
+<p>Useful learning resources:</p>
 
-<ul>
-<li>Add a reference to the <strong>Studio.AssemblyResolver</strong> library from Visual Studio using NuGet</li>
-</ul>
-
-<p><img src="/assets/images/posts/assemblyresolver/managenuget.png" alt="Manage Nuget" title="Manage Nuget" class="img-responsive"></p>
-
-<p><img src="/assets/images/posts/assemblyresolver/nugetassemblyresolver.png" alt="Nuget assembly resolver" title="Nuget assembly resolver" class="img-responsive"></p>
-
-<ul>
-<li>Add the following line of code in you application entry point</li>
-</ul>
-
-<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">AssemblyResolver</span><span class="p">.</span><span class="n">Resolve</span><span class="p">();</span></code></pre></div>
-
-<p>I&#39;ve already included the <strong>Studio AssemblyResolver</strong> library in <a href="https://github.com/sdl/SDL-Community/tree/master/Reindex%20Translation%20Memories">Reindex Translation Memories</a> plugin. You can have a look <a href="https://github.com/sdl/SDL-Community/blob/master/Reindex%20Translation%20Memories/Sdl.Community.ReindexTms/Program.cs#L18">here</a> if you are interested to see how I&#39;ve included the library.</p>
+<ol>
+<li><p><a href="http://docs.octopusdeploy.com/display/OD/Getting+started">Octopus Deploy Getting Started</a></p></li>
+<li><p><a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Installing Octopus Deploy Server</a></p></li>
+<li><p><a href="http://docs.octopusdeploy.com/display/OD/Installing+Tentacles">Installing Tentacles</a></p></li>
+<li><p><a href="http://docs.octopusdeploy.com/display/OD/Using+OctoPack">Using OctoPack</a></p></li>
+<li><p><a href="https://www.nuget.org/">What is Nuget?</a></p></li>
+<li><p><a href="http://www.translationzone.com/openexchange/developer/sdk.html">Develop SDL Studio plugins</a></p></li>
+</ol>
 
 <p>Please leave a comment if you have any questions or feedback.</p>
 
@@ -159,14 +149,10 @@
                     <br/>
                      
                         <div class="nav-previous">
-                          <a class="" href="http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html" rel="prev"><i class="fa fa-long-arrow-left nav-previous-link"></i>3rd party assemblies and SDL Studio plugins</a>
+                          <a class="" href="http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html" rel="prev"><i class="fa fa-long-arrow-left nav-previous-link"></i>How to access segment tags using Studio File Type Framework</a>
                         </div>
                       
                     
-                        <div class="nav-next">
-                          <a class="" href="http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html" rel="next">How to access segment tags using Studio File Type Framework<i class="fa fa-long-arrow-right nav-next-link"></i></a>
-                        </div>
-                       
                      
                       <br/>
                     <hr/>

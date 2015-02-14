@@ -8,7 +8,47 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Tue, 06 Jan 2015 18:20:00 +0200</pubDate>
+    <pubDate>Fri, 13 Feb 2015 01:20:00 +0200</pubDate>
+    <item>
+      <title>Click'n'Deploy Studio plugins</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html</link>
+      <description><![CDATA[App stores changed the way we install and maintain software on our devices. You now have a single centralized place where you go and search for what you need, click a button and in a matter of minutes you have the app working on your device. In a similar way you can extend SDL Studio by going on OpenExchange store and download a plugin you would like or need. Now this works just fine for most of the Studio plugins or apps but there are situations when you need to develop something that is specific for your company and doesn't make sense to be public to everyone since it's probably irrelevant for them and it might also contain confidential information. It would be nice if you would be able to create your private store inside OpenExchange where you can have you apps centralized and search-able just by you  but such a feature is not available at the moment. This article and video is about an alternate solution for this type of scenarios.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html#disqus_thread</comments>
+      <pubDate>Fri, 13 Feb 2015 01:20:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html</guid>
+      <content:encoded><![CDATA[<p><a href="https://speakerdeck.com/cromica/clickn-deploy" taget="_blank"><img src="/assets/images/posts//click-n-deploy/click-n-deploy.png" alt="Click'n'Deploy" title="Click'n'Deploy" class="img-responsive"></a></p>
+
+<p class="dropcap">App stores changed the way we install and maintain software on our devices. You now have a single centralized place where you go and search for what you need, click a button and in a matter of minutes you have the app working on your device. In a similar way you can extend SDL Studio by going on <a href="http://www.translationzone.com/openexchange/">OpenExchange</a> store and download a plugin you would like or need. Now this works just fine for most of the Studio plugins or apps but there are situations when you need to develop something that is specific for your company and doesn't make sense to be public to everyone since it's probably irrelevant for them and it might also contain confidential information. It would be nice if you would be able to create your private store inside <a href="http://www.translationzone.com/openexchange/">OpenExchange</a> where you can have you apps centralized and search-able just by you  but such a feature is not available at the moment. This article and video is about an alternate solution for this type of scenarios.</p>
+
+<h3>The solution</h3>
+
+<p>The solution is very simple and is based on the idea to automate as much as possible the process of releasing you plugin. The exact same thing is promoted by <a href="http://en.wikipedia.org/wiki/Continuous_delivery">Continuous Delivery</a>  practice and together with the evolution of this a couple of release management tools like <a href="https://octopusdeploy.com/">Octopus Deploy</a> or <a href="http://www.thoughtworks.com/products/go-continuous-delivery">GO</a> appeared in order to ease the adoption of such a practice. In our case since Studio plugins are developed using <a href="http://www.microsoft.com/net">Microsoft .Net</a> and it makes perfect sense to use <a href="https://octopusdeploy.com/">Octopus Deploy</a> since is dedicated for .Net solutions. Of course you can try and use <a href="http://www.thoughtworks.com/products/go-continuous-delivery">GO</a> or any other release management tool you prefer. If it&#39;s not clear by now the solution I&#39;m talking about is to automate your Studio plugin release management using <a href="https://octopusdeploy.com/">Octopus Deploy</a>.   </p>
+
+<h3>Octopus Deploy</h3>
+
+<p>I&#39;m not going to cover in detail <a href="https://octopusdeploy.com/">Octopus Deploy</a> since it comes with a very good documentation, rather I&#39;m going to present a higher level overview of how is going to work with Studio plugins. Octopus comes with a central server component which is called <a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Octopus Deploy Server</a> that you need to install somewhere where all your users machines will be able to access it. It can be an internal private server, a public server or somewhere in a cloud platform, there is no limitation as long as it&#39;s accessible. <a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Octopus Deploy Server</a> comes with web user interface which you can use once you have the server installed. Besides the server component Octopus comes with a client component called <a href="http://docs.octopusdeploy.com/display/OD/Installing+Tentacles">Tentacle Deploy agent</a>. This has to be installed on each user machine and it will be used to deploy your software, in our case the Studio plugins. This is a one time operation and once it&#39;s done you will only use the web user interface that comes with the server. There is a third component called <a href="http://docs.octopusdeploy.com/display/OD/Using+OctoPack">OctoPack</a> that is used to push the software/Studio plugin from you development or build machine to <a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Octopus Deploy Server</a>.  </p>
+
+<h3>Click&#39;n&#39;Deploy Studio plugins</h3>
+
+<p>There are quit a few moving parts when you first setup <a href="https://octopusdeploy.com/">Octopus Deploy</a> and some of the steps might not that obvious so instead off writing them in this article I decided that it would be better if just create a video to show you exactly how you configure Octopus to release Studio plugins to the user machine. </p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mMDnY73D1x8" frameborder="0" allowfullscreen></iframe>
+
+<p>Useful learning resources:</p>
+
+<ol>
+<li><p><a href="http://docs.octopusdeploy.com/display/OD/Getting+started">Octopus Deploy Getting Started</a></p></li>
+<li><p><a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Installing Octopus Deploy Server</a></p></li>
+<li><p><a href="http://docs.octopusdeploy.com/display/OD/Installing+Tentacles">Installing Tentacles</a></p></li>
+<li><p><a href="http://docs.octopusdeploy.com/display/OD/Using+OctoPack">Using OctoPack</a></p></li>
+<li><p><a href="https://www.nuget.org/">What is Nuget?</a></p></li>
+<li><p><a href="http://www.translationzone.com/openexchange/developer/sdk.html">Develop SDL Studio plugins</a></p></li>
+</ol>
+
+<p>Please leave a comment if you have any questions or feedback.</p>
+]]></content:encoded>
+      <dc:date>2015-02-13T01:20:00+02:00</dc:date>
+    </item>
     <item>
       <title>How to access segment tags using Studio File Type Framework</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html</link>
@@ -570,32 +610,6 @@
 ]]></content:encoded>
       <dc:date>2014-03-03T23:52:21+02:00</dc:date>
     </item>
-    <item>
-      <title>Why I choose Github pages</title>
-      <link>http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html</link>
-      <description><![CDATA[Github pages is something I've recently heard of and I really like it from the begging although I didn't exactly knew how is working. The main idea is that you will use a github repository to serve your site or blog.]]></description>
-      <comments>http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html#disqus_thread</comments>
-      <pubDate>Mon, 24 Feb 2014 23:52:21 +0200</pubDate>
-      <guid>http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html</guid>
-      <content:encoded><![CDATA[<p class="dropcap">Github pages is something I've recently heard of and I really like it from the begging although I didn't exactly knew how is working. The main idea is that you will use a github repository to serve your site or blog.</p>
-
-<h3>Main benefits</h3>
-
-<p>For me these are the main benefits in using github pages:</p>
-
-<ul>
-<li><p>I have complete control of my site not being constrained in any way by a blogging platform.</p></li>
-<li><p>No database is involved since github pages will serve only static html. Pages will be produced using <a href="http://jekyllrb.com/" title="jekyll">Jekyll</a> (more on this in future post).</p></li>
-<li><p>It&#39;s completely free so I don&#39;t need to bother looking for hosting options. And it has very <a href="http://www.jeremymorgan.com/blog/programming/how-fast-are-github-pages/" title="good performance">good performance</a>.</p></li>
-<li><p>It uses <a href="http://daringfireball.net/projects/markdown/" title="markdown">markdown</a> for create and edit posts. Beside that github offers in-browser support for markdown which means that I can create or edit posts directly from browser.</p></li>
-<li><p>Since github pages uses github <a href="http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1">repositories</a> it means that anyone can contribute to the website by sending a <a href="https://help.github.com/articles/using-pull-requests" title="pull request">pull request</a>. So please fell free to send any changes or if you see any spelling errors you can directly correct them, all you need to do is go to the <a href="https://github.com/cromica/cromica.github.io" title="repository">repository</a> and submit a <a href="https://help.github.com/articles/using-pull-requests" title="pull request">pull request</a> .</p></li>
-<li><p>If anyone has any suggestions on various features I can add or any changes please let me know by creating an <a href="https://github.com/cromica/cromica.github.io/issues">issue</a> or <a href="http://romuluscrisan.com/index.html#contact">drop me a line</a>.</p></li>
-</ul>
-
-<p>I really like github pages because it&#39;s very simple to use and it&#39;s emphasizes collaboration so anyone can become a contributor to the blog.</p>
-]]></content:encoded>
-      <dc:date>2014-02-24T23:52:21+02:00</dc:date>
-    </item>
-    <dc:date>2015-01-06T18:20:00+02:00</dc:date>
+    <dc:date>2015-02-13T01:20:00+02:00</dc:date>
   </channel>
 </rss>
