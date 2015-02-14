@@ -4,13 +4,51 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-02-13T13:49:04+02:00</updated>
+ <updated>2015-02-14T10:11:48+02:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>Click'n'Deploy Studio plugins</title>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html"/>
+   <updated>2015-02-13T01:20:00+02:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy Studio plugins</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/cromica/clickn-deploy&quot; taget=&quot;_blank&quot;&gt;&lt;img src=&quot;/assets/images/posts//click-n-deploy/click-n-deploy.png&quot; alt=&quot;Click&#39;n&#39;Deploy&quot; title=&quot;Click&#39;n&#39;Deploy&quot; class=&quot;img-responsive&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;App stores changed the way we install and maintain software on our devices. You now have a single centralized place where you go and search for what you need, click a button and in a matter of minutes you have the app working on your device. In a similar way you can extend SDL Studio by going on &lt;a href=&quot;http://www.translationzone.com/openexchange/&quot;&gt;OpenExchange&lt;/a&gt; store and download a plugin you would like or need. Now this works just fine for most of the Studio plugins or apps but there are situations when you need to develop something that is specific for your company and doesn&#39;t make sense to be public to everyone since it&#39;s probably irrelevant for them and it might also contain confidential information. It would be nice if you would be able to create your private store inside &lt;a href=&quot;http://www.translationzone.com/openexchange/&quot;&gt;OpenExchange&lt;/a&gt; where you can have you apps centralized and search-able just by you  but such a feature is not available at the moment. This article and video is about an alternate solution for this type of scenarios.&lt;/p&gt;
+
+&lt;h3&gt;The solution&lt;/h3&gt;
+
+&lt;p&gt;The solution is very simple and is based on the idea to automate as much as possible the process of releasing you plugin. The exact same thing is promoted by &lt;a href=&quot;http://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;Continuous Delivery&lt;/a&gt;  practice and together with the evolution of this a couple of release management tools like &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; or &lt;a href=&quot;http://www.thoughtworks.com/products/go-continuous-delivery&quot;&gt;GO&lt;/a&gt; appeared in order to ease the adoption of such a practice. In our case since Studio plugins are developed using &lt;a href=&quot;http://www.microsoft.com/net&quot;&gt;Microsoft .Net&lt;/a&gt; and it makes perfect sense to use &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; since is dedicated for .Net solutions. Of course you can try and use &lt;a href=&quot;http://www.thoughtworks.com/products/go-continuous-delivery&quot;&gt;GO&lt;/a&gt; or any other release management tool you prefer. If it&amp;#39;s not clear by now the solution I&amp;#39;m talking about is to automate your Studio plugin release management using &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt;.   &lt;/p&gt;
+
+&lt;h3&gt;Octopus Deploy&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;m not going to cover in detail &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; since it comes with a very good documentation, rather I&amp;#39;m going to present a higher level overview of how is going to work with Studio plugins. Octopus comes with a central server component which is called &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Octopus&quot;&gt;Octopus Deploy Server&lt;/a&gt; that you need to install somewhere where all your users machines will be able to access it. It can be an internal private server, a public server or somewhere in a cloud platform, there is no limitation as long as it&amp;#39;s accessible. &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Octopus&quot;&gt;Octopus Deploy Server&lt;/a&gt; comes with web user interface which you can use once you have the server installed. Besides the server component Octopus comes with a client component called &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Tentacles&quot;&gt;Tentacle Deploy agent&lt;/a&gt;. This has to be installed on each user machine and it will be used to deploy your software, in our case the Studio plugins. This is a one time operation and once it&amp;#39;s done you will only use the web user interface that comes with the server. There is a third component called &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Using+OctoPack&quot;&gt;OctoPack&lt;/a&gt; that is used to push the software/Studio plugin from you development or build machine to &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Octopus&quot;&gt;Octopus Deploy Server&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;h3&gt;Click&amp;#39;n&amp;#39;Deploy Studio plugins&lt;/h3&gt;
+
+&lt;p&gt;There are quit a few moving parts when you first setup &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; and some of the steps might not that obvious so instead off writing them in this article I decided that it would be better if just create a video to show you exactly how you configure Octopus to release Studio plugins to the user machine. &lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mMDnY73D1x8&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Useful learning resources:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Getting+started&quot;&gt;Octopus Deploy Getting Started&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Octopus&quot;&gt;Installing Octopus Deploy Server&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Tentacles&quot;&gt;Installing Tentacles&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Using+OctoPack&quot;&gt;Using OctoPack&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.nuget.org/&quot;&gt;What is Nuget?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.translationzone.com/openexchange/developer/sdk.html&quot;&gt;Develop SDL Studio plugins&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Please leave a comment if you have any questions or feedback.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>How to access segment tags using Studio File Type Framework</title>
