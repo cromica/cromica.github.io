@@ -8,7 +8,38 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Fri, 13 Feb 2015 01:20:00 +0200</pubDate>
+    <pubDate>Wed, 18 Feb 2015 21:20:00 +0200</pubDate>
+    <item>
+      <title>Sdl Studio PowerShell toolkit is now open source</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source.html</link>
+      <description><![CDATA[Starting from today Sdl Studio powerhsell toolkit is open source and you can find it on github. The toolkit was written to facilitate scripting of the Project Automation API which comes with SDL Studio. Until now this was kept on the SDL internal TFS and you where only able to get it by going to the community forum. At this point you might ask yourself what's going to change from now on since the toolkit was freely distributed until now?]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source.html#disqus_thread</comments>
+      <pubDate>Wed, 18 Feb 2015 21:20:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/studio-powershell-toolkit/open-source.png" alt="Click'n'Deploy" title="Click'n'Deploy" class="img-responsive"></p>
+
+<p class="dropcap">Starting from today Sdl Studio powerhsell toolkit is open source and you can find it on github. The toolkit was written to facilitate scripting of the Project Automation API which comes with SDL Studio. Until now this was kept on the SDL internal TFS and you where only able to get it by going to the community forum. At this point you might ask yourself what's going to change from now on since the toolkit was freely distributed until now?</p>
+
+<h3>Github</h3>
+
+<p>The project is now hosted on github in this <a href="https://github.com/sdl/Sdl-studio-powershell-toolkit">location</a>. The internal TFS will no longer be used so this means that every change that will be made to the toolkit will be made on this repository including changes done by Sdl developers. Also this allows any interested developer to contribute to the toolkit. </p>
+
+<p>Public releases are also hosted on github and you can be find them <a href="https://github.com/sdl/Sdl-studio-powershell-toolkit/releases/">here</a>. You are now able to download the entire toolkit or just one of the modules. </p>
+
+<h3>Open source</h3>
+
+<p>Open source it&#39;s not at all equal to free, it&#39;s much more than that. Yes you don&#39;t have to pay any money for this toolkit but from now on is not only Sdl&#39;s responsibility to maintain this toolkit, it&#39;s also the responsibility of each toolkit user or developer. To be a bit more specific if you find bug or want a new feature you can log it <a href="https://github.com/sdl/Sdl-studio-powershell-toolkit/issues">here</a> but don&#39;t necessarily expect someone from Sdl to resolve the issue, it might be anyone from the community or even you.</p>
+
+<p>Another important aspect that comes with open source is that every change you made to this toolkit has to be made open source. It&#39;s not mandatory to be made in the same repository but it has to be open source. I would encourage everyone to contribute to this repository and make the resolved issues available to everyone.</p>
+
+<h3>Conclusion</h3>
+
+<p>Contribute to Sdl Studio PowerShell toolkit from <a href="https://github.com/sdl/Sdl-studio-powershell-toolkit">here</a> or download the latest release from <a href="https://github.com/sdl/Sdl-studio-powershell-toolkit/releases/tag/1.0.0.0">here</a>. </p>
+
+<p>Please leave a comment if you have any questions or feedback.</p>
+]]></content:encoded>
+      <dc:date>2015-02-18T21:20:00+02:00</dc:date>
+    </item>
     <item>
       <title>Click'n'Deploy Studio plugins</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html</link>
@@ -572,44 +603,6 @@
 ]]></content:encoded>
       <dc:date>2014-03-06T21:14:00+02:00</dc:date>
     </item>
-    <item>
-      <title>The engine behind my blog</title>
-      <link>http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html</link>
-      <description><![CDATA[I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the reasons to start a blog, why I choose github pages to host it and now I will talk about Jekyll, the engine behind my blog.]]></description>
-      <comments>http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html#disqus_thread</comments>
-      <pubDate>Mon, 03 Mar 2014 23:52:21 +0200</pubDate>
-      <guid>http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html</guid>
-      <content:encoded><![CDATA[<p class="dropcap">I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the <a href="http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog.html">reasons to start a blog</a>, <a href="http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html">why I choose github pages</a> to host it and now I will talk about Jekyll, the engine behind my blog.</p>
-
-<h3>What is Jekyll ?</h3>
-
-<p>Jekyll is a parsing engine which generates static html pages from dynamic components like template or markdown files. It uses a simple inline syntax which at build time is evaluated and replaced resulting a static page. Here is a short and very simple example:</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;title&gt;</span><span class="nt">&lt;/title&gt;</span></code></pre></div>
-
-<p>In the above example the value for the title tag will be set with the value of the title property of the page object. Jekyll has a simple and limited syntax so it&#39;s quit easy to learn it, but it has great flexibility with lots of options on how to build the site. Also you can have partial files which Jekyll will combine at build time.</p>
-
-<p>Jekyll has a special folder structure which is used in order to generate the static website:</p>
-
-<ul>
-<li><p><strong>_includes</strong> folder is used to define partial files which can then be added to various pages. Some possible partial files might be the footer or header which for sure will be nice to define in one place and use on all pages.</p></li>
-<li><p><strong>_layout</strong> folder is pretty self explanatory and is the location where you will define the layouts of your pages.</p></li>
-<li><p><strong>_posts</strong> folder is the location from where dynamic content/posts will be saved. Jekyll uses a markup language like Markdown for this kind of files.</p></li>
-<li><p><strong>_drafts</strong> folder is where the working in progress stuff will be held since this location will not be evaluated at build unless <code>--draft</code> is specified.</p></li>
-<li><p><strong>_site</strong> folder is the location from where Jekyll will serve the static pages. During the build process Jekyll will combine partial files and evaluate the syntax producing a static html file which will be saved in this folder.</p></li>
-</ul>
-
-<h3>Jekyll and Github pages</h3>
-
-<p>Jekyll can be installed locally and since it has a small static webserver embedded it can be used in lots of ways to serve the website. Using <code>jekyll serve</code> you can build and browse the site. Beside this option you can use the site developed with Jekyll directly with Github pages since behind the scenes it uses Jekyll. So all you have to do is push your site developed with jekyll to a repository and Github will do the trick almost instant. Please be aware that this is not true for all Github repositories, it&#39;s only valid for Github pages repositories which must be created according to this <a href="http://pages.github.com/">steps</a>.  </p>
-
-<p>My intention with this article was to give a high overview of what Jekyll means and some basic principles. If you are looking for more details please have a look <a href="http://jekyllrb.com/">here</a> and <a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html">here</a>.</p>
-
-<p>If you have any questions please don&#39;t hesitate and leave a comment.</p>
-]]></content:encoded>
-      <dc:date>2014-03-03T23:52:21+02:00</dc:date>
-    </item>
-    <dc:date>2015-02-13T01:20:00+02:00</dc:date>
+    <dc:date>2015-02-18T21:20:00+02:00</dc:date>
   </channel>
 </rss>
