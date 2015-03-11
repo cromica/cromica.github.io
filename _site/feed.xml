@@ -8,7 +8,36 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Wed, 18 Feb 2015 21:20:00 +0200</pubDate>
+    <pubDate>Wed, 11 Mar 2015 21:20:00 +0200</pubDate>
+    <item>
+      <title>Merge files using SDL Studio Project Automation API</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api.html</link>
+      <description><![CDATA[SDL Studio allows the user to merge multiple files into one bilingual document (sdlxliff). This can be done during project creation and it can be useful in situations where you have multiple small files and you might want to translate them in one go without switching between documents.  If you don't already know SDL Studio is very extensible via the API's that are made available but sometimes simple things are not so simple to do by code because of software design decision or technical limitations. Merging files using SDL Studio Project Automation API can be done but is not that straight forward as you might expect and this is why I decided to write this article to show how this is done.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api.html#disqus_thread</comments>
+      <pubDate>Wed, 11 Mar 2015 21:20:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/merge-files/merge.jpg" alt="Click'n'Deploy" title="Merge files" class="img-responsive"></p>
+
+<p class="dropcap">SDL Studio allows the user to merge multiple files into one bilingual document (sdlxliff). This can be done during project creation and it can be useful in situations where you have multiple small files and you might want to translate them in one go without switching between documents. If you don't already know SDL Studio is very extensible via the API's that are made available but sometimes simple things are not so simple to do by code because of software design decision or technical limitations. Merging files using SDL Studio Project Automation API can be done but is not that straight forward as you might expect and this is why I decided to write this article to show how this is done.</p>
+
+<h3>Create Merged Project File</h3>
+
+<p>Looking at the documentation you can easily find <a href="http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/8c0d6583-c31c-365b-0819-ff19e18e1f5e.htm">CreateMergedProjectFile</a> method which allows you to specify the files you want to be merged and the name of the bilingual file which must have &quot;.sdlxliff&quot; extension. At this point this seems to be very simple but when you run this method you realize that is not actually doing much, there is no visible result on the project and the status is <em>Not Merged</em>. </p>
+
+<h3>What am I missing?</h3>
+
+<p>At this point you only get an <a href="http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/4ea34241-0524-aac3-45fa-817765b3bc5e.htm">MergedProjectFile</a> object which is just a representation of the merging structure. In order to actually create the bilingual merged file we need to use <a href="http://producthelp.sdl.com/SDK/FileTypeSupport/3.0/html/1f5584af-9763-46ff-894b-08127a2421a7.htm">Studio File Type Framework</a> to generate the sdlxliff file. Once we have that we can use <em>CopyToTargetLanguages</em> to copy the merged files to all target languages we need. To make this even more clear and concrete I&#39;m going to share a sample code that is doing all the steps I&#39;ve described until now.</p>
+
+<script src="https://gist.github.com/cromica/af1242f60511c52fba79.js"></script>
+
+<h3>Conclusion</h3>
+
+<p>It&#39;s not that complicated to merge files using the SDL Studio API but is not obvious and intuitive. I hope this article will clarify this situation. </p>
+
+<p>Please leave a comment if you have any questions or feedback.</p>
+]]></content:encoded>
+      <dc:date>2015-03-11T21:20:00+02:00</dc:date>
+    </item>
     <item>
       <title>Sdl Studio PowerShell toolkit is now open source</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source.html</link>
@@ -452,157 +481,6 @@
 ]]></content:encoded>
       <dc:date>2014-03-15T09:40:00+02:00</dc:date>
     </item>
-    <item>
-      <title>Install Jekyll using Chocolatey</title>
-      <link>http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html</link>
-      <description><![CDATA[As you probably already know this website and blog is created using github pages which behind the scene uses Jekyll. More on this you can read on my blog post.Every time I write a new article or make a change I would like to preview it before publishing it to live website.]]></description>
-      <comments>http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html#disqus_thread</comments>
-      <pubDate>Thu, 06 Mar 2014 21:14:00 +0200</pubDate>
-      <guid>http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html</guid>
-      <content:encoded><![CDATA[<p class="dropcap">As you probably already know this website and blog are created using github pages which behind the scene uses Jekyll. More on this you can read on my <a href="http://romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html">blog post</a>.Every time I write a new article or make a change I would like to preview it before publishing it to live website.When this get published to my website repository, Github builds it almost instantly so I'm able to see my change really fast, but this is still done on the public website. This can work pretty well but I prefer to see my changes locally and only if I'm ok to publish them on my <a href="https://github.com/cromica/cromica.github.io">repository</a>. So in order to do that I need to install jekyll on my local machine and use `jekyll serve` to build and serve the website.</p>
-
-<h3>Install Jekyll on a Windows machine</h3>
-
-<p>Jekyll is build with Ruby and uses some Python libraries so we need to install them in order to run Jekyll. Since most the work I do is around Microsoft .Net platform I need to use Windows operating system . My source of inspiration was this <a href="http://blog.davidebbo.com/2014/01/converting-my-old-blog.html">article</a> by David Ebbo. In his artcile he points to this <a href="http://yizeng.me/2013/05/10/setup-jekyll-on-windows/">article</a> which explains all the steps in detail. The information is perfectly valid at this moment so you can follow that too but I would like to show you a simple way using <a href="https://chocolatey.org/">Chocolatey</a>. The steps are pretty much the same with the article, the only difference is in the way you install the applications.</p>
-
-<h3>What is Chocolatey ?</h3>
-
-<blockquote>
-<p>Chocolatey is a global PowerShell execution engine using the NuGet packaging infrastructure. Think of it as the ultimate automation tool for Windows.</p>
-</blockquote>
-
-<p>It is very simple to install Chocolatey you just have to run this script on your command prompt:</p>
-
-<div class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nv">@powershell</span> <span class="n">-NoProfile</span> <span class="n">-ExecutionPolicy</span> <span class="n">unrestricted</span> <span class="n">-Command</span> <span class="s2">&quot;iex ((new-object net.webclient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))&quot;</span> <span class="p">&amp;&amp;</span> <span class="n">SET</span> <span class="n">PATH</span><span class="p">=</span><span class="k">%</span><span class="n">PATH</span><span class="p">%;</span><span class="k">%</span><span class="n">systemdrive</span><span class="p">%\</span><span class="n">chocolatey</span><span class="p">\</span><span class="n">bin</span></code></pre></div>
-
-<p>If this doesn&#39;t work for you there are other ways to install chocolatey <a href="https://github.com/chocolatey/chocolatey/wiki/Installation">here</a>.</p>
-
-<p>Now that we have chocolatey installed we can open a command prompt and using <code>cinst</code> we can install what we need. </p>
-
-<h3>Install Ruby</h3>
-
-<p>Run the following command on the command prompt:</p>
-
-<blockquote>
-<p>cinst ruby</p>
-</blockquote>
-
-<p>To check if it was installed with success close then open a new command prompt and run:</p>
-
-<blockquote>
-<p>ruby --version</p>
-</blockquote>
-
-<h3>Install Ruby Devkit</h3>
-
-<p>Here are the steps required to install and configure Devkit:</p>
-
-<blockquote>
-<p>cinst ruby2.devkit</p>
-</blockquote>
-
-<p>Initialize and configure by updating <code>config.yml</code> file from the devkit folder. In the command prompt type the following:</p>
-
-<blockquote>
-<p>cd &quot;C:\DevKit2&quot;</p>
-
-<p>ruby dk.rb init</p>
-
-<p>notepad config.yml</p>
-</blockquote>
-
-<p>This will open notepad where you need to add <code>- C:\tools\ruby200</code> at the end of the file. This path represents the location where ruby was installed and it might be different than the one I&#39;ve specified.</p>
-
-<p>After this step you need to go back to the command prompt and install <a href="http://guides.rubygems.org/what-is-a-gem/">gem</a>:</p>
-
-<blockquote>
-<p>ruby dk.rb review</p>
-
-<p>ruby dk.rb install</p>
-</blockquote>
-
-<p>At this point you should have gem installed. You can check it this way:</p>
-
-<blockquote>
-<p>gem --version</p>
-</blockquote>
-
-<p>If it&#39;s not working try to close and then open a new command prompt.</p>
-
-<h3>Install Jekyll</h3>
-
-<p>Run the following command on the command prompt:</p>
-
-<blockquote>
-<p>gem install jekyll</p>
-</blockquote>
-
-<h3>What is Pygments ?</h3>
-
-<blockquote>
-<p>Pygments is a generic syntax highlighter for general use in all kinds of software such as forum systems, wikis or other applications that need to prettify source code.</p>
-</blockquote>
-
-<p>Pygments is written in python so we need to install Python</p>
-
-<h3>Install Python</h3>
-
-<p>Run the following command on the command prompt:</p>
-
-<blockquote>
-<p>cinst python2</p>
-</blockquote>
-
-<p>Run the following command in a new command prompt to verify installation:</p>
-
-<blockquote>
-<p>python --version</p>
-</blockquote>
-
-<h3>Install &#39;Easy Install&#39;</h3>
-
-<p>Easy Install is a mechanism similar with ruby gems or chocolatey for python packages. In order to install it follow the steps:</p>
-
-<p>1.Download <a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py">ez_setup.py</a></p>
-
-<p>2.Run the following command from the location where you saved ez_setup.py</p>
-
-<blockquote>
-<p>python ez_setup.py</p>
-</blockquote>
-
-<p>3.Set the  &#39;Python Scripts&#39; directory (e.g. <code>C:\tools\python2\Scripts</code>) to PATH</p>
-
-<p>4.Verify that easy_install is installed properly:</p>
-
-<blockquote>
-<p>easy_install --help</p>
-</blockquote>
-
-<h3>Install Pygments</h3>
-
-<p>Now that we have python and easy install all we just need to run the following commnad to install pygments:</p>
-
-<blockquote>
-<p>easy_install pygments</p>
-</blockquote>
-
-<h3>Start Jekyll</h3>
-
-<p>You can now create a new Jekyll blog which can be browsed on <a href="http://localhost:4000">localhost:4000</a>:</p>
-
-<blockquote>
-<p>jekyll new myblog</p>
-
-<p>cd myblog</p>
-
-<p>jekyll serve</p>
-</blockquote>
-
-<p>I found it much easier to install all this using Chocolatey. I&#39;m keen to get your feedback on this.</p>
-]]></content:encoded>
-      <dc:date>2014-03-06T21:14:00+02:00</dc:date>
-    </item>
-    <dc:date>2015-02-18T21:20:00+02:00</dc:date>
+    <dc:date>2015-03-11T21:20:00+02:00</dc:date>
   </channel>
 </rss>

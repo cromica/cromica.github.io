@@ -4,13 +4,40 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-02-18T19:03:25+02:00</updated>
+ <updated>2015-03-11T15:31:44+02:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>Merge files using SDL Studio Project Automation API</title>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api.html"/>
+   <updated>2015-03-11T21:20:00+02:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/merge-files/merge.jpg&quot; alt=&quot;Click&#39;n&#39;Deploy&quot; title=&quot;Merge files&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;SDL Studio allows the user to merge multiple files into one bilingual document (sdlxliff). This can be done during project creation and it can be useful in situations where you have multiple small files and you might want to translate them in one go without switching between documents. If you don&#39;t already know SDL Studio is very extensible via the API&#39;s that are made available but sometimes simple things are not so simple to do by code because of software design decision or technical limitations. Merging files using SDL Studio Project Automation API can be done but is not that straight forward as you might expect and this is why I decided to write this article to show how this is done.&lt;/p&gt;
+
+&lt;h3&gt;Create Merged Project File&lt;/h3&gt;
+
+&lt;p&gt;Looking at the documentation you can easily find &lt;a href=&quot;http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/8c0d6583-c31c-365b-0819-ff19e18e1f5e.htm&quot;&gt;CreateMergedProjectFile&lt;/a&gt; method which allows you to specify the files you want to be merged and the name of the bilingual file which must have &amp;quot;.sdlxliff&amp;quot; extension. At this point this seems to be very simple but when you run this method you realize that is not actually doing much, there is no visible result on the project and the status is &lt;em&gt;Not Merged&lt;/em&gt;. &lt;/p&gt;
+
+&lt;h3&gt;What am I missing?&lt;/h3&gt;
+
+&lt;p&gt;At this point you only get an &lt;a href=&quot;http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/4ea34241-0524-aac3-45fa-817765b3bc5e.htm&quot;&gt;MergedProjectFile&lt;/a&gt; object which is just a representation of the merging structure. In order to actually create the bilingual merged file we need to use &lt;a href=&quot;http://producthelp.sdl.com/SDK/FileTypeSupport/3.0/html/1f5584af-9763-46ff-894b-08127a2421a7.htm&quot;&gt;Studio File Type Framework&lt;/a&gt; to generate the sdlxliff file. Once we have that we can use &lt;em&gt;CopyToTargetLanguages&lt;/em&gt; to copy the merged files to all target languages we need. To make this even more clear and concrete I&amp;#39;m going to share a sample code that is doing all the steps I&amp;#39;ve described until now.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/cromica/af1242f60511c52fba79.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;It&amp;#39;s not that complicated to merge files using the SDL Studio API but is not obvious and intuitive. I hope this article will clarify this situation. &lt;/p&gt;
+
+&lt;p&gt;Please leave a comment if you have any questions or feedback.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Sdl Studio PowerShell toolkit is now open source</title>
