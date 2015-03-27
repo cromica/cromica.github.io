@@ -65,7 +65,7 @@
 <body>
     <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
-        <h1 class="big-title">Blog</h1>
+        <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
     </div>
 </div>
@@ -97,18 +97,18 @@
     </nav>
 </header>
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>Why a blog</h1>
+                        <h1 itemprop="name">Why a blog</h1>
                         <small class="fsize13">
                             <a href="/blog/2014/02/23/why-a-blog.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> blog</a>
                             <a href="/blog/2014/02/23/why-a-blog.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">23 February 2014</span>
+                            <span class="label label-default light" itemprop="datePublished" content="">23 February 2014</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     <p class="dropcap">I was thinking to start a blog for some while but never find the right time. There are lots of ways to share information and knowledge but blog allows to share information in detail and also provide thorough explanations. Besides this I intend to use it as a personal knowledge base. Quite often I realize that I've done something similar in the past but I can't remember or find the information. So finally here it is.</p>
 
 <h3>The Journey</h3>
@@ -127,6 +127,7 @@
 
 <p>So at this point my blog is hosted by Github pages and this is just the first version of it. I will add some other features in the next weeks. </p>
 
+                    </span>
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
                     </p> -->

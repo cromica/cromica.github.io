@@ -1,17 +1,17 @@
 {% for post in paginator.posts%}
-<div class="item">
+<div class="item" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
     <div class="item-title">
-        <h2><a href="{{ post.url }}">{{post.title}}</a></h2>
-        <a href="{{ post.url }}" class="label label-default light"><i class="fa fa-dot-circle-o"></i> {{ post.categories }}</a>
+        <h2><a href="{{ post.url }}" itemprop="name">{{post.title}}</a></h2>
+        <a href="{{ post.url }}" class="label label-default light" itemprop="keywords"><i class="fa fa-dot-circle-o"></i> {{ post.categories }}</a>
         <a href="{{ post.url }}#disqus_thread" class="label label-default light">0 Comments</a>
-        <span class="label label-default light">{{post.date | date:"%-d %B %Y" }}</span>
+        <span class="label label-default light" itemprop="datePublished" content="{{post.date | date:"%-d %B %Y" }}">{{post.date | date:"%-d %B %Y" }}</span>
     </div>
     
     {% if post.image != '' %}
-        <img src="/assets/images/posts/{{ post.image }}" alt="post image" title="post image" class="img-responsive">
+        <img src="/assets/images/posts/{{ post.image }}" alt="post image" title="post image" class="img-responsive" itemprop="image">
     {% endif%}
-    <p>{{ post.excerpt }}</p>
-    <a href="{{ post.url }}" class="btn btn-xs"><i class="fa fa-sign-out"></i> READ MORE</a>
+    <p itemprop="description">{{ post.excerpt }}</p>
+    <a href="{{ post.url }}" class="btn btn-xs" itemprop="url"><i class="fa fa-sign-out"></i> READ MORE</a>
 </div>
 {% endfor %}
 {% if paginator.total_pages > 1%}

@@ -5,19 +5,20 @@
 <body>
     {% include blog_header.html%}
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>{{page.title}}</h1>
+                        <h1 itemprop="name">{{page.title}}</h1>
                         <small class="fsize13">
                             <a href="{{ page.url }}" class="label label-default light"><i class="fa fa-dot-circle-o"></i> {{ page.categories }}</a>
                             <a href="{{ page.url }}#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">{{page.date | date:"%-d %B %Y" }}</span>
+                            <span class="label label-default light" itemprop="datePublished" content="{{post.date | date:"%-d %B %Y" }}">{{page.date | date:"%-d %B %Y" }}</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     {{ content }}
+                    </span>
                <!--      <p class="fsize16">Tags: {{% for tag in page.tags %}}
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> {{tag}}</a> {{% endfor %}}
                     </p> -->

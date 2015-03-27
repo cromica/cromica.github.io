@@ -66,7 +66,7 @@
 <body>
     <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
-        <h1 class="big-title">Blog</h1>
+        <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
     </div>
 </div>
@@ -98,18 +98,18 @@
     </nav>
 </header>
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>Hello SDL</h1>
+                        <h1 itemprop="name">Hello SDL</h1>
                         <small class="fsize13">
                             <a href="/career/2014/10/01/hello-sdl.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> career</a>
                             <a href="/career/2014/10/01/hello-sdl.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">1 October 2014</span>
+                            <span class="label label-default light" itemprop="datePublished" content="">1 October 2014</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     <p><img src="/assets/images/posts/sdl.jpg" alt="Hello SDL" title="Hello SDL" class="img-responsive"></p>
 
 <p class="dropcap">I now have two weeks since I joined SDL as a <i>Language Platform Evangelist Developer</i>. Almost everyone asked me what does that mean and what will I do so I decided that I better explain here in detail. If you are looking for a general definition of the position you can find one on wikipedia but it won't help you too much. In order to understand it better you really need to understand the context.</p>
@@ -136,6 +136,7 @@
 
 <p>I think this is very interesting and I&#39;m really keen to see how things will evolve since there are many other things that I would like to do as part of my new role. Also SDL has some interesting plans around the community so stay tuned.</p>
 
+                    </span>
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
                     </p> -->
