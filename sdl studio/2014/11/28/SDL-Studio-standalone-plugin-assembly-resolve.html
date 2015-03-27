@@ -69,7 +69,7 @@
 <body>
     <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
-        <h1 class="big-title">Blog</h1>
+        <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
     </div>
 </div>
@@ -101,18 +101,18 @@
     </nav>
 </header>
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>SDL Studio standalone plugin assembly resolver</h1>
+                        <h1 itemprop="name">SDL Studio standalone plugin assembly resolver</h1>
                         <small class="fsize13">
                             <a href="/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> sdl studio</a>
                             <a href="/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">28 November 2014</span>
+                            <span class="label label-default light" itemprop="datePublished" content="">28 November 2014</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     <p><img src="/assets/images/posts/assemblyresolver/assemblyresolver.jpg" alt="Assembly Resolver" title="Assembly Resolver" class="img-responsive"></p>
 
 <p class="dropcap">SDL Studio plugin system allows developers to develop new features on top of the standard functionality. There are 2 types of plugins that can be developed, one which behaves like a Studio add-in and another one which behaves as a standalone application. Both plugin types require to run inside Studio installation folder. This is because the public Studio SDK is using other assemblies that are located in Studio folder. While this is perfectly fine for add-in type plugins for standalone plugins this adds limitation on where and how you can deploy your application.</p>
@@ -153,6 +153,7 @@
 
 <p>Please leave a comment if you have any questions or feedback.</p>
 
+                    </span>
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
                     </p> -->

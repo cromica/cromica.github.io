@@ -66,7 +66,7 @@
 <body>
     <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
-        <h1 class="big-title">Blog</h1>
+        <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
     </div>
 </div>
@@ -98,18 +98,18 @@
     </nav>
 </header>
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>Codecamp 2014</h1>
+                        <h1 itemprop="name">Codecamp 2014</h1>
                         <small class="fsize13">
                             <a href="/speaker/2014/10/31/Codecamp-2014.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> speaker</a>
                             <a href="/speaker/2014/10/31/Codecamp-2014.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">31 October 2014</span>
+                            <span class="label label-default light" itemprop="datePublished" content="">31 October 2014</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     <div class="owl-carousel text-left" data-navigation="true" data-singleitem="true" data-autoplay="true" data-transition="fade">
     <div class="item dragCursor">
         <img src="/assets/images/posts/codecamp2014/1.jpg" class="img-responsive"  alt="img" />
@@ -152,6 +152,7 @@
 
 <p>Please leave a comment if you have any questions or feedback. If you are interested in presenting this sessions just send me an email.</p>
 
+                    </span>
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
                     </p> -->

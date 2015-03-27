@@ -67,7 +67,7 @@
 <body>
     <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
-        <h1 class="big-title">Blog</h1>
+        <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
     </div>
 </div>
@@ -99,18 +99,18 @@
     </nav>
 </header>
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>Merge files using SDL Studio Project Automation API</h1>
+                        <h1 itemprop="name">Merge files using SDL Studio Project Automation API</h1>
                         <small class="fsize13">
                             <a href="/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> sdl studio</a>
                             <a href="/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">11 March 2015</span>
+                            <span class="label label-default light" itemprop="datePublished" content="">11 March 2015</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     <p><img src="/assets/images/posts/merge-files/merge.jpg" alt="Click'n'Deploy" title="Merge files" class="img-responsive"></p>
 
 <p class="dropcap">SDL Studio allows the user to merge multiple files into one bilingual document (sdlxliff). This can be done during project creation and it can be useful in situations where you have multiple small files and you might want to translate them in one go without switching between documents. If you don't already know SDL Studio is very extensible via the API's that are made available but sometimes simple things are not so simple to do by code because of software design decision or technical limitations. Merging files using SDL Studio Project Automation API can be done but is not that straight forward as you might expect and this is why I decided to write this article to show how this is done.</p>
@@ -131,6 +131,7 @@
 
 <p>Please leave a comment if you have any questions or feedback.</p>
 
+                    </span>
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
                     </p> -->

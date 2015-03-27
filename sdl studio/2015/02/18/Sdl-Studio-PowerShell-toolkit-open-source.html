@@ -67,7 +67,7 @@
 <body>
     <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
-        <h1 class="big-title">Blog</h1>
+        <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
     </div>
 </div>
@@ -99,18 +99,18 @@
     </nav>
 </header>
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>Sdl Studio PowerShell toolkit is now open source</h1>
+                        <h1 itemprop="name">Sdl Studio PowerShell toolkit is now open source</h1>
                         <small class="fsize13">
                             <a href="/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> sdl studio</a>
                             <a href="/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">18 February 2015</span>
+                            <span class="label label-default light" itemprop="datePublished" content="">18 February 2015</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     <p><img src="/assets/images/posts/studio-powershell-toolkit/open-source.png" alt="Click'n'Deploy" title="Click'n'Deploy" class="img-responsive"></p>
 
 <p class="dropcap">Starting from today Sdl Studio powerhsell toolkit is open source and you can find it on github. The toolkit was written to facilitate scripting of the Project Automation API which comes with SDL Studio. Until now this was kept on the SDL internal TFS and you where only able to get it by going to the community forum. At this point you might ask yourself what's going to change from now on since the toolkit was freely distributed until now?</p>
@@ -133,6 +133,7 @@
 
 <p>Please leave a comment if you have any questions or feedback.</p>
 
+                    </span>
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
                     </p> -->

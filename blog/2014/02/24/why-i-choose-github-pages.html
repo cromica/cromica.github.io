@@ -65,7 +65,7 @@
 <body>
     <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
-        <h1 class="big-title">Blog</h1>
+        <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
     </div>
 </div>
@@ -97,18 +97,18 @@
     </nav>
 </header>
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>Why I choose Github pages</h1>
+                        <h1 itemprop="name">Why I choose Github pages</h1>
                         <small class="fsize13">
                             <a href="/blog/2014/02/24/why-i-choose-github-pages.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> blog</a>
                             <a href="/blog/2014/02/24/why-i-choose-github-pages.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">24 February 2014</span>
+                            <span class="label label-default light" itemprop="datePublished" content="">24 February 2014</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     <p class="dropcap">Github pages is something I've recently heard of and I really like it from the begging although I didn't exactly knew how is working. The main idea is that you will use a github repository to serve your site or blog.</p>
 
 <h3>Main benefits</h3>
@@ -126,6 +126,7 @@
 
 <p>I really like github pages because it&#39;s very simple to use and it&#39;s emphasizes collaboration so anyone can become a contributor to the blog.</p>
 
+                    </span>
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
                     </p> -->

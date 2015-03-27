@@ -68,7 +68,7 @@
 <body>
     <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
-        <h1 class="big-title">Blog</h1>
+        <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
     </div>
 </div>
@@ -100,18 +100,18 @@
     </nav>
 </header>
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>Click'n'Deploy Studio plugins</h1>
+                        <h1 itemprop="name">Click'n'Deploy Studio plugins</h1>
                         <small class="fsize13">
                             <a href="/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> sdl studio</a>
                             <a href="/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">13 February 2015</span>
+                            <span class="label label-default light" itemprop="datePublished" content="">13 February 2015</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     <p><a href="https://speakerdeck.com/cromica/clickn-deploy" taget="_blank"><img src="/assets/images/posts//click-n-deploy/click-n-deploy.png" alt="Click'n'Deploy" title="Click'n'Deploy" class="img-responsive"></a></p>
 
 <p class="dropcap">App stores changed the way we install and maintain software on our devices. You now have a single centralized place where you go and search for what you need, click a button and in a matter of minutes you have the app working on your device. In a similar way you can extend SDL Studio by going on <a href="http://www.translationzone.com/openexchange/">OpenExchange</a> store and download a plugin you would like or need. Now this works just fine for most of the Studio plugins or apps but there are situations when you need to develop something that is specific for your company and doesn't make sense to be public to everyone since it's probably irrelevant for them and it might also contain confidential information. It would be nice if you would be able to create your private store inside <a href="http://www.translationzone.com/openexchange/">OpenExchange</a> where you can have you apps centralized and search-able just by you  but such a feature is not available at the moment. This article and video is about an alternate solution for this type of scenarios.</p>
@@ -143,6 +143,7 @@
 
 <p>Please leave a comment if you have any questions or feedback.</p>
 
+                    </span>
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
                     </p> -->

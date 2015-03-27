@@ -67,7 +67,7 @@
 <body>
     <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
-        <h1 class="big-title">Blog</h1>
+        <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
     </div>
 </div>
@@ -99,18 +99,18 @@
     </nav>
 </header>
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>The engine behind my blog</h1>
+                        <h1 itemprop="name">The engine behind my blog</h1>
                         <small class="fsize13">
                             <a href="/blog/2014/03/03/the-engine-behind-my-blog.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> blog</a>
                             <a href="/blog/2014/03/03/the-engine-behind-my-blog.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">3 March 2014</span>
+                            <span class="label label-default light" itemprop="datePublished" content="">3 March 2014</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     <p class="dropcap">I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the <a href="http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog.html">reasons to start a blog</a>, <a href="http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html">why I choose github pages</a> to host it and now I will talk about Jekyll, the engine behind my blog.</p>
 
 <h3>What is Jekyll ?</h3>
@@ -140,6 +140,7 @@
 
 <p>If you have any questions please don&#39;t hesitate and leave a comment.</p>
 
+                    </span>
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
                     </p> -->

@@ -71,7 +71,7 @@
 <body>
     <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
-        <h1 class="big-title">Blog</h1>
+        <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
     </div>
 </div>
@@ -103,18 +103,18 @@
     </nav>
 </header>
     <section id="blog">
-        <article class="container">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1>Install Jekyll using Chocolatey</h1>
+                        <h1 itemprop="name">Install Jekyll using Chocolatey</h1>
                         <small class="fsize13">
                             <a href="/jekyll/2014/03/06/install-jekyll-using-chocolatey.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> jekyll</a>
                             <a href="/jekyll/2014/03/06/install-jekyll-using-chocolatey.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light">6 March 2014</span>
+                            <span class="label label-default light" itemprop="datePublished" content="">6 March 2014</span>
                         </small>
                     </header>
-
+                    <span itemprop="articleBody">    
                     <p class="dropcap">As you probably already know this website and blog are created using github pages which behind the scene uses Jekyll. More on this you can read on my <a href="http://romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html">blog post</a>.Every time I write a new article or make a change I would like to preview it before publishing it to live website.When this get published to my website repository, Github builds it almost instantly so I'm able to see my change really fast, but this is still done on the public website. This can work pretty well but I prefer to see my changes locally and only if I'm ok to publish them on my <a href="https://github.com/cromica/cromica.github.io">repository</a>. So in order to do that I need to install jekyll on my local machine and use `jekyll serve` to build and serve the website.</p>
 
 <h3>Install Jekyll on a Windows machine</h3>
@@ -257,6 +257,7 @@
 
 <p>I found it much easier to install all this using Chocolatey. I&#39;m keen to get your feedback on this.</p>
 
+                    </span>
                <!--      <p class="fsize16">Tags: 
                         <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
                     </p> -->
