@@ -100,3 +100,5 @@ end
 desc "Commit and deploy _site/"
 task :commit_deploy => [:commit, :deploy] do
 end
+
+task :default => :build
