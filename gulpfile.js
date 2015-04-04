@@ -80,6 +80,7 @@ gulp.task('imgmin',['build-prod'], function () {
          .pipe(imagemin({
             progressive:true,
             svgoPlugins:[{removeViewBox:false}],
+            optimizationLevel:7,
             use:[pngquant()]
          })).pipe(gulp.dest('./_site/assets/images'));
     
