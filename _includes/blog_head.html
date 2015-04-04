@@ -53,8 +53,11 @@
     <script type="text/javascript" src="assets/plugins/lt-ie9/excanvas.compiled.js"></script>
     <![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Dosis:300,400" rel="stylesheet" type="text/css" />
-    <link href="/../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="/../assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    {% if site.environment == 'production' %}
+    <link href="/../assets/dist/style.css" rel="stylesheet" type="text/css" />
+    {% else %}
     <link href="/../assets/plugins/font-linecons/linecons.css" rel="stylesheet" type="text/css" />
     <link href="/../assets/css/superslides.css" rel="stylesheet" type="text/css" />
     <link href="/../assets/css/owl.carousel.css" rel="stylesheet" type="text/css" />
@@ -66,6 +69,8 @@
     <link href="/../assets/css/blog.css" rel="stylesheet" type="text/css" />
     <link href="/../assets/css/color/blue.css" rel="stylesheet" type="text/css" />
     <link href="/../assets/css/syntax.css" rel="stylesheet" type="text/css" />
+    {% endif %}
+
     <link rel="shortcut icon" href="/../assets/images/favicon.png" type="image/x-icon" />
     <link rel="icon" href="/../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/../assets/images/favicon.ico" type="image/x-icon" />

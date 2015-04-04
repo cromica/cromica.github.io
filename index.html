@@ -63,8 +63,11 @@ sitemap:
         <script type="text/javascript" src="assets/plugins/lt-ie9/excanvas.compiled.js"></script>
         <![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Dosis:300,400" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    {% if site.environment == 'production' %}
+    <link href="assets/dist/style.css" rel="stylesheet" type="text/css" />
+    {% else %}
     <link href="assets/plugins/font-linecons/linecons.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/superslides.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/owl.carousel.css" rel="stylesheet" type="text/css" />
@@ -76,6 +79,7 @@ sitemap:
     <link href="assets/css/blog.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/color/blue.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/syntax.css" rel="stylesheet" type="text/css" />
+    {% endif %}
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
@@ -151,8 +155,9 @@ sitemap:
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <a class="navbar-brand scrollTo" href="#home">
-                        <img src="assets/images/preview/content/people/1.jpg" alt="" width="50" height="50" style="border-radius:50%" />
+                        <img src="assets/images/preview/content/people/1.jpg" alt="" width="50" height="50" style="border-radius:50%;display:inline" />
                         <span class="">Romulus Crisan</span>
+
                     </a>
                     <a class="rssfeed" href="http://feeds.romuluscrisan.com/romuluscrisan"><span class="social fa fa-rss"></span></a>
                 </div>
@@ -584,11 +589,14 @@ sitemap:
 
 
     </script>
-    
-    <!-- /FOOTER -->
-    <!-- CORE FILES -->
-    <script type="text/javascript" src="assets/plugins/jquery/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+     <!-- CORE FILES -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+     {% if site.environment == 'production' %}
+    <script type="text/javascript" src="assets/dist/app.js"></script>
+     {% else %}
+ 
+   
     <!-- PLUGINS -->
     <script type="text/javascript" src="assets/plugins/jquery-fitvids/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-appear/jquery.appear.js"></script>
@@ -601,6 +609,9 @@ sitemap:
     <!-- Youtube video background -->
     <!-- js scripts -->
     <script async type="text/javascript" src="assets/js/scripts.js"></script>
+     {% endif %}
+
+  
     
     <!-- Change UA-XXXXX-X with your site ID -->
     <!--<script>
