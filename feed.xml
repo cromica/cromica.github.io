@@ -11,30 +11,119 @@
     <pubDate>Sun, 19 Apr 2015 22:20:00 +0300</pubDate>
     <item>
       <title>Code by the book</title>
-      <link>http://www.romuluscrisan.com/career/2015/04/19/2015-04-19-Code-by-the-book.html</link>
-      <description><![CDATA[SDL Studio allows the user to merge multiple files into one bilingual document (sdlxliff). This can be done during project creation and it can be useful in situations where you have multiple small files and you might want to translate them in one go without switching between documents.  If you don't already know SDL Studio is very extensible via the API's that are made available but sometimes simple things are not so simple to do by code because of software design decision or technical limitations. Merging files using SDL Studio Project Automation API can be done but is not that straight forward as you might expect and this is why I decided to write this article to show how this is done.]]></description>
-      <comments>http://www.romuluscrisan.com/career/2015/04/19/2015-04-19-Code-by-the-book.html#disqus_thread</comments>
+      <link>http://www.romuluscrisan.com/career/2015/04/19/Code-by-the-book.html</link>
+      <description><![CDATA[A few weeks back a friend of mine asked me to recommend him some programming/technical books. I was busy at that moment so I couldn't write my recommendations but he suggested that I should write an article on my blog. I thought that it's a great idea so here it is my list of recommendations. Although most of the times a I code in C# most of the books are technology agnostic which means every developer can read them.]]></description>
+      <comments>http://www.romuluscrisan.com/career/2015/04/19/Code-by-the-book.html#disqus_thread</comments>
       <pubDate>Sun, 19 Apr 2015 22:20:00 +0300</pubDate>
-      <guid>http://www.romuluscrisan.com/career/2015/04/19/2015-04-19-Code-by-the-book.html</guid>
+      <guid>http://www.romuluscrisan.com/career/2015/04/19/Code-by-the-book.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/code-by-the-book/books.jpg" alt="Code by the book" title="Code by the book" class="img-responsive"></p>
 
-<p class="dropcap">SDL Studio allows the user to merge multiple files into one bilingual document (sdlxliff). This can be done during project creation and it can be useful in situations where you have multiple small files and you might want to translate them in one go without switching between documents. If you don't already know SDL Studio is very extensible via the API's that are made available but sometimes simple things are not so simple to do by code because of software design decision or technical limitations. Merging files using SDL Studio Project Automation API can be done but is not that straight forward as you might expect and this is why I decided to write this article to show how this is done.</p>
+<p class="dropcap">A few weeks back a friend of mine asked me to recommend him some programming/technical books. I was busy at that moment so I couldn't write my recommendations but he suggested that I should write an article on my blog. I thought that it's a great idea so here it is my list of recommendations. Although most of the times a I code in C# most of the books are technology agnostic which means every developer can read them.</p>
 
-<h3>Create Merged Project File</h3>
+<h3>For blooming developers</h3>
 
-<p>Looking at the documentation you can easily find <a href="http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/8c0d6583-c31c-365b-0819-ff19e18e1f5e.htm">CreateMergedProjectFile</a> method which allows you to specify the files you want to be merged and the name of the bilingual file which must have &quot;.sdlxliff&quot; extension. At this point this seems to be very simple but when you run this method you realize that is not actually doing much, there is no visible result on the project and the status is <em>Not Merged</em>. </p>
+<p>This are some of the books I recommend for developers which are just starting their career. It&#39;s not that they shouldn&#39;t read more advanced books but those might be a bit too difficult for the moment.</p>
 
-<h3>What am I missing?</h3>
+<p><strong><a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code: A Handbook of Agile Software Craftsmanship</a></strong> by <a href="http://www.amazon.com/Robert-C.-Martin/e/B000APG87E/ref=dp_byline_cont_book_1">Robert C. Martin</a></p>
 
-<p>At this point you only get an <a href="http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/4ea34241-0524-aac3-45fa-817765b3bc5e.htm">MergedProjectFile</a> object which is just a representation of the merging structure. In order to actually create the bilingual merged file we need to use <a href="http://producthelp.sdl.com/SDK/FileTypeSupport/3.0/html/1f5584af-9763-46ff-894b-08127a2421a7.htm">Studio File Type Framework</a> to generate the sdlxliff file. Once we have that we can use <em>CopyToTargetLanguages</em> to copy the merged files to all target languages we need. To make this even more clear and concrete I&#39;m going to share a sample code that is doing all the steps I&#39;ve described until now.</p>
+<blockquote>
+<p>The book is divided into three parts. The first describes the principles, patterns, and practices of writing clean code. The second part consists of several case studies of increasing complexity. Each case study is an exercise in cleaning up code—of transforming a code base that has some problems into one that is sound and efficient. The third part is the payoff: a single chapter containing a list of heuristics and “smells” gathered while creating the case studies. The result is a knowledge base that describes the way we think when we write, read, and clean code. - <a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Amazon</a> </p>
+</blockquote>
 
-<script src="https://gist.github.com/cromica/af1242f60511c52fba79.js"></script>
+<p><strong><a href="http://www.amazon.com/The-Clean-Coder-Professional-Programmers/dp/0137081073">The Clean Coder: A Code of Conduct for Professional Programmers</a></strong> by <a href="http://www.amazon.com/Robert-C.-Martin/e/B000APG87E/ref=dp_byline_cont_book_1">Robert C. Martin</a></p>
 
-<h3>Conclusion</h3>
+<blockquote>
+<p>In The Clean Coder: A Code of Conduct for Professional Programmers, legendary software expert Robert C. Martin introduces the disciplines, techniques, tools, and practices of true software craftsmanship. This book is packed with practical advice–about everything from estimating and coding to refactoring and testing. It covers much more than technique: It is about attitude. Martin shows how to approach software development with honor, self-respect, and pride; work well and work clean; communicate and estimate faithfully; face difficult decisions with clarity and honesty; and understand that deep knowledge comes with a responsibility to act. - <a href="http://www.amazon.com/The-Clean-Coder-Professional-Programmers/dp/0137081073">Amazon</a></p>
+</blockquote>
 
-<p>It&#39;s not that complicated to merge files using the SDL Studio API but is not obvious and intuitive. I hope this article will clarify this situation. </p>
+<p><strong><a href="http://www.amazon.com/Depth-3rd-Edition-Jon-Skeet/dp/161729134X">C# in Depth, 3rd Edition</a></strong> by <a href="http://www.amazon.com/Jon-Skeet/e/B001JP0M8K/ref=dp_byline_cont_book_1">Jon Skeet</a></p>
 
-<p>Please leave a comment if you have any questions or feedback.</p>
+<blockquote>
+<p>C# in Depth is a book for those who are passionate about C#. It aims to be a bridge between the existing introductory books and the language specification: something readable but detailed, exploring every aspect of the language from version 2 onwards. In the interests of brevity, it doesn&#39;t spend much time on C# 1 - readers are already expected to know the first version at least reasonably. Every new feature from C# 2 onwards is covered, however, as shown in the table of contents below. - <a href="http://csharpindepth.com/">C# in Depth</a></p>
+</blockquote>
+
+<h3>For experienced developers</h3>
+
+<p><strong><a href="http://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475655&amp;sr=1-1&amp;keywords=extreme+programming">Extreme Programming Explained: Embrace Change, 2nd Edition</a></strong> by <a href="http://www.amazon.com/Kent-Beck/e/B000APC0EY/ref=dp_byline_cont_book_1">Kent Beck</a></p>
+
+<blockquote>
+<p>Whether you have a small team that is already closely aligned with your customers or a large team in a gigantic or multinational organization, you will find in these pages a wealth of ideas to challenge, inspire, and encourage you and your team members to substantially improve your software development. - <a href="http://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475655&amp;sr=1-1&amp;keywords=extreme+programming">Amazon</a></p>
+</blockquote>
+
+<p><strong><a href="http://www.amazon.com/Implementation-Patterns-Kent-Beck/dp/0321413091/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475615&amp;sr=1-1&amp;keywords=implementation+patterns">Implementation Patterns</a></strong> by <a href="http://www.amazon.com/Kent-Beck/e/B000APC0EY/ref=dp_byline_cont_book_1">Kent Beck</a></p>
+
+<blockquote>
+<p>Implementation Patterns will help programmers at all experience levels, especially those who have benefited from software patterns or agile methods. It will also be an indispensable resource for development teams seeking to work together more efficiently and build more maintainable software. No other programming book will touch your day-to-day work more often. - <a href="http://www.amazon.com/Implementation-Patterns-Kent-Beck/dp/0321413091/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475615&amp;sr=1-1&amp;keywords=implementation+patterns">Amazon</a></p>
+</blockquote>
+
+<p><strong><a href="http://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475783&amp;sr=1-1&amp;keywords=domain+driven+design">Domain-Driven Design: Tackling Complexity in the Heart of Software</a></strong> by <a href="http://www.amazon.com/Eric-Evans/e/B001KDCO2I/ref=dp_byline_cont_book_1">Eric Evans</a></p>
+
+<blockquote>
+<p>This book provides a broad framework for making design decisions and a technical vocabulary for discussing domain design. It is a synthesis of widely accepted best practices along with the author’s own insights and experiences. Projects facing complex domains can use this framework to approach domain-driven design systematically. - <a href="http://dddcommunity.org/book/evans_2003/">DDDCommunity</a></p>
+</blockquote>
+
+<p><strong><a href="http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/ref=sr_1_sc_1?s=books&amp;ie=UTF8&amp;qid=1425475928&amp;sr=1-1-spell&amp;keywords=code+comoplete">Code Complete: A Practical Handbook of Software Construction, Second Edition</a></strong> by <a href="http://www.amazon.com/Steve-McConnell/e/B000APETRK/ref=dp_byline_cont_book_1">Steve McConnell</a></p>
+
+<blockquote>
+<p>Capturing the body of knowledge available from research, academia, and everyday commercial practice, McConnell synthesizes the most effective techniques and must-know principles into clear, pragmatic guidance. No matter what your experience level, development environment, or project size, this book will inform and stimulate your thinking—and help you build the highest quality code. - <a href="http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/ref=sr_1_sc_1?s=books&amp;ie=UTF8&amp;qid=1425475928&amp;sr=1-1-spell&amp;keywords=code+comoplete">Amazon</a></p>
+</blockquote>
+
+<p><strong><a href="http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1429428810&amp;sr=1-1&amp;keywords=refactoring+martin+fowler">Refactoring: Improving the Design of Existing Code</a></strong> by <a href="http://www.amazon.com/Martin-Fowler/e/B000AQ6PGM/ref=dp_byline_cont_book_1">Martin Fowler</a>, <a href="http://www.amazon.com/Kent-Beck/e/B000APC0EY/ref=dp_byline_cont_book_2">Kent Beck</a>, <a href="http://www.amazon.com/s/ref=dp_byline_sr_book_3?ie=UTF8&amp;field-author=John+Brant&amp;search-alias=books&amp;text=John+Brant&amp;sort=relevancerank">John Brant</a>, <a href="http://www.amazon.com/s/ref=dp_byline_sr_book_4?ie=UTF8&amp;field-author=William+Opdyke&amp;search-alias=books&amp;text=William+Opdyke&amp;sort=relevancerank">William Opdyke</a>, <a href="http://www.amazon.com/s/ref=dp_byline_sr_book_5?ie=UTF8&amp;field-author=Don+Roberts&amp;search-alias=books&amp;text=Don+Roberts&amp;sort=relevancerank">Don Roberts</a></p>
+
+<blockquote>
+<p>Refactoring is about improving the design of existing code. It is the process of changing a software system in such a way that it does not alter the external behavior of the code, yet improves its internal structure. With refactoring you can even take a bad design and rework it into a good one. This book offers a thorough discussion of the principles of refactoring, including where to spot opportunities for refactoring, and how to set up the required tests. There is also a catalog of more than 40 proven refactorings with details as to when and why to use the refactoring, step by step instructions for implementing it, and an example illustrating how it works The book is written using Java as its principle language, but the ideas are applicable to any OO language. - <a href="http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1429428810&amp;sr=1-1&amp;keywords=refactoring+martin+fowler">Amazon</a></p>
+</blockquote>
+
+<p><strong><a href="http://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475911&amp;sr=1-1&amp;keywords=continuous+delivery">Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation</a></strong> by <a href="http://www.amazon.com/Jez-Humble/e/B003SNGS8E/ref=dp_byline_cont_book_1">Jez Humble</a>, <a href="http://www.amazon.com/David-Farley/e/B003VSTZ72/ref=dp_byline_cont_book_2">David Farley</a></p>
+
+<blockquote>
+<p>Getting software released to users is often a painful, risky, and time-consuming process.
+This groundbreaking new book sets out the principles and technical practices that enable
+rapid, incremental delivery of high quality, valuable new functionality to users. Through
+automation of the build, deployment, and testing process, and improved collaboration between
+developers, testers, and operations, delivery teams can get changes released in a matter of hours—
+sometimes even minutes–no matter what the size of a project or the complexity of its code base. - <a href="http://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475911&amp;sr=1-1&amp;keywords=continuous+delivery">Amazon</a></p>
+</blockquote>
+
+<p><strong><a href="http://www.amazon.com/Dependency-Injection-NET-Mark-Seemann/dp/1935182501/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475711&amp;sr=1-1&amp;keywords=dependency+injection">Dependency Injection in .NET</a></strong> by <a href="http://www.amazon.com/Mark-Seemann/e/B004XYGMVK/ref=dp_byline_cont_book_1">Mark Seemann</a></p>
+
+<blockquote>
+<p>Dependency Injection in .NET introduces DI and provides a practical guide for applying it in .NET applications. The book presents the core patterns in plain C#, so you&#39;ll fully understand how DI works. Then you&#39;ll learn to integrate DI with standard Microsoft technologies like ASP.NET MVC, and to use DI frameworks like StructureMap, Castle Windsor, and Unity. By the end of the book, you&#39;ll be comfortable applying this powerful technique in your everyday .NET development. - <a href="http://www.amazon.com/Dependency-Injection-NET-Mark-Seemann/dp/1935182501/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475711&amp;sr=1-1&amp;keywords=dependency+injection">Amazon</a></p>
+</blockquote>
+
+<p><strong><a href="http://www.amazon.com/Art-Unit-Testing-examples/dp/1617290890/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475748&amp;sr=1-1&amp;keywords=the+art+of+unit+testing">The Art of Unit Testing: with examples in C#</a></strong> by <a href="http://www.amazon.com/Roy-Osherove/e/B00D3VXAG4/ref=dp_byline_cont_book_1">Roy Osherove</a></p>
+
+<blockquote>
+<p>The Art of Unit Testing, Second Edition guides you step by step from writing your first simple unit tests to building complete test sets that are maintainable, readable, and trustworthy. You&#39;ll move quickly to more complicated subjects like mocks and stubs, while learning to use isolation (mocking) frameworks like Moq, FakeItEasy, and Typemock Isolator. You&#39;ll explore test patterns and organization, refactor code applications, and learn how to test &quot;untestable&quot; code. Along the way, you&#39;ll learn about integration testing and techniques for testing with databases.</p>
+
+<p>The examples in the book use C#, but will benefit anyone using a statically typed language such as Java or C++. - <a href="http://www.amazon.com/Art-Unit-Testing-examples/dp/1617290890/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1425475748&amp;sr=1-1&amp;keywords=the+art+of+unit+testing">Amazon</a></p>
+</blockquote>
+
+<h3>For those about to rock</h3>
+
+<p>Software is about solving people problems and to do that you need more than just coding skills. If you want to rock you need to deliver the software as people expect it. On top of the technical books I recommend a few books that can help you rock.</p>
+
+<p><strong><a href="http://www.amazon.com/User-Stories-Applied-Software-Development/dp/0321205685">User Stories Applied: For Agile Software Development</a></strong> by <a href="http://www.amazon.com/Mike-Cohn/e/B001H6MN56/ref=dp_byline_cont_book_1">Mike Cohn</a></p>
+
+<blockquote>
+<p>The best way to build software that meets users&#39; needs is to begin with &quot;user stories&quot;: simple, clear, brief descriptions of functionality that will be valuable to real users. In User Stories Applied, Mike Cohn provides you with a front-to-back blueprint for writing these user stories and weaving them into your development lifecycle. - <a href="http://www.amazon.com/User-Stories-Applied-Software-Development/dp/0321205685">Amazon</a></p>
+</blockquote>
+
+<p><strong><a href="http://www.amazon.com/Impact-Mapping-software-products-projects-ebook/dp/B009KWDKVA">Impact Mapping: Making a big impact with software products and projects</a></strong> by <a href="http://www.amazon.com/Gojko-Adzic/e/B004P9W8G6/ref=ntt_athr_dp_pel_1">Gojko Adzic</a></p>
+
+<blockquote>
+<p>This handbook is a practical guide to impact mapping, a simple yet incredibly effective method for collaborative strategic planning that helps organisations make an impact with software. Impact mapping helps to create better plans and roadmaps that ensure alignment of business and delivery, and are easily adaptable to change. Impact mapping fits nicely into several current trends in software product management and release planning, including goal-oriented requirements engineering, frequent iterative delivery, agile and lean software methods, lean startup product development cycles, and design thinking. - <a href="http://www.amazon.com/Impact-Mapping-software-products-projects-ebook/dp/B009KWDKVA">Amazon</a></p>
+</blockquote>
+
+<p><strong><a href="https://leanpub.com/50quickideas">Fifty Quick Ideas to Improve your User Stories</a></strong> by <a href="https://leanpub.com/u/gojko">Gojko Adzic</a>, <a href="https://leanpub.com/u/davidevans_neuri">David Evans</a></p>
+
+<blockquote>
+<p>This is a book for anyone working in an iterative delivery environment, doing planning with user stories. The ideas in this book are useful both to people relatively new to user stories and those who have been working with them for years. People who work in software delivery, regardless of their role, will find plenty of tips for engaging stakeholders better and structuring iterative plans more effectively. Business stakeholders working with software teams will discover how to provide better information to their delivery groups, how to set better priorities and how to outrun the competition by achieving more with less software. - <a href="https://leanpub.com/50quickideas">Leanpub</a></p>
+</blockquote>
+
+<h3>Final words</h3>
+
+<p>The above recommendations are based on the books I&#39;ve read and had a big influence on me. There many other great books which I didn&#39;t heard off or I didn&#39;t manage to read yet so please leave a comment with your recommendations.</p>
 ]]></content:encoded>
       <dc:date>2015-04-19T22:20:00+03:00</dc:date>
     </item>
