@@ -8,7 +8,36 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Wed, 11 Mar 2015 21:20:00 +0200</pubDate>
+    <pubDate>Sun, 19 Apr 2015 22:20:00 +0300</pubDate>
+    <item>
+      <title>Code by the book</title>
+      <link>http://www.romuluscrisan.com/career/2015/04/19/2015-04-19-Code-by-the-book.html</link>
+      <description><![CDATA[SDL Studio allows the user to merge multiple files into one bilingual document (sdlxliff). This can be done during project creation and it can be useful in situations where you have multiple small files and you might want to translate them in one go without switching between documents.  If you don't already know SDL Studio is very extensible via the API's that are made available but sometimes simple things are not so simple to do by code because of software design decision or technical limitations. Merging files using SDL Studio Project Automation API can be done but is not that straight forward as you might expect and this is why I decided to write this article to show how this is done.]]></description>
+      <comments>http://www.romuluscrisan.com/career/2015/04/19/2015-04-19-Code-by-the-book.html#disqus_thread</comments>
+      <pubDate>Sun, 19 Apr 2015 22:20:00 +0300</pubDate>
+      <guid>http://www.romuluscrisan.com/career/2015/04/19/2015-04-19-Code-by-the-book.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/code-by-the-book/books.jpg" alt="Code by the book" title="Code by the book" class="img-responsive"></p>
+
+<p class="dropcap">SDL Studio allows the user to merge multiple files into one bilingual document (sdlxliff). This can be done during project creation and it can be useful in situations where you have multiple small files and you might want to translate them in one go without switching between documents. If you don't already know SDL Studio is very extensible via the API's that are made available but sometimes simple things are not so simple to do by code because of software design decision or technical limitations. Merging files using SDL Studio Project Automation API can be done but is not that straight forward as you might expect and this is why I decided to write this article to show how this is done.</p>
+
+<h3>Create Merged Project File</h3>
+
+<p>Looking at the documentation you can easily find <a href="http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/8c0d6583-c31c-365b-0819-ff19e18e1f5e.htm">CreateMergedProjectFile</a> method which allows you to specify the files you want to be merged and the name of the bilingual file which must have &quot;.sdlxliff&quot; extension. At this point this seems to be very simple but when you run this method you realize that is not actually doing much, there is no visible result on the project and the status is <em>Not Merged</em>. </p>
+
+<h3>What am I missing?</h3>
+
+<p>At this point you only get an <a href="http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/4ea34241-0524-aac3-45fa-817765b3bc5e.htm">MergedProjectFile</a> object which is just a representation of the merging structure. In order to actually create the bilingual merged file we need to use <a href="http://producthelp.sdl.com/SDK/FileTypeSupport/3.0/html/1f5584af-9763-46ff-894b-08127a2421a7.htm">Studio File Type Framework</a> to generate the sdlxliff file. Once we have that we can use <em>CopyToTargetLanguages</em> to copy the merged files to all target languages we need. To make this even more clear and concrete I&#39;m going to share a sample code that is doing all the steps I&#39;ve described until now.</p>
+
+<script src="https://gist.github.com/cromica/af1242f60511c52fba79.js"></script>
+
+<h3>Conclusion</h3>
+
+<p>It&#39;s not that complicated to merge files using the SDL Studio API but is not obvious and intuitive. I hope this article will clarify this situation. </p>
+
+<p>Please leave a comment if you have any questions or feedback.</p>
+]]></content:encoded>
+      <dc:date>2015-04-19T22:20:00+03:00</dc:date>
+    </item>
     <item>
       <title>Merge files using SDL Studio Project Automation API</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api.html</link>
@@ -462,25 +491,6 @@
 ]]></content:encoded>
       <dc:date>2014-09-20T21:53:00+03:00</dc:date>
     </item>
-    <item>
-      <title>My Journey to start a blog</title>
-      <link>http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog.html</link>
-      <description><![CDATA[Now that I written some articles around my journey to start a blog I think it might be very useful to have a short summary of my journey.]]></description>
-      <comments>http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog.html#disqus_thread</comments>
-      <pubDate>Sat, 15 Mar 2014 09:40:00 +0200</pubDate>
-      <guid>http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog.html</guid>
-      <content:encoded><![CDATA[<p class="dropcap">Now that I written some articles around my journey to start a blog I think it might be very useful to have a short summary of my journey.</p>
-
-<h3>The Journey</h3>
-
-<p>Well I was thinking to start a blog for sometime because of the reasons I&#39;ve pointed in my first article <a href="http://romuluscrisan.com/blog/2014/02/23/why-a-blog.html">Why a blog ?</a>. This is a technical blog since I will write most of the time about software development and various technologies in an attempt to share my knowledge and experience but also because I want to us it as a brain dump. From time to time I might write about  some other things but probably still around technology. </p>
-
-<p>Finally this year I started looking for various options to host a blog and I ended up using <a href="http://pages.github.com/">Github pages</a>. Why I made this option I&#39;ve detailed in my blog post <a href="http://romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html">Why I choose Github pages</a>. Github pages is powered by a very nice and interesting framework called Jekyll for which I wrote an introduction  in my article <a href="http://romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html">The engine behing my blog</a>. Since my work is most of the time in Microsoft world I had to install Jekyll on Windows which is not necessarily straight forward so I described an easier alternative using chocolatey in my article <a href="http://romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html">Install Jekyll using chocolatey</a>.</p>
-
-<p>I&#39;m really glad that finally I manage to start this blog but I guess the real challenge comes now when I will need to actually use it and keep it alive. I hope you will find my journey useful to decide start a blog or if you are already decided to assist in your steps to get the blog started.</p>
-]]></content:encoded>
-      <dc:date>2014-03-15T09:40:00+02:00</dc:date>
-    </item>
-    <dc:date>2015-03-11T21:20:00+02:00</dc:date>
+    <dc:date>2015-04-19T22:20:00+03:00</dc:date>
   </channel>
 </rss>

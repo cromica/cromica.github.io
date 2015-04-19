@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en-US">
-    <head>
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Romulus Crisan | Ask on OpenExchange</title>
+    <title>Code by the book</title>
     
 
-    <meta content="Romulus Crisan | Ask on OpenExchange" property="og:title">
-    <meta content="Romulus Crisan | Ask on OpenExchange" name="twitter:title">
+    <meta content="Code by the book" property="og:title">
+    <meta content="Code by the book" name="twitter:title">
     <meta content="Software developer, trainer, speaker and more by Romulus Crisan" property="og:site_name">
     <meta content="Romulus Crisan is a software developer, trainer, speaker, agile." name="description">
     <meta content="Romulus Crisan is a software developer, trainer, speaker, agile." property="og:description">
@@ -21,15 +21,23 @@
 
     <link href="/atom.xml" rel="alternate" title="Atom" type="application/atom+xml">
     <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
-    <link href="http://www.romuluscrisan.com/ask-on-openexchange/index.html" rel="canonical">
+    <link href="http://www.romuluscrisan.com/career/2015/04/19/2015-04-19-Code-by-the-book.html" rel="canonical">
     <meta content="article" property="og:type">
     <meta content="summary" name="twitter:card">
-    <meta content="http://www.romuluscrisan.com/ask-on-openexchange/index.html" property="og:url">
-    <meta content="http://www.romuluscrisan.com/ask-on-openexchange/index.html" name="twitter:url">  
+    <meta content="http://www.romuluscrisan.com/career/2015/04/19/2015-04-19-Code-by-the-book.html" property="og:url">
+    <meta content="http://www.romuluscrisan.com/career/2015/04/19/2015-04-19-Code-by-the-book.html" name="twitter:url"> 
+    <meta content="2015-04-19T22:20:00+03:00" property="article:published_time">
+    <meta content="http://www.romuluscrisan.com/index.html#about" property="article:author"> 
     
     
-    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/preview/content/people/1.jpg">
-    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/preview/content/people/1.jpg">  
+    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts/code-by-the-book/books.jpg">
+    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts/code-by-the-book/books.jpg">  
+    <meta property="article:section" content="career">   
+    <meta property="article:tag" content="Code">
+    <meta property="article:tag" content="book">
+    <meta property="article:tag" content="programing">
+    <meta property="article:tag" content="development">
+    <meta property="article:tag" content="software"> 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="assets/plugins/lt-ie9/html5.js"></script>
     <script type="text/javascript" src="assets/plugins/lt-ie9/respond.min.js"></script>
@@ -60,8 +68,9 @@
    
 </head>
 
-    <body itemscope="" itemtype="http://schema.org/Blog">
-        <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
+
+<body>
+    <div class="inner-cover blog-header" style="background-image:url('/../assets/images/preview/slider/3.jpg')">
     <div class="text-center">
         <h1 class="big-title" itemprop="name">Blog</h1>
         <p>Share knowledge and brain dump.</p>
@@ -94,31 +103,58 @@
         </div>
     </nav>
 </header>
-        <section id="blog" >
-            <article class="container">
+    <section id="blog">
+        <article class="container" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="row">
                 <div class="left col-md-9">
-              
-                    <section id="ask-on-openexchange">
-  
-            <header class="text-center">
-                <h1>Ask on OpenExchange</h1>
-            </header>
-            <div class="divider">
-            </div>
-            <article class="text-center big-paragraph">
-                <p>Click and drag the following bookmarklet to your bookmarks or favorites bar ask a question or start a discussion on <a href="https://community.sdl.com/developers/studio-developers/" target="_blank">OpenExchange</a></p>
-            </article>
-           <article>
-	           <div class="row">
-	                        <div class="col-md-12">
-	                            <a href="javascript:location.href='https://community.sdl.com/developers/studio-developers/f/57/p/addpost'" class="btn btn-default">Ask on OpenExchange</a>
-	                        </div>
-	            </div>
-           </article>
+                    <header>
+                        <h1 itemprop="name">Code by the book</h1>
+                        <small class="fsize13">
+                            <a href="/career/2015/04/19/2015-04-19-Code-by-the-book.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> career</a>
+                            <a href="/career/2015/04/19/2015-04-19-Code-by-the-book.html#disqus_thread" class="label label-default light">0 Comments</a>
+                            <span class="label label-default light" itemprop="datePublished" content="">19 April 2015</span>
+                        </small>
+                    </header>
+                    <span itemprop="articleBody">    
+                    <p><img src="/assets/images/posts/code-by-the-book/books.jpg" alt="Code by the book" title="Code by the book" class="img-responsive"></p>
 
-        
-</section>
+<p class="dropcap">SDL Studio allows the user to merge multiple files into one bilingual document (sdlxliff). This can be done during project creation and it can be useful in situations where you have multiple small files and you might want to translate them in one go without switching between documents. If you don't already know SDL Studio is very extensible via the API's that are made available but sometimes simple things are not so simple to do by code because of software design decision or technical limitations. Merging files using SDL Studio Project Automation API can be done but is not that straight forward as you might expect and this is why I decided to write this article to show how this is done.</p>
+
+<h3>Create Merged Project File</h3>
+
+<p>Looking at the documentation you can easily find <a href="http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/8c0d6583-c31c-365b-0819-ff19e18e1f5e.htm">CreateMergedProjectFile</a> method which allows you to specify the files you want to be merged and the name of the bilingual file which must have &quot;.sdlxliff&quot; extension. At this point this seems to be very simple but when you run this method you realize that is not actually doing much, there is no visible result on the project and the status is <em>Not Merged</em>. </p>
+
+<h3>What am I missing?</h3>
+
+<p>At this point you only get an <a href="http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/4ea34241-0524-aac3-45fa-817765b3bc5e.htm">MergedProjectFile</a> object which is just a representation of the merging structure. In order to actually create the bilingual merged file we need to use <a href="http://producthelp.sdl.com/SDK/FileTypeSupport/3.0/html/1f5584af-9763-46ff-894b-08127a2421a7.htm">Studio File Type Framework</a> to generate the sdlxliff file. Once we have that we can use <em>CopyToTargetLanguages</em> to copy the merged files to all target languages we need. To make this even more clear and concrete I&#39;m going to share a sample code that is doing all the steps I&#39;ve described until now.</p>
+
+<script src="https://gist.github.com/cromica/af1242f60511c52fba79.js"></script>
+
+<h3>Conclusion</h3>
+
+<p>It&#39;s not that complicated to merge files using the SDL Studio API but is not obvious and intuitive. I hope this article will clarify this situation. </p>
+
+<p>Please leave a comment if you have any questions or feedback.</p>
+
+                    </span>
+               <!--      <p class="fsize16">Tags: 
+                        <a class="label label-default light" href="#"><i class="fa fa-tags"></i> </a> 
+                    </p> -->
+                    <br/>
+                     
+                        <div class="nav-previous">
+                          <a class="" href="http://www.romuluscrisan.com/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api.html" rel="prev"><i class="fa fa-long-arrow-left nav-previous-link"></i>Merge files using SDL Studio Project Automation API</a>
+                        </div>
+                      
+                    
+                     
+                      <br/>
+                    <hr/>
+                    <div id="disqus_thread"></div>
+                   
+                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+                    </noscript>
+                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                 </div>
                 <div class="right col-md-3">
     <!-- blog search -->
@@ -152,9 +188,9 @@
     </div>
 </div>
             </div>
-            </article>
-        </section>
-         <footer>
+        </article>
+    </section>
+     <footer>
         <!-- SCROOL TO TOP -->
         <a href="#toTop" class="fa fa-arrow-up toTop"></a>
         <div class="container">
@@ -257,16 +293,27 @@
         window._gaq = [['_setAccount','UA-XXXXX-X'],['_trackPageview'],['_trackPageLoadTime']];
         Modernizr.load({load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'});
 </script>  -->
-        <script type="text/javascript">
+     <script type="text/javascript">
                     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                    var disqus_shortname = 'romuluscrisan'; // required: replace example with your forum shortname
+                    var disqus_shortname = 'romuluscrisan';
                     /* * * DON'T EDIT BELOW THIS LINE * * */
-                    (function () {
-                        var s = document.createElement('script'); s.async = true;
+                     (function() {
+                        var dsq = document.createElement('script');
+                        dsq.type = 'text/javascript';
+                        dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                    (function() {
+                        var s = document.createElement('script');
+                        s.async = true;
                         s.type = 'text/javascript';
                         s.src = '//' + disqus_shortname + '.disqus.com/count.js';
                         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
                     }());
-        </script>
-    </body>
+                    </script>
+
+              
+</body>
+
 </html>
