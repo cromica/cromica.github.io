@@ -8,7 +8,54 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Sun, 19 Apr 2015 22:20:00 +0300</pubDate>
+    <pubDate>Tue, 05 May 2015 22:20:00 +0300</pubDate>
+    <item>
+      <title>Studio plugin versioning</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2015/05/05/Studio%20plugin%20versioning.html</link>
+      <description><![CDATA[SDL Studio 2015 is just around the corner and as a plugin developer there are a few things you should do to make your plugin compatible with this new Studio version. Now with all Studio versions out there some may ask how can I control my plugin versions and how can I make sure my plugin will be used only by the appropriate version of SDL Studio.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/05/05/Studio%20plugin%20versioning.html#disqus_thread</comments>
+      <pubDate>Tue, 05 May 2015 22:20:00 +0300</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/05/05/Studio%20plugin%20versioning.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/studio-plugin-versioning/version.jpg" alt="Studio plugin versioning" title="Studio plugin versioning" class="img-responsive"></p>
+
+<p class="dropcap">SDL Studio 2015 is just around the corner and as a plugin developer there are a few things you should do to make your plugin compatible with this new Studio version. You can read more about this here: <a href="https://community.sdl.com/developers/language-developers/w/wiki/647.steps-to-upgrade-your-plugin-for-studio-2015">Steps to upgrade your plugin for Studio 2015</a>. Now with all Studio versions out there some may ask how can I control my plugin versions and how can I make sure my plugin will be used only by the appropriate version of SDL Studio.</p>
+
+<h3>Plugin manifest</h3>
+
+<p>Every plugin must contain a manifest file that defines a few general information about your plugin. The file is called <em>pluginpackage.manifest.xml</em> and if you open any *.sdlplugin file with and archiving tool, like <a href="http://www.7-zip.org/">7zip</a>, you should be able to see it and open it. Also when you create a new plugin solution in Microsoft Visual Studio this file will be automatically created for you and it will be included in our plugin package (.sdlplugin file). In this file you can add your plugin name, description, author, version, required product and you can <a href="http://romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html">specify additional files to be included in the package</a>.</p>
+
+<h3>Plugin versioning</h3>
+
+<p>As I highlighted before you can specify a plugin version by using the tag:</p>
+
+<blockquote>
+<p>Version</p>
+</blockquote>
+
+<p>This is used by SDL Studio to remove previously deployed plugins. For example if you have on your machine a plugin with version 0.1.0.0 if you install a new version like 0.1.1.0 it will automatically remove the unpacked version of the plugin and unpack the newer version. If the version is the same or lower this will not happen hence you will have to do it yourself.</p>
+
+<h3>Product versioning</h3>
+
+<p>Besides plugin versioning you can also specify SDL Studio versions that are compatible with your plugin. This can be done using the tag:</p>
+
+<blockquote>
+<p>RequiredProduct</p>
+</blockquote>
+
+<p>On this tag you can specify in the attribute <em>minversion</em> the lowest SDL Studio version that is compatible with your plugin. For example if you specify a minimum version of <em>10.0</em> this means that your plugin will be compatible with Studio 2011 or higher. If you want to limit your plugin just to a specific SDL Studio version you can also specify a <em>maxversion</em> attribute. So for example if in our case we add a maximum version of <em>10.9</em> this will not be compatible with Studio 2014 or higher and even if it&#39;s copied into the Studio 2014 plugins folder it will be ignored.</p>
+
+<h3>Universal plugin installer</h3>
+
+<p>The universal plugin installer is also using this information to avoid deploying plugins that are not compatible with a specific Studio version. If you are not familiar with the universal plugin installer you can read more here: <a href="https://github.com/sdl/Sdl-plugin-installer">SDL plugin installer</a>.</p>
+
+<h3>Final words</h3>
+
+<p>I recommend to review your manifest file and take advantage of the versioning capabilities. Even if there is no obvious reason at the moment it might prove handy in the future. </p>
+
+<p>Please leave a comment if you have any questions.</p>
+]]></content:encoded>
+      <dc:date>2015-05-05T22:20:00+03:00</dc:date>
+    </item>
     <item>
       <title>Code by the book</title>
       <link>http://www.romuluscrisan.com/career/2015/04/19/Code-by-the-book.html</link>
@@ -557,29 +604,6 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 ]]></content:encoded>
       <dc:date>2014-10-01T17:15:00+03:00</dc:date>
     </item>
-    <item>
-      <title>Thank you Endava</title>
-      <link>http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html</link>
-      <description><![CDATA[This week I had my last day as an Endava employee since I've accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback, so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with  Endava.]]></description>
-      <comments>http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html#disqus_thread</comments>
-      <pubDate>Sat, 20 Sep 2014 21:53:00 +0300</pubDate>
-      <guid>http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/endava.jpg" alt="Thank you Endava" title="Thank you Endava" class="img-responsive"></p>
-
-<p class="dropcap">This week I had my last day as an Endava employee since I've accepted a new challenge, but more about that in a later post. Endava is a company that constantly tries to improve based on previous experiences and feedback so last week I had brief exit interview which is meant to provide feedback to the company. I have to admit that I really enjoyed this last discussion where I had one last opportunity to directly share my ideas with Endava.</p>
-
-<p>My journey with Endava was about 7 years and a half. All this years had a great impact on my career and who am I today. When I joined the company I was a naive developer who was just interested in writing some code but slowly that changed because the company was constantly taking care of my growth and career path. I really think that Endava provides a great working environment where you can learn, grow and expand your skills regardless of the fact that you are just starting your career or you have several years of experience.</p>
-
-<p><img src="/assets/images/posts/endava_colleagues.jpg" alt="Thank you Endava" title="Thank you Endava" class="img-responsive"></p>
-
-<p>Certainly I will miss my colleagues from Endava with which I shared so many great experiences, but I&#39;m still going to be around so don&#39;t be a stranger suddenly. I want to thank you all for your great support and help during all this years.</p>
-
-<p>But because I&#39;m leaving it doesn&#39;t mean that we can&#39;t stay in touch. For sure I&#39;m going to post more often on this blog so you can leave a comment or find me on Twitter, Linkedin, Facebook, Gmail.</p>
-
-<p>Thanks Endava for all this great years.</p>
-]]></content:encoded>
-      <dc:date>2014-09-20T21:53:00+03:00</dc:date>
-    </item>
-    <dc:date>2015-04-19T22:20:00+03:00</dc:date>
+    <dc:date>2015-05-05T22:20:00+03:00</dc:date>
   </channel>
 </rss>
