@@ -4,13 +4,58 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-04-19T11:12:34+03:00</updated>
+ <updated>2015-05-05T19:04:43+03:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>Studio plugin versioning</title>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/05/05/Studio%20plugin%20versioning.html"/>
+   <updated>2015-05-05T22:20:00+03:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2015/05/05/Studio plugin versioning</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/studio-plugin-versioning/version.jpg&quot; alt=&quot;Studio plugin versioning&quot; title=&quot;Studio plugin versioning&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;SDL Studio 2015 is just around the corner and as a plugin developer there are a few things you should do to make your plugin compatible with this new Studio version. You can read more about this here: &lt;a href=&quot;https://community.sdl.com/developers/language-developers/w/wiki/647.steps-to-upgrade-your-plugin-for-studio-2015&quot;&gt;Steps to upgrade your plugin for Studio 2015&lt;/a&gt;. Now with all Studio versions out there some may ask how can I control my plugin versions and how can I make sure my plugin will be used only by the appropriate version of SDL Studio.&lt;/p&gt;
+
+&lt;h3&gt;Plugin manifest&lt;/h3&gt;
+
+&lt;p&gt;Every plugin must contain a manifest file that defines a few general information about your plugin. The file is called &lt;em&gt;pluginpackage.manifest.xml&lt;/em&gt; and if you open any *.sdlplugin file with and archiving tool, like &lt;a href=&quot;http://www.7-zip.org/&quot;&gt;7zip&lt;/a&gt;, you should be able to see it and open it. Also when you create a new plugin solution in Microsoft Visual Studio this file will be automatically created for you and it will be included in our plugin package (.sdlplugin file). In this file you can add your plugin name, description, author, version, required product and you can &lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html&quot;&gt;specify additional files to be included in the package&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Plugin versioning&lt;/h3&gt;
+
+&lt;p&gt;As I highlighted before you can specify a plugin version by using the tag:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Version&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is used by SDL Studio to remove previously deployed plugins. For example if you have on your machine a plugin with version 0.1.0.0 if you install a new version like 0.1.1.0 it will automatically remove the unpacked version of the plugin and unpack the newer version. If the version is the same or lower this will not happen hence you will have to do it yourself.&lt;/p&gt;
+
+&lt;h3&gt;Product versioning&lt;/h3&gt;
+
+&lt;p&gt;Besides plugin versioning you can also specify SDL Studio versions that are compatible with your plugin. This can be done using the tag:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;RequiredProduct&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;On this tag you can specify in the attribute &lt;em&gt;minversion&lt;/em&gt; the lowest SDL Studio version that is compatible with your plugin. For example if you specify a minimum version of &lt;em&gt;10.0&lt;/em&gt; this means that your plugin will be compatible with Studio 2011 or higher. If you want to limit your plugin just to a specific SDL Studio version you can also specify a &lt;em&gt;maxversion&lt;/em&gt; attribute. So for example if in our case we add a maximum version of &lt;em&gt;10.9&lt;/em&gt; this will not be compatible with Studio 2014 or higher and even if it&amp;#39;s copied into the Studio 2014 plugins folder it will be ignored.&lt;/p&gt;
+
+&lt;h3&gt;Universal plugin installer&lt;/h3&gt;
+
+&lt;p&gt;The universal plugin installer is also using this information to avoid deploying plugins that are not compatible with a specific Studio version. If you are not familiar with the universal plugin installer you can read more here: &lt;a href=&quot;https://github.com/sdl/Sdl-plugin-installer&quot;&gt;SDL plugin installer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Final words&lt;/h3&gt;
+
+&lt;p&gt;I recommend to review your manifest file and take advantage of the versioning capabilities. Even if there is no obvious reason at the moment it might prove handy in the future. &lt;/p&gt;
+
+&lt;p&gt;Please leave a comment if you have any questions.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Code by the book</title>
