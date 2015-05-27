@@ -4,13 +4,44 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-05-05T19:04:43+03:00</updated>
+ <updated>2015-05-27T15:11:26+03:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>Playing with SDL Studio settings</title>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/05/27/Playing%20with%20SDL%20Studio%20settings.html"/>
+   <updated>2015-05-27T22:00:00+03:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2015/05/27/Playing with SDL Studio settings</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/playing-with-settings/playing-with-settings.png&quot; alt=&quot;Playing with SDL Studio settings&quot; title=&quot;Playing with SDL Studio settings&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;SDL Studio is a complex and extendable application witch comes with a few APIs that allows any developer to extend the application in all kind of ways. To be more exact there are 6 APIs you can use to build your application. This degree of complexity and extensibility translates in a huge amount of settings you can play with. The user interface does a great job presenting them in a meaningful way but that is not the same when you want to develop something in your custom applications and you need to read or update some of the settings.&lt;/p&gt;
+
+&lt;h3&gt;Project Settings&lt;/h3&gt;
+
+&lt;p&gt;Lets say you are in a situation where the API is not offering you direct access to the user setting you would like to change, what options you have in this situation? A great amount of settings are store in the project file which in essence it&amp;#39;s an xml file. This mean I could use the standard .NET libraries to parse the project xml file and change what I need. This is completely true and can be done but the problem is knowing the xml structure which for the project file can be pretty complex and hard to understand. To give you an example the project file for a very simple test project is over 1000 lines. Understanding those lines can take some time and patience. Before continuing I want to clarify one thing which is knowing that the SDL Studio project file is not only about user settings it&amp;#39;s much more than that, things that are used internal by Studio so we need to be very careful when we change anything in this file. My recommendation would be to use the &lt;a href=&quot;http://producthelp.sdl.com/SDK/Core/3.0/search.html?SearchText=settingsbundle&quot;&gt;settings classes&lt;/a&gt; exposed by SDL Studio Core API.&lt;/p&gt;
+
+&lt;h3&gt;Settings Bundle and Group&lt;/h3&gt;
+
+&lt;p&gt;User settings are stored in hierarchical structure as settings bundles. A bundle is bound to a feature from SDL Studio. For example I can have a settings bundle for project specific settings, another project bundle with settings for language direction, another one for language file and so on. Each bundle will have unique identifier as a GUID value and can have one or multiple child elements in form of settings group. A settings group represent a smaller piece from the bundle feature and can have, as child&amp;#39;s, one or multiple settings. As an example of settings group you can think at specific settings for a file type which is part of the project settings bundle.&lt;/p&gt;
+
+&lt;p&gt;With this said the SDL Studio API has &lt;a href=&quot;http://producthelp.sdl.com/SDK/Core/3.0/html/9e4ba18c-dab1-bb47-0ce7-a31fb3002ba3.htm&quot;&gt;ISettingsBundle&lt;/a&gt; interface and a &lt;a href=&quot;http://producthelp.sdl.com/SDK/Core/3.0/html/72c76110-8d6c-6315-58d9-dc36b998d14b.htm&quot;&gt;SettingsGroup&lt;/a&gt; class used to represent the hierarchical structure I explained above. The API doesn&amp;#39;t expose a concrete implementation of &lt;a href=&quot;http://producthelp.sdl.com/SDK/Core/3.0/html/9e4ba18c-dab1-bb47-0ce7-a31fb3002ba3.htm&quot;&gt;ISettingsBundle&lt;/a&gt; so you need to use &lt;a href=&quot;http://producthelp.sdl.com/SDK/Core/3.0/html/ae69c32c-3ebe-946f-3e3c-d091278a407f.htm&quot;&gt;SettingsUtils&lt;/a&gt; class to create an instance of settings bundle.&lt;/p&gt;
+
+&lt;h3&gt;Real use case&lt;/h3&gt;
+
+&lt;p&gt;To clarify the things a bit I want to show you a real use case where you can use the settings classes from the SDL Studio Core API. Let&amp;#39;s say that for a project we want to disable all the global verifiers. This value is kept in the project file and can be changed using .NET xml libraries or using the settings classes I explained in the previous paragraph. Here&amp;#39;s the code required to implement this feature:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/cromica/7299796351f364d93aa5.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;In this case I obtain the settings group id by instantiating all the global verifiers but you can request the setting group also by just providing the string. &lt;/p&gt;
+
+&lt;p&gt;Please leave a comment if you have any questions.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Studio plugin versioning</title>

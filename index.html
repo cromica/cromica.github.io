@@ -454,6 +454,9 @@ sitemap:
                     {% for post in site.posts offset:0 limit:3 %}
                     <div class="col-md-4 quick-hover">
                         <div class="quick-item">
+                             {% if post.image != '' %}
+        <img src="/assets/images/posts/{{ post.image }}" alt="post image" title="post image" class="img-responsive" itemprop="image">
+    {% endif%}
                             <h4>{{ post.title }}</h4>
                             <p>{{ post.summary }}</p>
                             <a href="{{ post.url }}" class="btn btn-xs"><i class="fa fa-sign-out"></i> READ MORE</a>
