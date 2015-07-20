@@ -8,7 +8,32 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Tue, 02 Jun 2015 22:00:00 +0300</pubDate>
+    <pubDate>Mon, 20 Jul 2015 13:00:00 +0300</pubDate>
+    <item>
+      <title>OpenExchange: Age of developers</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html</link>
+      <description><![CDATA[OpenExchange was launched a few years back by SDL with the purpose to allow anyone to integrate their solutions or ideas with the SDL Language Platform. This gave everyone freedom to augment the SDL platform according to their needs. Because of this freedom, apps like Glossary Converter, MSWord Grammar Checker and many others where possible. It's pretty obvious that this brings great value to every SDL language platform user, but how about building those apps? From where should I start? I'm a translator do I need to program? I have no idea about the translation industry, what can I do?]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html#disqus_thread</comments>
+      <pubDate>Mon, 20 Jul 2015 13:00:00 +0300</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-intro/age-of-developers-intro.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
+
+<p class="dropcap">OpenExchange was launched a few years back by SDL with the purpose to allow anyone to integrate their solutions or ideas with the SDL language platform. This gave everyone freedom to augment the SDL language platform according to their needs. Because of this freedom, apps like <a href="http://www.translationzone.com/openexchange/app/glossaryconverter-476.html#46146" target="_blank">Glossary Converter</a>, <a href="http://www.translationzone.com/openexchange/app/mswordgrammarcheckerforstudio2015-796.html#85390">MSWord Grammar Checker</a> and many others where possible. It's pretty obvious that this brings great value to every SDL language platform user, but how about building those apps? From where should I start? I'm a translator do I need to write code? I have no idea about the translation industry, what can I do? </p>
+
+<h3 id="age-of-developers">Age of developers</h3>
+
+<p>This is the introduction article for a series of blog posts that I’m about to write about how you can develop apps or plugins for OpenExchange throughout which I will answer the above questions and many others. If you’re not a developer but you would like to be able to build something don’t worry I will show you how you can start learn programming, if you are a developer already but don’t have a clue about translation industry and what can you do I got you covered as well. I will start from ground zero providing step by step explanation on how you need to setup the development environment, what tools you need and from where you can get them. Throughout the series I will develop a plugin and share with you the steps I’m doing and also the source code.</p>
+
+<p>As I release parts of this series I will update this page with links to the articles.</p>
+
+<blockquote>
+  <p>Link to articles coming soon</p>
+</blockquote>
+
+<p>Please leave a comment if you have any questions.</p>
+]]></content:encoded>
+      <dc:date>2015-07-20T13:00:00+03:00</dc:date>
+    </item>
     <item>
       <title>Integration API enhancements introduced in SDL Studio CU10</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/06/02/Integration%20API%20enhancements%20introduced%20in%20SDL%20Studio%20CU10.html</link>
@@ -613,89 +638,6 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 ]]></content:encoded>
       <dc:date>2014-11-28T14:20:00+02:00</dc:date>
     </item>
-    <item>
-      <title>3rd party assemblies and SDL Studio plugins</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html</link>
-      <description><![CDATA[Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is Json.NET. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies.]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html#disqus_thread</comments>
-      <pubDate>Fri, 07 Nov 2014 18:18:00 +0200</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/3rdparty/3rdpartyassemblies.png" alt="Hello SDL" title="Hello SDL" class="img-responsive" /></p>
-
-<p class="dropcap">Last week I was working at a new plugin for SDL Studio 2014 and I wanted to serialize some information in json. The best tool handle this type of operations in .NET, at least in my opinion, is <a href="http://james.newtonking.com/json" target="_blank">Json.NET</a>. It made perfect sense to use it but until now I didn't use any external dependencies in an SDL Studio plugin so I started to look into what options we have to deploy our plugins together with 3rd party assemblies.</p>
-
-<h3 id="sdl-studio-plugins">SDL Studio plugins</h3>
-
-<p>This is not a detailed look at what SDL Studio plugins are but I want to give a bit of context on how they are working. First of all each plugin has to be packed in a package with extension <code>.sldplugin</code> (this a zip file in essence). If you use the SDL Studio templates from Visual Studio this done for you automatically. Once you have the package you need to deploy it in one of the three location where SDL Studio is expecting plugins:</p>
-
-<blockquote>
-  <ol>
-    <li>$(CurrentUser)\AppData\Local\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <ol>
-    <li>$(CurrentUser)\AppData\Roaming\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <ol>
-    <li>$(ProgramData)\SDL\SDL Trados Studio{Studio Version}\Plugins\Packages\</li>
-  </ol>
-</blockquote>
-
-<p>There is no difference between this locations so you can choose whatever you prefer. Once the package is in one of this locations when SDL Studio starts it will unpack the package, drop the content into a dedicated location and load the plugin assembly. This depends on where you deployed your package and can be one of this locations:</p>
-
-<blockquote>
-  <ol>
-    <li>$(CurrentUser)\AppData\Local\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <ol>
-    <li>$(CurrentUser)\AppData\Roaming\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <ol>
-    <li>$(ProgramData)\SDL\SDL Trados Studio{Studio Version}\Plugins\Unpacked\</li>
-  </ol>
-</blockquote>
-
-<h3 id="deploy-3rd-party-assemblies">Deploy 3rd party assemblies</h3>
-
-<p>Now that we have a brief understanding on how SDL Studio handles plugins let’s see what options we have to deploy 3rd party plugins:</p>
-
-<blockquote>
-  <ol>
-    <li>Include the assemblies in the plugin package</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <ol>
-    <li>Create an installer which will copy the 3rd party assemblies into SDL Studio folder under $(ProgramFiles)</li>
-  </ol>
-</blockquote>
-
-<p>Although the second option can work I don’t like it because it requires more work, administrative rights to deploy the assemblies and might intefere with Studio installation. This was also suggest by <a href="https://community.sdl.com/members/davidfritch/default.aspx">David Fritch</a> in this <a href="https://community.sdl.com/phase_2_groups/sdl_openexchange_developers/f/39/t/3149.aspx">thread</a> as a possible way to do it.</p>
-
-<p>I consider the first option the right way to do it since it’s very simple and clean. All you have to do is change the <code>pluginpackage.manifest.xml</code> which has to be part of the solution in order to generate the <code>.sdlplugin</code> file. By default this xml file contains some tags to specify the plugin name, version, description, author and required SDL Studio product. You will need to add an <code>&lt;Include&gt;</code> tag which in my case, for <a href="http://james.newtonking.com/json">Json.NET</a>, looked something like this:</p>
-
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;Include&gt;</span>
-	<span class="nt">&lt;File&gt;</span>Newtonsoft.Json.dll<span class="nt">&lt;/File&gt;</span>
-<span class="nt">&lt;/Include&gt;</span></code></pre></div>
-
-<p>You can have a look at my entire xml file <a href="https://github.com/sdl/SDL-Community/blob/master/Controlled%20Machine%20Translation%20Providers/Sdl.Community.ControlledMTProviders/pluginpackage.manifest.xml#L9">here</a>.</p>
-
-<p>Please leave a comment if you have any questions or feedback.</p>
-]]></content:encoded>
-      <dc:date>2014-11-07T18:18:00+02:00</dc:date>
-    </item>
-    <dc:date>2015-06-02T22:00:00+03:00</dc:date>
+    <dc:date>2015-07-20T13:00:00+03:00</dc:date>
   </channel>
 </rss>
