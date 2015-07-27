@@ -10,7 +10,7 @@ image: "age-of-developers-translator-code/age-of-developers-translator-code.jpg"
 
 <img src="/assets/images/posts/age-of-developers-translator-code/age-of-developers-translator-code.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive">
 
-<p class="dropcap">This is the first part from the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series. This article is meant to be a short guide for translators that are willing to augment their productivity and ease their day to day work by writing plugins for Sdl Studio, but they don't know from where to start.</p>
+<p class="dropcap">This is the first TEST part from the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series. This article is meant to be a short guide for translators that are willing to augment their productivity and ease their day to day work by writing plugins for Sdl Studio, but they don't know from where to start.</p>
 
 ### Age of developers - table of contents###
 
