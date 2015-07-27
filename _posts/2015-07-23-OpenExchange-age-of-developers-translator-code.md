@@ -10,7 +10,7 @@ image: "age-of-developers-translator-code/age-of-developers-translator-code.jpg"
 
 <img src="/assets/images/posts/age-of-developers-translator-code/age-of-developers-translator-code.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive">
 
-<p class="dropcap">This is the first part of the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series. This article is meant to be a short guide for translators who are willing to augment their productivity and ease their day to day work by writing plugins for SDL Trados Studio, but they don't know from where to start.</p>
+<p class="dropcap">This is the first part of the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series. This article is meant to be a short guide for translators who are willing to augment their productivity and ease their day to day work by writing plugins for SDL Studio, but they don't know from where to start.</p>
 
 ### Age of developers - table of contents###
 
@@ -20,7 +20,7 @@ As I release parts of this series I will update this page with links to the arti
 
 ### I'm a translator do I need to write code?###
 
-The short answer is yes. In order to make an SDL Trados Studio plugin and publish it on the SDL OpenExchange you need to write code. SDL Trados Studio is developed using Microsoft technology called [Microsoft .Net](http://www.microsoft.com/net). The platform allows you to build all kind of apps from desktop (like Studio) to web and mobile. [Scott Hanselman](http://www.hanselman.com/), principal program manager and community architect at Microsoft, estimates that there are [~8 million](http://www.quora.com/How-many-NET-developers-are-there) .net developers out there. The [Microsoft .Net](http://www.microsoft.com/net) platform has support for [many programming languages](https://en.wikipedia.org/wiki/List_of_CLI_languages) but the most popular is C# (CSharp). I would recommend learning this language because you will be able to find many resources to help you in your learning journey.
+The short answer is yes. In order to make an SDL Studio plugin and publish it on the SDL OpenExchange you need to write code. SDL Studio is developed using Microsoft technology called [Microsoft .Net](http://www.microsoft.com/net). The platform allows you to build all kind of apps from desktop (like Studio) to web and mobile. [Scott Hanselman](http://www.hanselman.com/), principal program manager and community architect at Microsoft, estimates that there are [~8 million](http://www.quora.com/How-many-NET-developers-are-there) .net developers out there. The [Microsoft .Net](http://www.microsoft.com/net) platform has support for [many programming languages](https://en.wikipedia.org/wiki/List_of_CLI_languages) but the most popular is C# (CSharp). I would recommend learning this language because you will be able to find many resources to help you in your learning journey.
 
 ### Why should I bother?###
 
