@@ -499,16 +499,16 @@ sitemap:
                     <span id="_msg_txt_">
                         <strong>Thank You!</strong>Your message successfully sent!</span>
                 </div>
-                <form id="contactForm" method="post" action="http://getsimpleform.com/messages?form_api_token=a79f639716bff5445b768edc74eb2310" class="white block form-inline">
+                <form id="contactForm" method="post" action="http://formspree.io/cromica@gmail.com" class="white block form-inline">
                     <div class="row">
                         <div class="col-md-4">
                             <input required class="fullwidth" type="text" name="contact_name" id="contact_name" value="" placeholder="NAME *" title="Name" />
                         </div>
                         <div class="col-md-4">
-                            <input required class="fullwidth" type="email" name="contact_email" id="contact_email" value="" placeholder="EMAIL *" title="Email" />
+                            <input required class="fullwidth" type="email" name="_replyto" id="contact_email" value="" placeholder="EMAIL *" title="Email" />
                         </div>
                         <div class="col-md-4">
-                            <input class="fullwidth" type="text" name="contact_subject" id="contact_subject" value="" placeholder="SUBJECT" title="subject" />
+                            <input class="fullwidth" type="text" name="_subject" id="contact_subject" value="" placeholder="SUBJECT" title="subject" />
                         </div>
                     </div>
                     <div class="row">
@@ -516,7 +516,8 @@ sitemap:
                             <textarea required class="fullwidth" rows="5" name="message"  placeholder="MESSAGE *"></textarea>
                         </div>
                         <div class="col-md-12">
-                            <input type="hidden" name="captcha" id="captcha" value="" />
+                            <input type="text" name="_gotcha" style="display:none" />
+                            <input type="hidden" name="_next" value="www.romuluscrisan.com" />
                             <button id="contact_submit" class="btn btn-default">SEND MESSAGE</button>
                         </div>
                     </div>
