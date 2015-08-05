@@ -19,6 +19,8 @@ This is the introduction article for a series of blog posts that I'm about to wr
 As I release parts of this series I will update this page with links to the articles.
 
 
-1. [I'm a translator do I need to write code?](http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html)
+1. Introduction
+2. [I'm a translator do I need to write code?](http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html)
+3. [I'm a developer, why bother with translation industry?]()
 
 Please leave a comment if you have any questions.

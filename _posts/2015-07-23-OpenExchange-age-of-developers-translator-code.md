@@ -17,6 +17,8 @@ image: "age-of-developers-translator-code/age-of-developers-translator-code.jpg"
 As I release parts of this series I will update this page with links to the articles.
 
 1. [Introduction](http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html)
+2. I'm a translator do I need to write code?
+3. [I'm a developer, why bother with translation industry?]()
 
 ### I'm a translator do I need to write code?###
 
