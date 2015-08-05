@@ -8,7 +8,80 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Mon, 20 Jul 2015 13:00:00 +0300</pubDate>
+    <pubDate>Wed, 05 Aug 2015 13:00:00 +0300</pubDate>
+    <item>
+      <title>I'm a developer, why bother with translation industry?</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html</link>
+      <description><![CDATA[This is the second part of the OpenExchange: Age of Developers series and is meant to highlight a few benefits of getting involved in the translation industry as a developer.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html#disqus_thread</comments>
+      <pubDate>Wed, 05 Aug 2015 13:00:00 +0300</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-developer-translation-industry/developer-translation-industry.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
+
+<p class="dropcap">This is the second part of the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series and is meant to highlight a few benefits of getting involved in the translation industry as a developer.</p>
+
+<h3 id="age-of-developers---table-of-contents">Age of developers - table of contents</h3>
+
+<p>As I release parts of this series I will update this page with links to the articles.</p>
+
+<ol>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html">Introduction</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html">I’m a translator do I need to write code?</a></li>
+  <li>I’m a developer, why bother with translation industry?</li>
+</ol>
+
+<h3 id="translation-industry">Translation industry</h3>
+
+<p>I’m a developer, my heart beats 01010101…, so I’m not going to bore you with market shares, revenues and other big numbers about how big is this industry. If you are really curios about this have a look <a href="http://www.pangeanic.com/knowledge_center/size-of-the-translation-industry/#">here</a>. What I would like to say is how important is this industry in today’s world and to sustain my affirmation look at this numbers:</p>
+
+<ul>
+  <li>Only 27% of Internet users speak English</li>
+  <li>70% of internet traffic comes from non-English native countries</li>
+  <li>34% of Twitter messages are in English</li>
+  <li>75% of Facebook users are outside of US</li>
+</ul>
+
+<p>Interesting numbers I must say and they clearly show how relevant this industry is. Now some of you might have heard about <a href="https://en.wikipedia.org/wiki/Machine_translation">machine translation</a> but the translation industry is much more than that. It’s about language localization, interpretation and terminology. </p>
+
+<h3 id="technology">Technology</h3>
+
+<p>Now let’s get closer to what we as developers are interested in, which is the technology. Each industry has his own specific terminology so I would like to take this opportunity to briefly explain some of the terms:</p>
+
+<ol>
+  <li><a href="http://www.translationzone.com/products/cat-tools/">CAT tools (Computer-Assisted Translation)</a> - typically this are desktop application that aid translators and linguists to increase their translation productivity. While this applications will continue to be predominant on the desktop slowly web solution will appear that will add new options to translators and linguists.</li>
+  <li><a href="http://www.translationzone.com/products/translation-memory/#tag1">Translation Memories</a> - this are databases that store segments, which can be sentences, paragraphs, headings, titles or elements in a list that have been translated. CAT tools rely on translation memories to aid the translator during the translation.</li>
+  <li><a href="http://www.translationzone.com/products/terminology-management/#tag1">Termbase</a> - this is a central repository, like a database, which allows translators to systematically manage approved terms.</li>
+  <li><a href="http://www.translationzone.com/products/machine-translation/#tag1">Machine translation</a> - this is about automated translation of natural languages. Probably all of you have used <a href="http://www.freetranslation.com/">free translation</a> or <a href="https://translate.google.ro/">google translate</a> which are the perfect examples of machine translation. The examples I gave are just end-user products but each platform expose machine translation capabilities through various api’s as part of a <a href="https://languagecloud.sdl.com/translation-toolkit/api-documentation">cloud offering</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Postediting">Post-editing</a> - this is the process of improving a machine generated translation and typically is done from a CAT tool.  </li>
+</ol>
+
+<h3 id="why-bother">Why bother?</h3>
+
+<p>Now that I gave you a brief overview of the translation industry the big question is why should I, as a developer, bother getting into this. I already know desktop, web, mobile and/or cloud technologies and I also have to keep up with the fast pace of technology changes. That might be true but if you really want to be a great specialist it’s not enough just to know some technologies, you need to make them relevant. People expect from developers solutions for their problems and good solution require industry expertise. If someone asks you to build them an accounting system you don’t need to be an expert accountant but you need to know a few things about accounting. I highly recommend reading John Sonmez article <a href="http://simpleprogrammer.com/2015/04/23/im-not-sure-i-want-to-be-a-specialist/">I’m not sure I want to be a specialist</a> which emphasizes on specialize as a developer.</p>
+
+<p>Becoming a specialist will help you become a better professional, find interesting job opportunities or even become a freelance developer if this is something you’re looking for. </p>
+
+<p>Specializing in a relevant industry makes perfect sense and this why I consider that you as a developer should take into consideration the translation industry.</p>
+
+<h3 id="where-do-i-start">Where do I start?</h3>
+
+<p>A great way to learn about translation industry is to start develop plugins and apps for existing products. <a href="www.sdl.com/openexchange">SDL OpenExchange</a> app store is nice way to publish your work and maybe even earn some money. To publish an app on SDL OpenExchange you need to become an SDL OpenExchange developer. This is a simple process you can follow from <a href="http://www.translationzone.com/openexchange/developer/">here</a>. You don’t need to worry about licenses since SDL can offer dedicated developer licenses:</p>
+
+<ol>
+  <li>CAT Tool - SDL’s CAT tool name is <a href="http://www.sdl.com/cxc/language/translation-productivity/trados-studio/">SDL Trados Studio 2015</a> and in order to develop anything on top if it you’ll need a license. In order to get a developer license please create an SDL OpenExchange developer account and then send an email to app-signing@sdl.com and this will be sorted out</li>
+  <li>Machine Translation - SDL’s machine translation cloud solution is named <a href="https://languagecloud.sdl.com/">Language Cloud</a> and you can sign-up for a developer account <a href="https://languagecloud.sdl.com/translation-toolkit/sign-up">here</a>.  </li>
+</ol>
+
+<p>Every new journey might be a bit bumpy in the beginning and you should not hesitate to ask for help. I recommend to register in the <a href="https://community.sdl.com/developers/language-developers/">language developer community</a> and ask for help there. </p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>My best advice is to have patience, practice as much as possible and don’t be afraid to ask. I’m sure the results will come sooner or later. Happy coding. </p>
+
+<p>Please leave a comment if you have any questions.</p>
+]]></content:encoded>
+      <dc:date>2015-08-05T13:00:00+03:00</dc:date>
+    </item>
     <item>
       <title>I'm a translator do I need to write code?</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html</link>
@@ -26,6 +99,8 @@
 
 <ol>
   <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html">Introduction</a></li>
+  <li>I’m a translator do I need to write code?</li>
+  <li><a href="">I’m a developer, why bother with translation industry?</a></li>
 </ol>
 
 <h3 id="im-a-translator-do-i-need-to-write-code">I’m a translator do I need to write code?</h3>
@@ -89,7 +164,9 @@
 <p>As I release parts of this series I will update this page with links to the articles.</p>
 
 <ol>
+  <li>Introduction</li>
   <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html">I’m a translator do I need to write code?</a></li>
+  <li><a href="">I’m a developer, why bother with translation industry?</a></li>
 </ol>
 
 <p>Please leave a comment if you have any questions.</p>
@@ -515,142 +592,6 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 ]]></content:encoded>
       <dc:date>2015-02-13T01:20:00+02:00</dc:date>
     </item>
-    <item>
-      <title>How to access segment tags using Studio File Type Framework</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html</link>
-      <description><![CDATA[Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I'm going to discuss in this article."]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html#disqus_thread</comments>
-      <pubDate>Tue, 06 Jan 2015 18:20:00 +0200</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/segmentTags/segments.png" alt="Assembly Resolver" title="Assembly Resolver" class="img-responsive" /></p>
-
-<p class="dropcap">Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I'm going to discuss in this article. </p>
-
-<h3 id="visitor-pattern">Visitor Pattern</h3>
-
-<p>Before jumping into the problem I recommend you to get familiarized with the visitor pattern since this is used as part of the Studio File Type Framework and you will need apply it in order to get the tags. To get familiarized you can read the theory on <a href="http://en.wikipedia.org/wiki/Visitor_pattern">wikipedia</a> or if you want a practical example you can have a look <a href="http://www.codeproject.com/Articles/588882/TheplusVisitorplusPatternplusExplained">here</a>.</p>
-
-<p>In Studio File Type Framework visitor pattern is made available via <em>IMarkupDataVisitor</em> interface. </p>
-
-<h3 id="paragraphs-segments-and-more">Paragraphs, Segments and more</h3>
-
-<p>When a document is opened for translation Studio brakes it into segments. This is done by the segmentation engine using the segmentation rules defined in Studio. A segment can be a paragraph or a sentence length but what is important to understand is that for Studio a segment represents a piece of localizable content for which existing translations can possibly be used. Besides localizable content there are other elements, like formatting, that Studio needs to take into considerations.</p>
-
-<p>Now that we have a better understanding of how Studio is handling the content let me highlight how this is reflected in the File Type Framework:</p>
-
-<p><code>IParagraph</code> represents the entire content that is displayed on one Studio editor row. This can contain multiple elements like tags or segments.</p>
-
-<p><code>IParagraphUnit</code> a unit of source language content and the localized target language content. Source and Target can be accessed using the corresponding properties which will return an <em>IParagraph</em> object instance with the information described above. One thing to keep in mind is that there are two type of paragraph units:</p>
-
-<ol>
-  <li>Structure paragraph units will contain only structure tags that are not localizable. In this case the Target will be null.</li>
-  <li>Localizable paragraph units will contain localizable content.</li>
-</ol>
-
-<p><code>ISegment</code> represents a piece of localizable content.</p>
-
-<p><code>ISegmentPair</code> segments exists in source and target language versions which are bot accessible using <em>ISegmentPair</em>. </p>
-
-<p>Segments and Paragraphs are considered containers of other elements like text, comments, revisions and so on. All containers share common behavior and that’s why in the File Type Framework both are abstracted using <em>IAbstractMarkupDataContainer</em>. An <em>IAbstractMarkupDataContainer</em> contains multiple <em>IAbstractMarkupData</em> elements. This means that text, comments and other similar elements are represented in the framework using <em>IAbstractMarkupData</em> interface. One very important aspect of this structure is the fact that a segment can be considered as an element of the paragraph but also as a container for other elements which means that it can be manipulated as an <em>IAbstractMarkupDataContainer</em> or as an <em>IAbstractMarkupData</em>.</p>
-
-<p>Here’s a diagram which describes the structure:</p>
-
-<p><img src="/assets/images/posts/segmentTags/abstractmarkupdatacontainer.png" alt="Abstract Markup Data Container" title="Abstract Markup Data Container" class="img-responsive" /></p>
-
-<h3 id="access-segment-tags">Access segment tags</h3>
-
-<p>All paragraph elements are like a tree structure that must be traversed using visitor pattern. For each paragraph unit we can look at the Source property which is an <em>IParagraph</em>. Thinking at the abstraction I was talking earlier an <em>IParagraph</em> is in essence an <em>IAbstractMarkupDataContainer</em> which in turn is an enumeration of <em>IAbstractMarkupData</em>. Here’s a sample code on how you can iterate paragraph unit elements:</p>
-
-<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">IAbstractMarkupData</span><span class="p">&gt;</span> <span class="n">container</span> <span class="p">=</span> <span class="n">paragraphUnit</span><span class="p">.</span><span class="n">Source</span><span class="p">;</span>
- 
-<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">contentItem</span> <span class="k">in</span> <span class="n">container</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">//structure tag is not supported by IMarkupDataVisitor and you should ignore it</span>
-    <span class="n">IStructureTag</span> <span class="n">stag</span> <span class="p">=</span> <span class="n">contentItem</span> <span class="k">as</span> <span class="n">IStructureTag</span><span class="p">;</span>
-       <span class="k">if</span> <span class="p">(</span><span class="n">stag</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-                       
-      <span class="n">contentItem</span><span class="p">.</span><span class="n">AcceptVisitor</span><span class="p">(</span><span class="k">new</span> <span class="n">MarkupDataVisitor</span><span class="p">());</span>
-<span class="p">}</span></code></pre></div>
-
-<p>There is one new thing in the above sample which I didn’t discuss about.This is <em>MarkupDataVisitor</em> which is an implementation of the interface <em>IMarkupDataVisitor</em> I was mentioning in the visitor pattern section. Here’s how the interface looks like:</p>
-
-<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="c1">/// &lt;summary&gt;</span>
-<span class="c1">/// Interface for the visitor in the visitor pattern implementation for translatable source / target </span>
-<span class="c1">/// content items in a localizable paragraph unit.</span>
-<span class="c1">/// &lt;/summary&gt;</span>
-<span class="k">public</span> <span class="k">interface</span> <span class="n">IMarkupDataVisitor</span>
-<span class="p">{</span>
-	<span class="c1">/// &lt;summary&gt;</span>
-	<span class="c1">/// Called by tag pair instances.</span>
-	<span class="c1">/// &lt;/summary&gt;</span>
-	<span class="c1">/// &lt;param name=&quot;tagPair&quot;&gt;&lt;/param&gt;</span>
-    <span class="k">void</span> <span class="nf">VisitTagPair</span><span class="p">(</span><span class="n">ITagPair</span> <span class="n">tagPair</span><span class="p">);</span>
-
-
-	<span class="c1">/// &lt;summary&gt;</span>
-	<span class="c1">/// Called by placeholder tag instances.</span>
-	<span class="c1">/// &lt;/summary&gt;</span>
-	<span class="c1">/// &lt;param name=&quot;tag&quot;&gt;&lt;/param&gt;</span>
-    <span class="k">void</span> <span class="nf">VisitPlaceholderTag</span><span class="p">(</span><span class="n">IPlaceholderTag</span> <span class="n">tag</span><span class="p">);</span>
-
-
-	<span class="c1">/// &lt;summary&gt;</span>
-	<span class="c1">/// Called by text instances.</span>
-	<span class="c1">/// &lt;/summary&gt;</span>
-	<span class="c1">/// &lt;param name=&quot;text&quot;&gt;&lt;/param&gt;</span>
-    <span class="k">void</span> <span class="nf">VisitText</span><span class="p">(</span><span class="n">IText</span> <span class="n">text</span><span class="p">);</span>
-
-
-	<span class="c1">/// &lt;summary&gt;</span>
-	<span class="c1">/// Called by segment instances.</span>
-	<span class="c1">/// &lt;/summary&gt;</span>
-	<span class="c1">/// &lt;param name=&quot;segment&quot;&gt;&lt;/param&gt;</span>
-    <span class="k">void</span> <span class="nf">VisitSegment</span><span class="p">(</span><span class="n">ISegment</span> <span class="n">segment</span><span class="p">);</span>
-
-
-	<span class="c1">/// &lt;summary&gt;</span>
-	<span class="c1">/// Called by location marker instances.</span>
-	<span class="c1">/// &lt;/summary&gt;</span>
-	<span class="c1">/// &lt;param name=&quot;location&quot;&gt;&lt;/param&gt;</span>
-	<span class="k">void</span> <span class="nf">VisitLocationMarker</span><span class="p">(</span><span class="n">ILocationMarker</span> <span class="n">location</span><span class="p">);</span>
-
-
-	<span class="c1">/// &lt;summary&gt;</span>
-	<span class="c1">/// Called by comment marker instances.</span>
-	<span class="c1">/// &lt;/summary&gt;</span>
-	<span class="c1">/// &lt;param name=&quot;commentMarker&quot;&gt;&lt;/param&gt;</span>
-    <span class="k">void</span> <span class="nf">VisitCommentMarker</span><span class="p">(</span><span class="n">ICommentMarker</span> <span class="n">commentMarker</span><span class="p">);</span>
-
-
-	<span class="c1">/// &lt;summary&gt;</span>
-	<span class="c1">/// Called by other marker instances.</span>
-	<span class="c1">/// &lt;/summary&gt;</span>
-	<span class="c1">/// &lt;param name=&quot;marker&quot;&gt;&lt;/param&gt;</span>
-    <span class="k">void</span> <span class="nf">VisitOtherMarker</span><span class="p">(</span><span class="n">IOtherMarker</span> <span class="n">marker</span><span class="p">);</span>
-
-
-	<span class="c1">/// &lt;summary&gt;</span>
-	<span class="c1">/// Called by locked content instances.</span>
-	<span class="c1">/// &lt;/summary&gt;</span>
-	<span class="c1">/// &lt;param name=&quot;lockedContent&quot;&gt;&lt;/param&gt;</span>
-    <span class="k">void</span> <span class="nf">VisitLockedContent</span><span class="p">(</span><span class="n">ILockedContent</span> <span class="n">lockedContent</span><span class="p">);</span>
-
-
-	<span class="c1">/// &lt;summary&gt;</span>
-	<span class="c1">/// Called by revision marker instances.</span>
-	<span class="c1">/// &lt;/summary&gt;</span>
-	<span class="c1">/// &lt;param name=&quot;revisionMarker&quot;&gt;&lt;/param&gt;</span>
-	<span class="k">void</span> <span class="nf">VisitRevisionMarker</span><span class="p">(</span><span class="n">IRevisionMarker</span> <span class="n">revisionMarker</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
-
-<p>As you can see you are now able manipulate each element type. For example if you need formatting information you can get it from the <em>ITagPair</em> interface. </p>
-
-<p><strong>Don’t forget</strong> that segments are containers as well so on <em>VisitSegement</em> method you need to traverse his structure in the same way as for the paragraph unit.</p>
-
-<p>Please leave a comment if you have any questions or feedback.</p>
-]]></content:encoded>
-      <dc:date>2015-01-06T18:20:00+02:00</dc:date>
-    </item>
-    <dc:date>2015-07-20T13:00:00+03:00</dc:date>
+    <dc:date>2015-08-05T13:00:00+03:00</dc:date>
   </channel>
 </rss>
