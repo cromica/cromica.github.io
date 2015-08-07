@@ -32,7 +32,7 @@
 
 <h3 id="translation-industry">Translation industry</h3>
 
-<p>I’m a developer, my heart beats 01010101…, so I’m not going to bore you with market shares, revenues and other big numbers about how big is this industry. If you are really curios about this have a look <a href="http://www.pangeanic.com/knowledge_center/size-of-the-translation-industry/#">here</a>. What I would like to say is how important is this industry in today’s world and to sustain my affirmation look at this numbers:</p>
+<p>I’m a developer, my heart beats 01010101…, so I’m not going to bore you with market shares, revenues and other big numbers about how big this industry is. If you are really curious about this have a look <a href="http://www.pangeanic.com/knowledge_center/size-of-the-translation-industry/#">here</a>. What I would like to say is how important this industry is in today’s world and to sustain my affirmation look at these numbers:</p>
 
 <ul>
   <li>Only 27% of Internet users speak English</li>
@@ -45,27 +45,27 @@
 
 <h3 id="technology">Technology</h3>
 
-<p>Now let’s get closer to what we as developers are interested in, which is the technology. Each industry has his own specific terminology so I would like to take this opportunity to briefly explain some of the terms:</p>
+<p>Now let’s get closer to what we as developers are interested in, which is the technology. Each industry has its own specific terminology so I would like to take this opportunity to briefly explain some of the terms:</p>
 
 <ol>
-  <li><a href="http://www.translationzone.com/products/cat-tools/">CAT tools (Computer-Assisted Translation)</a> - typically this are desktop application that aid translators and linguists to increase their translation productivity. While this applications will continue to be predominant on the desktop slowly web solution will appear that will add new options to translators and linguists.</li>
-  <li><a href="http://www.translationzone.com/products/translation-memory/#tag1">Translation Memories</a> - this are databases that store segments, which can be sentences, paragraphs, headings, titles or elements in a list that have been translated. CAT tools rely on translation memories to aid the translator during the translation.</li>
+  <li><a href="http://www.translationzone.com/products/cat-tools/">CAT tools (Computer-Assisted Translation)</a> - typically these are desktop applications that aid translators and linguists to increase their translation productivity. While these applications will continue to be predominant on the desktop, web solutions will slowly appear that will add new options for translators and linguists.</li>
+  <li><a href="http://www.translationzone.com/products/translation-memory/#tag1">Translation Memories</a> - this are databases that store segments, which can be sentences, paragraphs, headings, titles or elements, from any filetype, in a list that has been translated. CAT tools rely on translation memories to aid the translator during the translation.</li>
   <li><a href="http://www.translationzone.com/products/terminology-management/#tag1">Termbase</a> - this is a central repository, like a database, which allows translators to systematically manage approved terms.</li>
-  <li><a href="http://www.translationzone.com/products/machine-translation/#tag1">Machine translation</a> - this is about automated translation of natural languages. Probably all of you have used <a href="http://www.freetranslation.com/">free translation</a> or <a href="https://translate.google.ro/">google translate</a> which are the perfect examples of machine translation. The examples I gave are just end-user products but each platform expose machine translation capabilities through various api’s as part of a <a href="https://languagecloud.sdl.com/translation-toolkit/api-documentation">cloud offering</a>.</li>
+  <li><a href="http://www.translationzone.com/products/machine-translation/#tag1">Machine translation</a> - this is about automated translation of natural languages. Probably all of you have used <a href="http://www.freetranslation.com/">free translation</a> or <a href="https://translate.google.ro/">google translate</a> which are the great examples of machine translation at work. The examples I’ve given are just end-user products but each platform exposes machine translation capabilities through various api’s as part of a <a href="https://languagecloud.sdl.com/translation-toolkit/api-documentation">cloud offering</a>.</li>
   <li><a href="https://en.wikipedia.org/wiki/Postediting">Post-editing</a> - this is the process of improving a machine generated translation and typically is done from a CAT tool.  </li>
 </ol>
 
 <h3 id="why-bother">Why bother?</h3>
 
-<p>Now that I gave you a brief overview of the translation industry the big question is why should I, as a developer, bother getting into this. I already know desktop, web, mobile and/or cloud technologies and I also have to keep up with the fast pace of technology changes. That might be true but if you really want to be a great specialist it’s not enough just to know some technologies, you need to make them relevant. People expect from developers solutions for their problems and good solution require industry expertise. If someone asks you to build them an accounting system you don’t need to be an expert accountant but you need to know a few things about accounting. I highly recommend reading John Sonmez article <a href="http://simpleprogrammer.com/2015/04/23/im-not-sure-i-want-to-be-a-specialist/">I’m not sure I want to be a specialist</a> which emphasizes on specialize as a developer.</p>
+<p>Now that I’ve given you a brief overview of the translation industry the big question is why should I, as a developer, bother getting into this. I already know desktop, web, mobile and/or cloud technologies and I also have to keep up with the fast pace of technology changes. That might be true but if you really want to be a great specialist it’s not enough just to know some technologies, you need to make them relevant. People expect solutions for their problems from developers and good solutions require industry expertise. If someone asks you to build them an accounting system you don’t need to be an expert accountant but you need to know a few things about accounting. I highly recommend reading the article from John Sonmez “<a href="http://simpleprogrammer.com/2015/04/23/im-not-sure-i-want-to-be-a-specialist/">I’m not sure I want to be a specialist</a>” which emphasizes on specializing as a developer.</p>
 
 <p>Becoming a specialist will help you become a better professional, find interesting job opportunities or even become a freelance developer if this is something you’re looking for. </p>
 
-<p>Specializing in a relevant industry makes perfect sense and this why I consider that you as a developer should take into consideration the translation industry.</p>
+<p>Specializing in a specific industry makes perfect sense and this why I consider that you as a developer should take into consideration the translation industry.</p>
 
 <h3 id="where-do-i-start">Where do I start?</h3>
 
-<p>A great way to learn about translation industry is to start develop plugins and apps for existing products. <a href="www.sdl.com/openexchange">SDL OpenExchange</a> app store is nice way to publish your work and maybe even earn some money. To publish an app on SDL OpenExchange you need to become an SDL OpenExchange developer. This is a simple process you can follow from <a href="http://www.translationzone.com/openexchange/developer/">here</a>. You don’t need to worry about licenses since SDL can offer dedicated developer licenses:</p>
+<p>A great way to learn about the translation industry is to start develop plugins and apps for existing products. The <a href="www.sdl.com/openexchange">SDL OpenExchange</a> app store is nice way to publish your work and maybe even earn some money. At the very best you will gain exposure as a developer to those translations companies looking for development expertise to help them integrate their own systems or gain some competitive advantage by asking you to implement some ideas of their own. To publish an app on SDL OpenExchange you need to become an SDL OpenExchange developer. This is a simple process you can follow from <a href="http://www.translationzone.com/openexchange/developer/">here</a>. You don’t need to worry about licenses since SDL can offer dedicated developer licenses:</p>
 
 <ol>
   <li>CAT Tool - SDL’s CAT tool name is <a href="http://www.sdl.com/cxc/language/translation-productivity/trados-studio/">SDL Trados Studio 2015</a> and in order to develop anything on top if it you’ll need a license. In order to get a developer license please create an SDL OpenExchange developer account and then send an email to app-signing@sdl.com and this will be sorted out</li>
@@ -100,7 +100,7 @@
 <ol>
   <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html">Introduction</a></li>
   <li>I’m a translator do I need to write code?</li>
-  <li><a href="">I’m a developer, why bother with translation industry?</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html">I’m a developer, why bother with translation industry?</a></li>
 </ol>
 
 <h3 id="im-a-translator-do-i-need-to-write-code">I’m a translator do I need to write code?</h3>
@@ -166,7 +166,7 @@
 <ol>
   <li>Introduction</li>
   <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html">I’m a translator do I need to write code?</a></li>
-  <li><a href="">I’m a developer, why bother with translation industry?</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html">I’m a developer, why bother with translation industry?</a></li>
 </ol>
 
 <p>Please leave a comment if you have any questions.</p>
