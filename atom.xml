@@ -4,13 +4,64 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-08-07T20:49:13+03:00</updated>
+ <updated>2015-08-25T17:42:30+03:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>Configure OpenExchange development environment</title>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html"/>
+   <updated>2015-08-25T13:00:00+03:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/age-of-developers-build-ox-environment/age-of-developers-build-ox-environment.jpg&quot; alt=&quot;Age Of Developers&quot; title=&quot;Age of Developers&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;This is the third part of the &lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html&quot; target=&quot;_blank&quot;&gt;OpenExchange: Age of Developers&lt;/a&gt; series and is meant to provide guideline on how to setup the development environment for OpenExchange.&lt;/p&gt;
+
+&lt;h3 id=&quot;age-of-developers---table-of-contents&quot;&gt;Age of developers - table of contents&lt;/h3&gt;
+
+&lt;p&gt;As I release parts of this series I will update this page with links to the articles.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html&quot;&gt;I’m a translator do I need to write code?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html&quot;&gt;I’m a developer, why bother with translation industry?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Configure OpenExchange development environment&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;first-things-first&quot;&gt;First things first&lt;/h3&gt;
+
+&lt;p&gt;In my previous article I tried to articulate why developing applications or plugins for OpenExchange can bring you benefits regardless if you are a developer or not. Now it’s time to move on and start get our hands dirty. Before starting any development you need to prepare your machine/laptop and based on which Studio(2014 or 2015) version are you going to use the configuration might be a bit different but let’s take it step by step:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Operating system&lt;/strong&gt; - Since the development is done using Microsoft .NET at least for the moment this is only possible only on Windows operating systems. The minimum version you should use is Windows Vista SP2 but I highly recommend to try and use Windows 7 or later. If you want to develop on Windows server that’s fine but you need to have at least Windows Server 2008 SP2.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SDL Product&lt;/strong&gt; - At the moment you can build applications around a few SDL products like Multiterm, Passolo or Studio. Based on which plugin you want to build you will need a licensed product. Now if you don’t have a license don’t worry because if you register &lt;a href=&quot;http://www.translationzone.com/openexchange/developer/&quot;&gt;here&lt;/a&gt; and join the SDL Developer Program we can help you with the licenses you need for development.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SDK&lt;/strong&gt; - You can download the SDK for the product you’re looking to develop from &lt;a href=&quot;http://www.translationzone.com/openexchange/developer/sdk.html&quot;&gt;here&lt;/a&gt;. Now before going forward I would like to clarify what exactly you get and what you don’t get with this SDK’s. The main purpose for the SDK’s is to help the developer in building the application and this why with the SDK you get some code samples, documentation, Microsoft Visual Studio project templates (2012, 2013 and soon 2015) and build targets that are used by Microsoft Visual Studio to create your &lt;em&gt;sdlplugin&lt;/em&gt; file at each build. You won’t get the product API with the SDK since this is already part of the application.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Microsoft .Net&lt;/strong&gt; - This depends on the SDL Studio version you are developing for. SDL Studio 2014 uses .Net framework 4.0.3 and SDL Studio 2015 uses .Net framewrok 4.5.2. Based on the operating system you might already have .net installed on your machine.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Microsoft Visual Studio&lt;/strong&gt; - For SDL Studio 2014 development you can use any version of Visual Studio starting from Visual Studio 2010 and for SDL Studio 2015 you need to use Visual Studio 2013 or later. I highly recommend to use Visual Studio 2013 or 2015. For this 2 versions you can use the community edition which is completely free and offers the same features like the professional version. More details about it &lt;a href=&quot;https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There aren’t a lot of things to be installed and configured but it might take some time to install all of them.  &lt;/p&gt;
+
+&lt;h3 id=&quot;version-control&quot;&gt;Version control&lt;/h3&gt;
+
+&lt;p&gt;A version control system allows you to track the changes you’ve done to a file or a set of files. It is also backing up your files on some server/cloud. A few people might say that this is not necessary for small projects because it’s an overhead. This might be true but there are plenty of other reasons to do it:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Files are backed up on a server/cloud and in case your machine crashes you don’t loose all your work.&lt;/li&gt;
+  &lt;li&gt;Every change you make to a file is tracked and version-ed. This means you can always rollback to a previous version if you’ve done something bad in your current version.&lt;/li&gt;
+  &lt;li&gt;What do you do if you have multiple development machines, like a desktop and a laptop? Synchronizing between them can give you lot’s of headaches.&lt;/li&gt;
+  &lt;li&gt;There are free solutions like &lt;a href=&quot;https://github.com/&quot;&gt;github&lt;/a&gt; or &lt;a href=&quot;https://www.visualstudio.com/en-us/products/visual-studio-online-pricing-vs.aspx&quot;&gt;visual studio online&lt;/a&gt;. Now github is free for as many users as you like as long as your project is public (you should consider open source licensing in this case). Visual Studio online is free but only for the 5 users. I’m pretty sure that one of this options will fit your needs.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Please leave a comment if you have any questions.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>I'm a developer, why bother with translation industry?</title>

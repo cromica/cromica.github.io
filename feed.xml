@@ -8,7 +8,60 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Wed, 05 Aug 2015 13:00:00 +0300</pubDate>
+    <pubDate>Tue, 25 Aug 2015 13:00:00 +0300</pubDate>
+    <item>
+      <title>Configure OpenExchange development environment</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html</link>
+      <description><![CDATA[This is the third part of the OpenExchange: Age of Developers series and is meant to provide guideline on how to setup the development environment for OpenExchange.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html#disqus_thread</comments>
+      <pubDate>Tue, 25 Aug 2015 13:00:00 +0300</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-build-ox-environment/age-of-developers-build-ox-environment.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
+
+<p class="dropcap">This is the third part of the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series and is meant to provide guideline on how to setup the development environment for OpenExchange.</p>
+
+<h3 id="age-of-developers---table-of-contents">Age of developers - table of contents</h3>
+
+<p>As I release parts of this series I will update this page with links to the articles.</p>
+
+<ol>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html">Introduction</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html">I’m a translator do I need to write code?</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html">I’m a developer, why bother with translation industry?</a></li>
+  <li>Configure OpenExchange development environment</li>
+</ol>
+
+<h3 id="first-things-first">First things first</h3>
+
+<p>In my previous article I tried to articulate why developing applications or plugins for OpenExchange can bring you benefits regardless if you are a developer or not. Now it’s time to move on and start get our hands dirty. Before starting any development you need to prepare your machine/laptop and based on which Studio(2014 or 2015) version are you going to use the configuration might be a bit different but let’s take it step by step:</p>
+
+<ol>
+  <li><strong>Operating system</strong> - Since the development is done using Microsoft .NET at least for the moment this is only possible only on Windows operating systems. The minimum version you should use is Windows Vista SP2 but I highly recommend to try and use Windows 7 or later. If you want to develop on Windows server that’s fine but you need to have at least Windows Server 2008 SP2.</li>
+  <li><strong>SDL Product</strong> - At the moment you can build applications around a few SDL products like Multiterm, Passolo or Studio. Based on which plugin you want to build you will need a licensed product. Now if you don’t have a license don’t worry because if you register <a href="http://www.translationzone.com/openexchange/developer/">here</a> and join the SDL Developer Program we can help you with the licenses you need for development.</li>
+  <li><strong>SDK</strong> - You can download the SDK for the product you’re looking to develop from <a href="http://www.translationzone.com/openexchange/developer/sdk.html">here</a>. Now before going forward I would like to clarify what exactly you get and what you don’t get with this SDK’s. The main purpose for the SDK’s is to help the developer in building the application and this why with the SDK you get some code samples, documentation, Microsoft Visual Studio project templates (2012, 2013 and soon 2015) and build targets that are used by Microsoft Visual Studio to create your <em>sdlplugin</em> file at each build. You won’t get the product API with the SDK since this is already part of the application.</li>
+  <li><strong>Microsoft .Net</strong> - This depends on the SDL Studio version you are developing for. SDL Studio 2014 uses .Net framework 4.0.3 and SDL Studio 2015 uses .Net framewrok 4.5.2. Based on the operating system you might already have .net installed on your machine.</li>
+  <li><strong>Microsoft Visual Studio</strong> - For SDL Studio 2014 development you can use any version of Visual Studio starting from Visual Studio 2010 and for SDL Studio 2015 you need to use Visual Studio 2013 or later. I highly recommend to use Visual Studio 2013 or 2015. For this 2 versions you can use the community edition which is completely free and offers the same features like the professional version. More details about it <a href="https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx">here</a>.</li>
+</ol>
+
+<p>There aren’t a lot of things to be installed and configured but it might take some time to install all of them.  </p>
+
+<h3 id="version-control">Version control</h3>
+
+<p>A version control system allows you to track the changes you’ve done to a file or a set of files. It is also backing up your files on some server/cloud. A few people might say that this is not necessary for small projects because it’s an overhead. This might be true but there are plenty of other reasons to do it:</p>
+
+<ol>
+  <li>Files are backed up on a server/cloud and in case your machine crashes you don’t loose all your work.</li>
+  <li>Every change you make to a file is tracked and version-ed. This means you can always rollback to a previous version if you’ve done something bad in your current version.</li>
+  <li>What do you do if you have multiple development machines, like a desktop and a laptop? Synchronizing between them can give you lot’s of headaches.</li>
+  <li>There are free solutions like <a href="https://github.com/">github</a> or <a href="https://www.visualstudio.com/en-us/products/visual-studio-online-pricing-vs.aspx">visual studio online</a>. Now github is free for as many users as you like as long as your project is public (you should consider open source licensing in this case). Visual Studio online is free but only for the 5 users. I’m pretty sure that one of this options will fit your needs.</li>
+</ol>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Please leave a comment if you have any questions.</p>
+]]></content:encoded>
+      <dc:date>2015-08-25T13:00:00+03:00</dc:date>
+    </item>
     <item>
       <title>I'm a developer, why bother with translation industry?</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html</link>
@@ -540,58 +593,6 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 ]]></content:encoded>
       <dc:date>2015-02-18T21:20:00+02:00</dc:date>
     </item>
-    <item>
-      <title>Click'n'Deploy Studio plugins</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html</link>
-      <description><![CDATA[App stores changed the way we install and maintain software on our devices. You now have a single centralized place where you go and search for what you need, click a button and in a matter of minutes you have the app working on your device. In a similar way you can extend SDL Studio by going on OpenExchange store and download a plugin you would like or need. Now this works just fine for most of the Studio plugins or apps but there are situations when you need to develop something that is specific for your company and doesn't make sense to be public to everyone since it's probably irrelevant for them and it might also contain confidential information. It would be nice if you would be able to create your private store inside OpenExchange where you can have you apps centralized and search-able just by you  but such a feature is not available at the moment. This article and video is about an alternate solution for this type of scenarios.]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html#disqus_thread</comments>
-      <pubDate>Fri, 13 Feb 2015 01:20:00 +0200</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html</guid>
-      <content:encoded><![CDATA[<p><a href="https://speakerdeck.com/cromica/clickn-deploy" taget="_blank"><img src="/assets/images/posts//click-n-deploy/click-n-deploy.png" alt="Click'n'Deploy" title="Click'n'Deploy" class="img-responsive" /></a></p>
-
-<p class="dropcap">App stores changed the way we install and maintain software on our devices. You now have a single centralized place where you go and search for what you need, click a button and in a matter of minutes you have the app working on your device. In a similar way you can extend SDL Studio by going on <a href="http://www.translationzone.com/openexchange/">OpenExchange</a> store and download a plugin you would like or need. Now this works just fine for most of the Studio plugins or apps but there are situations when you need to develop something that is specific for your company and doesn't make sense to be public to everyone since it's probably irrelevant for them and it might also contain confidential information. It would be nice if you would be able to create your private store inside <a href="http://www.translationzone.com/openexchange/">OpenExchange</a> where you can have you apps centralized and search-able just by you  but such a feature is not available at the moment. This article and video is about an alternate solution for this type of scenarios.</p>
-
-<h3 id="the-solution">The solution</h3>
-
-<p>The solution is very simple and is based on the idea to automate as much as possible the process of releasing you plugin. The exact same thing is promoted by <a href="http://en.wikipedia.org/wiki/Continuous_delivery">Continuous Delivery</a>  practice and together with the evolution of this a couple of release management tools like <a href="https://octopusdeploy.com/">Octopus Deploy</a> or <a href="http://www.thoughtworks.com/products/go-continuous-delivery">GO</a> appeared in order to ease the adoption of such a practice. In our case since Studio plugins are developed using <a href="http://www.microsoft.com/net">Microsoft .Net</a> and it makes perfect sense to use <a href="https://octopusdeploy.com/">Octopus Deploy</a> since is dedicated for .Net solutions. Of course you can try and use <a href="http://www.thoughtworks.com/products/go-continuous-delivery">GO</a> or any other release management tool you prefer. If it’s not clear by now the solution I’m talking about is to automate your Studio plugin release management using <a href="https://octopusdeploy.com/">Octopus Deploy</a>.   </p>
-
-<h3 id="octopus-deploy">Octopus Deploy</h3>
-
-<p>I’m not going to cover in detail <a href="https://octopusdeploy.com/">Octopus Deploy</a> since it comes with a very good documentation, rather I’m going to present a higher level overview of how is going to work with Studio plugins. Octopus comes with a central server component which is called <a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Octopus Deploy Server</a> that you need to install somewhere where all your users machines will be able to access it. It can be an internal private server, a public server or somewhere in a cloud platform, there is no limitation as long as it’s accessible. <a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Octopus Deploy Server</a> comes with web user interface which you can use once you have the server installed. Besides the server component Octopus comes with a client component called <a href="http://docs.octopusdeploy.com/display/OD/Installing+Tentacles">Tentacle Deploy agent</a>. This has to be installed on each user machine and it will be used to deploy your software, in our case the Studio plugins. This is a one time operation and once it’s done you will only use the web user interface that comes with the server. There is a third component called <a href="http://docs.octopusdeploy.com/display/OD/Using+OctoPack">OctoPack</a> that is used to push the software/Studio plugin from you development or build machine to <a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Octopus Deploy Server</a>.  </p>
-
-<h3 id="clickndeploy-studio-plugins">Click’n’Deploy Studio plugins</h3>
-
-<p>There are quit a few moving parts when you first setup <a href="https://octopusdeploy.com/">Octopus Deploy</a> and some of the steps might not that obvious so instead off writing them in this article I decided that it would be better if just create a video to show you exactly how you configure Octopus to release Studio plugins to the user machine. </p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mMDnY73D1x8" frameborder="0" allowfullscreen=""></iframe>
-
-<p>Useful learning resources:</p>
-
-<ol>
-  <li>
-    <p><a href="http://docs.octopusdeploy.com/display/OD/Getting+started">Octopus Deploy Getting Started</a></p>
-  </li>
-  <li>
-    <p><a href="http://docs.octopusdeploy.com/display/OD/Installing+Octopus">Installing Octopus Deploy Server</a></p>
-  </li>
-  <li>
-    <p><a href="http://docs.octopusdeploy.com/display/OD/Installing+Tentacles">Installing Tentacles</a></p>
-  </li>
-  <li>
-    <p><a href="http://docs.octopusdeploy.com/display/OD/Using+OctoPack">Using OctoPack</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.nuget.org/">What is Nuget?</a></p>
-  </li>
-  <li>
-    <p><a href="http://www.translationzone.com/openexchange/developer/sdk.html">Develop SDL Studio plugins</a></p>
-  </li>
-</ol>
-
-<p>Please leave a comment if you have any questions or feedback.</p>
-]]></content:encoded>
-      <dc:date>2015-02-13T01:20:00+02:00</dc:date>
-    </item>
-    <dc:date>2015-08-05T13:00:00+03:00</dc:date>
+    <dc:date>2015-08-25T13:00:00+03:00</dc:date>
   </channel>
 </rss>
