@@ -8,7 +8,52 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Tue, 25 Aug 2015 13:00:00 +0300</pubDate>
+    <pubDate>Thu, 27 Aug 2015 22:00:00 +0300</pubDate>
+    <item>
+      <title>Translate,Measure,Compete...#YourProductivity</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2015/08/27/Translate-Measure-Compete-YourProductivity.html</link>
+      <description><![CDATA[A few months back during a brainstorm session me an and Paul Filkin where playing with some ideas on how we could help translators improve their productivity. It was clear from the beginning that we need to provide some metrics that will help translators understand how they are performing but we also wanted to make it in a fun way. We ended with a few ideas which we then refined with sales and marketing teams from SDL and started the work. I'm happy to say that you can now see the results on OpenExchange as #YourProductivity application.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/08/27/Translate-Measure-Compete-YourProductivity.html#disqus_thread</comments>
+      <pubDate>Thu, 27 Aug 2015 22:00:00 +0300</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/08/27/Translate-Measure-Compete-YourProductivity.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/yourproductivity/leaderboard.png" alt="Leaderboard" title="Leaderboard" class="img-responsive" /></p>
+
+<p class="dropcap">A few months back during a brainstorm session me an and <a href="http://multifarious.filkin.com/" target="_blank">Paul Filkin</a> where playing with some ideas on how we could help translators improve their productivity. It was clear from the beginning that we need to provide some metrics that will help translators understand how they are performing but we also wanted to make it in a fun way. We ended with a few ideas which we then refined with sales and marketing teams from SDL and started the work. I'm happy to say that you can now see the results on OpenExchange as <a href="http://www.translationzone.com/openexchange/app/yourproductivity-861.html#88985" target="_blank">#YourProductivity</a> application.</p>
+
+<h3 id="yourproductivity">#YourProductivity</h3>
+
+<p>The #YourProductivity application has 2 main components. One is the SDL Studio plugin that you can get download from <a href="http://www.translationzone.com/openexchange/app/yourproductivity-861.html#88985">here</a>. Once the download is finished all you have to do is double click the file and follow the steps to install the plugin. The second component is a leaderboard  web application that can be access from <a href="http://www.translationzone.com/community/app/community-productivity/">here</a>. Now let me explain a bit each of this 2 components</p>
+
+<h3 id="sdl-studio-plugin">SDL Studio plugin</h3>
+
+<p>Once you install the plugin when you will go in the SDL Studio editor view you will see a new section in the ribbon, after the project settings, named #YourProductivity. There are 3 buttons available in this section:</p>
+
+<ol>
+  <li><strong>Productivity score</strong> - this will open the productivity score window where you will be able to find all the information about your productivity.</li>
+  <li><strong>Share</strong> - this will open a window which will allow you to share the score on the leaderboard and on twitter. In order to share your score you will need to configure your twitter account.</li>
+  <li><strong>Leaderboard</strong> - this will open, in your default web browser, the leaderboard web application.</li>
+</ol>
+
+<p>As you probably realized the central point is the <em>productivity score</em> window where you will be able to find all the productivity metrics and the score you can share on the leaderboard to enter the competition. Yes you’ve heard  correctly there is also a competition and prizes bot more on that a bit later. A picture is worth a thousand words so have a look at the next screen shot and I will explain some of the elements you can find in that screen.</p>
+
+<p><img src="/assets/images/posts/yourproductivity/productivity-score.png" alt="Productivity Score" title="Productivity Score" class="img-responsive" /></p>
+
+<p>On the top left-hand side you can find your score that you can share on the leaderboard and if you configured your twitter account then you will also see the icon and your name. I want to point out the fact that you can use this app without configuring the twitter account but in this case you will not be able to share the score or see your twitter image and name. Also the only information that is shared on the leaderboard is the score on the left-hand side, all the other information is just for you, saved on the local machine, and is meant to help you understand how well you are taking advantage of the productivity features provided by SDL Studio. The <em>translation efficiency</em> percentage is the main indicator of that. You can also find a list of all the projects you’ve worked on, together with the files you’ve touched during the translation. For each file you can find information on how many characters where inserted during translation process,this includes characters from TM’s or AT, how many keystrokes you’ve used and how efficient you were on that specific file. You should aim to have the <em>keystrokes saved</em> number as high as possible.</p>
+
+<h3 id="leaderboard">Leaderboard</h3>
+
+<p>The leaderboard is a public web application, so you can have a look at it even if you haven’t shared anything on it. Based on the scores on the leaderboard at the end of each month the top 3 positions, along with 4 lucky users selected at random, will receive Amazon gift cards worth up to €150. </p>
+
+<p>At the end of each month both the leaderboard and the information you find in the SDL Studio plugin will be cleared so if you didn’t get a chance in the competition this month you can definitely do it next month. </p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>This is the first release of the application, we already have some ideas for the next version but it would be great to get some feedback from you. </p>
+
+<p>If you want to learn more about the app and how it was build you can find me in Amsterdam in the week starting with 14th of September for the <a href="https://community.sdl.com/products-solutions/language/translationproductivity/c/e/102?mkt_tok=3RkMMJWWfF9wsRonvq7KcO%2FhmjTEU5z17%2BgtWaCwhokz2EFye%2BLIHETpodcMT8JlNbzYDBceEJhqyQJxPr3DJNkN1tloRhTgDQ%3D%3D">SDL Open House</a> and <a href="https://community.sdl.com/events/sdl_community_open_sept_2015_amsterdam/c/e/65?mkt_tok=3RkMMJWWfF9wsRonvq7KcO%2FhmjTEU5z17%2BgtWaCwhokz2EFye%2BLIHETpodcMT8JlNbzYDBceEJhqyQJxPr3DJNkN1tloRhTgDQ%3D%3D">Hackathon</a>. </p>
+]]></content:encoded>
+      <dc:date>2015-08-27T22:00:00+03:00</dc:date>
+    </item>
     <item>
       <title>Configure OpenExchange development environment</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html</link>
@@ -565,37 +610,6 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 ]]></content:encoded>
       <dc:date>2015-03-11T21:20:00+02:00</dc:date>
     </item>
-    <item>
-      <title>Sdl Studio PowerShell toolkit is now open source</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source.html</link>
-      <description><![CDATA[Starting from today Sdl Studio powerhsell toolkit is open source and you can find it on github. The toolkit was written to facilitate scripting of the Project Automation API which comes with SDL Studio. Until now this was kept on the SDL internal TFS and you where only able to get it by going to the community forum. At this point you might ask yourself what's going to change from now on since the toolkit was freely distributed until now?]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source.html#disqus_thread</comments>
-      <pubDate>Wed, 18 Feb 2015 21:20:00 +0200</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/studio-powershell-toolkit/open-source.png" alt="Click'n'Deploy" title="Click'n'Deploy" class="img-responsive" /></p>
-
-<p class="dropcap">Starting from today Sdl Studio powerhsell toolkit is open source and you can find it on github. The toolkit was written to facilitate scripting of the Project Automation API which comes with SDL Studio. Until now this was kept on the SDL internal TFS and you where only able to get it by going to the community forum. At this point you might ask yourself what's going to change from now on since the toolkit was freely distributed until now?</p>
-
-<h3 id="github">Github</h3>
-
-<p>The project is now hosted on github in this <a href="https://github.com/sdl/Sdl-studio-powershell-toolkit">location</a>. The internal TFS will no longer be used so this means that every change that will be made to the toolkit will be made on this repository including changes done by Sdl developers. Also this allows any interested developer to contribute to the toolkit. </p>
-
-<p>Public releases are also hosted on github and you can be find them <a href="https://github.com/sdl/Sdl-studio-powershell-toolkit/releases/">here</a>. You are now able to download the entire toolkit or just one of the modules. </p>
-
-<h3 id="open-source">Open source</h3>
-
-<p>Open source it’s not at all equal to free, it’s much more than that. Yes you don’t have to pay any money for this toolkit but from now on is not only Sdl’s responsibility to maintain this toolkit, it’s also the responsibility of each toolkit user or developer. To be a bit more specific if you find bug or want a new feature you can log it <a href="https://github.com/sdl/Sdl-studio-powershell-toolkit/issues">here</a> but don’t necessarily expect someone from Sdl to resolve the issue, it might be anyone from the community or even you.</p>
-
-<p>Another important aspect that comes with open source is that every change you made to this toolkit has to be made open source. It’s not mandatory to be made in the same repository but it has to be open source. I would encourage everyone to contribute to this repository and make the resolved issues available to everyone.</p>
-
-<h3 id="conclusion">Conclusion</h3>
-
-<p>Contribute to Sdl Studio PowerShell toolkit from <a href="https://github.com/sdl/Sdl-studio-powershell-toolkit">here</a> or download the latest release from <a href="https://github.com/sdl/Sdl-studio-powershell-toolkit/releases/tag/1.0.0.0">here</a>. </p>
-
-<p>Please leave a comment if you have any questions or feedback.</p>
-]]></content:encoded>
-      <dc:date>2015-02-18T21:20:00+02:00</dc:date>
-    </item>
-    <dc:date>2015-08-25T13:00:00+03:00</dc:date>
+    <dc:date>2015-08-27T22:00:00+03:00</dc:date>
   </channel>
 </rss>
