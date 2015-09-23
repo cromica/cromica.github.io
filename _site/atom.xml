@@ -4,7 +4,7 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-08-28T13:24:39+03:00</updated>
+ <updated>2015-09-23T10:50:28+03:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
@@ -303,6 +303,8 @@
 &lt;p&gt;Until now developers were only able to get information about &lt;a href=&quot;http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/2b0cadd0-8be7-eea2-f974-bb14bdcb6db8.htm&quot;&gt;ActiveFile&lt;/a&gt; like statistics, language, project id and so on. There was no way to get information like creation date, change date, metada and so on. This is now possible using &lt;em&gt;ActiveFileProperties&lt;/em&gt; property of the &lt;a href=&quot;http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/9bb61319-d033-7198-9aee-b29eb5f759e9.htm&quot;&gt;Document&lt;/a&gt; class. Also an event was added to notify when the active file properties are changed.&lt;/p&gt;
 
 &lt;h3 id=&quot;accessupdate-segment-and-paragraph-unit-properties&quot;&gt;Access/update segment and paragraph unit properties&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Update 23.09.2015&lt;/strong&gt; - &lt;em&gt;This feature didn’t make it in Studio 2014 CU10 and it’s available only in Studio 2015&lt;/em&gt; &lt;/p&gt;
 
 &lt;p&gt;If you needed to make any work around segments the only available option was to use &lt;a href=&quot;http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/b4f43e30-8ba6-f2c2-7ea2-883ab83d1d67.htm&quot;&gt;ProcessSegmentPairs&lt;/a&gt; method from the &lt;a href=&quot;http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/9bb61319-d033-7198-9aee-b29eb5f759e9.htm&quot;&gt;Document&lt;/a&gt; class. Now this can do the trick but it’s not straightforward to use and can be an overhead for simple scenarios, also this method was not providing any way to interact with paragraph units. We’ve now added a couple other options that provide more granularity and flexibility in how a developer is able to process segments. We also added  capabilities to work directly with paragraph units. Here’s the list with the methods available:&lt;/p&gt;
 

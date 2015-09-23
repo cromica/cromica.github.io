@@ -38,6 +38,8 @@ Until now developers were only able to get information about [ActiveFile](http:/
 
 ### Access/update segment and paragraph unit properties ###
 
+**Update 23.09.2015** - *This feature didn't make it in Studio 2014 CU10 and it's available only in Studio 2015* 
+
 If you needed to make any work around segments the only available option was to use [ProcessSegmentPairs](http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/b4f43e30-8ba6-f2c2-7ea2-883ab83d1d67.htm) method from the [Document](http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/9bb61319-d033-7198-9aee-b29eb5f759e9.htm) class. Now this can do the trick but it's not straightforward to use and can be an overhead for simple scenarios, also this method was not providing any way to interact with paragraph units. We've now added a couple other options that provide more granularity and flexibility in how a developer is able to process segments. We also added  capabilities to work directly with paragraph units. Here's the list with the methods available:
 
 1. *GetSegmentPairsFromParagraph* - Based on the paragraph id you can obtain the segment pairs of that paragraph
