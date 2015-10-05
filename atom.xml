@@ -4,13 +4,54 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-09-23T10:50:28+03:00</updated>
+ <updated>2015-10-05T19:18:18+03:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>Studio API Training Day</title>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/10/05/Studio%20API%20Training%20Day.html"/>
+   <updated>2015-10-05T22:00:00+03:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2015/10/05/Studio API Training Day</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/studio-api-training-day/studio-api-training-day.jpg&quot; alt=&quot;training day&quot; title=&quot;training day&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;By this time some of you are already aware of my &lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html&quot; target=&quot;_blank&quot;&gt;Age of Developers&lt;/a&gt; initiative. This initiative is meant to help everyone which would like to build applications for &lt;a href=&quot;translationzone.com/openexchange/&quot; target=&quot;_blank&quot;&gt;OpenExchange store&lt;/a&gt; or integrate SDL language products in their organization. Another way to learn develop applications for &lt;a href=&quot;translationzone.com/openexchange/&quot; target=&quot;_blank&quot;&gt;OpenExchange store&lt;/a&gt; is by going to a training. Now I have to say this is not something that happens regularly but if there is enough demand it can be arranged. For example last month we had an opportunity for a one day Studio API training at the &lt;a href=&quot;http://suai.ru/&quot; target=&quot;_blank&quot;&gt;Saint-Petersburg State University Of Aerospace Instrumentation&lt;/a&gt; with students from their language and computer systems faculties and I would like to briefly share with you what we covered.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-a-day&quot;&gt;What a day&lt;/h3&gt;
+
+&lt;p&gt;As a personal opinion I see training’s as a jump-start and eye opener since nobody becomes an expert in one day. In order to become one it requires lots of work, perseverance and patience. Having that said the objective of this training was to familiarize the students with some translation industry concepts, like translation memories, and the Studio API. One really important aspect that I need to mention is that none of them had any previous contacts with the translation industry. Because of this our first part of the training day was focused on showing and explaining SDL Studio together with API. After this first part we had 3 coding sessions in which each of the participant worked on the same &lt;a href=&quot;https://github.com/sdl/Sdl-Community/tree/master/Record%20Source%20TU&quot;&gt;application&lt;/a&gt; on his development machine. In two of the sessions they were following me as I was writing parts of the applications and in the third (last) session they worked in small teams of 3 people to try and implement the final bits.&lt;/p&gt;
+
+&lt;div class=&quot;owl-carousel text-left&quot; data-navigation=&quot;true&quot; data-singleitem=&quot;true&quot; data-autoplay=&quot;true&quot; data-transition=&quot;fade&quot;&gt;
+	&lt;div class=&quot;item dragCursor&quot;&gt;
+		&lt;img src=&quot;/assets/images/posts/studio-api-training-day/1.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;item dragCursor&quot;&gt;
+		&lt;img src=&quot;/assets/images/posts/studio-api-training-day/2.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;item dragCursor&quot;&gt;
+		&lt;img src=&quot;/assets/images/posts/studio-api-training-day/3.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;item dragCursor&quot;&gt;
+		&lt;img src=&quot;/assets/images/posts/studio-api-training-day/4.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;item dragCursor&quot;&gt;
+		&lt;img src=&quot;/assets/images/posts/studio-api-training-day/5.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;img&quot; /&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;saint-petersburg&quot;&gt;Saint Petersburg&lt;/h3&gt;
+
+&lt;p&gt;Well this is not about the training but it was my first time in &lt;a href=&quot;https://www.flickr.com/search/?text=saint%20petersburg&quot;&gt;Saint-Petersburg&lt;/a&gt; and Russia. It’s a really nice town which I highly recommend to visit if you have the chance. People are very nice and there are plenty of &lt;a href=&quot;http://www.tripadvisor.com/Attractions-g298507-Activities-St_Petersburg_Northwestern_District.html&quot;&gt;things to do&lt;/a&gt;. I know I would like to have the chance to go again&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;If you are interested in more details or have any questions please leave a comment.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Translate,Measure,Compete...#YourProductivity</title>
