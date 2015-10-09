@@ -4,13 +4,52 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-10-05T19:18:18+03:00</updated>
+ <updated>2015-10-09T18:42:08+03:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>OpenExchange:Where do I start?</title>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html"/>
+   <updated>2015-10-09T22:00:00+03:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/age-of-developers-where-do-i-start/age-of-developers-where-do-i-start.jpg&quot; alt=&quot;training day&quot; title=&quot;training day&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;This is the 4th part of the &lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html&quot; target=&quot;_blank&quot;&gt;OpenExchange: Age of Developers&lt;/a&gt; series and is meant to provide information about places you can use to learn the API&#39;s to build applications for OpenExchange store.&lt;/p&gt;
+
+&lt;h3 id=&quot;age-of-developers---table-of-contents&quot;&gt;Age of developers - table of contents&lt;/h3&gt;
+
+&lt;p&gt;As I release parts of this series I will update this page with links to the articles.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html&quot;&gt;I’m a translator do I need to write code?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html&quot;&gt;I’m a developer, why bother with translation industry?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html&quot;&gt;Configure OpenExchange development environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;OpenExchange:Where do I start?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;learning-places&quot;&gt;Learning places&lt;/h3&gt;
+
+&lt;p&gt;First of all please make sure you have the development environment configured. If you’re not sure have a look &lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html&quot;&gt;here&lt;/a&gt;. Now lets see the places from where you can get information and help:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.translationzone.com/openexchange/developer/sdk.html&quot;&gt;Developer page&lt;/a&gt; This is the place from where you can browse or download the API’s help. Have a look at the available API’s and based on your needs drill-down to details.
+2.&lt;a href=&quot;https://community.sdl.com/developers/language-developers/&quot;&gt;Language developers community&lt;/a&gt; As you go along with your work and experiments it’s inevitable that you’ll have questions and the best way to answer questions is by discussing them with other people. Some people might already faced the same issues, others can help based on their experience or maybe just see the problem from a different angle. Take advantage of the dedicated language developers community and ask your questions, don’t be afraid nobody will judge or bite.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html&quot;&gt;Age of developers series&lt;/a&gt; This blog series it’s about providing useful information to people looking to develop applications for OpenExchange.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://producthelp.sdl.com/SDK/Installer/4.0/SDLTradosStudio2015SDK.exe?s=220754%7C20150929122123%7C0xc14fa61273cb403b6b17b8063f985709b69a88ee&quot;&gt;SDK Samples&lt;/a&gt; Downloading and installing the SDK is part of the development environment configuration. Besides project templates it also comes with sample projects that you can use for learning or starting a new project.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://sdl.github.io/#language&quot;&gt;Open Source projects&lt;/a&gt; We’ve open sourced more than 10 applications which are published on OpenExchange. This way you can see real code that is in production today, used by translators, reviewers and project managers on a daily basis. You can see real solutions to real problems not just samples. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;final-words&quot;&gt;Final words&lt;/h3&gt;
+
+&lt;p&gt;We’re working to provide more and more materials that help people get engage so please let us know if you have any suggestions and ideas about what kind of materials you consider it will help you.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Studio API Training Day</title>
@@ -114,6 +153,7 @@
   &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html&quot;&gt;I’m a translator do I need to write code?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html&quot;&gt;I’m a developer, why bother with translation industry?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Configure OpenExchange development environment&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/10/05/OpenExchange-age-of-developers-where-do-i-start.html&quot;&gt;OpenExchange:Where do I start?&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;first-things-first&quot;&gt;First things first&lt;/h3&gt;
@@ -165,6 +205,7 @@
   &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html&quot;&gt;I’m a translator do I need to write code?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;I’m a developer, why bother with translation industry?&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html&quot;&gt;Configure OpenExchange development environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/10/05/OpenExchange-age-of-developers-where-do-i-start.html&quot;&gt;OpenExchange:Where do I start?&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;translation-industry&quot;&gt;Translation industry&lt;/h3&gt;
@@ -237,6 +278,7 @@
   &lt;li&gt;I’m a translator do I need to write code?&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html&quot;&gt;I’m a developer, why bother with translation industry?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html&quot;&gt;Configure OpenExchange development environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/10/05/OpenExchange-age-of-developers-where-do-i-start.html&quot;&gt;OpenExchange:Where do I start?&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;im-a-translator-do-i-need-to-write-code&quot;&gt;I’m a translator do I need to write code?&lt;/h3&gt;
@@ -302,6 +344,7 @@
   &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html&quot;&gt;I’m a translator do I need to write code?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html&quot;&gt;I’m a developer, why bother with translation industry?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html&quot;&gt;Configure OpenExchange development environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/10/05/OpenExchange-age-of-developers-where-do-i-start.html&quot;&gt;OpenExchange:Where do I start?&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Please leave a comment if you have any questions.&lt;/p&gt;
