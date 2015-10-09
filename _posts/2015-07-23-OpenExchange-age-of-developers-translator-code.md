@@ -20,7 +20,7 @@ As I release parts of this series I will update this page with links to the arti
 2. I'm a translator do I need to write code?
 3. [I'm a developer, why bother with translation industry?](http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html)
 4. [Configure OpenExchange development environment](http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html)
-5. [OpenExchange:Where do I start?](http://romuluscrisan.com/sdl%20studio/2015/10/05/OpenExchange-age-of-developers-where-do-i-start.html)
+5. [OpenExchange:Where do I start?](http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html)
 
 ### I'm a translator do I need to write code?###
 
