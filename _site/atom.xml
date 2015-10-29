@@ -4,13 +4,66 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-10-09T21:42:40+03:00</updated>
+ <updated>2015-10-29T15:07:35+02:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>GroupShare custom authentication provider</title>
+   <link href="http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider.html"/>
+   <updated>2015-10-29T21:00:00+02:00</updated>
+   <id>http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/groupshare-custom-authentication-provider/groupshare-custom-authentication-provider.png&quot; alt=&quot;GroupShare custom authentication provider&quot; title=&quot;GroupShare custom authentication provider&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;GroupShare is a collaboration platform for translation teams that is helping streamline translation processes, reduce coordination efforts and offer a secure access to all in-house and external resources. I&#39;m not going to get into details about GroupShare but if you want to know more have a look &lt;a href=&quot;http://www.translationzone.com/products/sdl-studio-groupshare/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. Since GroupShare is a collaboration platform it implies that there are ways to create and manage users. Out of the box GroupShare allows 2 types of users to be defined. One is the SDL type for which the username and password is created and stored in the GroupShare database. The second one is Windows type which means that the password is not stored in GroupShare database rather the user will be authenticated against a corporate network that is using Microsoft Active Directory service domain identity or other Windows accounts. While this is good enough in most of the situations there are customers that already have a system where they store users and would like to use that instead of having different users in various systems. To overcome this need GroupShare allows implementation of custom authentication providers.&lt;/p&gt;
+
+&lt;h3 id=&quot;custom-authentication-provider&quot;&gt;Custom authentication provider&lt;/h3&gt;
+
+&lt;p&gt;In order to implement a custom authentication provider you will have to implement a GroupShare plugin. Building such a plugin is very similar experience to building an SDL Studio plugin. Since GroupShare is built using Microsoft .NET you will have to use the Microsoft development platform and to be more specific for GroupShare 2015 you will need to use Microsoft .NET 4.5.2 version. The tool of choice for doing Microsoft .NET development is &lt;a href=&quot;https://www.visualstudio.com/&quot;&gt;Visual Studio&lt;/a&gt;. You can use any flavor of Visual Studio (including the &lt;a href=&quot;https://www.visualstudio.com/products/visual-studio-community-vs&quot;&gt;free community edition&lt;/a&gt;) but since you need to build your plugin for Microsoft .NET 4.5.2 you will have to use Visual Studio 2013 or later. Here are the steps you need to follow to create the plugin:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Using Visual Studio create a new project of type Class Library.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add reference to the following assemblies (both can be found under &lt;code&gt;SDL Server\Application&lt;/code&gt; folder of your GroupShare install location):&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Sdl.Core.PluginFramework.dll&lt;/p&gt;
+
+      &lt;p&gt;Sdl.StudioServer.Api.Core.dll&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add a new class to the project and name it accordingly to your needs.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open the newly created class and decorate it with the attribute &lt;code&gt;CustomAuthenticationProviderExtention&lt;/code&gt;. Also set attribute property &lt;code&gt;CanValidateUserExistance&lt;/code&gt; to true.&lt;/p&gt;
+
+    &lt;p&gt;&lt;code&gt;[CustomAuthenticationProviderExtention(CanValidateUserExistance = true)]&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inherit the newly created class from &lt;code&gt;ICustomAuthenticationProvider&lt;/code&gt;. This will require to create 2 methods in your class &lt;code&gt;UserExists&lt;/code&gt; and &lt;code&gt;ValidateCredentials&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Implemented this 2 new methods with your custom authentication logic.&lt;/li&gt;
+  &lt;li&gt;Add a new xml file to your project with the following naming format &lt;code&gt;{yourcustomname}.plugin.xml&lt;/code&gt;. This is used to describe the plugin you are building and it will be used by GroupShare to load your plugin. The content of your file has to follow a certain structure. You can use the following example to build yours:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script src=&quot;https://gist.github.com/cromica/c8083af5d32caa6cdd63.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;signing&quot;&gt;Signing&lt;/h3&gt;
+
+&lt;p&gt;Before you can deploy your plugin to GroupShare your plugin assembly must be signed. To sign it please send your plugin assembly to &lt;code&gt;app-signing@sdl.com&lt;/code&gt;.  &lt;/p&gt;
+
+&lt;h3 id=&quot;deploy&quot;&gt;Deploy&lt;/h3&gt;
+
+&lt;p&gt;To deploy your plugin you will have to copy the plugin.xml file described at point 7 to the &lt;code&gt;SDL Server\Application\Plugins&lt;/code&gt; folder of your GroupShare install location. Next you need to drop your plugin assembly in the &lt;code&gt;SDL Server\Application&lt;/code&gt; folder. If you have other dependencies to your plugin please copy those also to the &lt;code&gt;SDL Server\Application&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;h3 id=&quot;final-words&quot;&gt;Final words&lt;/h3&gt;
+
+&lt;p&gt;You can find a complete sample implementation of a custom authentication provider &lt;a href=&quot;https://github.com/sdl/Sdl-GroupShare-Custom-Authentication-Provider&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Please let me know if you have any comments or questions.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>OpenExchange:Where do I start?</title>
