@@ -8,7 +8,62 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Fri, 09 Oct 2015 22:00:00 +0300</pubDate>
+    <pubDate>Thu, 29 Oct 2015 21:00:00 +0200</pubDate>
+    <item>
+      <title>GroupShare custom authentication provider</title>
+      <link>http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider.html</link>
+      <description><![CDATA[GroupShare is a collaboration platform for translation teams that is helping streamline translation processes, reduce coordination efforts and offer a secure access to all in-house and external resources. I'm not going to get into details about GroupShare but if you want to know more have a look here. Since GroupShare is a collaboration platform it implies that there are ways to create and manage users. Out of the box GroupShare allows 2 types of users to be defined. One is the SDL type for which the username and password is created and stored in the GroupShare database. The second one is Windows type which means that the password is not stored in GroupShare database rather the user will be authenticated against a corporate network that is using Microsoft Active Directory service domain identity or other Windows accounts. While this is good enough in most of the situations there are customers that already have a system where they store users and would like to use that instead of having different users in various systems. To overcome this need GroupShare allows implementation of custom authentication providers.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider.html#disqus_thread</comments>
+      <pubDate>Thu, 29 Oct 2015 21:00:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/groupshare-custom-authentication-provider/groupshare-custom-authentication-provider.png" alt="GroupShare custom authentication provider" title="GroupShare custom authentication provider" class="img-responsive" /></p>
+
+<p class="dropcap">GroupShare is a collaboration platform for translation teams that is helping streamline translation processes, reduce coordination efforts and offer a secure access to all in-house and external resources. I'm not going to get into details about GroupShare but if you want to know more have a look <a href="http://www.translationzone.com/products/sdl-studio-groupshare/" target="_blank">here</a>. Since GroupShare is a collaboration platform it implies that there are ways to create and manage users. Out of the box GroupShare allows 2 types of users to be defined. One is the SDL type for which the username and password is created and stored in the GroupShare database. The second one is Windows type which means that the password is not stored in GroupShare database rather the user will be authenticated against a corporate network that is using Microsoft Active Directory service domain identity or other Windows accounts. While this is good enough in most of the situations there are customers that already have a system where they store users and would like to use that instead of having different users in various systems. To overcome this need GroupShare allows implementation of custom authentication providers.</p>
+
+<h3 id="custom-authentication-provider">Custom authentication provider</h3>
+
+<p>In order to implement a custom authentication provider you will have to implement a GroupShare plugin. Building such a plugin is very similar experience to building an SDL Studio plugin. Since GroupShare is built using Microsoft .NET you will have to use the Microsoft development platform and to be more specific for GroupShare 2015 you will need to use Microsoft .NET 4.5.2 version. The tool of choice for doing Microsoft .NET development is <a href="https://www.visualstudio.com/">Visual Studio</a>. You can use any flavor of Visual Studio (including the <a href="https://www.visualstudio.com/products/visual-studio-community-vs">free community edition</a>) but since you need to build your plugin for Microsoft .NET 4.5.2 you will have to use Visual Studio 2013 or later. Here are the steps you need to follow to create the plugin:</p>
+
+<ol>
+  <li>Using Visual Studio create a new project of type Class Library.</li>
+  <li>
+    <p>Add reference to the following assemblies (both can be found under <code>SDL Server\Application</code> folder of your GroupShare install location):</p>
+
+    <blockquote>
+      <p>Sdl.Core.PluginFramework.dll</p>
+
+      <p>Sdl.StudioServer.Api.Core.dll</p>
+    </blockquote>
+  </li>
+  <li>Add a new class to the project and name it accordingly to your needs.</li>
+  <li>
+    <p>Open the newly created class and decorate it with the attribute <code>CustomAuthenticationProviderExtention</code>. Also set attribute property <code>CanValidateUserExistance</code> to true.</p>
+
+    <p><code>[CustomAuthenticationProviderExtention(CanValidateUserExistance = true)]</code></p>
+  </li>
+  <li>Inherit the newly created class from <code>ICustomAuthenticationProvider</code>. This will require to create 2 methods in your class <code>UserExists</code> and <code>ValidateCredentials</code>.</li>
+  <li>Implemented this 2 new methods with your custom authentication logic.</li>
+  <li>Add a new xml file to your project with the following naming format <code>{yourcustomname}.plugin.xml</code>. This is used to describe the plugin you are building and it will be used by GroupShare to load your plugin. The content of your file has to follow a certain structure. You can use the following example to build yours:</li>
+</ol>
+
+<script src="https://gist.github.com/cromica/c8083af5d32caa6cdd63.js"></script>
+
+<h3 id="signing">Signing</h3>
+
+<p>Before you can deploy your plugin to GroupShare your plugin assembly must be signed. To sign it please send your plugin assembly to <code>app-signing@sdl.com</code>.  </p>
+
+<h3 id="deploy">Deploy</h3>
+
+<p>To deploy your plugin you will have to copy the plugin.xml file described at point 7 to the <code>SDL Server\Application\Plugins</code> folder of your GroupShare install location. Next you need to drop your plugin assembly in the <code>SDL Server\Application</code> folder. If you have other dependencies to your plugin please copy those also to the <code>SDL Server\Application</code> folder.</p>
+
+<h3 id="final-words">Final words</h3>
+
+<p>You can find a complete sample implementation of a custom authentication provider <a href="https://github.com/sdl/Sdl-GroupShare-Custom-Authentication-Provider">here</a>.</p>
+
+<p>Please let me know if you have any comments or questions.</p>
+]]></content:encoded>
+      <dc:date>2015-10-29T21:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>OpenExchange:Where do I start?</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html</link>
@@ -510,47 +565,6 @@
 ]]></content:encoded>
       <dc:date>2015-05-27T22:00:00+03:00</dc:date>
     </item>
-    <item>
-      <title>Studio plugin versioning</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2015/05/05/Studio%20plugin%20versioning.html</link>
-      <description><![CDATA[SDL Studio 2015 is just around the corner and as a plugin developer there are a few things you should do to make your plugin compatible with this new Studio version. Now with all Studio versions out there some may ask how can I control my plugin versions and how can I make sure my plugin will be used only by the appropriate version of SDL Studio.]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/05/05/Studio%20plugin%20versioning.html#disqus_thread</comments>
-      <pubDate>Tue, 05 May 2015 22:20:00 +0300</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/05/05/Studio%20plugin%20versioning.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/studio-plugin-versioning/version.jpg" alt="Studio plugin versioning" title="Studio plugin versioning" class="img-responsive" /></p>
-
-<p class="dropcap">SDL Studio 2015 is just around the corner and as a plugin developer there are a few things you should do to make your plugin compatible with this new Studio version. You can read more about this here: <a href="https://community.sdl.com/developers/language-developers/w/wiki/647.steps-to-upgrade-your-plugin-for-studio-2015">Steps to upgrade your plugin for Studio 2015</a>. Now with all Studio versions out there some may ask how can I control my plugin versions and how can I make sure my plugin will be used only by the appropriate version of SDL Studio.</p>
-
-<h3 id="plugin-manifest">Plugin manifest</h3>
-
-<p>Every plugin must contain a manifest file that defines a few general information about your plugin. The file is called <em>pluginpackage.manifest.xml</em> and if you open any *.sdlplugin file with and archiving tool, like <a href="http://www.7-zip.org/">7zip</a>, you should be able to see it and open it. Also when you create a new plugin solution in Microsoft Visual Studio this file will be automatically created for you and it will be included in our plugin package (.sdlplugin file). In this file you can add your plugin name, description, author, version, required product and you can <a href="http://romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html">specify additional files to be included in the package</a>.</p>
-
-<h3 id="plugin-versioning">Plugin versioning</h3>
-
-<p>As I highlighted before you can specify a plugin version by using the tag:
-&gt; Version</p>
-
-<p>This is used by SDL Studio to remove previously deployed plugins. For example if you have on your machine a plugin with version 0.1.0.0 if you install a new version like 0.1.1.0 it will automatically remove the unpacked version of the plugin and unpack the newer version. If the version is the same or lower this will not happen hence you will have to do it yourself.</p>
-
-<h3 id="product-versioning">Product versioning</h3>
-
-<p>Besides plugin versioning you can also specify SDL Studio versions that are compatible with your plugin. This can be done using the tag:
-&gt;RequiredProduct</p>
-
-<p>On this tag you can specify in the attribute <em>minversion</em> the lowest SDL Studio version that is compatible with your plugin. For example if you specify a minimum version of <em>10.0</em> this means that your plugin will be compatible with Studio 2011 or higher. If you want to limit your plugin just to a specific SDL Studio version you can also specify a <em>maxversion</em> attribute. So for example if in our case we add a maximum version of <em>10.9</em> this will not be compatible with Studio 2014 or higher and even if it’s copied into the Studio 2014 plugins folder it will be ignored.</p>
-
-<h3 id="universal-plugin-installer">Universal plugin installer</h3>
-
-<p>The universal plugin installer is also using this information to avoid deploying plugins that are not compatible with a specific Studio version. If you are not familiar with the universal plugin installer you can read more here: <a href="https://github.com/sdl/Sdl-plugin-installer">SDL plugin installer</a>.</p>
-
-<h3 id="final-words">Final words</h3>
-
-<p>I recommend to review your manifest file and take advantage of the versioning capabilities. Even if there is no obvious reason at the moment it might prove handy in the future. </p>
-
-<p>Please leave a comment if you have any questions.</p>
-]]></content:encoded>
-      <dc:date>2015-05-05T22:20:00+03:00</dc:date>
-    </item>
-    <dc:date>2015-10-09T22:00:00+03:00</dc:date>
+    <dc:date>2015-10-29T21:00:00+02:00</dc:date>
   </channel>
 </rss>
