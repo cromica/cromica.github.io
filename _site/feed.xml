@@ -8,7 +8,54 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Thu, 29 Oct 2015 21:00:00 +0200</pubDate>
+    <pubDate>Sat, 14 Nov 2015 20:00:00 +0200</pubDate>
+    <item>
+      <title>Setting up build automation for .Net open source projects</title>
+      <link>http://www.romuluscrisan.com/opensource/2015/11/14/setting-up-build-automation-for-net-open-source-projects.html</link>
+      <description><![CDATA[GroupShare is a collaboration platform for translation teams that is helping streamline translation processes, reduce coordination efforts and offer a secure access to all in-house and external resources. I'm not going to get into details about GroupShare but if you want to know more have a look here. Since GroupShare is a collaboration platform it implies that there are ways to create and manage users. Out of the box GroupShare allows 2 types of users to be defined. One is the SDL type for which the username and password is created and stored in the GroupShare database. The second one is Windows type which means that the password is not stored in GroupShare database rather the user will be authenticated against a corporate network that is using Microsoft Active Directory service domain identity or other Windows accounts. While this is good enough in most of the situations there are customers that already have a system where they store users and would like to use that instead of having different users in various systems. To overcome this need GroupShare allows implementation of custom authentication providers.]]></description>
+      <comments>http://www.romuluscrisan.com/opensource/2015/11/14/setting-up-build-automation-for-net-open-source-projects.html#disqus_thread</comments>
+      <pubDate>Sat, 14 Nov 2015 20:00:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/opensource/2015/11/14/setting-up-build-automation-for-net-open-source-projects.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/setting-up-build-automation-net-projects/setting-up-build.jpg" alt="Setting up build automation" title="Setting up build automation" class="img-responsive" /></p>
+
+<p class="dropcap">In the last weeks I worked on a .net client library for <a href="http://www.sdl.com/cxc/language/translation-productivity/studio-groupshare/" target="_blank">SDL Studio GroupShare</a>. This new client library is open source and meant to simplify developers work in terms of consuming resources available in GroupShare, but more about this on a future article. As I was coming closer to make a new release of this library I was thinking that it would make perfect sense to automate the build. There are many reasons to do that but for me the most important one was to have a painless mechanism to verify contribution from other developers. I've setup build automation for a few projects but this was my first attempt to do it for an open source project. While the automation concepts are exactly the same as for any other project the tooling involved is a bit different, especially if you are coming from a Microsoft world.</p>
+
+<h3 id="cloud-hosted-building-automation-for-net">Cloud hosted building automation for .NET</h3>
+
+<p>Open source means that your entire source code is publicly available to everyone interested, if it’s not then what’s the point of having it open source? Being public it probably means that you are hosting your code in places like <a href="https://github.com/">Github</a>, honestly nowadays this is probably your best choice. My choice to host the code for the GroupShare client library was <a href="https://github.com/sdl/groupsharekit.net">Github</a> and based on my previous experience my first idea to setup build automation was to prepare a server somewhere that would be able to grab my code and run the build script. While I could have setup a server pretty easy I immediately step backed since I was having the feeling that this approach doesn’t fit the purpose, somehow this doesn’t fit on the open source world. The reason I was having this feeling is because somebody (me) had to invest time, effort and some money to keep the server run. Also there was no simple option to share this with the other developers interested in using or contributing to the library. So I started doing some research and I found out there are a bunch of cloud hosted services that provide build automation and each of them was integrating nicely with Github. The list is pretty long so I’ll share just a few that I found most interesting and popular among other developers: <a href="https://travis-ci.org/">Travis CI</a>, <a href="https://codeship.com/">Codeship</a> and <a href="https://drone.io/">Drone.io</a>. Awesome, just that none of them had support for Windows environments and my library was .net and I was not using either <a href="http://www.mono-project.com/">Mono</a> or <a href="http://blogs.msdn.com/b/dotnet/archive/2014/12/04/introducing-net-core.aspx">.Net core</a>. So in my mind I was thinking that I should turn my attention to what Microsoft has to offer in terms of build automation since I’m pretty sure they’ll support Windows environments. I knew Microsoft had TFS Build as part of their on-premise enterprise solution and I also knew about their relatively new <a href="https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx">visual studio online</a> offering which should include also build automation. <a href="https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx">Visual studio online</a>  does offer this capability and can also be configured to grab the code from github, more about his <a href="https://msdn.microsoft.com/en-us/Library/vs/alm/Build/github/index?f=255&amp;MSPPError=-2147217396">here</a>. Awesome again, just that this feature is not completely free and unfortunately the pricing model is not simple and friendly to understand. So again I had to continue looking for other options and I finally found <a href="http://www.appveyor.com/">AppVeyor</a> which is completely free for open source projects and it’s supporting Windows environments, actually they market themselves as <code>... Continuous Integration and Deployment tools to every .NET developer ...</code>. It’s pretty obviously that my choice was <a href="https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx">Visual studio online</a> because … errr not. I choose <a href="http://www.appveyor.com/">AppVeyor</a> because of obvious reasons, but it’s a shame that Microsoft doesn’t have a simple free offering for open source projects given the recent strong movement towards open source.     </p>
+
+<h3 id="build-scripting">Build scripting</h3>
+
+<p>At this point I had my source code on <a href="https://github.com/">Github</a> and choose <a href="http://www.appveyor.com/">AppVeyor</a> to run my builds. Linking them together was easy since <a href="http://www.appveyor.com/">AppVeyor</a> allows you to log in with your <a href="https://github.com/">Github</a> credentials and once you authorize <a href="http://www.appveyor.com/">AppVeyor</a> it’s just a matter of choosing the repository for which you want to build. At this point I highly recommend looking to the <a href="http://www.appveyor.com/docs">AppVeyor documentation</a> if you are not familiar with the platform.</p>
+
+<p>After the linking was done <a href="http://www.appveyor.com/">AppVeyor</a> requires that you repository to have <code>appveyor.yml</code> file from which you can configure which build environment, deploy mechanism and build scripts to run. Since in my case the requirements where simple I pretty much left the default configuration. I only specified my build script:</p>
+
+<script src="https://gist.github.com/cromica/03a1ba3d5cf4531f0152.js"></script>
+
+<p>As you can see from my above script I basically run my cmd <a href="https://www.google.ro/search?sourceid=chrome-psyapi2&amp;ion=1&amp;espv=2&amp;ie=UTF-8&amp;q=cmd%20script&amp;oq=cmd%20scri&amp;aqs=chrome.0.0j69i57j0l4.3162j0j7">Windows batch script</a> specifying two different targets one for building my library and one for run a few integration tests. The batch script is a bit more complicated at the first look but is really simple actually. The first step is to use <a href="https://www.nuget.org/">Nuget</a> to install to additional libraries that I need to run the build. First is <a href="http://fsharp.github.io/FAKE/">Fake</a>, more about this in a bit, and the XUnit test runner console that I need to run my integration tests since I’m using XUnit for testing instead of MS Tests.    </p>
+
+<script src="https://gist.github.com/cromica/02318ab4b34c76d19cdb.js"></script>
+
+<p>Creating build automation script is not something that the .Net developer has to do and this is because the wonderful job done for him by Visual Studio. That is slowly changing because of the <a href="https://en.wikipedia.org/wiki/Continuous_integration">CI</a> practice. To build a .net project/solution you need run <a href="https://msdn.microsoft.com/en-us/library/ms171452.aspx">msbuild</a> (this is what Visual Studio does behind the scenes). MSBuild is extensible and you can alter the build process based on your need but the syntax is pretty complicated and verbose (completely written in xml), personally I don’t necessarily like it. Apparently I was not the only who didn’t like working directly with msbuild so the community created libraries to simplify the build process. This type of libraries are using a domain specific language based on a well know programming, like <a href="http://rake.rubyforge.org/">rake</a> using ruby or <a href="http://gruntjs.com/">grunt</a>/<a href="http://gulpjs.com/">gulp</a> using java-script. Any of this libraries can be used to create a .net build script since they have dedicated plugins from msbuild but you’ll have to add a new dependency on your build system. For rake you will have to install ruby and for grunt/gulp you will need <a href="https://nodejs.org/en/">nodejs</a>. Based on the same concept I found 2 other libraries based on .Net programming language which didn’t require additional dependencies. One is named <a href="http://fsharp.github.io/FAKE/">fake</a> using F# and <a href="https://github.com/sakeproject/sake">sake</a> using C#. Initially I was tempted to use sake because I feel much comfortable writing in C# and I’ve seen it’s used by Microsoft in their open source repositories but it’s not well documented so I decided to use fake. I’m not an F# developer so the syntax seems kind of weird to me but it doesn’t matter that much since you only need some basics and you can of course copy from other examples. For the GroupShare client library I ended up with this:</p>
+
+<script src="https://gist.github.com/cromica/57efc7eee344e84cdb8c.js"></script>
+
+<p>Looks a bit scary at first but just walk through it line by line and it will start make sense, especially if you’ve done some work with msbuild. First 23 lines are just setting a bunch of values and then defining some msbuild targets using fake dsl language. Name of the targets are meaningful for what they are doing.</p>
+
+<h3 id="handling-sensitive-data">Handling sensitive data</h3>
+
+<p>In an open source project all your information has to be public including your configuration settings, like api keys, user name or passwords. For example your application might use a mailing platform like <a href="http://www.mailgun.com/">mailigun</a> for which you have your own account which you don’t want to be shared with everyone. In a private project you don’t need to worry to much about this because typically this type of information end up in configuration file that can be accessed only by authorized people. Also you might run some integration tests as part of your build for which you might need some api key’s or credentials. The solution I found for handling sensitive data is to use <a href="https://en.wikipedia.org/wiki/Environment_variable">environment variables</a>. This are easy to configure on your machine, testing machine(s) and all of the build platforms allow configuring environment variables from and administrative panel. </p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>I hope this will give you a much clear picture about options you have in terms of cloud hosted build platforms you can use for your project, especially open source. One thing I have to mention that each of the build platforms have offerings for non open source projects but for those you’ll have to pay.</p>
+
+<p>Please let me know if you have any comments or questions.</p>
+
+<p><em>Picture: <a href="https://flic.kr/p/oYw4LG">Wei-Feng Xue - Night wheel long exposure</a></em></p>
+]]></content:encoded>
+      <dc:date>2015-11-14T20:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>GroupShare custom authentication provider</title>
       <link>http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider.html</link>
@@ -532,39 +579,6 @@
 ]]></content:encoded>
       <dc:date>2015-06-02T22:00:00+03:00</dc:date>
     </item>
-    <item>
-      <title>Playing with SDL Studio settings</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2015/05/27/Playing%20with%20SDL%20Studio%20settings.html</link>
-      <description><![CDATA[SDL Studio is a complex and extendable application witch comes with a few APIs that allows any developer to extend the application in all kind of ways. To be more exact there are 6 APIs you can use to build your application. This degree of complexity and extensibility translates in a huge amount of settings you can play with. The user interface does a great job present them in a meaningful way but that is not the same when you want to develop something in your custom applications and you need to read or update some of the settings.]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/05/27/Playing%20with%20SDL%20Studio%20settings.html#disqus_thread</comments>
-      <pubDate>Wed, 27 May 2015 22:00:00 +0300</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/05/27/Playing%20with%20SDL%20Studio%20settings.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/playing-with-settings/playing-with-settings.png" alt="Playing with SDL Studio settings" title="Playing with SDL Studio settings" class="img-responsive" /></p>
-
-<p class="dropcap">SDL Studio is a complex and extendable application witch comes with a few APIs that allows any developer to extend the application in all kind of ways. To be more exact there are 6 APIs you can use to build your application. This degree of complexity and extensibility translates in a huge amount of settings you can play with. The user interface does a great job presenting them in a meaningful way but that is not the same when you want to develop something in your custom applications and you need to read or update some of the settings.</p>
-
-<h3 id="project-settings">Project Settings</h3>
-
-<p>Lets say you are in a situation where the API is not offering you direct access to the user setting you would like to change, what options you have in this situation? A great amount of settings are store in the project file which in essence it’s an xml file. This mean I could use the standard .NET libraries to parse the project xml file and change what I need. This is completely true and can be done but the problem is knowing the xml structure which for the project file can be pretty complex and hard to understand. To give you an example the project file for a very simple test project is over 1000 lines. Understanding those lines can take some time and patience. Before continuing I want to clarify one thing which is knowing that the SDL Studio project file is not only about user settings it’s much more than that, things that are used internal by Studio so we need to be very careful when we change anything in this file. My recommendation would be to use the <a href="http://producthelp.sdl.com/SDK/Core/3.0/search.html?SearchText=settingsbundle">settings classes</a> exposed by SDL Studio Core API.</p>
-
-<h3 id="settings-bundle-and-group">Settings Bundle and Group</h3>
-
-<p>User settings are stored in hierarchical structure as settings bundles. A bundle is bound to a feature from SDL Studio. For example I can have a settings bundle for project specific settings, another project bundle with settings for language direction, another one for language file and so on. Each bundle will have unique identifier as a GUID value and can have one or multiple child elements in form of settings group. A settings group represent a smaller piece from the bundle feature and can have, as child’s, one or multiple settings. As an example of settings group you can think at specific settings for a file type which is part of the project settings bundle.</p>
-
-<p>With this said the SDL Studio API has <a href="http://producthelp.sdl.com/SDK/Core/3.0/html/9e4ba18c-dab1-bb47-0ce7-a31fb3002ba3.htm">ISettingsBundle</a> interface and a <a href="http://producthelp.sdl.com/SDK/Core/3.0/html/72c76110-8d6c-6315-58d9-dc36b998d14b.htm">SettingsGroup</a> class used to represent the hierarchical structure I explained above. The API doesn’t expose a concrete implementation of <a href="http://producthelp.sdl.com/SDK/Core/3.0/html/9e4ba18c-dab1-bb47-0ce7-a31fb3002ba3.htm">ISettingsBundle</a> so you need to use <a href="http://producthelp.sdl.com/SDK/Core/3.0/html/ae69c32c-3ebe-946f-3e3c-d091278a407f.htm">SettingsUtils</a> class to create an instance of settings bundle.</p>
-
-<h3 id="real-use-case">Real use case</h3>
-
-<p>To clarify the things a bit I want to show you a real use case where you can use the settings classes from the SDL Studio Core API. Let’s say that for a project we want to disable all the global verifiers. This value is kept in the project file and can be changed using .NET xml libraries or using the settings classes I explained in the previous paragraph. Here’s the code required to implement this feature:</p>
-
-<script src="https://gist.github.com/cromica/7299796351f364d93aa5.js"></script>
-
-<p>In this case I obtain the settings group id by instantiating all the global verifiers but you can request the setting group also by just providing the string. </p>
-
-<p>Please leave a comment if you have any questions.</p>
-]]></content:encoded>
-      <dc:date>2015-05-27T22:00:00+03:00</dc:date>
-    </item>
-    <dc:date>2015-10-29T21:00:00+02:00</dc:date>
+    <dc:date>2015-11-14T20:00:00+02:00</dc:date>
   </channel>
 </rss>

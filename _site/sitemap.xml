@@ -2,10 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://www.romuluscrisan.com/</loc>
-    <lastmod>2015-10-29T15:07:35+02:00</lastmod>
+    <lastmod>2015-11-14T14:43:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+    <url>
+      <loc>http://www.romuluscrisan.com/opensource/2015/11/14/setting-up-build-automation-for-net-open-source-projects.html</loc>
+      
+        <lastmod>2015-11-14T20:00:00+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
   
     <url>
       <loc>http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider.html</loc>
@@ -349,7 +362,7 @@
   <url>
     <loc>http://www.romuluscrisan.com/atom.xml</loc>
     
-      <lastmod>2015-10-29T15:07:35+02:00</lastmod>
+      <lastmod>2015-11-14T14:43:06+02:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -414,7 +427,7 @@
   <url>
     <loc>http://www.romuluscrisan.com/sitemap.xml</loc>
     
-      <lastmod>2015-10-29T15:07:35+02:00</lastmod>
+      <lastmod>2015-11-14T14:43:06+02:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -427,7 +440,7 @@
   <url>
     <loc>http://www.romuluscrisan.com//feed.xml</loc>
     
-      <lastmod>2015-10-29T15:07:35+02:00</lastmod>
+      <lastmod>2015-11-14T14:43:06+02:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
