@@ -4,13 +4,54 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-11-14T14:43:06+02:00</updated>
+ <updated>2015-11-19T22:25:49+02:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>Introducing GroupShareKit</title>
+   <link href="http://www.romuluscrisan.com/sdl-groupshare/2015/11/16/introducing-groupsharekit.html"/>
+   <updated>2015-11-16T00:00:00+02:00</updated>
+   <id>http://www.romuluscrisan.com/sdl-groupshare/2015/11/16/introducing-groupsharekit</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/introducing-groupsharekit/introducing-groupsharekit.jpg&quot; alt=&quot;Setting up build automation&quot; title=&quot;Setting up build automation&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;I love small and simple things that help me be more productive with my work. This is the main reasons why some time ago I started to work on &lt;a href=&quot;https://github.com/sdl/groupsharekit.net&quot; target=&quot;_blank&quot;&gt;GroupShareKit&lt;/a&gt; and I&#39;m now happy to say that this is now available for everyone to use it as they like. Not only that you can use it but is completely open source.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-groupsharekit&quot;&gt;What is GroupShareKit?&lt;/h3&gt;
+
+&lt;p&gt;GroupShareKit is a client library targeting .NET 4.5 and above that provides an easy way to interact with &lt;a href=&quot;http://sdldevelopmentpartners.sdlproducts.com/documentation/api&quot;&gt;GroupShare Rest API&lt;/a&gt;. This library will greatly simplify and reduce the work a developer has to do in order to consume resources available in GroupShare by reducing the amount of boilerplate code and configuration that has to be written. This way the developer can focus his time and work on the actual implementation that has to be done.&lt;/p&gt;
+
+&lt;p&gt;Another benefit of this library is that you don’t have to actually understand how rest API’s are working since all this will be completely hidden. If you are not sure what an rest API is please have a look &lt;a href=&quot;http://schoolofdata.org/2013/11/18/web-apis-for-non-programmers/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-do-i-start&quot;&gt;How do I start?&lt;/h3&gt;
+
+&lt;p&gt;Using GroupShareKit library is very simple and it doesn’t require to run any installer, all you have to do is a few clicks inside Microsoft Visual Studio. The first step you need to do is to open the project where you want to use GroupShareKit in Visual Studio. After the project is opened go in the &lt;code&gt;Solution Explorer&lt;/code&gt; area (if you can’t find it just press CTRL+ALT+L inside Visual Studio), then right click on the project &lt;code&gt;References&lt;/code&gt; and select &lt;code&gt;Manage Nuget packages...&lt;/code&gt;(if you can’t see this option have a look &lt;a href=&quot;https://docs.nuget.org/consume/installing-nuget&quot;&gt;here&lt;/a&gt;). This action will open a window where you need to search for &lt;code&gt;GroupShareKit&lt;/code&gt; and once you get the result just click the install button. That’s all, you can start use the GroupShareKit library in your project.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/introducing-groupsharekit/manage-nuget.png&quot; alt=&quot;Manage Nuget&quot; title=&quot;Manage Nuget&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;For more details please have a look &lt;a href=&quot;https://github.com/sdl/groupsharekit.net#groupsharekit---groupshare-rest-api-client-library-for-net-&quot;&gt;here&lt;/a&gt;. If you don’t find an answer don’t hesitate to ask a question on &lt;a href=&quot;https://community.sdl.com/developers/language-developers/&quot;&gt;language developer community&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;contribution&quot;&gt;Contribution&lt;/h3&gt;
+
+&lt;p&gt;GroupShareKit is open source and published under &lt;a href=&quot;https://opensource.org/licenses/MIT&quot;&gt;MIT License&lt;/a&gt; so if you would like to add a new feature or you find a bug please don’t hesitate to use the &lt;a href=&quot;&quot;&gt;issue tracker&lt;/a&gt;. Of course you can do more than that by actually implementing the feature or the fix your looking for. Also you might find issues that are already opened with which you might be able to help. More about that &lt;a href=&quot;https://github.com/sdl/groupsharekit.net/issues&quot;&gt;here&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;If you wonder why should you contribute to open source projects read this &lt;a href=&quot;http://opensource.about.com/od/what-is-open-source/fl/Why-Do-People-Contribute-to-Open-Source-Projects.htm&quot;&gt;article&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;happy-coding&quot;&gt;Happy coding&lt;/h3&gt;
+
+&lt;p&gt;I’m really keen to hear about your experience with the library and what kind of integration you’ve done.&lt;/p&gt;
+
+&lt;p&gt;Please let me know if you have any comments or questions.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Picture: &lt;a href=&quot;https://flic.kr/p/5o9EuF&quot;&gt;BOB008 - Swiss Army Knife&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Setting up build automation for .Net open source projects</title>
@@ -49,7 +90,7 @@
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
-&lt;p&gt;I hope this will give you a much clear picture about options you have in terms of cloud hosted build platforms you can use for your project, especially open source. One thing I have to mention that each of the build platforms have offerings for non open source projects but for those you’ll have to pay.&lt;/p&gt;
+&lt;p&gt;I hope this will give you a much clearer picture about options you have in terms of cloud hosted build platforms you can use for your project, especially open source. One thing I have to mention that each of the build platforms have offerings for non open source projects but for those you’ll have to pay.&lt;/p&gt;
 
 &lt;p&gt;Please let me know if you have any comments or questions.&lt;/p&gt;
 
