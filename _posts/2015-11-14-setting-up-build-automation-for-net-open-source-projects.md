@@ -41,7 +41,7 @@ In an open source project all your information has to be public including your c
 
 ### Conclusion ###
 
-I hope this will give you a much clear picture about options you have in terms of cloud hosted build platforms you can use for your project, especially open source. One thing I have to mention that each of the build platforms have offerings for non open source projects but for those you'll have to pay.
+I hope this will give you a much clearer picture about options you have in terms of cloud hosted build platforms you can use for your project, especially open source. One thing I have to mention that each of the build platforms have offerings for non open source projects but for those you'll have to pay.
 
 Please let me know if you have any comments or questions.
 

@@ -8,7 +8,50 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Sat, 14 Nov 2015 20:00:00 +0200</pubDate>
+    <pubDate>Mon, 16 Nov 2015 00:00:00 +0200</pubDate>
+    <item>
+      <title>Introducing GroupShareKit</title>
+      <link>http://www.romuluscrisan.com/sdl-groupshare/2015/11/16/introducing-groupsharekit.html</link>
+      <description><![CDATA[I love small and simple things that help me be more productive with my work. This is the main reasons why some time ago I started to work on GroupShareKit and I'm now happy to say that this is now available for everyone to use it as they like. Not only that you can use it but is completely open source.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl-groupshare/2015/11/16/introducing-groupsharekit.html#disqus_thread</comments>
+      <pubDate>Mon, 16 Nov 2015 00:00:00 +0200</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl-groupshare/2015/11/16/introducing-groupsharekit.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/introducing-groupsharekit/introducing-groupsharekit.jpg" alt="Setting up build automation" title="Setting up build automation" class="img-responsive" /></p>
+
+<p class="dropcap">I love small and simple things that help me be more productive with my work. This is the main reasons why some time ago I started to work on <a href="https://github.com/sdl/groupsharekit.net" target="_blank">GroupShareKit</a> and I'm now happy to say that this is now available for everyone to use it as they like. Not only that you can use it but is completely open source.</p>
+
+<h3 id="what-is-groupsharekit">What is GroupShareKit?</h3>
+
+<p>GroupShareKit is a client library targeting .NET 4.5 and above that provides an easy way to interact with <a href="http://sdldevelopmentpartners.sdlproducts.com/documentation/api">GroupShare Rest API</a>. This library will greatly simplify and reduce the work a developer has to do in order to consume resources available in GroupShare by reducing the amount of boilerplate code and configuration that has to be written. This way the developer can focus his time and work on the actual implementation that has to be done.</p>
+
+<p>Another benefit of this library is that you don’t have to actually understand how rest API’s are working since all this will be completely hidden. If you are not sure what an rest API is please have a look <a href="http://schoolofdata.org/2013/11/18/web-apis-for-non-programmers/">here</a>.</p>
+
+<h3 id="how-do-i-start">How do I start?</h3>
+
+<p>Using GroupShareKit library is very simple and it doesn’t require to run any installer, all you have to do is a few clicks inside Microsoft Visual Studio. The first step you need to do is to open the project where you want to use GroupShareKit in Visual Studio. After the project is opened go in the <code>Solution Explorer</code> area (if you can’t find it just press CTRL+ALT+L inside Visual Studio), then right click on the project <code>References</code> and select <code>Manage Nuget packages...</code>(if you can’t see this option have a look <a href="https://docs.nuget.org/consume/installing-nuget">here</a>). This action will open a window where you need to search for <code>GroupShareKit</code> and once you get the result just click the install button. That’s all, you can start use the GroupShareKit library in your project.</p>
+
+<p><img src="/assets/images/posts/introducing-groupsharekit/manage-nuget.png" alt="Manage Nuget" title="Manage Nuget" class="img-responsive" /></p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>For more details please have a look <a href="https://github.com/sdl/groupsharekit.net#groupsharekit---groupshare-rest-api-client-library-for-net-">here</a>. If you don’t find an answer don’t hesitate to ask a question on <a href="https://community.sdl.com/developers/language-developers/">language developer community</a>.</p>
+
+<h3 id="contribution">Contribution</h3>
+
+<p>GroupShareKit is open source and published under <a href="https://opensource.org/licenses/MIT">MIT License</a> so if you would like to add a new feature or you find a bug please don’t hesitate to use the <a href="">issue tracker</a>. Of course you can do more than that by actually implementing the feature or the fix your looking for. Also you might find issues that are already opened with which you might be able to help. More about that <a href="https://github.com/sdl/groupsharekit.net/issues">here</a>. </p>
+
+<p>If you wonder why should you contribute to open source projects read this <a href="http://opensource.about.com/od/what-is-open-source/fl/Why-Do-People-Contribute-to-Open-Source-Projects.htm">article</a>.</p>
+
+<h3 id="happy-coding">Happy coding</h3>
+
+<p>I’m really keen to hear about your experience with the library and what kind of integration you’ve done.</p>
+
+<p>Please let me know if you have any comments or questions.</p>
+
+<p><em>Picture: <a href="https://flic.kr/p/5o9EuF">BOB008 - Swiss Army Knife</a></em></p>
+]]></content:encoded>
+      <dc:date>2015-11-16T00:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Setting up build automation for .Net open source projects</title>
       <link>http://www.romuluscrisan.com/opensource/2015/11/14/setting-up-build-automation-for-net-open-source-projects.html</link>
@@ -48,7 +91,7 @@
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p>I hope this will give you a much clear picture about options you have in terms of cloud hosted build platforms you can use for your project, especially open source. One thing I have to mention that each of the build platforms have offerings for non open source projects but for those you’ll have to pay.</p>
+<p>I hope this will give you a much clearer picture about options you have in terms of cloud hosted build platforms you can use for your project, especially open source. One thing I have to mention that each of the build platforms have offerings for non open source projects but for those you’ll have to pay.</p>
 
 <p>Please let me know if you have any comments or questions.</p>
 
@@ -464,121 +507,6 @@
 ]]></content:encoded>
       <dc:date>2015-07-20T13:00:00+03:00</dc:date>
     </item>
-    <item>
-      <title>Integration API enhancements introduced in SDL Studio CU10</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2015/06/02/Integration%20API%20enhancements%20introduced%20in%20SDL%20Studio%20CU10.html</link>
-      <description><![CDATA[Latest SDL Studio update, cumulative update 10, was released on 13th of May and together with this update there a few additions to the integration API. If you want to see the entire list of changes included in this update have a look at the sdl knowledge base. Now lets get down to business and talk about the integration api changes.]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/06/02/Integration%20API%20enhancements%20introduced%20in%20SDL%20Studio%20CU10.html#disqus_thread</comments>
-      <pubDate>Tue, 02 Jun 2015 22:00:00 +0300</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/06/02/Integration%20API%20enhancements%20introduced%20in%20SDL%20Studio%20CU10.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/integration-api-enhancements-cu10/integration-api-enhancements-cu10.jpg" alt="Integration API enhancements introduce in SDL Studio CU10" title="Integration API enhancements introduce in SDL Studio CU10" class="img-responsive" /></p>
-
-<p class="dropcap">Latest SDL Studio update, cumulative update 10, was released on 13th of May and together with this update there a few additions to the integration API. If you want to see the entire list of changes included in this update have a look <a href="http://kb.sdl.com/#tab:homeTab:crumb:7:artId:5375" target="_blank">here</a>. Now lets get down to business and talk about the integration api changes.</p>
-
-<h3 id="table-of-contents">Table of contents</h3>
-
-<p>This is a pretty long post and you might not want to read through the entire article so if you want to read only a specific topic I prepared a jump-list with the topics I cover in this article:</p>
-
-<ol>
-  <li><a href="#segment-translation-on-demand">Segment translation on-demand</a></li>
-  <li><a href="#active-file-properties">Active file properties</a></li>
-  <li><a href="#accessupdate-segment-and-paragraph-unit-properties">Access/update segment and paragraph unit properties</a></li>
-  <li><a href="#crud-operations-on-comments">CRUD operations on comments</a></li>
-  <li><a href="#change-segment-confirmation-level">Change segment confirmation level</a></li>
-  <li><a href="#autosuggest-provider-icon">AutoSuggest provider icon</a></li>
-  <li><a href="#segment-content-ready">Segment Content ready</a></li>
-</ol>
-
-<h3 id="segment-translation-on-demand">Segment translation on-demand</h3>
-
-<p>Segment translation is done by the translation providers that are configured and enabled at the project level. This can happen as a pre-translation step or when the current segment is changed by the user in the user interface. With this new feature added to the integration API a developer is able to request the translation of the current selected segment whenever this is needed. This can be done from the <a href="http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/2a868ca0-831d-4614-9763-2bf928a0f3fb.htm">EditorController</a>. To see this in action you can look at this sample:</p>
-
-<script src="https://gist.github.com/cromica/4676c94c596aa174c4f4.js"></script>
-
-<p>This sample code is take from the <a href="https://github.com/sdl/Sdl-Community/tree/master/Controlled%20Machine%20Translation%20Providers">Controlled Machine Translation Providers</a> plugin.</p>
-
-<h3 id="active-file-properties">Active file properties</h3>
-
-<p>Until now developers were only able to get information about <a href="http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/2b0cadd0-8be7-eea2-f974-bb14bdcb6db8.htm">ActiveFile</a> like statistics, language, project id and so on. There was no way to get information like creation date, change date, metada and so on. This is now possible using <em>ActiveFileProperties</em> property of the <a href="http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/9bb61319-d033-7198-9aee-b29eb5f759e9.htm">Document</a> class. Also an event was added to notify when the active file properties are changed.</p>
-
-<h3 id="accessupdate-segment-and-paragraph-unit-properties">Access/update segment and paragraph unit properties</h3>
-
-<p><strong>Update 23.09.2015</strong> - <em>This feature didn’t make it in Studio 2014 CU10 and it’s available only in Studio 2015</em> </p>
-
-<p>If you needed to make any work around segments the only available option was to use <a href="http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/b4f43e30-8ba6-f2c2-7ea2-883ab83d1d67.htm">ProcessSegmentPairs</a> method from the <a href="http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/9bb61319-d033-7198-9aee-b29eb5f759e9.htm">Document</a> class. Now this can do the trick but it’s not straightforward to use and can be an overhead for simple scenarios, also this method was not providing any way to interact with paragraph units. We’ve now added a couple other options that provide more granularity and flexibility in how a developer is able to process segments. We also added  capabilities to work directly with paragraph units. Here’s the list with the methods available:</p>
-
-<ol>
-  <li><em>GetSegmentPairsFromParagraph</em> - Based on the paragraph id you can obtain the segment pairs of that paragraph</li>
-</ol>
-
-<script src="https://gist.github.com/cromica/92f94e278fe1c41d6a46.js"></script>
-
-<ol>
-  <li><em>UpdateSegmentPair</em> - updates the document with the specified segment pair</li>
-</ol>
-
-<script src="https://gist.github.com/cromica/4182815a61117b5a3dbb.js"></script>
-
-<ol>
-  <li><em>UpdateSegmentPairProperties</em> - updates the document with the specified segment pair properties</li>
-</ol>
-
-<script src="https://gist.github.com/cromica/233216998995c82eaaef.js"></script>
-
-<ol>
-  <li><em>UpdateParagraphProperties</em> - updates the document with the specified paragraph properties</li>
-</ol>
-
-<script src="https://gist.github.com/cromica/c755798e710a09b153aa.js"></script>
-
-<h3 id="crud-operations-on-comments">CRUD operations on comments</h3>
-
-<p>Adding comments was only possible using <a href="https://community.sdl.com/developers/language-developers/f/57/p/3414/12658#12658">Billingual API</a>. While this is fine when you want to do it for your custom file type is not productive to use it when you just want to add comments to your well known file type. To solve this issue the integration api has now specialized methods that allow <a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations for comments. Here’s the list with the methods available: </p>
-
-<ol>
-  <li><em>AddCommentOnSegment</em></li>
-</ol>
-
-<script src="https://gist.github.com/cromica/86234330eb378a3798de.js"></script>
-
-<ol>
-  <li><em>UpdateCommentOnSegment</em></li>
-</ol>
-
-<script src="https://gist.github.com/cromica/5b1931864dcbe16935e1.js"></script>
-
-<ol>
-  <li><em>DeleteCommentOnSegment</em></li>
-</ol>
-
-<script src="https://gist.github.com/cromica/a281d232959dbabe1222.js"></script>
-
-<ol>
-  <li><em>DeleteAllCommentsOnSegment</em></li>
-</ol>
-
-<script src="https://gist.github.com/cromica/363b895641c7443c1bdf.js"></script>
-
-<h3 id="change-segment-confirmation-level">Change segment confirmation level</h3>
-
-<p>Developers are now able to change the segment confirmation level using the integration API and also they can now subscribe to an event that is trigger when the confirmation level is changed.</p>
-
-<script src="https://gist.github.com/cromica/b70a13dd8c08f8882ecb.js"></script>
-
-<h3 id="autosuggest-provider-icon">AutoSuggest provider icon</h3>
-
-<p>Developer can now add custom icons for their AutoSuggest providers.</p>
-
-<script src="https://gist.github.com/cromica/a55d2a6b9cbd848af1b7.js"></script>
-
-<h3 id="segment-content-ready">Segment Content ready</h3>
-
-<p>There are situations where you may want to do some additional work after the translation has been done. To cover this type of situation the event <em>ActiveSegmentContentIsReady</em> was added to the <a href="http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/9bb61319-d033-7198-9aee-b29eb5f759e9.htm">Document</a> class.</p>
-
-<p>Please leave a comment if you have any questions.</p>
-]]></content:encoded>
-      <dc:date>2015-06-02T22:00:00+03:00</dc:date>
-    </item>
-    <dc:date>2015-11-14T20:00:00+02:00</dc:date>
+    <dc:date>2015-11-16T00:00:00+02:00</dc:date>
   </channel>
 </rss>
