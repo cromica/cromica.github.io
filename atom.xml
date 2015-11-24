@@ -4,7 +4,7 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-11-19T22:25:49+02:00</updated>
+ <updated>2015-11-24T16:51:34+02:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
@@ -1052,7 +1052,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;h3 id=&quot;got-it--no-gac-but-we-want-solutions&quot;&gt;Got it … no GAC, but we want solutions!&lt;/h3&gt;
 
-&lt;p&gt;To solve this problem I’ve developed a small library called &lt;strong&gt;Studio AssemblyResolver&lt;/strong&gt;. Basically every time an dll is not found in the current application location the library will look after the dll in the Studio folder. The library comes with 2 mechanism for looking after Studio folder but you can add your own resolve mechanism. If you are interested about more details please have a look &lt;a href=&quot;https://github.com/cromica/Studio-AssemblyResolver&quot;&gt;here&lt;/a&gt;. The library is also published in the &lt;a href=&quot;https://www.nuget.org/packages/Studio.AssemblyResolver/0.1.1&quot;&gt;Nuget package repository&lt;/a&gt; which allows to be easily added to your project.&lt;/p&gt;
+&lt;p&gt;To solve this problem I’ve developed a small library called &lt;strong&gt;Studio AssemblyResolver&lt;/strong&gt;. Basically every time an dll is not found in the current application location the library will look after the dll in the Studio folder. The library comes with 2 mechanism for looking after Studio folder but you can add your own resolve mechanism. If you are interested about more details please have a look &lt;a href=&quot;https://github.com/cromica/Studio-AssemblyResolver&quot;&gt;here&lt;/a&gt;. The library is also published in the &lt;a href=&quot;https://www.nuget.org/packages/Studio.AssemblyResolver&quot;&gt;Nuget package repository&lt;/a&gt; which allows to be easily added to your project.&lt;/p&gt;
 
 &lt;h3 id=&quot;how-to-use-studio-assemblyresolver&quot;&gt;How to use Studio AssemblyResolver&lt;/h3&gt;
 
