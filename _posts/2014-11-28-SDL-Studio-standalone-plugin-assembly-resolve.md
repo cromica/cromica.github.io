@@ -24,7 +24,7 @@ You can read more about why to avoid GAC [here](http://www.sellsbrothers.com/Pos
 
 ### Got it ... no GAC, but we want solutions! ###
 
-To solve this problem I've developed a small library called **Studio AssemblyResolver**. Basically every time an dll is not found in the current application location the library will look after the dll in the Studio folder. The library comes with 2 mechanism for looking after Studio folder but you can add your own resolve mechanism. If you are interested about more details please have a look [here](https://github.com/cromica/Studio-AssemblyResolver). The library is also published in the [Nuget package repository](https://www.nuget.org/packages/Studio.AssemblyResolver/0.1.1) which allows to be easily added to your project.
+To solve this problem I've developed a small library called **Studio AssemblyResolver**. Basically every time an dll is not found in the current application location the library will look after the dll in the Studio folder. The library comes with 2 mechanism for looking after Studio folder but you can add your own resolve mechanism. If you are interested about more details please have a look [here](https://github.com/cromica/Studio-AssemblyResolver). The library is also published in the [Nuget package repository](https://www.nuget.org/packages/Studio.AssemblyResolver) which allows to be easily added to your project.
 
 ### How to use Studio AssemblyResolver ###
 
