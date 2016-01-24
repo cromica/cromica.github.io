@@ -8,14 +8,14 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Mon, 16 Nov 2015 00:00:00 +0200</pubDate>
+    <pubDate>Sun, 15 Nov 2015 22:00:00 +0000</pubDate>
     <item>
       <title>Introducing GroupShareKit</title>
-      <link>http://www.romuluscrisan.com/sdl-groupshare/2015/11/16/introducing-groupsharekit.html</link>
+      <link>http://www.romuluscrisan.com/sdl-groupshare/2015/11/15/introducing-groupsharekit.html</link>
       <description><![CDATA[I love small and simple things that help me be more productive with my work. This is the main reasons why some time ago I started to work on GroupShareKit and I'm now happy to say that this is now available for everyone to use it as they like. Not only that you can use it but is completely open source.]]></description>
-      <comments>http://www.romuluscrisan.com/sdl-groupshare/2015/11/16/introducing-groupsharekit.html#disqus_thread</comments>
-      <pubDate>Mon, 16 Nov 2015 00:00:00 +0200</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl-groupshare/2015/11/16/introducing-groupsharekit.html</guid>
+      <comments>http://www.romuluscrisan.com/sdl-groupshare/2015/11/15/introducing-groupsharekit.html#disqus_thread</comments>
+      <pubDate>Sun, 15 Nov 2015 22:00:00 +0000</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl-groupshare/2015/11/15/introducing-groupsharekit.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/introducing-groupsharekit/introducing-groupsharekit.jpg" alt="Setting up build automation" title="Setting up build automation" class="img-responsive" /></p>
 
 <p class="dropcap">I love small and simple things that help me be more productive with my work. This is the main reasons why some time ago I started to work on <a href="https://github.com/sdl/groupsharekit.net" target="_blank">GroupShareKit</a> and I'm now happy to say that this is now available for everyone to use it as they like. Not only that you can use it but is completely open source.</p>
@@ -38,7 +38,7 @@
 
 <h3 id="contribution">Contribution</h3>
 
-<p>GroupShareKit is open source and published under <a href="https://opensource.org/licenses/MIT">MIT License</a> so if you would like to add a new feature or you find a bug please don’t hesitate to use the <a href="">issue tracker</a>. Of course you can do more than that by actually implementing the feature or the fix your looking for. Also you might find issues that are already opened with which you might be able to help. More about that <a href="https://github.com/sdl/groupsharekit.net/issues">here</a>. </p>
+<p>GroupShareKit is open source and published under <a href="https://opensource.org/licenses/MIT">MIT License</a> so if you would like to add a new feature or you find a bug please don’t hesitate to use the <a href="">issue tracker</a>. Of course you can do more than that by actually implementing the feature or the fix your looking for. Also you might find issues that are already opened with which you might be able to help. More about that <a href="https://github.com/sdl/groupsharekit.net/issues">here</a>.</p>
 
 <p>If you wonder why should you contribute to open source projects read this <a href="http://opensource.about.com/od/what-is-open-source/fl/Why-Do-People-Contribute-to-Open-Source-Projects.htm">article</a>.</p>
 
@@ -50,14 +50,14 @@
 
 <p><em>Picture: <a href="https://flic.kr/p/5o9EuF">BOB008 - Swiss Army Knife</a></em></p>
 ]]></content:encoded>
-      <dc:date>2015-11-16T00:00:00+02:00</dc:date>
+      <dc:date>2015-11-15T22:00:00+00:00</dc:date>
     </item>
     <item>
       <title>Setting up build automation for .Net open source projects</title>
       <link>http://www.romuluscrisan.com/opensource/2015/11/14/setting-up-build-automation-for-net-open-source-projects.html</link>
       <description><![CDATA[GroupShare is a collaboration platform for translation teams that is helping streamline translation processes, reduce coordination efforts and offer a secure access to all in-house and external resources. I'm not going to get into details about GroupShare but if you want to know more have a look here. Since GroupShare is a collaboration platform it implies that there are ways to create and manage users. Out of the box GroupShare allows 2 types of users to be defined. One is the SDL type for which the username and password is created and stored in the GroupShare database. The second one is Windows type which means that the password is not stored in GroupShare database rather the user will be authenticated against a corporate network that is using Microsoft Active Directory service domain identity or other Windows accounts. While this is good enough in most of the situations there are customers that already have a system where they store users and would like to use that instead of having different users in various systems. To overcome this need GroupShare allows implementation of custom authentication providers.]]></description>
       <comments>http://www.romuluscrisan.com/opensource/2015/11/14/setting-up-build-automation-for-net-open-source-projects.html#disqus_thread</comments>
-      <pubDate>Sat, 14 Nov 2015 20:00:00 +0200</pubDate>
+      <pubDate>Sat, 14 Nov 2015 18:00:00 +0000</pubDate>
       <guid>http://www.romuluscrisan.com/opensource/2015/11/14/setting-up-build-automation-for-net-open-source-projects.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/setting-up-build-automation-net-projects/setting-up-build.jpg" alt="Setting up build automation" title="Setting up build automation" class="img-responsive" /></p>
 
@@ -65,7 +65,7 @@
 
 <h3 id="cloud-hosted-building-automation-for-net">Cloud hosted building automation for .NET</h3>
 
-<p>Open source means that your entire source code is publicly available to everyone interested, if it’s not then what’s the point of having it open source? Being public it probably means that you are hosting your code in places like <a href="https://github.com/">Github</a>, honestly nowadays this is probably your best choice. My choice to host the code for the GroupShare client library was <a href="https://github.com/sdl/groupsharekit.net">Github</a> and based on my previous experience my first idea to setup build automation was to prepare a server somewhere that would be able to grab my code and run the build script. While I could have setup a server pretty easy I immediately step backed since I was having the feeling that this approach doesn’t fit the purpose, somehow this doesn’t fit on the open source world. The reason I was having this feeling is because somebody (me) had to invest time, effort and some money to keep the server run. Also there was no simple option to share this with the other developers interested in using or contributing to the library. So I started doing some research and I found out there are a bunch of cloud hosted services that provide build automation and each of them was integrating nicely with Github. The list is pretty long so I’ll share just a few that I found most interesting and popular among other developers: <a href="https://travis-ci.org/">Travis CI</a>, <a href="https://codeship.com/">Codeship</a> and <a href="https://drone.io/">Drone.io</a>. Awesome, just that none of them had support for Windows environments and my library was .net and I was not using either <a href="http://www.mono-project.com/">Mono</a> or <a href="http://blogs.msdn.com/b/dotnet/archive/2014/12/04/introducing-net-core.aspx">.Net core</a>. So in my mind I was thinking that I should turn my attention to what Microsoft has to offer in terms of build automation since I’m pretty sure they’ll support Windows environments. I knew Microsoft had TFS Build as part of their on-premise enterprise solution and I also knew about their relatively new <a href="https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx">visual studio online</a> offering which should include also build automation. <a href="https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx">Visual studio online</a>  does offer this capability and can also be configured to grab the code from github, more about his <a href="https://msdn.microsoft.com/en-us/Library/vs/alm/Build/github/index?f=255&amp;MSPPError=-2147217396">here</a>. Awesome again, just that this feature is not completely free and unfortunately the pricing model is not simple and friendly to understand. So again I had to continue looking for other options and I finally found <a href="http://www.appveyor.com/">AppVeyor</a> which is completely free for open source projects and it’s supporting Windows environments, actually they market themselves as <code>... Continuous Integration and Deployment tools to every .NET developer ...</code>. It’s pretty obviously that my choice was <a href="https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx">Visual studio online</a> because … errr not. I choose <a href="http://www.appveyor.com/">AppVeyor</a> because of obvious reasons, but it’s a shame that Microsoft doesn’t have a simple free offering for open source projects given the recent strong movement towards open source.     </p>
+<p>Open source means that your entire source code is publicly available to everyone interested, if it’s not then what’s the point of having it open source? Being public it probably means that you are hosting your code in places like <a href="https://github.com/">Github</a>, honestly nowadays this is probably your best choice. My choice to host the code for the GroupShare client library was <a href="https://github.com/sdl/groupsharekit.net">Github</a> and based on my previous experience my first idea to setup build automation was to prepare a server somewhere that would be able to grab my code and run the build script. While I could have setup a server pretty easy I immediately step backed since I was having the feeling that this approach doesn’t fit the purpose, somehow this doesn’t fit on the open source world. The reason I was having this feeling is because somebody (me) had to invest time, effort and some money to keep the server run. Also there was no simple option to share this with the other developers interested in using or contributing to the library. So I started doing some research and I found out there are a bunch of cloud hosted services that provide build automation and each of them was integrating nicely with Github. The list is pretty long so I’ll share just a few that I found most interesting and popular among other developers: <a href="https://travis-ci.org/">Travis CI</a>, <a href="https://codeship.com/">Codeship</a> and <a href="https://drone.io/">Drone.io</a>. Awesome, just that none of them had support for Windows environments and my library was .net and I was not using either <a href="http://www.mono-project.com/">Mono</a> or <a href="http://blogs.msdn.com/b/dotnet/archive/2014/12/04/introducing-net-core.aspx">.Net core</a>. So in my mind I was thinking that I should turn my attention to what Microsoft has to offer in terms of build automation since I’m pretty sure they’ll support Windows environments. I knew Microsoft had TFS Build as part of their on-premise enterprise solution and I also knew about their relatively new <a href="https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx">visual studio online</a> offering which should include also build automation. <a href="https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx">Visual studio online</a>  does offer this capability and can also be configured to grab the code from github, more about his <a href="https://msdn.microsoft.com/en-us/Library/vs/alm/Build/github/index?f=255&amp;MSPPError=-2147217396">here</a>. Awesome again, just that this feature is not completely free and unfortunately the pricing model is not simple and friendly to understand. So again I had to continue looking for other options and I finally found <a href="http://www.appveyor.com/">AppVeyor</a> which is completely free for open source projects and it’s supporting Windows environments, actually they market themselves as <code>... Continuous Integration and Deployment tools to every .NET developer ...</code>. It’s pretty obviously that my choice was <a href="https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx">Visual studio online</a> because … errr not. I choose <a href="http://www.appveyor.com/">AppVeyor</a> because of obvious reasons, but it’s a shame that Microsoft doesn’t have a simple free offering for open source projects given the recent strong movement towards open source.</p>
 
 <h3 id="build-scripting">Build scripting</h3>
 
@@ -75,7 +75,7 @@
 
 <script src="https://gist.github.com/cromica/03a1ba3d5cf4531f0152.js"></script>
 
-<p>As you can see from my above script I basically run my cmd <a href="https://www.google.ro/search?sourceid=chrome-psyapi2&amp;ion=1&amp;espv=2&amp;ie=UTF-8&amp;q=cmd%20script&amp;oq=cmd%20scri&amp;aqs=chrome.0.0j69i57j0l4.3162j0j7">Windows batch script</a> specifying two different targets one for building my library and one for run a few integration tests. The batch script is a bit more complicated at the first look but is really simple actually. The first step is to use <a href="https://www.nuget.org/">Nuget</a> to install to additional libraries that I need to run the build. First is <a href="http://fsharp.github.io/FAKE/">Fake</a>, more about this in a bit, and the XUnit test runner console that I need to run my integration tests since I’m using XUnit for testing instead of MS Tests.    </p>
+<p>As you can see from my above script I basically run my cmd <a href="https://www.google.ro/search?sourceid=chrome-psyapi2&amp;ion=1&amp;espv=2&amp;ie=UTF-8&amp;q=cmd%20script&amp;oq=cmd%20scri&amp;aqs=chrome.0.0j69i57j0l4.3162j0j7">Windows batch script</a> specifying two different targets one for building my library and one for run a few integration tests. The batch script is a bit more complicated at the first look but is really simple actually. The first step is to use <a href="https://www.nuget.org/">Nuget</a> to install to additional libraries that I need to run the build. First is <a href="http://fsharp.github.io/FAKE/">Fake</a>, more about this in a bit, and the XUnit test runner console that I need to run my integration tests since I’m using XUnit for testing instead of MS Tests.</p>
 
 <script src="https://gist.github.com/cromica/02318ab4b34c76d19cdb.js"></script>
 
@@ -87,7 +87,7 @@
 
 <h3 id="handling-sensitive-data">Handling sensitive data</h3>
 
-<p>In an open source project all your information has to be public including your configuration settings, like api keys, user name or passwords. For example your application might use a mailing platform like <a href="http://www.mailgun.com/">mailigun</a> for which you have your own account which you don’t want to be shared with everyone. In a private project you don’t need to worry to much about this because typically this type of information end up in configuration file that can be accessed only by authorized people. Also you might run some integration tests as part of your build for which you might need some api key’s or credentials. The solution I found for handling sensitive data is to use <a href="https://en.wikipedia.org/wiki/Environment_variable">environment variables</a>. This are easy to configure on your machine, testing machine(s) and all of the build platforms allow configuring environment variables from and administrative panel. </p>
+<p>In an open source project all your information has to be public including your configuration settings, like api keys, user name or passwords. For example your application might use a mailing platform like <a href="http://www.mailgun.com/">mailigun</a> for which you have your own account which you don’t want to be shared with everyone. In a private project you don’t need to worry to much about this because typically this type of information end up in configuration file that can be accessed only by authorized people. Also you might run some integration tests as part of your build for which you might need some api key’s or credentials. The solution I found for handling sensitive data is to use <a href="https://en.wikipedia.org/wiki/Environment_variable">environment variables</a>. This are easy to configure on your machine, testing machine(s) and all of the build platforms allow configuring environment variables from and administrative panel.</p>
 
 <h3 id="conclusion">Conclusion</h3>
 
@@ -97,14 +97,14 @@
 
 <p><em>Picture: <a href="https://flic.kr/p/oYw4LG">Wei-Feng Xue - Night wheel long exposure</a></em></p>
 ]]></content:encoded>
-      <dc:date>2015-11-14T20:00:00+02:00</dc:date>
+      <dc:date>2015-11-14T18:00:00+00:00</dc:date>
     </item>
     <item>
       <title>GroupShare custom authentication provider</title>
       <link>http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider.html</link>
       <description><![CDATA[GroupShare is a collaboration platform for translation teams that is helping streamline translation processes, reduce coordination efforts and offer a secure access to all in-house and external resources. I'm not going to get into details about GroupShare but if you want to know more have a look here. Since GroupShare is a collaboration platform it implies that there are ways to create and manage users. Out of the box GroupShare allows 2 types of users to be defined. One is the SDL type for which the username and password is created and stored in the GroupShare database. The second one is Windows type which means that the password is not stored in GroupShare database rather the user will be authenticated against a corporate network that is using Microsoft Active Directory service domain identity or other Windows accounts. While this is good enough in most of the situations there are customers that already have a system where they store users and would like to use that instead of having different users in various systems. To overcome this need GroupShare allows implementation of custom authentication providers.]]></description>
       <comments>http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider.html#disqus_thread</comments>
-      <pubDate>Thu, 29 Oct 2015 21:00:00 +0200</pubDate>
+      <pubDate>Thu, 29 Oct 2015 19:00:00 +0000</pubDate>
       <guid>http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/groupshare-custom-authentication-provider/groupshare-custom-authentication-provider.png" alt="GroupShare custom authentication provider" title="GroupShare custom authentication provider" class="img-responsive" /></p>
 
@@ -140,7 +140,7 @@
 
 <h3 id="signing">Signing</h3>
 
-<p>Before you can deploy your plugin to GroupShare your plugin assembly must be signed. To sign it please send your plugin assembly to <code>app-signing@sdl.com</code>.  </p>
+<p>Before you can deploy your plugin to GroupShare your plugin assembly must be signed. To sign it please send your plugin assembly to <code>app-signing@sdl.com</code>.</p>
 
 <h3 id="deploy">Deploy</h3>
 
@@ -152,14 +152,14 @@
 
 <p>Please let me know if you have any comments or questions.</p>
 ]]></content:encoded>
-      <dc:date>2015-10-29T21:00:00+02:00</dc:date>
+      <dc:date>2015-10-29T19:00:00+00:00</dc:date>
     </item>
     <item>
       <title>OpenExchange:Where do I start?</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html</link>
       <description><![CDATA[This is the 4th part of the OpenExchange: Age of Developers series and is meant to provide information about places you can use to learn the API's to build applications for OpenExchange store.]]></description>
       <comments>http://www.romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html#disqus_thread</comments>
-      <pubDate>Fri, 09 Oct 2015 22:00:00 +0300</pubDate>
+      <pubDate>Fri, 09 Oct 2015 19:00:00 +0000</pubDate>
       <guid>http://www.romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-where-do-i-start/age-of-developers-where-do-i-start.jpg" alt="training day" title="training day" class="img-responsive" /></p>
 
@@ -186,21 +186,21 @@
 2.<a href="https://community.sdl.com/developers/language-developers/">Language developers community</a> As you go along with your work and experiments it’s inevitable that you’ll have questions and the best way to answer questions is by discussing them with other people. Some people might already faced the same issues, others can help based on their experience or maybe just see the problem from a different angle. Take advantage of the dedicated language developers community and ask your questions, don’t be afraid nobody will judge or bite.</li>
   <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html">Age of developers series</a> This blog series it’s about providing useful information to people looking to develop applications for OpenExchange.</li>
   <li><a href="http://producthelp.sdl.com/SDK/Installer/4.0/SDLTradosStudio2015SDK.exe?s=220754%7C20150929122123%7C0xc14fa61273cb403b6b17b8063f985709b69a88ee">SDK Samples</a> Downloading and installing the SDK is part of the development environment configuration. Besides project templates it also comes with sample projects that you can use for learning or starting a new project.</li>
-  <li><a href="http://sdl.github.io/#language">Open Source projects</a> We’ve open sourced more than 10 applications which are published on OpenExchange. This way you can see real code that is in production today, used by translators, reviewers and project managers on a daily basis. You can see real solutions to real problems not just samples. </li>
+  <li><a href="http://sdl.github.io/#language">Open Source projects</a> We’ve open sourced more than 10 applications which are published on OpenExchange. This way you can see real code that is in production today, used by translators, reviewers and project managers on a daily basis. You can see real solutions to real problems not just samples.</li>
 </ol>
 
 <h3 id="final-words">Final words</h3>
 
 <p>We’re working to provide more and more materials that help people get engage so please let us know if you have any suggestions and ideas about what kind of materials you consider it will help you.</p>
 ]]></content:encoded>
-      <dc:date>2015-10-09T22:00:00+03:00</dc:date>
+      <dc:date>2015-10-09T19:00:00+00:00</dc:date>
     </item>
     <item>
       <title>Studio API Training Day</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/10/05/Studio%20API%20Training%20Day.html</link>
       <description><![CDATA[By this time some of you are already aware of my Age of Developers initiative. This initiative is meant to help everyone which would like to build applications for OpenExchange store or integrate SDL language products in their organization. Another way to learn develop applications for OpenExchange store is by going to a training. Now I have to say this is not something that happens regularly but if there is enough demand it can be arranged. For example last month we had an opportunity for a one day Studio API training at the Saint-Petersburg State University Of Aerospace Instrumentation with students from their language and computer systems faculties. Let me talk a bit about what was covered in this one day training.]]></description>
       <comments>http://www.romuluscrisan.com/sdl%20studio/2015/10/05/Studio%20API%20Training%20Day.html#disqus_thread</comments>
-      <pubDate>Mon, 05 Oct 2015 22:00:00 +0300</pubDate>
+      <pubDate>Mon, 05 Oct 2015 19:00:00 +0000</pubDate>
       <guid>http://www.romuluscrisan.com/sdl%20studio/2015/10/05/Studio%20API%20Training%20Day.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/studio-api-training-day/studio-api-training-day.jpg" alt="training day" title="training day" class="img-responsive" /></p>
 
@@ -236,14 +236,14 @@
 
 <p>If you are interested in more details or have any questions please leave a comment.</p>
 ]]></content:encoded>
-      <dc:date>2015-10-05T22:00:00+03:00</dc:date>
+      <dc:date>2015-10-05T19:00:00+00:00</dc:date>
     </item>
     <item>
       <title>Translate,Measure,Compete...#YourProductivity</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/08/27/Translate-Measure-Compete-YourProductivity.html</link>
       <description><![CDATA[A few months back during a brainstorm session me an and Paul Filkin where playing with some ideas on how we could help translators improve their productivity. It was clear from the beginning that we need to provide some metrics that will help translators understand how they are performing but we also wanted to make it in a fun way. We ended with a few ideas which we then refined with sales and marketing teams from SDL and started the work. I'm happy to say that you can now see the results on OpenExchange as #YourProductivity application.]]></description>
       <comments>http://www.romuluscrisan.com/sdl%20studio/2015/08/27/Translate-Measure-Compete-YourProductivity.html#disqus_thread</comments>
-      <pubDate>Thu, 27 Aug 2015 22:00:00 +0300</pubDate>
+      <pubDate>Thu, 27 Aug 2015 19:00:00 +0000</pubDate>
       <guid>http://www.romuluscrisan.com/sdl%20studio/2015/08/27/Translate-Measure-Compete-YourProductivity.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/yourproductivity/leaderboard.png" alt="Leaderboard" title="Leaderboard" class="img-responsive" /></p>
 
@@ -271,24 +271,24 @@
 
 <h3 id="leaderboard">Leaderboard</h3>
 
-<p>The leaderboard is a public web application, so you can have a look at it even if you haven’t shared anything on it. Based on the scores on the leaderboard at the end of each month the top 3 positions, along with 4 lucky users selected at random, will receive Amazon gift cards worth up to €150. </p>
+<p>The leaderboard is a public web application, so you can have a look at it even if you haven’t shared anything on it. Based on the scores on the leaderboard at the end of each month the top 3 positions, along with 4 lucky users selected at random, will receive Amazon gift cards worth up to €150.</p>
 
-<p>At the end of each month both the leaderboard and the information you find in the SDL Studio plugin will be cleared so if you didn’t get a chance in the competition this month you can definitely do it next month. </p>
+<p>At the end of each month both the leaderboard and the information you find in the SDL Studio plugin will be cleared so if you didn’t get a chance in the competition this month you can definitely do it next month.</p>
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p>This is the first release of the application, we already have some ideas for the next version but it would be great to get some feedback from you. </p>
+<p>This is the first release of the application, we already have some ideas for the next version but it would be great to get some feedback from you.</p>
 
-<p>If you want to learn more about the app and how it was build you can find me in Amsterdam in the week starting with 14th of September for the <a href="https://community.sdl.com/products-solutions/language/translationproductivity/c/e/102?mkt_tok=3RkMMJWWfF9wsRonvq7KcO%2FhmjTEU5z17%2BgtWaCwhokz2EFye%2BLIHETpodcMT8JlNbzYDBceEJhqyQJxPr3DJNkN1tloRhTgDQ%3D%3D">SDL Open House</a> and <a href="https://community.sdl.com/events/sdl_community_open_sept_2015_amsterdam/c/e/65?mkt_tok=3RkMMJWWfF9wsRonvq7KcO%2FhmjTEU5z17%2BgtWaCwhokz2EFye%2BLIHETpodcMT8JlNbzYDBceEJhqyQJxPr3DJNkN1tloRhTgDQ%3D%3D">Hackathon</a>. </p>
+<p>If you want to learn more about the app and how it was build you can find me in Amsterdam in the week starting with 14th of September for the <a href="https://community.sdl.com/products-solutions/language/translationproductivity/c/e/102?mkt_tok=3RkMMJWWfF9wsRonvq7KcO%2FhmjTEU5z17%2BgtWaCwhokz2EFye%2BLIHETpodcMT8JlNbzYDBceEJhqyQJxPr3DJNkN1tloRhTgDQ%3D%3D">SDL Open House</a> and <a href="https://community.sdl.com/events/sdl_community_open_sept_2015_amsterdam/c/e/65?mkt_tok=3RkMMJWWfF9wsRonvq7KcO%2FhmjTEU5z17%2BgtWaCwhokz2EFye%2BLIHETpodcMT8JlNbzYDBceEJhqyQJxPr3DJNkN1tloRhTgDQ%3D%3D">Hackathon</a>.</p>
 ]]></content:encoded>
-      <dc:date>2015-08-27T22:00:00+03:00</dc:date>
+      <dc:date>2015-08-27T19:00:00+00:00</dc:date>
     </item>
     <item>
       <title>Configure OpenExchange development environment</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html</link>
       <description><![CDATA[This is the third part of the OpenExchange: Age of Developers series and is meant to provide guideline on how to setup the development environment for OpenExchange.]]></description>
       <comments>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html#disqus_thread</comments>
-      <pubDate>Tue, 25 Aug 2015 13:00:00 +0300</pubDate>
+      <pubDate>Tue, 25 Aug 2015 10:00:00 +0000</pubDate>
       <guid>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-build-ox-environment/age-of-developers-build-ox-environment.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
 
@@ -318,7 +318,7 @@
   <li><strong>Microsoft Visual Studio</strong> - For SDL Studio 2014 development you can use any version of Visual Studio starting from Visual Studio 2010 and for SDL Studio 2015 you need to use Visual Studio 2013 or later. I highly recommend to use Visual Studio 2013 or 2015. For this 2 versions you can use the community edition which is completely free and offers the same features like the professional version. More details about it <a href="https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx">here</a>.</li>
 </ol>
 
-<p>There aren’t a lot of things to be installed and configured but it might take some time to install all of them.  </p>
+<p>There aren’t a lot of things to be installed and configured but it might take some time to install all of them.</p>
 
 <h3 id="version-control">Version control</h3>
 
@@ -335,14 +335,14 @@
 
 <p>Please leave a comment if you have any questions.</p>
 ]]></content:encoded>
-      <dc:date>2015-08-25T13:00:00+03:00</dc:date>
+      <dc:date>2015-08-25T10:00:00+00:00</dc:date>
     </item>
     <item>
       <title>I'm a developer, why bother with translation industry?</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html</link>
       <description><![CDATA[This is the second part of the OpenExchange: Age of Developers series and is meant to highlight a few benefits of getting involved in the translation industry as a developer.]]></description>
       <comments>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html#disqus_thread</comments>
-      <pubDate>Wed, 05 Aug 2015 13:00:00 +0300</pubDate>
+      <pubDate>Wed, 05 Aug 2015 10:00:00 +0000</pubDate>
       <guid>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-developer-translation-industry/developer-translation-industry.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
 
@@ -371,7 +371,7 @@
   <li>75% of Facebook users are outside of US</li>
 </ul>
 
-<p>Interesting numbers I must say and they clearly show how relevant this industry is. Now some of you might have heard about <a href="https://en.wikipedia.org/wiki/Machine_translation">machine translation</a> but the translation industry is much more than that. It’s about language localization, interpretation and terminology. </p>
+<p>Interesting numbers I must say and they clearly show how relevant this industry is. Now some of you might have heard about <a href="https://en.wikipedia.org/wiki/Machine_translation">machine translation</a> but the translation industry is much more than that. It’s about language localization, interpretation and terminology.</p>
 
 <h3 id="technology">Technology</h3>
 
@@ -382,14 +382,14 @@
   <li><a href="http://www.translationzone.com/products/translation-memory/#tag1">Translation Memories</a> - this are databases that store segments, which can be sentences, paragraphs, headings, titles or elements, from any filetype, in a list that has been translated. CAT tools rely on translation memories to aid the translator during the translation.</li>
   <li><a href="http://www.translationzone.com/products/terminology-management/#tag1">Termbase</a> - this is a central repository, like a database, which allows translators to systematically manage approved terms.</li>
   <li><a href="http://www.translationzone.com/products/machine-translation/#tag1">Machine translation</a> - this is about automated translation of natural languages. Probably all of you have used <a href="http://www.freetranslation.com/">free translation</a> or <a href="https://translate.google.ro/">google translate</a> which are the great examples of machine translation at work. The examples I’ve given are just end-user products but each platform exposes machine translation capabilities through various api’s as part of a <a href="https://languagecloud.sdl.com/translation-toolkit/api-documentation">cloud offering</a>.</li>
-  <li><a href="https://en.wikipedia.org/wiki/Postediting">Post-editing</a> - this is the process of improving a machine generated translation and typically is done from a CAT tool.  </li>
+  <li><a href="https://en.wikipedia.org/wiki/Postediting">Post-editing</a> - this is the process of improving a machine generated translation and typically is done from a CAT tool.</li>
 </ol>
 
 <h3 id="why-bother">Why bother?</h3>
 
 <p>Now that I’ve given you a brief overview of the translation industry the big question is why should I, as a developer, bother getting into this. I already know desktop, web, mobile and/or cloud technologies and I also have to keep up with the fast pace of technology changes. That might be true but if you really want to be a great specialist it’s not enough just to know some technologies, you need to make them relevant. People expect solutions for their problems from developers and good solutions require industry expertise. If someone asks you to build them an accounting system you don’t need to be an expert accountant but you need to know a few things about accounting. I highly recommend reading the article from John Sonmez “<a href="http://simpleprogrammer.com/2015/04/23/im-not-sure-i-want-to-be-a-specialist/">I’m not sure I want to be a specialist</a>” which emphasizes on specializing as a developer.</p>
 
-<p>Becoming a specialist will help you become a better professional, find interesting job opportunities or even become a freelance developer if this is something you’re looking for. </p>
+<p>Becoming a specialist will help you become a better professional, find interesting job opportunities or even become a freelance developer if this is something you’re looking for.</p>
 
 <p>Specializing in a specific industry makes perfect sense and this why I consider that you as a developer should take into consideration the translation industry.</p>
 
@@ -399,25 +399,25 @@
 
 <ol>
   <li>CAT Tool - SDL’s CAT tool name is <a href="http://www.sdl.com/cxc/language/translation-productivity/trados-studio/">SDL Trados Studio 2015</a> and in order to develop anything on top if it you’ll need a license. In order to get a developer license please create an SDL OpenExchange developer account and then send an email to app-signing@sdl.com and this will be sorted out</li>
-  <li>Machine Translation - SDL’s machine translation cloud solution is named <a href="https://languagecloud.sdl.com/">Language Cloud</a> and you can sign-up for a developer account <a href="https://languagecloud.sdl.com/translation-toolkit/sign-up">here</a>.  </li>
+  <li>Machine Translation - SDL’s machine translation cloud solution is named <a href="https://languagecloud.sdl.com/">Language Cloud</a> and you can sign-up for a developer account <a href="https://languagecloud.sdl.com/translation-toolkit/sign-up">here</a>.</li>
 </ol>
 
-<p>Every new journey might be a bit bumpy in the beginning and you should not hesitate to ask for help. I recommend to register in the <a href="https://community.sdl.com/developers/language-developers/">language developer community</a> and ask for help there. </p>
+<p>Every new journey might be a bit bumpy in the beginning and you should not hesitate to ask for help. I recommend to register in the <a href="https://community.sdl.com/developers/language-developers/">language developer community</a> and ask for help there.</p>
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p>My best advice is to have patience, practice as much as possible and don’t be afraid to ask. I’m sure the results will come sooner or later. Happy coding. </p>
+<p>My best advice is to have patience, practice as much as possible and don’t be afraid to ask. I’m sure the results will come sooner or later. Happy coding.</p>
 
 <p>Please leave a comment if you have any questions.</p>
 ]]></content:encoded>
-      <dc:date>2015-08-05T13:00:00+03:00</dc:date>
+      <dc:date>2015-08-05T10:00:00+00:00</dc:date>
     </item>
     <item>
       <title>I'm a translator do I need to write code?</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html</link>
       <description><![CDATA[This is the first part of the OpenExchange: Age of Developers series. This article is meant to be a short guide for translators who are willing to augment their productivity and ease their day to day work by writing plugins for Sdl Studio, but they don't know from where to start.]]></description>
       <comments>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html#disqus_thread</comments>
-      <pubDate>Mon, 20 Jul 2015 13:00:00 +0300</pubDate>
+      <pubDate>Mon, 20 Jul 2015 10:00:00 +0000</pubDate>
       <guid>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-translator-code/age-of-developers-translator-code.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
 
@@ -464,7 +464,7 @@
   <li><a href="http://www.pluralsight.com/courses/csharp-fundamentals-csharp5">C# Fundamentals with C# 5.0</a> This is a great video which I highly recommend but it’s different to the first two in my list because you have to pay for this service. You do get over 4000 courses of great quality though!</li>
 </ol>
 
-<p>Although watching those videos provides lots of information the best way to really learn is by practice, so I highly suggest you stop the videos and practice what you’ve seen at every opportunity. </p>
+<p>Although watching those videos provides lots of information the best way to really learn is by practice, so I highly suggest you stop the videos and practice what you’ve seen at every opportunity.</p>
 
 <p>If you prefer to learn from books I highly recommend <a href="http://csharpindepth.com/">C# in depth</a> but I would still suggest you supplement the book with some of the above videos.</p>
 
@@ -472,18 +472,18 @@
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p>My best advice is to have patience, practice as much as possible and don’t be afraid to ask. I’m sure the results will come sooner or later. Happy coding. </p>
+<p>My best advice is to have patience, practice as much as possible and don’t be afraid to ask. I’m sure the results will come sooner or later. Happy coding.</p>
 
 <p>Please leave a comment if you have any questions.</p>
 ]]></content:encoded>
-      <dc:date>2015-07-20T13:00:00+03:00</dc:date>
+      <dc:date>2015-07-20T10:00:00+00:00</dc:date>
     </item>
     <item>
       <title>OpenExchange: Age of developers</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html</link>
       <description><![CDATA[OpenExchange was launched a few years back by SDL with the purpose to allow anyone to integrate their solutions or ideas with the SDL Language Platform. This gave everyone freedom to augment the SDL platform according to their needs. Because of this freedom, apps like Glossary Converter, MSWord Grammar Checker and many others where possible. It's pretty obvious that this brings great value to every SDL language platform user, but how about building those apps? From where should I start? I'm a translator do I need to program? I have no idea about the translation industry, what can I do?]]></description>
       <comments>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html#disqus_thread</comments>
-      <pubDate>Mon, 20 Jul 2015 13:00:00 +0300</pubDate>
+      <pubDate>Mon, 20 Jul 2015 10:00:00 +0000</pubDate>
       <guid>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html</guid>
       <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-intro/age-of-developers-intro.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
 
@@ -505,8 +505,8 @@
 
 <p>Please leave a comment if you have any questions.</p>
 ]]></content:encoded>
-      <dc:date>2015-07-20T13:00:00+03:00</dc:date>
+      <dc:date>2015-07-20T10:00:00+00:00</dc:date>
     </item>
-    <dc:date>2015-11-16T00:00:00+02:00</dc:date>
+    <dc:date>2015-11-15T22:00:00+00:00</dc:date>
   </channel>
 </rss>

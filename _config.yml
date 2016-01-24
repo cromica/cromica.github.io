@@ -2,7 +2,7 @@ paginate: 5
 paginate_path: "/blog/page/:num"
 name: Romulus Crisan 
 markdown: kramdown
-exclude: node_modules
+exclude: [node_modules]
 highlighter: pygments
 gems: ['jekyll-lunr-js-search']
 lunr_search:

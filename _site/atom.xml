@@ -4,7 +4,7 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2015-11-24T16:51:34+02:00</updated>
+ <updated>2016-01-24T09:06:17+00:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Introducing GroupShareKit</title>
-   <link href="http://www.romuluscrisan.com/sdl-groupshare/2015/11/16/introducing-groupsharekit.html"/>
-   <updated>2015-11-16T00:00:00+02:00</updated>
-   <id>http://www.romuluscrisan.com/sdl-groupshare/2015/11/16/introducing-groupsharekit</id>
+   <link href="http://www.romuluscrisan.com/sdl-groupshare/2015/11/15/introducing-groupsharekit.html"/>
+   <updated>2015-11-15T22:00:00+00:00</updated>
+   <id>http://www.romuluscrisan.com/sdl-groupshare/2015/11/15/introducing-groupsharekit</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/introducing-groupsharekit/introducing-groupsharekit.jpg&quot; alt=&quot;Setting up build automation&quot; title=&quot;Setting up build automation&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
 &lt;p class=&quot;dropcap&quot;&gt;I love small and simple things that help me be more productive with my work. This is the main reasons why some time ago I started to work on &lt;a href=&quot;https://github.com/sdl/groupsharekit.net&quot; target=&quot;_blank&quot;&gt;GroupShareKit&lt;/a&gt; and I&#39;m now happy to say that this is now available for everyone to use it as they like. Not only that you can use it but is completely open source.&lt;/p&gt;
@@ -39,7 +39,7 @@
 
 &lt;h3 id=&quot;contribution&quot;&gt;Contribution&lt;/h3&gt;
 
-&lt;p&gt;GroupShareKit is open source and published under &lt;a href=&quot;https://opensource.org/licenses/MIT&quot;&gt;MIT License&lt;/a&gt; so if you would like to add a new feature or you find a bug please don’t hesitate to use the &lt;a href=&quot;&quot;&gt;issue tracker&lt;/a&gt;. Of course you can do more than that by actually implementing the feature or the fix your looking for. Also you might find issues that are already opened with which you might be able to help. More about that &lt;a href=&quot;https://github.com/sdl/groupsharekit.net/issues&quot;&gt;here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;GroupShareKit is open source and published under &lt;a href=&quot;https://opensource.org/licenses/MIT&quot;&gt;MIT License&lt;/a&gt; so if you would like to add a new feature or you find a bug please don’t hesitate to use the &lt;a href=&quot;&quot;&gt;issue tracker&lt;/a&gt;. Of course you can do more than that by actually implementing the feature or the fix your looking for. Also you might find issues that are already opened with which you might be able to help. More about that &lt;a href=&quot;https://github.com/sdl/groupsharekit.net/issues&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;If you wonder why should you contribute to open source projects read this &lt;a href=&quot;http://opensource.about.com/od/what-is-open-source/fl/Why-Do-People-Contribute-to-Open-Source-Projects.htm&quot;&gt;article&lt;/a&gt;.&lt;/p&gt;
 
@@ -56,7 +56,7 @@
  <entry>
    <title>Setting up build automation for .Net open source projects</title>
    <link href="http://www.romuluscrisan.com/opensource/2015/11/14/setting-up-build-automation-for-net-open-source-projects.html"/>
-   <updated>2015-11-14T20:00:00+02:00</updated>
+   <updated>2015-11-14T18:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/opensource/2015/11/14/setting-up-build-automation-for-net-open-source-projects</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/setting-up-build-automation-net-projects/setting-up-build.jpg&quot; alt=&quot;Setting up build automation&quot; title=&quot;Setting up build automation&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -64,7 +64,7 @@
 
 &lt;h3 id=&quot;cloud-hosted-building-automation-for-net&quot;&gt;Cloud hosted building automation for .NET&lt;/h3&gt;
 
-&lt;p&gt;Open source means that your entire source code is publicly available to everyone interested, if it’s not then what’s the point of having it open source? Being public it probably means that you are hosting your code in places like &lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt;, honestly nowadays this is probably your best choice. My choice to host the code for the GroupShare client library was &lt;a href=&quot;https://github.com/sdl/groupsharekit.net&quot;&gt;Github&lt;/a&gt; and based on my previous experience my first idea to setup build automation was to prepare a server somewhere that would be able to grab my code and run the build script. While I could have setup a server pretty easy I immediately step backed since I was having the feeling that this approach doesn’t fit the purpose, somehow this doesn’t fit on the open source world. The reason I was having this feeling is because somebody (me) had to invest time, effort and some money to keep the server run. Also there was no simple option to share this with the other developers interested in using or contributing to the library. So I started doing some research and I found out there are a bunch of cloud hosted services that provide build automation and each of them was integrating nicely with Github. The list is pretty long so I’ll share just a few that I found most interesting and popular among other developers: &lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt;, &lt;a href=&quot;https://codeship.com/&quot;&gt;Codeship&lt;/a&gt; and &lt;a href=&quot;https://drone.io/&quot;&gt;Drone.io&lt;/a&gt;. Awesome, just that none of them had support for Windows environments and my library was .net and I was not using either &lt;a href=&quot;http://www.mono-project.com/&quot;&gt;Mono&lt;/a&gt; or &lt;a href=&quot;http://blogs.msdn.com/b/dotnet/archive/2014/12/04/introducing-net-core.aspx&quot;&gt;.Net core&lt;/a&gt;. So in my mind I was thinking that I should turn my attention to what Microsoft has to offer in terms of build automation since I’m pretty sure they’ll support Windows environments. I knew Microsoft had TFS Build as part of their on-premise enterprise solution and I also knew about their relatively new &lt;a href=&quot;https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx&quot;&gt;visual studio online&lt;/a&gt; offering which should include also build automation. &lt;a href=&quot;https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx&quot;&gt;Visual studio online&lt;/a&gt;  does offer this capability and can also be configured to grab the code from github, more about his &lt;a href=&quot;https://msdn.microsoft.com/en-us/Library/vs/alm/Build/github/index?f=255&amp;amp;MSPPError=-2147217396&quot;&gt;here&lt;/a&gt;. Awesome again, just that this feature is not completely free and unfortunately the pricing model is not simple and friendly to understand. So again I had to continue looking for other options and I finally found &lt;a href=&quot;http://www.appveyor.com/&quot;&gt;AppVeyor&lt;/a&gt; which is completely free for open source projects and it’s supporting Windows environments, actually they market themselves as &lt;code&gt;... Continuous Integration and Deployment tools to every .NET developer ...&lt;/code&gt;. It’s pretty obviously that my choice was &lt;a href=&quot;https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx&quot;&gt;Visual studio online&lt;/a&gt; because … errr not. I choose &lt;a href=&quot;http://www.appveyor.com/&quot;&gt;AppVeyor&lt;/a&gt; because of obvious reasons, but it’s a shame that Microsoft doesn’t have a simple free offering for open source projects given the recent strong movement towards open source.     &lt;/p&gt;
+&lt;p&gt;Open source means that your entire source code is publicly available to everyone interested, if it’s not then what’s the point of having it open source? Being public it probably means that you are hosting your code in places like &lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt;, honestly nowadays this is probably your best choice. My choice to host the code for the GroupShare client library was &lt;a href=&quot;https://github.com/sdl/groupsharekit.net&quot;&gt;Github&lt;/a&gt; and based on my previous experience my first idea to setup build automation was to prepare a server somewhere that would be able to grab my code and run the build script. While I could have setup a server pretty easy I immediately step backed since I was having the feeling that this approach doesn’t fit the purpose, somehow this doesn’t fit on the open source world. The reason I was having this feeling is because somebody (me) had to invest time, effort and some money to keep the server run. Also there was no simple option to share this with the other developers interested in using or contributing to the library. So I started doing some research and I found out there are a bunch of cloud hosted services that provide build automation and each of them was integrating nicely with Github. The list is pretty long so I’ll share just a few that I found most interesting and popular among other developers: &lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt;, &lt;a href=&quot;https://codeship.com/&quot;&gt;Codeship&lt;/a&gt; and &lt;a href=&quot;https://drone.io/&quot;&gt;Drone.io&lt;/a&gt;. Awesome, just that none of them had support for Windows environments and my library was .net and I was not using either &lt;a href=&quot;http://www.mono-project.com/&quot;&gt;Mono&lt;/a&gt; or &lt;a href=&quot;http://blogs.msdn.com/b/dotnet/archive/2014/12/04/introducing-net-core.aspx&quot;&gt;.Net core&lt;/a&gt;. So in my mind I was thinking that I should turn my attention to what Microsoft has to offer in terms of build automation since I’m pretty sure they’ll support Windows environments. I knew Microsoft had TFS Build as part of their on-premise enterprise solution and I also knew about their relatively new &lt;a href=&quot;https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx&quot;&gt;visual studio online&lt;/a&gt; offering which should include also build automation. &lt;a href=&quot;https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx&quot;&gt;Visual studio online&lt;/a&gt;  does offer this capability and can also be configured to grab the code from github, more about his &lt;a href=&quot;https://msdn.microsoft.com/en-us/Library/vs/alm/Build/github/index?f=255&amp;amp;MSPPError=-2147217396&quot;&gt;here&lt;/a&gt;. Awesome again, just that this feature is not completely free and unfortunately the pricing model is not simple and friendly to understand. So again I had to continue looking for other options and I finally found &lt;a href=&quot;http://www.appveyor.com/&quot;&gt;AppVeyor&lt;/a&gt; which is completely free for open source projects and it’s supporting Windows environments, actually they market themselves as &lt;code&gt;... Continuous Integration and Deployment tools to every .NET developer ...&lt;/code&gt;. It’s pretty obviously that my choice was &lt;a href=&quot;https://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs.aspx&quot;&gt;Visual studio online&lt;/a&gt; because … errr not. I choose &lt;a href=&quot;http://www.appveyor.com/&quot;&gt;AppVeyor&lt;/a&gt; because of obvious reasons, but it’s a shame that Microsoft doesn’t have a simple free offering for open source projects given the recent strong movement towards open source.&lt;/p&gt;
 
 &lt;h3 id=&quot;build-scripting&quot;&gt;Build scripting&lt;/h3&gt;
 
@@ -74,7 +74,7 @@
 
 &lt;script src=&quot;https://gist.github.com/cromica/03a1ba3d5cf4531f0152.js&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;As you can see from my above script I basically run my cmd &lt;a href=&quot;https://www.google.ro/search?sourceid=chrome-psyapi2&amp;amp;ion=1&amp;amp;espv=2&amp;amp;ie=UTF-8&amp;amp;q=cmd%20script&amp;amp;oq=cmd%20scri&amp;amp;aqs=chrome.0.0j69i57j0l4.3162j0j7&quot;&gt;Windows batch script&lt;/a&gt; specifying two different targets one for building my library and one for run a few integration tests. The batch script is a bit more complicated at the first look but is really simple actually. The first step is to use &lt;a href=&quot;https://www.nuget.org/&quot;&gt;Nuget&lt;/a&gt; to install to additional libraries that I need to run the build. First is &lt;a href=&quot;http://fsharp.github.io/FAKE/&quot;&gt;Fake&lt;/a&gt;, more about this in a bit, and the XUnit test runner console that I need to run my integration tests since I’m using XUnit for testing instead of MS Tests.    &lt;/p&gt;
+&lt;p&gt;As you can see from my above script I basically run my cmd &lt;a href=&quot;https://www.google.ro/search?sourceid=chrome-psyapi2&amp;amp;ion=1&amp;amp;espv=2&amp;amp;ie=UTF-8&amp;amp;q=cmd%20script&amp;amp;oq=cmd%20scri&amp;amp;aqs=chrome.0.0j69i57j0l4.3162j0j7&quot;&gt;Windows batch script&lt;/a&gt; specifying two different targets one for building my library and one for run a few integration tests. The batch script is a bit more complicated at the first look but is really simple actually. The first step is to use &lt;a href=&quot;https://www.nuget.org/&quot;&gt;Nuget&lt;/a&gt; to install to additional libraries that I need to run the build. First is &lt;a href=&quot;http://fsharp.github.io/FAKE/&quot;&gt;Fake&lt;/a&gt;, more about this in a bit, and the XUnit test runner console that I need to run my integration tests since I’m using XUnit for testing instead of MS Tests.&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/cromica/02318ab4b34c76d19cdb.js&quot;&gt;&lt;/script&gt;
 
@@ -86,7 +86,7 @@
 
 &lt;h3 id=&quot;handling-sensitive-data&quot;&gt;Handling sensitive data&lt;/h3&gt;
 
-&lt;p&gt;In an open source project all your information has to be public including your configuration settings, like api keys, user name or passwords. For example your application might use a mailing platform like &lt;a href=&quot;http://www.mailgun.com/&quot;&gt;mailigun&lt;/a&gt; for which you have your own account which you don’t want to be shared with everyone. In a private project you don’t need to worry to much about this because typically this type of information end up in configuration file that can be accessed only by authorized people. Also you might run some integration tests as part of your build for which you might need some api key’s or credentials. The solution I found for handling sensitive data is to use &lt;a href=&quot;https://en.wikipedia.org/wiki/Environment_variable&quot;&gt;environment variables&lt;/a&gt;. This are easy to configure on your machine, testing machine(s) and all of the build platforms allow configuring environment variables from and administrative panel. &lt;/p&gt;
+&lt;p&gt;In an open source project all your information has to be public including your configuration settings, like api keys, user name or passwords. For example your application might use a mailing platform like &lt;a href=&quot;http://www.mailgun.com/&quot;&gt;mailigun&lt;/a&gt; for which you have your own account which you don’t want to be shared with everyone. In a private project you don’t need to worry to much about this because typically this type of information end up in configuration file that can be accessed only by authorized people. Also you might run some integration tests as part of your build for which you might need some api key’s or credentials. The solution I found for handling sensitive data is to use &lt;a href=&quot;https://en.wikipedia.org/wiki/Environment_variable&quot;&gt;environment variables&lt;/a&gt;. This are easy to configure on your machine, testing machine(s) and all of the build platforms allow configuring environment variables from and administrative panel.&lt;/p&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
@@ -101,7 +101,7 @@
  <entry>
    <title>GroupShare custom authentication provider</title>
    <link href="http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider.html"/>
-   <updated>2015-10-29T21:00:00+02:00</updated>
+   <updated>2015-10-29T19:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl-groupshare/2015/10/29/GroupShare-custom-authentication-provider</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/groupshare-custom-authentication-provider/groupshare-custom-authentication-provider.png&quot; alt=&quot;GroupShare custom authentication provider&quot; title=&quot;GroupShare custom authentication provider&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -137,7 +137,7 @@
 
 &lt;h3 id=&quot;signing&quot;&gt;Signing&lt;/h3&gt;
 
-&lt;p&gt;Before you can deploy your plugin to GroupShare your plugin assembly must be signed. To sign it please send your plugin assembly to &lt;code&gt;app-signing@sdl.com&lt;/code&gt;.  &lt;/p&gt;
+&lt;p&gt;Before you can deploy your plugin to GroupShare your plugin assembly must be signed. To sign it please send your plugin assembly to &lt;code&gt;app-signing@sdl.com&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;deploy&quot;&gt;Deploy&lt;/h3&gt;
 
@@ -154,7 +154,7 @@
  <entry>
    <title>OpenExchange:Where do I start?</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html"/>
-   <updated>2015-10-09T22:00:00+03:00</updated>
+   <updated>2015-10-09T19:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/age-of-developers-where-do-i-start/age-of-developers-where-do-i-start.jpg&quot; alt=&quot;training day&quot; title=&quot;training day&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -181,7 +181,7 @@
 2.&lt;a href=&quot;https://community.sdl.com/developers/language-developers/&quot;&gt;Language developers community&lt;/a&gt; As you go along with your work and experiments it’s inevitable that you’ll have questions and the best way to answer questions is by discussing them with other people. Some people might already faced the same issues, others can help based on their experience or maybe just see the problem from a different angle. Take advantage of the dedicated language developers community and ask your questions, don’t be afraid nobody will judge or bite.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html&quot;&gt;Age of developers series&lt;/a&gt; This blog series it’s about providing useful information to people looking to develop applications for OpenExchange.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://producthelp.sdl.com/SDK/Installer/4.0/SDLTradosStudio2015SDK.exe?s=220754%7C20150929122123%7C0xc14fa61273cb403b6b17b8063f985709b69a88ee&quot;&gt;SDK Samples&lt;/a&gt; Downloading and installing the SDK is part of the development environment configuration. Besides project templates it also comes with sample projects that you can use for learning or starting a new project.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://sdl.github.io/#language&quot;&gt;Open Source projects&lt;/a&gt; We’ve open sourced more than 10 applications which are published on OpenExchange. This way you can see real code that is in production today, used by translators, reviewers and project managers on a daily basis. You can see real solutions to real problems not just samples. &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://sdl.github.io/#language&quot;&gt;Open Source projects&lt;/a&gt; We’ve open sourced more than 10 applications which are published on OpenExchange. This way you can see real code that is in production today, used by translators, reviewers and project managers on a daily basis. You can see real solutions to real problems not just samples.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;final-words&quot;&gt;Final words&lt;/h3&gt;
@@ -193,7 +193,7 @@
  <entry>
    <title>Studio API Training Day</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/10/05/Studio%20API%20Training%20Day.html"/>
-   <updated>2015-10-05T22:00:00+03:00</updated>
+   <updated>2015-10-05T19:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/10/05/Studio API Training Day</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/studio-api-training-day/studio-api-training-day.jpg&quot; alt=&quot;training day&quot; title=&quot;training day&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -234,7 +234,7 @@
  <entry>
    <title>Translate,Measure,Compete...#YourProductivity</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/08/27/Translate-Measure-Compete-YourProductivity.html"/>
-   <updated>2015-08-27T22:00:00+03:00</updated>
+   <updated>2015-08-27T19:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/08/27/Translate-Measure-Compete-YourProductivity</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/yourproductivity/leaderboard.png&quot; alt=&quot;Leaderboard&quot; title=&quot;Leaderboard&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -262,22 +262,22 @@
 
 &lt;h3 id=&quot;leaderboard&quot;&gt;Leaderboard&lt;/h3&gt;
 
-&lt;p&gt;The leaderboard is a public web application, so you can have a look at it even if you haven’t shared anything on it. Based on the scores on the leaderboard at the end of each month the top 3 positions, along with 4 lucky users selected at random, will receive Amazon gift cards worth up to €150. &lt;/p&gt;
+&lt;p&gt;The leaderboard is a public web application, so you can have a look at it even if you haven’t shared anything on it. Based on the scores on the leaderboard at the end of each month the top 3 positions, along with 4 lucky users selected at random, will receive Amazon gift cards worth up to €150.&lt;/p&gt;
 
-&lt;p&gt;At the end of each month both the leaderboard and the information you find in the SDL Studio plugin will be cleared so if you didn’t get a chance in the competition this month you can definitely do it next month. &lt;/p&gt;
+&lt;p&gt;At the end of each month both the leaderboard and the information you find in the SDL Studio plugin will be cleared so if you didn’t get a chance in the competition this month you can definitely do it next month.&lt;/p&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
-&lt;p&gt;This is the first release of the application, we already have some ideas for the next version but it would be great to get some feedback from you. &lt;/p&gt;
+&lt;p&gt;This is the first release of the application, we already have some ideas for the next version but it would be great to get some feedback from you.&lt;/p&gt;
 
-&lt;p&gt;If you want to learn more about the app and how it was build you can find me in Amsterdam in the week starting with 14th of September for the &lt;a href=&quot;https://community.sdl.com/products-solutions/language/translationproductivity/c/e/102?mkt_tok=3RkMMJWWfF9wsRonvq7KcO%2FhmjTEU5z17%2BgtWaCwhokz2EFye%2BLIHETpodcMT8JlNbzYDBceEJhqyQJxPr3DJNkN1tloRhTgDQ%3D%3D&quot;&gt;SDL Open House&lt;/a&gt; and &lt;a href=&quot;https://community.sdl.com/events/sdl_community_open_sept_2015_amsterdam/c/e/65?mkt_tok=3RkMMJWWfF9wsRonvq7KcO%2FhmjTEU5z17%2BgtWaCwhokz2EFye%2BLIHETpodcMT8JlNbzYDBceEJhqyQJxPr3DJNkN1tloRhTgDQ%3D%3D&quot;&gt;Hackathon&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;If you want to learn more about the app and how it was build you can find me in Amsterdam in the week starting with 14th of September for the &lt;a href=&quot;https://community.sdl.com/products-solutions/language/translationproductivity/c/e/102?mkt_tok=3RkMMJWWfF9wsRonvq7KcO%2FhmjTEU5z17%2BgtWaCwhokz2EFye%2BLIHETpodcMT8JlNbzYDBceEJhqyQJxPr3DJNkN1tloRhTgDQ%3D%3D&quot;&gt;SDL Open House&lt;/a&gt; and &lt;a href=&quot;https://community.sdl.com/events/sdl_community_open_sept_2015_amsterdam/c/e/65?mkt_tok=3RkMMJWWfF9wsRonvq7KcO%2FhmjTEU5z17%2BgtWaCwhokz2EFye%2BLIHETpodcMT8JlNbzYDBceEJhqyQJxPr3DJNkN1tloRhTgDQ%3D%3D&quot;&gt;Hackathon&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Configure OpenExchange development environment</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html"/>
-   <updated>2015-08-25T13:00:00+03:00</updated>
+   <updated>2015-08-25T10:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/age-of-developers-build-ox-environment/age-of-developers-build-ox-environment.jpg&quot; alt=&quot;Age Of Developers&quot; title=&quot;Age of Developers&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -307,7 +307,7 @@
   &lt;li&gt;&lt;strong&gt;Microsoft Visual Studio&lt;/strong&gt; - For SDL Studio 2014 development you can use any version of Visual Studio starting from Visual Studio 2010 and for SDL Studio 2015 you need to use Visual Studio 2013 or later. I highly recommend to use Visual Studio 2013 or 2015. For this 2 versions you can use the community edition which is completely free and offers the same features like the professional version. More details about it &lt;a href=&quot;https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;There aren’t a lot of things to be installed and configured but it might take some time to install all of them.  &lt;/p&gt;
+&lt;p&gt;There aren’t a lot of things to be installed and configured but it might take some time to install all of them.&lt;/p&gt;
 
 &lt;h3 id=&quot;version-control&quot;&gt;Version control&lt;/h3&gt;
 
@@ -329,7 +329,7 @@
  <entry>
    <title>I'm a developer, why bother with translation industry?</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html"/>
-   <updated>2015-08-05T13:00:00+03:00</updated>
+   <updated>2015-08-05T10:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/age-of-developers-developer-translation-industry/developer-translation-industry.jpg&quot; alt=&quot;Age Of Developers&quot; title=&quot;Age of Developers&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -358,7 +358,7 @@
   &lt;li&gt;75% of Facebook users are outside of US&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Interesting numbers I must say and they clearly show how relevant this industry is. Now some of you might have heard about &lt;a href=&quot;https://en.wikipedia.org/wiki/Machine_translation&quot;&gt;machine translation&lt;/a&gt; but the translation industry is much more than that. It’s about language localization, interpretation and terminology. &lt;/p&gt;
+&lt;p&gt;Interesting numbers I must say and they clearly show how relevant this industry is. Now some of you might have heard about &lt;a href=&quot;https://en.wikipedia.org/wiki/Machine_translation&quot;&gt;machine translation&lt;/a&gt; but the translation industry is much more than that. It’s about language localization, interpretation and terminology.&lt;/p&gt;
 
 &lt;h3 id=&quot;technology&quot;&gt;Technology&lt;/h3&gt;
 
@@ -369,14 +369,14 @@
   &lt;li&gt;&lt;a href=&quot;http://www.translationzone.com/products/translation-memory/#tag1&quot;&gt;Translation Memories&lt;/a&gt; - this are databases that store segments, which can be sentences, paragraphs, headings, titles or elements, from any filetype, in a list that has been translated. CAT tools rely on translation memories to aid the translator during the translation.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.translationzone.com/products/terminology-management/#tag1&quot;&gt;Termbase&lt;/a&gt; - this is a central repository, like a database, which allows translators to systematically manage approved terms.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.translationzone.com/products/machine-translation/#tag1&quot;&gt;Machine translation&lt;/a&gt; - this is about automated translation of natural languages. Probably all of you have used &lt;a href=&quot;http://www.freetranslation.com/&quot;&gt;free translation&lt;/a&gt; or &lt;a href=&quot;https://translate.google.ro/&quot;&gt;google translate&lt;/a&gt; which are the great examples of machine translation at work. The examples I’ve given are just end-user products but each platform exposes machine translation capabilities through various api’s as part of a &lt;a href=&quot;https://languagecloud.sdl.com/translation-toolkit/api-documentation&quot;&gt;cloud offering&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Postediting&quot;&gt;Post-editing&lt;/a&gt; - this is the process of improving a machine generated translation and typically is done from a CAT tool.  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Postediting&quot;&gt;Post-editing&lt;/a&gt; - this is the process of improving a machine generated translation and typically is done from a CAT tool.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;why-bother&quot;&gt;Why bother?&lt;/h3&gt;
 
 &lt;p&gt;Now that I’ve given you a brief overview of the translation industry the big question is why should I, as a developer, bother getting into this. I already know desktop, web, mobile and/or cloud technologies and I also have to keep up with the fast pace of technology changes. That might be true but if you really want to be a great specialist it’s not enough just to know some technologies, you need to make them relevant. People expect solutions for their problems from developers and good solutions require industry expertise. If someone asks you to build them an accounting system you don’t need to be an expert accountant but you need to know a few things about accounting. I highly recommend reading the article from John Sonmez “&lt;a href=&quot;http://simpleprogrammer.com/2015/04/23/im-not-sure-i-want-to-be-a-specialist/&quot;&gt;I’m not sure I want to be a specialist&lt;/a&gt;” which emphasizes on specializing as a developer.&lt;/p&gt;
 
-&lt;p&gt;Becoming a specialist will help you become a better professional, find interesting job opportunities or even become a freelance developer if this is something you’re looking for. &lt;/p&gt;
+&lt;p&gt;Becoming a specialist will help you become a better professional, find interesting job opportunities or even become a freelance developer if this is something you’re looking for.&lt;/p&gt;
 
 &lt;p&gt;Specializing in a specific industry makes perfect sense and this why I consider that you as a developer should take into consideration the translation industry.&lt;/p&gt;
 
@@ -386,14 +386,14 @@
 
 &lt;ol&gt;
   &lt;li&gt;CAT Tool - SDL’s CAT tool name is &lt;a href=&quot;http://www.sdl.com/cxc/language/translation-productivity/trados-studio/&quot;&gt;SDL Trados Studio 2015&lt;/a&gt; and in order to develop anything on top if it you’ll need a license. In order to get a developer license please create an SDL OpenExchange developer account and then send an email to app-signing@sdl.com and this will be sorted out&lt;/li&gt;
-  &lt;li&gt;Machine Translation - SDL’s machine translation cloud solution is named &lt;a href=&quot;https://languagecloud.sdl.com/&quot;&gt;Language Cloud&lt;/a&gt; and you can sign-up for a developer account &lt;a href=&quot;https://languagecloud.sdl.com/translation-toolkit/sign-up&quot;&gt;here&lt;/a&gt;.  &lt;/li&gt;
+  &lt;li&gt;Machine Translation - SDL’s machine translation cloud solution is named &lt;a href=&quot;https://languagecloud.sdl.com/&quot;&gt;Language Cloud&lt;/a&gt; and you can sign-up for a developer account &lt;a href=&quot;https://languagecloud.sdl.com/translation-toolkit/sign-up&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Every new journey might be a bit bumpy in the beginning and you should not hesitate to ask for help. I recommend to register in the &lt;a href=&quot;https://community.sdl.com/developers/language-developers/&quot;&gt;language developer community&lt;/a&gt; and ask for help there. &lt;/p&gt;
+&lt;p&gt;Every new journey might be a bit bumpy in the beginning and you should not hesitate to ask for help. I recommend to register in the &lt;a href=&quot;https://community.sdl.com/developers/language-developers/&quot;&gt;language developer community&lt;/a&gt; and ask for help there.&lt;/p&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
-&lt;p&gt;My best advice is to have patience, practice as much as possible and don’t be afraid to ask. I’m sure the results will come sooner or later. Happy coding. &lt;/p&gt;
+&lt;p&gt;My best advice is to have patience, practice as much as possible and don’t be afraid to ask. I’m sure the results will come sooner or later. Happy coding.&lt;/p&gt;
 
 &lt;p&gt;Please leave a comment if you have any questions.&lt;/p&gt;
 </content>
@@ -402,7 +402,7 @@
  <entry>
    <title>I'm a translator do I need to write code?</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html"/>
-   <updated>2015-07-20T13:00:00+03:00</updated>
+   <updated>2015-07-20T10:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/age-of-developers-translator-code/age-of-developers-translator-code.jpg&quot; alt=&quot;Age Of Developers&quot; title=&quot;Age of Developers&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -449,7 +449,7 @@
   &lt;li&gt;&lt;a href=&quot;http://www.pluralsight.com/courses/csharp-fundamentals-csharp5&quot;&gt;C# Fundamentals with C# 5.0&lt;/a&gt; This is a great video which I highly recommend but it’s different to the first two in my list because you have to pay for this service. You do get over 4000 courses of great quality though!&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Although watching those videos provides lots of information the best way to really learn is by practice, so I highly suggest you stop the videos and practice what you’ve seen at every opportunity. &lt;/p&gt;
+&lt;p&gt;Although watching those videos provides lots of information the best way to really learn is by practice, so I highly suggest you stop the videos and practice what you’ve seen at every opportunity.&lt;/p&gt;
 
 &lt;p&gt;If you prefer to learn from books I highly recommend &lt;a href=&quot;http://csharpindepth.com/&quot;&gt;C# in depth&lt;/a&gt; but I would still suggest you supplement the book with some of the above videos.&lt;/p&gt;
 
@@ -457,7 +457,7 @@
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
-&lt;p&gt;My best advice is to have patience, practice as much as possible and don’t be afraid to ask. I’m sure the results will come sooner or later. Happy coding. &lt;/p&gt;
+&lt;p&gt;My best advice is to have patience, practice as much as possible and don’t be afraid to ask. I’m sure the results will come sooner or later. Happy coding.&lt;/p&gt;
 
 &lt;p&gt;Please leave a comment if you have any questions.&lt;/p&gt;
 </content>
@@ -466,7 +466,7 @@
  <entry>
    <title>OpenExchange: Age of developers</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html"/>
-   <updated>2015-07-20T13:00:00+03:00</updated>
+   <updated>2015-07-20T10:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/age-of-developers-intro/age-of-developers-intro.jpg&quot; alt=&quot;Age Of Developers&quot; title=&quot;Age of Developers&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -493,7 +493,7 @@
  <entry>
    <title>Integration API enhancements introduced in SDL Studio CU10</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/06/02/Integration%20API%20enhancements%20introduced%20in%20SDL%20Studio%20CU10.html"/>
-   <updated>2015-06-02T22:00:00+03:00</updated>
+   <updated>2015-06-02T19:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/06/02/Integration API enhancements introduced in SDL Studio CU10</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/integration-api-enhancements-cu10/integration-api-enhancements-cu10.jpg&quot; alt=&quot;Integration API enhancements introduce in SDL Studio CU10&quot; title=&quot;Integration API enhancements introduce in SDL Studio CU10&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -527,7 +527,7 @@
 
 &lt;h3 id=&quot;accessupdate-segment-and-paragraph-unit-properties&quot;&gt;Access/update segment and paragraph unit properties&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;Update 23.09.2015&lt;/strong&gt; - &lt;em&gt;This feature didn’t make it in Studio 2014 CU10 and it’s available only in Studio 2015&lt;/em&gt; &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update 23.09.2015&lt;/strong&gt; - &lt;em&gt;This feature didn’t make it in Studio 2014 CU10 and it’s available only in Studio 2015&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;If you needed to make any work around segments the only available option was to use &lt;a href=&quot;http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/b4f43e30-8ba6-f2c2-7ea2-883ab83d1d67.htm&quot;&gt;ProcessSegmentPairs&lt;/a&gt; method from the &lt;a href=&quot;http://producthelp.sdl.com/SDK/StudioIntegrationApi/3.0/html/9bb61319-d033-7198-9aee-b29eb5f759e9.htm&quot;&gt;Document&lt;/a&gt; class. Now this can do the trick but it’s not straightforward to use and can be an overhead for simple scenarios, also this method was not providing any way to interact with paragraph units. We’ve now added a couple other options that provide more granularity and flexibility in how a developer is able to process segments. We also added  capabilities to work directly with paragraph units. Here’s the list with the methods available:&lt;/p&gt;
 
@@ -557,7 +557,7 @@
 
 &lt;h3 id=&quot;crud-operations-on-comments&quot;&gt;CRUD operations on comments&lt;/h3&gt;
 
-&lt;p&gt;Adding comments was only possible using &lt;a href=&quot;https://community.sdl.com/developers/language-developers/f/57/p/3414/12658#12658&quot;&gt;Billingual API&lt;/a&gt;. While this is fine when you want to do it for your custom file type is not productive to use it when you just want to add comments to your well known file type. To solve this issue the integration api has now specialized methods that allow &lt;a href=&quot;http://en.wikipedia.org/wiki/Create,_read,_update_and_delete&quot;&gt;CRUD&lt;/a&gt; operations for comments. Here’s the list with the methods available: &lt;/p&gt;
+&lt;p&gt;Adding comments was only possible using &lt;a href=&quot;https://community.sdl.com/developers/language-developers/f/57/p/3414/12658#12658&quot;&gt;Billingual API&lt;/a&gt;. While this is fine when you want to do it for your custom file type is not productive to use it when you just want to add comments to your well known file type. To solve this issue the integration api has now specialized methods that allow &lt;a href=&quot;http://en.wikipedia.org/wiki/Create,_read,_update_and_delete&quot;&gt;CRUD&lt;/a&gt; operations for comments. Here’s the list with the methods available:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;em&gt;AddCommentOnSegment&lt;/em&gt;&lt;/li&gt;
@@ -606,7 +606,7 @@
  <entry>
    <title>Playing with SDL Studio settings</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/05/27/Playing%20with%20SDL%20Studio%20settings.html"/>
-   <updated>2015-05-27T22:00:00+03:00</updated>
+   <updated>2015-05-27T19:00:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/05/27/Playing with SDL Studio settings</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/playing-with-settings/playing-with-settings.png&quot; alt=&quot;Playing with SDL Studio settings&quot; title=&quot;Playing with SDL Studio settings&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -628,7 +628,7 @@
 
 &lt;script src=&quot;https://gist.github.com/cromica/7299796351f364d93aa5.js&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;In this case I obtain the settings group id by instantiating all the global verifiers but you can request the setting group also by just providing the string. &lt;/p&gt;
+&lt;p&gt;In this case I obtain the settings group id by instantiating all the global verifiers but you can request the setting group also by just providing the string.&lt;/p&gt;
 
 &lt;p&gt;Please leave a comment if you have any questions.&lt;/p&gt;
 </content>
@@ -637,7 +637,7 @@
  <entry>
    <title>Studio plugin versioning</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/05/05/Studio%20plugin%20versioning.html"/>
-   <updated>2015-05-05T22:20:00+03:00</updated>
+   <updated>2015-05-05T19:20:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/05/05/Studio plugin versioning</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/studio-plugin-versioning/version.jpg&quot; alt=&quot;Studio plugin versioning&quot; title=&quot;Studio plugin versioning&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -667,7 +667,7 @@
 
 &lt;h3 id=&quot;final-words&quot;&gt;Final words&lt;/h3&gt;
 
-&lt;p&gt;I recommend to review your manifest file and take advantage of the versioning capabilities. Even if there is no obvious reason at the moment it might prove handy in the future. &lt;/p&gt;
+&lt;p&gt;I recommend to review your manifest file and take advantage of the versioning capabilities. Even if there is no obvious reason at the moment it might prove handy in the future.&lt;/p&gt;
 
 &lt;p&gt;Please leave a comment if you have any questions.&lt;/p&gt;
 </content>
@@ -676,7 +676,7 @@
  <entry>
    <title>Code by the book</title>
    <link href="http://www.romuluscrisan.com/career/2015/04/19/Code-by-the-book.html"/>
-   <updated>2015-04-19T22:20:00+03:00</updated>
+   <updated>2015-04-19T19:20:00+00:00</updated>
    <id>http://www.romuluscrisan.com/career/2015/04/19/Code-by-the-book</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/code-by-the-book/books.jpg&quot; alt=&quot;Code by the book&quot; title=&quot;Code by the book&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -689,7 +689,7 @@
 &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882&quot;&gt;Clean Code: A Handbook of Agile Software Craftsmanship&lt;/a&gt;&lt;/strong&gt; by &lt;a href=&quot;http://www.amazon.com/Robert-C.-Martin/e/B000APG87E/ref=dp_byline_cont_book_1&quot;&gt;Robert C. Martin&lt;/a&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;The book is divided into three parts. The first describes the principles, patterns, and practices of writing clean code. The second part consists of several case studies of increasing complexity. Each case study is an exercise in cleaning up code—of transforming a code base that has some problems into one that is sound and efficient. The third part is the payoff: a single chapter containing a list of heuristics and “smells” gathered while creating the case studies. The result is a knowledge base that describes the way we think when we write, read, and clean code. - &lt;a href=&quot;http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882&quot;&gt;Amazon&lt;/a&gt; &lt;/p&gt;
+  &lt;p&gt;The book is divided into three parts. The first describes the principles, patterns, and practices of writing clean code. The second part consists of several case studies of increasing complexity. Each case study is an exercise in cleaning up code—of transforming a code base that has some problems into one that is sound and efficient. The third part is the payoff: a single chapter containing a list of heuristics and “smells” gathered while creating the case studies. The result is a knowledge base that describes the way we think when we write, read, and clean code. - &lt;a href=&quot;http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882&quot;&gt;Amazon&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.amazon.com/The-Clean-Coder-Professional-Programmers/dp/0137081073&quot;&gt;The Clean Coder: A Code of Conduct for Professional Programmers&lt;/a&gt;&lt;/strong&gt; by &lt;a href=&quot;http://www.amazon.com/Robert-C.-Martin/e/B000APG87E/ref=dp_byline_cont_book_1&quot;&gt;Robert C. Martin&lt;/a&gt;&lt;/p&gt;
@@ -794,7 +794,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>Merge files using SDL Studio Project Automation API</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api.html"/>
-   <updated>2015-03-11T21:20:00+02:00</updated>
+   <updated>2015-03-11T19:20:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/03/11/Merge-translatable-files-using-SDL-Studio-Project-automation-api</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/merge-files/merge.jpg&quot; alt=&quot;Click&#39;n&#39;Deploy&quot; title=&quot;Merge files&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -802,7 +802,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;h3 id=&quot;create-merged-project-file&quot;&gt;Create Merged Project File&lt;/h3&gt;
 
-&lt;p&gt;Looking at the documentation you can easily find &lt;a href=&quot;http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/8c0d6583-c31c-365b-0819-ff19e18e1f5e.htm&quot;&gt;CreateMergedProjectFile&lt;/a&gt; method which allows you to specify the files you want to be merged and the name of the bilingual file which must have “.sdlxliff” extension. At this point this seems to be very simple but when you run this method you realize that is not actually doing much, there is no visible result on the project and the status is &lt;em&gt;Not Merged&lt;/em&gt;. &lt;/p&gt;
+&lt;p&gt;Looking at the documentation you can easily find &lt;a href=&quot;http://producthelp.sdl.com/SDK/ProjectAutomationApi/3.0/html/8c0d6583-c31c-365b-0819-ff19e18e1f5e.htm&quot;&gt;CreateMergedProjectFile&lt;/a&gt; method which allows you to specify the files you want to be merged and the name of the bilingual file which must have “.sdlxliff” extension. At this point this seems to be very simple but when you run this method you realize that is not actually doing much, there is no visible result on the project and the status is &lt;em&gt;Not Merged&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;what-am-i-missing&quot;&gt;What am I missing?&lt;/h3&gt;
 
@@ -812,7 +812,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
-&lt;p&gt;It’s not that complicated to merge files using the SDL Studio API but is not obvious and intuitive. I hope this article will clarify this situation. &lt;/p&gt;
+&lt;p&gt;It’s not that complicated to merge files using the SDL Studio API but is not obvious and intuitive. I hope this article will clarify this situation.&lt;/p&gt;
 
 &lt;p&gt;Please leave a comment if you have any questions or feedback.&lt;/p&gt;
 </content>
@@ -821,7 +821,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>Sdl Studio PowerShell toolkit is now open source</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source.html"/>
-   <updated>2015-02-18T21:20:00+02:00</updated>
+   <updated>2015-02-18T19:20:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/02/18/Sdl-Studio-PowerShell-toolkit-open-source</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/studio-powershell-toolkit/open-source.png&quot; alt=&quot;Click&#39;n&#39;Deploy&quot; title=&quot;Click&#39;n&#39;Deploy&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -829,9 +829,9 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;h3 id=&quot;github&quot;&gt;Github&lt;/h3&gt;
 
-&lt;p&gt;The project is now hosted on github in this &lt;a href=&quot;https://github.com/sdl/Sdl-studio-powershell-toolkit&quot;&gt;location&lt;/a&gt;. The internal TFS will no longer be used so this means that every change that will be made to the toolkit will be made on this repository including changes done by Sdl developers. Also this allows any interested developer to contribute to the toolkit. &lt;/p&gt;
+&lt;p&gt;The project is now hosted on github in this &lt;a href=&quot;https://github.com/sdl/Sdl-studio-powershell-toolkit&quot;&gt;location&lt;/a&gt;. The internal TFS will no longer be used so this means that every change that will be made to the toolkit will be made on this repository including changes done by Sdl developers. Also this allows any interested developer to contribute to the toolkit.&lt;/p&gt;
 
-&lt;p&gt;Public releases are also hosted on github and you can be find them &lt;a href=&quot;https://github.com/sdl/Sdl-studio-powershell-toolkit/releases/&quot;&gt;here&lt;/a&gt;. You are now able to download the entire toolkit or just one of the modules. &lt;/p&gt;
+&lt;p&gt;Public releases are also hosted on github and you can be find them &lt;a href=&quot;https://github.com/sdl/Sdl-studio-powershell-toolkit/releases/&quot;&gt;here&lt;/a&gt;. You are now able to download the entire toolkit or just one of the modules.&lt;/p&gt;
 
 &lt;h3 id=&quot;open-source&quot;&gt;Open source&lt;/h3&gt;
 
@@ -841,7 +841,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
-&lt;p&gt;Contribute to Sdl Studio PowerShell toolkit from &lt;a href=&quot;https://github.com/sdl/Sdl-studio-powershell-toolkit&quot;&gt;here&lt;/a&gt; or download the latest release from &lt;a href=&quot;https://github.com/sdl/Sdl-studio-powershell-toolkit/releases/tag/1.0.0.0&quot;&gt;here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Contribute to Sdl Studio PowerShell toolkit from &lt;a href=&quot;https://github.com/sdl/Sdl-studio-powershell-toolkit&quot;&gt;here&lt;/a&gt; or download the latest release from &lt;a href=&quot;https://github.com/sdl/Sdl-studio-powershell-toolkit/releases/tag/1.0.0.0&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Please leave a comment if you have any questions or feedback.&lt;/p&gt;
 </content>
@@ -849,24 +849,24 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  
  <entry>
    <title>Click'n'Deploy Studio plugins</title>
-   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy%20Studio%20plugins.html"/>
-   <updated>2015-02-13T01:20:00+02:00</updated>
-   <id>http://www.romuluscrisan.com/sdl%20studio/2015/02/13/Click-n-deploy Studio plugins</id>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2015/02/12/Click-n-deploy%20Studio%20plugins.html"/>
+   <updated>2015-02-12T23:20:00+00:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2015/02/12/Click-n-deploy Studio plugins</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/cromica/clickn-deploy&quot; taget=&quot;_blank&quot;&gt;&lt;img src=&quot;/assets/images/posts//click-n-deploy/click-n-deploy.png&quot; alt=&quot;Click&#39;n&#39;Deploy&quot; title=&quot;Click&#39;n&#39;Deploy&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p class=&quot;dropcap&quot;&gt;App stores changed the way we install and maintain software on our devices. You now have a single centralized place where you go and search for what you need, click a button and in a matter of minutes you have the app working on your device. In a similar way you can extend SDL Studio by going on &lt;a href=&quot;http://www.translationzone.com/openexchange/&quot;&gt;OpenExchange&lt;/a&gt; store and download a plugin you would like or need. Now this works just fine for most of the Studio plugins or apps but there are situations when you need to develop something that is specific for your company and doesn&#39;t make sense to be public to everyone since it&#39;s probably irrelevant for them and it might also contain confidential information. It would be nice if you would be able to create your private store inside &lt;a href=&quot;http://www.translationzone.com/openexchange/&quot;&gt;OpenExchange&lt;/a&gt; where you can have you apps centralized and search-able just by you  but such a feature is not available at the moment. This article and video is about an alternate solution for this type of scenarios.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-solution&quot;&gt;The solution&lt;/h3&gt;
 
-&lt;p&gt;The solution is very simple and is based on the idea to automate as much as possible the process of releasing you plugin. The exact same thing is promoted by &lt;a href=&quot;http://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;Continuous Delivery&lt;/a&gt;  practice and together with the evolution of this a couple of release management tools like &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; or &lt;a href=&quot;http://www.thoughtworks.com/products/go-continuous-delivery&quot;&gt;GO&lt;/a&gt; appeared in order to ease the adoption of such a practice. In our case since Studio plugins are developed using &lt;a href=&quot;http://www.microsoft.com/net&quot;&gt;Microsoft .Net&lt;/a&gt; and it makes perfect sense to use &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; since is dedicated for .Net solutions. Of course you can try and use &lt;a href=&quot;http://www.thoughtworks.com/products/go-continuous-delivery&quot;&gt;GO&lt;/a&gt; or any other release management tool you prefer. If it’s not clear by now the solution I’m talking about is to automate your Studio plugin release management using &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt;.   &lt;/p&gt;
+&lt;p&gt;The solution is very simple and is based on the idea to automate as much as possible the process of releasing you plugin. The exact same thing is promoted by &lt;a href=&quot;http://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;Continuous Delivery&lt;/a&gt;  practice and together with the evolution of this a couple of release management tools like &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; or &lt;a href=&quot;http://www.thoughtworks.com/products/go-continuous-delivery&quot;&gt;GO&lt;/a&gt; appeared in order to ease the adoption of such a practice. In our case since Studio plugins are developed using &lt;a href=&quot;http://www.microsoft.com/net&quot;&gt;Microsoft .Net&lt;/a&gt; and it makes perfect sense to use &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; since is dedicated for .Net solutions. Of course you can try and use &lt;a href=&quot;http://www.thoughtworks.com/products/go-continuous-delivery&quot;&gt;GO&lt;/a&gt; or any other release management tool you prefer. If it’s not clear by now the solution I’m talking about is to automate your Studio plugin release management using &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;octopus-deploy&quot;&gt;Octopus Deploy&lt;/h3&gt;
 
-&lt;p&gt;I’m not going to cover in detail &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; since it comes with a very good documentation, rather I’m going to present a higher level overview of how is going to work with Studio plugins. Octopus comes with a central server component which is called &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Octopus&quot;&gt;Octopus Deploy Server&lt;/a&gt; that you need to install somewhere where all your users machines will be able to access it. It can be an internal private server, a public server or somewhere in a cloud platform, there is no limitation as long as it’s accessible. &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Octopus&quot;&gt;Octopus Deploy Server&lt;/a&gt; comes with web user interface which you can use once you have the server installed. Besides the server component Octopus comes with a client component called &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Tentacles&quot;&gt;Tentacle Deploy agent&lt;/a&gt;. This has to be installed on each user machine and it will be used to deploy your software, in our case the Studio plugins. This is a one time operation and once it’s done you will only use the web user interface that comes with the server. There is a third component called &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Using+OctoPack&quot;&gt;OctoPack&lt;/a&gt; that is used to push the software/Studio plugin from you development or build machine to &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Octopus&quot;&gt;Octopus Deploy Server&lt;/a&gt;.  &lt;/p&gt;
+&lt;p&gt;I’m not going to cover in detail &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; since it comes with a very good documentation, rather I’m going to present a higher level overview of how is going to work with Studio plugins. Octopus comes with a central server component which is called &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Octopus&quot;&gt;Octopus Deploy Server&lt;/a&gt; that you need to install somewhere where all your users machines will be able to access it. It can be an internal private server, a public server or somewhere in a cloud platform, there is no limitation as long as it’s accessible. &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Octopus&quot;&gt;Octopus Deploy Server&lt;/a&gt; comes with web user interface which you can use once you have the server installed. Besides the server component Octopus comes with a client component called &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Tentacles&quot;&gt;Tentacle Deploy agent&lt;/a&gt;. This has to be installed on each user machine and it will be used to deploy your software, in our case the Studio plugins. This is a one time operation and once it’s done you will only use the web user interface that comes with the server. There is a third component called &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Using+OctoPack&quot;&gt;OctoPack&lt;/a&gt; that is used to push the software/Studio plugin from you development or build machine to &lt;a href=&quot;http://docs.octopusdeploy.com/display/OD/Installing+Octopus&quot;&gt;Octopus Deploy Server&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;clickndeploy-studio-plugins&quot;&gt;Click’n’Deploy Studio plugins&lt;/h3&gt;
 
-&lt;p&gt;There are quit a few moving parts when you first setup &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; and some of the steps might not that obvious so instead off writing them in this article I decided that it would be better if just create a video to show you exactly how you configure Octopus to release Studio plugins to the user machine. &lt;/p&gt;
+&lt;p&gt;There are quit a few moving parts when you first setup &lt;a href=&quot;https://octopusdeploy.com/&quot;&gt;Octopus Deploy&lt;/a&gt; and some of the steps might not that obvious so instead off writing them in this article I decided that it would be better if just create a video to show you exactly how you configure Octopus to release Studio plugins to the user machine.&lt;/p&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mMDnY73D1x8&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
@@ -900,7 +900,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>How to access segment tags using Studio File Type Framework</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html"/>
-   <updated>2015-01-06T18:20:00+02:00</updated>
+   <updated>2015-01-06T16:20:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2015/01/06/How to access segment tags using Studio File Type Framework </id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/segmentTags/segments.png&quot; alt=&quot;Assembly Resolver&quot; title=&quot;Assembly Resolver&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -910,7 +910,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;p&gt;Before jumping into the problem I recommend you to get familiarized with the visitor pattern since this is used as part of the Studio File Type Framework and you will need apply it in order to get the tags. To get familiarized you can read the theory on &lt;a href=&quot;http://en.wikipedia.org/wiki/Visitor_pattern&quot;&gt;wikipedia&lt;/a&gt; or if you want a practical example you can have a look &lt;a href=&quot;http://www.codeproject.com/Articles/588882/TheplusVisitorplusPatternplusExplained&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;In Studio File Type Framework visitor pattern is made available via &lt;em&gt;IMarkupDataVisitor&lt;/em&gt; interface. &lt;/p&gt;
+&lt;p&gt;In Studio File Type Framework visitor pattern is made available via &lt;em&gt;IMarkupDataVisitor&lt;/em&gt; interface.&lt;/p&gt;
 
 &lt;h3 id=&quot;paragraphs-segments-and-more&quot;&gt;Paragraphs, Segments and more&lt;/h3&gt;
 
@@ -929,7 +929,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;p&gt;&lt;code&gt;ISegment&lt;/code&gt; represents a piece of localizable content.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;ISegmentPair&lt;/code&gt; segments exists in source and target language versions which are bot accessible using &lt;em&gt;ISegmentPair&lt;/em&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ISegmentPair&lt;/code&gt; segments exists in source and target language versions which are bot accessible using &lt;em&gt;ISegmentPair&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Segments and Paragraphs are considered containers of other elements like text, comments, revisions and so on. All containers share common behavior and that’s why in the File Type Framework both are abstracted using &lt;em&gt;IAbstractMarkupDataContainer&lt;/em&gt;. An &lt;em&gt;IAbstractMarkupDataContainer&lt;/em&gt; contains multiple &lt;em&gt;IAbstractMarkupData&lt;/em&gt; elements. This means that text, comments and other similar elements are represented in the framework using &lt;em&gt;IAbstractMarkupData&lt;/em&gt; interface. One very important aspect of this structure is the fact that a segment can be considered as an element of the paragraph but also as a container for other elements which means that it can be manipulated as an &lt;em&gt;IAbstractMarkupDataContainer&lt;/em&gt; or as an &lt;em&gt;IAbstractMarkupData&lt;/em&gt;.&lt;/p&gt;
 
@@ -1023,7 +1023,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 	&lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VisitRevisionMarker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IRevisionMarker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;revisionMarker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;As you can see you are now able manipulate each element type. For example if you need formatting information you can get it from the &lt;em&gt;ITagPair&lt;/em&gt; interface. &lt;/p&gt;
+&lt;p&gt;As you can see you are now able manipulate each element type. For example if you need formatting information you can get it from the &lt;em&gt;ITagPair&lt;/em&gt; interface.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Don’t forget&lt;/strong&gt; that segments are containers as well so on &lt;em&gt;VisitSegement&lt;/em&gt; method you need to traverse his structure in the same way as for the paragraph unit.&lt;/p&gt;
 
@@ -1034,7 +1034,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>SDL Studio standalone plugin assembly resolver</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve.html"/>
-   <updated>2014-11-28T14:20:00+02:00</updated>
+   <updated>2014-11-28T12:20:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2014/11/28/SDL-Studio-standalone-plugin-assembly-resolve</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/assemblyresolver/assemblyresolver.jpg&quot; alt=&quot;Assembly Resolver&quot; title=&quot;Assembly Resolver&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -1048,7 +1048,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
   &lt;p&gt;&lt;strong&gt;GAC supports multiple version of an assembly. This means that when an assembly is updated to a newer version both versions will be saved. You might say that the old version should be removed, but this is not always possible since for example there are customers that have multiple version of Studio that are used on the same machine. Keeping multiple version of the same assembly will lead to unexpected behavior and errors from the application.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;You can read more about why to avoid GAC &lt;a href=&quot;http://www.sellsbrothers.com/Posts/Details/12503&quot;&gt;here&lt;/a&gt;.   &lt;/p&gt;
+&lt;p&gt;You can read more about why to avoid GAC &lt;a href=&quot;http://www.sellsbrothers.com/Posts/Details/12503&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;got-it--no-gac-but-we-want-solutions&quot;&gt;Got it … no GAC, but we want solutions!&lt;/h3&gt;
 
@@ -1081,7 +1081,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>3rd party assemblies and SDL Studio plugins</title>
    <link href="http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins.html"/>
-   <updated>2014-11-07T18:18:00+02:00</updated>
+   <updated>2014-11-07T16:18:00+00:00</updated>
    <id>http://www.romuluscrisan.com/sdl%20studio/2014/11/07/3rd-party-assmeblies-and-SDL-Studio-plugins</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/3rdparty/3rdpartyassemblies.png&quot; alt=&quot;Hello SDL&quot; title=&quot;Hello SDL&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -1162,7 +1162,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>Codecamp 2014</title>
    <link href="http://www.romuluscrisan.com/speaker/2014/10/31/Codecamp-2014.html"/>
-   <updated>2014-10-31T11:07:00+02:00</updated>
+   <updated>2014-10-31T09:07:00+00:00</updated>
    <id>http://www.romuluscrisan.com/speaker/2014/10/31/Codecamp-2014</id>
    <content type="html">&lt;div class=&quot;owl-carousel text-left&quot; data-navigation=&quot;true&quot; data-singleitem=&quot;true&quot; data-autoplay=&quot;true&quot; data-transition=&quot;fade&quot;&gt;
 	&lt;div class=&quot;item dragCursor&quot;&gt;
@@ -1211,7 +1211,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>Hello SDL</title>
    <link href="http://www.romuluscrisan.com/career/2014/10/01/hello-sdl.html"/>
-   <updated>2014-10-01T17:15:00+03:00</updated>
+   <updated>2014-10-01T14:15:00+00:00</updated>
    <id>http://www.romuluscrisan.com/career/2014/10/01/hello-sdl</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/sdl.jpg&quot; alt=&quot;Hello SDL&quot; title=&quot;Hello SDL&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -1223,7 +1223,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;h3 id=&quot;what-im-going-to-do-at-sdl&quot;&gt;What I’m going to do at SDL?&lt;/h3&gt;
 
-&lt;p&gt;As I previously said SDL is offering now &lt;a href=&quot;http://www.sdl.com/solutions/business-need/global-customer-experience-management/&quot;&gt;global customer experience management&lt;/a&gt; and as you might already think when you say global you immediately think of multiple languages, which means translation. &lt;/p&gt;
+&lt;p&gt;As I previously said SDL is offering now &lt;a href=&quot;http://www.sdl.com/solutions/business-need/global-customer-experience-management/&quot;&gt;global customer experience management&lt;/a&gt; and as you might already think when you say global you immediately think of multiple languages, which means translation.&lt;/p&gt;
 
 &lt;p&gt;I’m going to be closely involved in &lt;a href=&quot;http://www.sdl.com/products/sdl-trados-studio/&quot;&gt;SDL Trados Studio&lt;/a&gt; and &lt;a href=&quot;https://languagecloud.sdl.com/&quot;&gt;Language Cloud&lt;/a&gt; and probably some other products depending on the needs. Most of my work will be around creating and growing the development community for this products, but I will also offer support and consultancy to clients and help the sale process when is necessary. Growing the development community can mean many things but here are some of they key things I will do:&lt;/p&gt;
 
@@ -1244,7 +1244,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>Thank you Endava</title>
    <link href="http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava.html"/>
-   <updated>2014-09-20T21:53:00+03:00</updated>
+   <updated>2014-09-20T18:53:00+00:00</updated>
    <id>http://www.romuluscrisan.com/career/2014/09/20/thank-you-endava</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/endava.jpg&quot; alt=&quot;Thank you Endava&quot; title=&quot;Thank you Endava&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -1265,13 +1265,13 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>My Journey to start a blog</title>
    <link href="http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog.html"/>
-   <updated>2014-03-15T09:40:00+02:00</updated>
+   <updated>2014-03-15T07:40:00+00:00</updated>
    <id>http://www.romuluscrisan.com/blog/2014/03/15/my-journey-to-start-a-blog</id>
    <content type="html">&lt;p class=&quot;dropcap&quot;&gt;Now that I written some articles around my journey to start a blog I think it might be very useful to have a short summary of my journey.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-journey&quot;&gt;The Journey&lt;/h3&gt;
 
-&lt;p&gt;Well I was thinking to start a blog for sometime because of the reasons I’ve pointed in my first article &lt;a href=&quot;http://romuluscrisan.com/blog/2014/02/23/why-a-blog.html&quot;&gt;Why a blog ?&lt;/a&gt;. This is a technical blog since I will write most of the time about software development and various technologies in an attempt to share my knowledge and experience but also because I want to us it as a brain dump. From time to time I might write about  some other things but probably still around technology. &lt;/p&gt;
+&lt;p&gt;Well I was thinking to start a blog for sometime because of the reasons I’ve pointed in my first article &lt;a href=&quot;http://romuluscrisan.com/blog/2014/02/23/why-a-blog.html&quot;&gt;Why a blog ?&lt;/a&gt;. This is a technical blog since I will write most of the time about software development and various technologies in an attempt to share my knowledge and experience but also because I want to us it as a brain dump. From time to time I might write about  some other things but probably still around technology.&lt;/p&gt;
 
 &lt;p&gt;Finally this year I started looking for various options to host a blog and I ended up using &lt;a href=&quot;http://pages.github.com/&quot;&gt;Github pages&lt;/a&gt;. Why I made this option I’ve detailed in my blog post &lt;a href=&quot;http://romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html&quot;&gt;Why I choose Github pages&lt;/a&gt;. Github pages is powered by a very nice and interesting framework called Jekyll for which I wrote an introduction  in my article &lt;a href=&quot;http://romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html&quot;&gt;The engine behing my blog&lt;/a&gt;. Since my work is most of the time in Microsoft world I had to install Jekyll on Windows which is not necessarily straight forward so I described an easier alternative using chocolatey in my article &lt;a href=&quot;http://romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html&quot;&gt;Install Jekyll using chocolatey&lt;/a&gt;.&lt;/p&gt;
 
@@ -1282,7 +1282,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>Install Jekyll using Chocolatey</title>
    <link href="http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html"/>
-   <updated>2014-03-06T21:14:00+02:00</updated>
+   <updated>2014-03-06T19:14:00+00:00</updated>
    <id>http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey</id>
    <content type="html">&lt;p class=&quot;dropcap&quot;&gt;As you probably already know this website and blog are created using github pages which behind the scene uses Jekyll. More on this you can read on my &lt;a href=&quot;http://romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html&quot;&gt;blog post&lt;/a&gt;.Every time I write a new article or make a change I would like to preview it before publishing it to live website.When this get published to my website repository, Github builds it almost instantly so I&#39;m able to see my change really fast, but this is still done on the public website. This can work pretty well but I prefer to see my changes locally and only if I&#39;m ok to publish them on my &lt;a href=&quot;https://github.com/cromica/cromica.github.io&quot;&gt;repository&lt;/a&gt;. So in order to do that I need to install jekyll on my local machine and use `jekyll serve` to build and serve the website.&lt;/p&gt;
 
@@ -1302,7 +1302,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;p&gt;If this doesn’t work for you there are other ways to install chocolatey &lt;a href=&quot;https://github.com/chocolatey/chocolatey/wiki/Installation&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Now that we have chocolatey installed we can open a command prompt and using &lt;code&gt;cinst&lt;/code&gt; we can install what we need. &lt;/p&gt;
+&lt;p&gt;Now that we have chocolatey installed we can open a command prompt and using &lt;code&gt;cinst&lt;/code&gt; we can install what we need.&lt;/p&gt;
 
 &lt;h3 id=&quot;install-ruby&quot;&gt;Install Ruby&lt;/h3&gt;
 
@@ -1405,7 +1405,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>The engine behind my blog</title>
    <link href="http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html"/>
-   <updated>2014-03-03T23:52:21+02:00</updated>
+   <updated>2014-03-03T21:52:21+00:00</updated>
    <id>http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog</id>
    <content type="html">&lt;p class=&quot;dropcap&quot;&gt;I guess it&#39;s time to dive a bit more on what technology stands behind my blog. In the previous posts I&#39;ve talked about the &lt;a href=&quot;http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog.html&quot;&gt;reasons to start a blog&lt;/a&gt;, &lt;a href=&quot;http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html&quot;&gt;why I choose github pages&lt;/a&gt; to host it and now I will talk about Jekyll, the engine behind my blog.&lt;/p&gt;
 
@@ -1440,7 +1440,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;h3 id=&quot;jekyll-and-github-pages&quot;&gt;Jekyll and Github pages&lt;/h3&gt;
 
-&lt;p&gt;Jekyll can be installed locally and since it has a small static webserver embedded it can be used in lots of ways to serve the website. Using &lt;code&gt;jekyll serve&lt;/code&gt; you can build and browse the site. Beside this option you can use the site developed with Jekyll directly with Github pages since behind the scenes it uses Jekyll. So all you have to do is push your site developed with jekyll to a repository and Github will do the trick almost instant. Please be aware that this is not true for all Github repositories, it’s only valid for Github pages repositories which must be created according to this &lt;a href=&quot;http://pages.github.com/&quot;&gt;steps&lt;/a&gt;.  &lt;/p&gt;
+&lt;p&gt;Jekyll can be installed locally and since it has a small static webserver embedded it can be used in lots of ways to serve the website. Using &lt;code&gt;jekyll serve&lt;/code&gt; you can build and browse the site. Beside this option you can use the site developed with Jekyll directly with Github pages since behind the scenes it uses Jekyll. So all you have to do is push your site developed with jekyll to a repository and Github will do the trick almost instant. Please be aware that this is not true for all Github repositories, it’s only valid for Github pages repositories which must be created according to this &lt;a href=&quot;http://pages.github.com/&quot;&gt;steps&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;My intention with this article was to give a high overview of what Jekyll means and some basic principles. If you are looking for more details please have a look &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;http://jekyllbootstrap.com/lessons/jekyll-introduction.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
@@ -1452,7 +1452,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>Why I choose Github pages</title>
    <link href="http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html"/>
-   <updated>2014-02-24T23:52:21+02:00</updated>
+   <updated>2014-02-24T21:52:21+00:00</updated>
    <id>http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages</id>
    <content type="html">&lt;p class=&quot;dropcap&quot;&gt;Github pages is something I&#39;ve recently heard of and I really like it from the begging although I didn&#39;t exactly knew how is working. The main idea is that you will use a github repository to serve your site or blog.&lt;/p&gt;
 
@@ -1489,13 +1489,13 @@ sometimes even minutes–no matter what the size of a project or the complexity 
  <entry>
    <title>Why a blog</title>
    <link href="http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog.html"/>
-   <updated>2014-02-23T22:54:21+02:00</updated>
+   <updated>2014-02-23T20:54:21+00:00</updated>
    <id>http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog</id>
    <content type="html">&lt;p class=&quot;dropcap&quot;&gt;I was thinking to start a blog for some while but never find the right time. There are lots of ways to share information and knowledge but blog allows to share information in detail and also provide thorough explanations. Besides this I intend to use it as a personal knowledge base. Quite often I realize that I&#39;ve done something similar in the past but I can&#39;t remember or find the information. So finally here it is.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-journey&quot;&gt;The Journey&lt;/h3&gt;
 
-&lt;p&gt;There are quite a few things to think about when deciding to have a blog, like: &lt;/p&gt;
+&lt;p&gt;There are quite a few things to think about when deciding to have a blog, like:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1505,7 +1505,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
     &lt;p&gt;What blogging platform should I use?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Since I’m a developer should I build something of my own? &lt;/p&gt;
+    &lt;p&gt;Since I’m a developer should I build something of my own?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Where I will host it?&lt;/p&gt;
@@ -1517,7 +1517,7 @@ sometimes even minutes–no matter what the size of a project or the complexity 
 
 &lt;p&gt;There some other smaller things but those where the main questions for me. For the first one I’ve answered in the first paragraph but let’s see a bit about the other questions. First of all I’m not a big &lt;a href=&quot;http://wordpress.com/&quot; title=&quot;Wordpress&quot;&gt;Wordpress&lt;/a&gt; fan although I’ve used it in the past. This is not because it’s bad rather it’s a mater of taste. Next I had a look at &lt;a href=&quot;https://ghost.org/&quot; title=&quot;Ghost&quot;&gt;Ghost&lt;/a&gt; which is really interesting and nice. There are some other good blogging platforms like &lt;a href=&quot;https://www.blogger.com/features&quot; title=&quot;Blogger&quot;&gt;Blogger&lt;/a&gt; or &lt;a href=&quot;https://www.tumblr.com/&quot; title=&quot;Tumblr&quot;&gt;Tumblr&lt;/a&gt; and I have to admit that it’s hard to decide between them but I wanted to have more control so just a blogging platform was a no go for me. Building something of my own was interesting enough but I quickly realize that I don’t have enough time to do it so I abandoned the idea. Looking for other option I read &lt;a href=&quot;http://blog.davidebbo.com/about/&quot; title=&quot;David Ebbo&quot;&gt;David Ebbo&lt;/a&gt; was &lt;a href=&quot;http://blog.davidebbo.com/2014/01/moving-to-github-pages.html&quot; title=&quot;Moving to GitHub pages&quot;&gt;moving his site to Github pages&lt;/a&gt; and decided to have a look. I really liked the way Github pages is working and I will tell more about this on future posts.&lt;/p&gt;
 
-&lt;p&gt;So at this point my blog is hosted by Github pages and this is just the first version of it. I will add some other features in the next weeks. &lt;/p&gt;
+&lt;p&gt;So at this point my blog is hosted by Github pages and this is just the first version of it. I will add some other features in the next weeks.&lt;/p&gt;
 
 </content>
  </entry>
