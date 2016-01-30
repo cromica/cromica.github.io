@@ -31,10 +31,16 @@ prose:
           element: "text"
           label: "Title"
           value: ""
-      - name: "splash"
+	  - name: "image"
         field:
           element: "text"
-          label: "Splash image"
+          label: "Image"
+          value: ""
+      - name: "excerpt"
+        field:
+          element: "textarea"
+          label: "Excerpt"
+          placeholder: "Please add an excerpt"
           value: ""
       - name: "category"
         field:
