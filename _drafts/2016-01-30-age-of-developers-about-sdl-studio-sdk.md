@@ -35,7 +35,7 @@ SDK stands for **software development kit** and typically is a set of software d
 
 SDL Studio SDK comes as a separate download from the standard SDL Studio application. You can get it from the developer page located [here](http://www.translationzone.com/openexchange/developer/sdk.html). Now let's see what goodies we get with the SDK:
 
-1. Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API's. This applications are really for good to get you started with one of the API's but please bare in mind that they don't cover the entire API's so please also look for features in the [documention](http://www.translationzone.com/openexchange/developer/sdk.html) or ask on our [developer community](https://community.sdl.com/developers/language-developers/). You can find the samples located under the `c:\ProgramData\SDL\SDK {Version}\` folder.
+1. Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API's. This applications are really for good to get you started with one of the API's but please bare in mind that they don't cover the entire API's feature set so please also look for features in the [documention](http://www.translationzone.com/openexchange/developer/sdk.html) or ask on our [developer community](https://community.sdl.com/developers/language-developers/). You can find the samples located under the `c:\ProgramData\SDL\SDK {Version}\` folder.
     
 2. Microsoft Visual Studio project templates. This templates are very useful when you start developing a new plugin for SDL Studio because you just select the template that is appropriate for the API you want to use.
 ![sdl-project-vs-templates.png]({{site.baseurl}}/assets/images/posts/sdl-project-vs-templates.png)
