@@ -50,9 +50,17 @@ At this point I need to mention that not all API libraries are used for default 
 
 If the **API libraries** are distributed with the product a valid questions pops up and that is if I need to install the SDK. The answer is no but I highly recommend it. It is possible to develop a plugin for SDL Studio without having the SDK installed on your machine is just that it will take more time to setup your Visual Studio project. First of all you will have to specify all the SDL Studio API libraries you need. This is pretty straightforward task but the complicated bit is to create the `.sdlplugin` file. You will have to manually edit the Visual Studio project file and add the msbuild targets to create the `.sdlplugin` package. 
 
-### Happy coding ###
+### Future plans ###
 
-I'm really keen to hear about your experience with the library and what kind of integration you've done.
+I have to say that SDL Studio SDK is kind of slim in terms of the tooling that is providing to the developers and it doesn't make too much sense to keep it in the current form. There other better ways in which we can provide the current content so the future plans is as follows:
+
+1. Move sample applications to Github. This gives us a few benefits like better searchability, improvements and fixeses can be done by anyone interested not just SDL internal developers and of course it will still be available to download locally as a zip file.
+
+2. Create more specific Visual Studio project templates.
+
+3. Provide Visual Studio project templates as Visual Studio extension. Initially this will probably be available only for Visual Studio 2015 and based on the need we will make it available for older versions.
+
+I believe this changes will make the SDK more open and closer to the developer. Of course when all the above points will be done the current installer will probably dissapear.
 
 Please let me know if you have any comments or questions.
 
