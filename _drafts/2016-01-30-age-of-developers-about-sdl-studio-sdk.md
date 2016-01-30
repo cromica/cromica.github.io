@@ -30,22 +30,21 @@ As I release parts of this series I will update this page with links to the arti
 
 SDK stands for **software development kit** and typically is a set of software development tools that enable the creation of applications for certain software applications. What exactly an SDK contains differ between each target software applications. Sometimes it can be a set of libraries in certain programing languages, like [Microsoft .Net](https://www.microsoft.com/net) or [Java](https://www.java.com), or it can contain a bunch of supporting tools. Typically the SDK cames as separate download since not every user might be interested in using this type of capabilities.If you are interested in more details you can have a look [here](https://en.wikipedia.org/wiki/Software_development_kit). 
 
-### What can I find the SDL Studio SDK ###
+### What can I find inside the SDL Studio SDK ###
 
 SDL Studio SDK comes as a separate download from the standard SDL Studio application. You can get it from the developer page located [here](http://www.translationzone.com/openexchange/developer/sdk.html). Here's the list of things that will be installed with the SDK:
 
 1. Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API's. This applications are really for good to get started with one of the API's but please bare in mind that they don't cover the entire API's so please also look for features in the [documention](http://www.translationzone.com/openexchange/developer/sdk.html) or ask on our [developer community](https://community.sdl.com/developers/language-developers/).
     
-2. Microsoft Visual Studio project templates.
+2. Microsoft Visual Studio project templates. This templates are very usefull when you start developing a new plugin for SDL Studio because you just select the template that is appropriate for the API you want to use
 
+### What is not part of the SDL Studio SDK ###
 
+At this point you might wonder a bit why the previous section didn't mention anything about the **API libraries** since typically this libraries come with the SDK. The reason I didn't mention them is because they are installed together with SDL Studio. There is a simple and good reason why they are distributed with the product and this is because some of the default features are developed using this API's. To give you some good examples all out-of-the-box filters are developed on top of the same [File Type Support Framework](http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/), also each translation provider is built using the same [Translation Memory API](http://producthelp.sdl.com/SDK/TranslationMemoryApi/4.0/).
 
-<img src="/assets/images/posts/introducing-groupsharekit/manage-nuget.png" alt="Manage Nuget" title="Manage Nuget" class="img-responsive">
+Distributing the API libraries together with the product has some pros and cons. The main disadvantage is that we are not able to provide new features in the API libraries on a different pace than the product releases. A big advantage is that the API's that are used for default features are well tested and mature.
 
-
-### Documentation ###
-
-For more details please have a look [here](https://github.com/sdl/groupsharekit.net#groupsharekit---groupshare-rest-api-client-library-for-net-). If you don't find an answer don't hesitate to ask a question on [language developer community](https://community.sdl.com/developers/language-developers/).
+At this point I need to mention that not all API libraries are used for default features. For example the [Intergration API](http://producthelp.sdl.com/SDK/StudioIntegrationApi/4.0/) is just a wrapper on top of internal components.
 
 ### Contribution ###
 
