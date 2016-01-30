@@ -26,31 +26,4 @@ prose:
         field:
            element: "hidden"
            value: "post"
-      - name: "title"
-        field:
-           element: "text"
-           label: "Title"
-           value:""
-      - name: "excerpt"
-        field:
-           element: "textarea"
-           label: "Excerpt"
-           placeholder:"Please enter the excerpt"           
-      - name: "category"
-        field:
-           element: "multiselect"
-           label: "Add category"
-           placeholder:"Choose category"
-           options:
-             - name:"SDL Studio"
-               value:"SDL Studio"
-             - name:"OpenSource"
-               value:"OpenSource"
-             - name:"SDL-GroupShare"
-               value:"SDL-GroupShare"
-             - name:"Blog"
-               value:"Blog"                
-             - name:"Career"
-               value:"Career"
-             - name:"Jekyll"
-               value:"Jekyll"
+     
