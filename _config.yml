@@ -17,7 +17,7 @@ rss_name: feed.xml
 rss_post_limit: 10
 environment: development
 prose:
- rooturl: '_posts _drafts'
+ rooturl: '_posts'
  siteurl: 'http://romuluscrisan.com'
  media: 'assets/images/posts'
  metadata:
