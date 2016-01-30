@@ -34,9 +34,9 @@ SDK stands for **software development kit** and typically is a set of software d
 
 SDL Studio SDK comes as a separate download from the standard SDL Studio application. You can get it from the developer page located [here](http://www.translationzone.com/openexchange/developer/sdk.html). Here's the list of things that will be installed with the SDK:
 
-	1. Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API's. This applications are really for good to get started with one of the API's but please bare in mind that they don't cover the entire API's so please also look for features in the [documention](http://www.translationzone.com/openexchange/developer/sdk.html) or ask on our [developer community](https://community.sdl.com/developers/language-developers/).
+1. Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API's. This applications are really for good to get started with one of the API's but please bare in mind that they don't cover the entire API's so please also look for features in the [documention](http://www.translationzone.com/openexchange/developer/sdk.html) or ask on our [developer community](https://community.sdl.com/developers/language-developers/).
     
-	2. Microsoft Visual Studio project templates.
+2. Microsoft Visual Studio project templates.
 
 
 
