@@ -31,11 +31,6 @@ prose:
           element: "text"
           label: "Title"
           value: ""
-      - name: "image"
-        field:
-          element: "text"
-          label: "Image"
-          value: ""
       - name: "excerpt"
         field:
           element: "textarea"
