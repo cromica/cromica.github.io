@@ -1,29 +1,42 @@
 ---
 layout: post
 title: About SDL Studio SDK
-date: {}
+date: 2016-01-30T12:54:21.000Z
 category: 
   - SDL Studio
 tags: Studio SDK
-excerpt: "I love small and simple things that help me be more productive with my work. This is the main reasons why some time ago I started to work on GroupShareKit and I&amp;#x27;m now happy to say that this is now available for everyone to use it as they like. Not only that you can use it but is completely open source."
+excerpt: "I love small and simple things that help me be more productive with my work. This is the main reasons why some time ago I started to work on GroupShareKit and I&amp;amp;#x27;m now happy to say that this is now available for everyone to use it as they like. Not only that you can use it but is completely open source."
 image: "introducing-groupsharekit/introducing-groupsharekit.jpg"
 published: true
 ---
 
+![about-sdl-studio-sdk.jpg]({{site.baseurl}}/assets/images/posts/about-sdl-studio-sdk.jpg)
 
-<img src="/assets/images/posts/introducing-groupsharekit/introducing-groupsharekit.jpg" alt="Setting up build automation" title="Setting up build automation" class="img-responsive">
 
-<p class="dropcap">This is the 5th part of the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series. In the previous articles I talked about how to configure your development environment and also gaeve  some suggestion on how you can start the development. Now in this  </p>
+<p class="dropcap">This is the 5th part of the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series. In the previous articles I talked about how to configure your development environment and also gave  some suggestion on how you can start the development for OpenExchange store. One of the steps from the development environment setup was to install the SDL Studio SDK and I think it's worth talking about it in a bit more detail.</p>
 
-### What is GroupShareKit? ###
+### Age of developers - table of contents###
 
-GroupShareKit is a client library targeting .NET 4.5 and above that provides an easy way to interact with [GroupShare Rest API](http://sdldevelopmentpartners.sdlproducts.com/documentation/api). This library will greatly simplify and reduce the work a developer has to do in order to consume resources available in GroupShare by reducing the amount of boilerplate code and configuration that has to be written. This way the developer can focus his time and work on the actual implementation that has to be done.
+As I release parts of this series I will update this page with links to the articles.
 
-Another benefit of this library is that you don't have to actually understand how rest API's are working since all this will be completely hidden. If you are not sure what an rest API is please have a look [here](http://schoolofdata.org/2013/11/18/web-apis-for-non-programmers/).
+1. [Introduction](http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html)
+2. [I'm a translator do I need to write code?](http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html)
+3. [I'm a developer, why bother with translation industry?](http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html)
+4. [Configure OpenExchange development environment](http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html)
+5. [OpenExchange:Where do I start?](http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html)
+6. About SDL Studio SDK
 
-### How do I start? ###
+### What is an SDK? ###
 
-Using GroupShareKit library is very simple and it doesn't require to run any installer, all you have to do is a few clicks inside Microsoft Visual Studio. The first step you need to do is to open the project where you want to use GroupShareKit in Visual Studio. After the project is opened go in the `Solution Explorer` area (if you can't find it just press CTRL+ALT+L inside Visual Studio), then right click on the project `References` and select `Manage Nuget packages...`(if you can't see this option have a look [here](https://docs.nuget.org/consume/installing-nuget)). This action will open a window where you need to search for `GroupShareKit` and once you get the result just click the install button. That's all, you can start use the GroupShareKit library in your project.
+SDK stands for **software development kit** and typically is a set of software development tools that enable the creation of applications for certain software applications. What exactly an SDK contains differ between each target software applications. Sometimes it can be a set of libraries in certain programing languages, like [Microsoft .Net](https://www.microsoft.com/net) or [Java](https://www.java.com), or it can contain a bunch of supporting tools. Typically the SDK cames as separate download since not every user might be interested in using this type of capabilities.If you are interested in more details you can have a look [here](https://en.wikipedia.org/wiki/Software_development_kit). 
+
+### What can I find the SDL Studio SDK ###
+
+SDL Studio SDK comes as a separate download from the standard SDL Studio application. You can get it from the developer page located [here](http://www.translationzone.com/openexchange/developer/sdk.html). Here's the list of things that will be installed with the SDK:
+	1. Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API's. Those are really for good to get started with one the API's but please bare in mind that they don't cover the entire API's so please also look for features in the [documention](http://www.translationzone.com/openexchange/developer/sdk.html) or ask on our [developer community](https://community.sdl.com/developers/language-developers/).
+	2. item
+
+
 
 <img src="/assets/images/posts/introducing-groupsharekit/manage-nuget.png" alt="Manage Nuget" title="Manage Nuget" class="img-responsive">
 
@@ -44,4 +57,4 @@ I'm really keen to hear about your experience with the library and what kind of 
 
 Please let me know if you have any comments or questions.
 
-*Picture: [BOB008 - Swiss Army Knife](https://flic.kr/p/5o9EuF)*
+*Picture: [kballo - SDK Bayonne](https://flic.kr/p/Q4MPv)*
