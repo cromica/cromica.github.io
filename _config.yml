@@ -31,7 +31,7 @@ prose:
           element: "text"
           label: "Title"
           value: ""
-                - name: "image"
+      - name: "image"
         field:
           element: "text"
           label: "Image"
