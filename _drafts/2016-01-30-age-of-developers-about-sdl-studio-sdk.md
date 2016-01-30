@@ -1,12 +1,13 @@
 ---
 layout: post
 title: About SDL Studio SDK
-date: 2016-01-30T12:54:21.000Z
+date: {}
 category: 
   - SDL Studio
 tags: Studio SDK
-excerpt: "I love small and simple things that help me be more productive with my work. This is the main reasons why some time ago I started to work on GroupShareKit and I&amp;amp;#x27;m now happy to say that this is now available for everyone to use it as they like. Not only that you can use it but is completely open source."
-image: "introducing-groupsharekit/introducing-groupsharekit.jpg"
+excerpt: 
+  This is the 5th part of the OpenExchange: "Age of Developers series. In the previous articles I talked about how to configure your development environment and also gave  some suggestion on how you can start the development for OpenExchange store. One of the steps from the development environment setup was to install the SDL Studio SDK and I think it's worth talking about it in a bit more detail."
+image: "about-sdl-studio-sdk.jpg"
 published: true
 ---
 
