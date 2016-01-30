@@ -29,15 +29,17 @@ As I release parts of this series I will update this page with links to the arti
 
 ### What is an SDK? ###
 
-SDK stands for **software development kit** and typically is a set of software development tools that enable the creation of applications for certain software applications. What exactly an SDK contains differ between each target software applications. Sometimes it can be a set of libraries in certain programing languages, like [Microsoft .Net](https://www.microsoft.com/net) or [Java](https://www.java.com), or it can contain a bunch of supporting tools. Typically the SDK cames as separate download since not every user might be interested in using this type of capabilities.If you are interested in more details you can have a look [here](https://en.wikipedia.org/wiki/Software_development_kit). 
+SDK stands for **software development kit** and typically is a set of software development tools that enable the creation of applications for certain software applications. What exactly an SDK contains differ between each target software applications. Sometimes it can be a set of libraries in certain programming languages, like [Microsoft .Net](https://www.microsoft.com/net) or [Java](https://www.java.com), or it can contain a bunch of supporting tools. Typically the SDK comes as a separate download since not every user might be interested in using this type of capabilities.If you are interested in more details you can have a look [here](https://en.wikipedia.org/wiki/Software_development_kit). 
 
 ### What I can find inside the SDL Studio SDK? ###
 
 SDL Studio SDK comes as a separate download from the standard SDL Studio application. You can get it from the developer page located [here](http://www.translationzone.com/openexchange/developer/sdk.html). Here's the list of things that will be installed with the SDK:
 
-1. Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API's. This applications are really for good to get started with one of the API's but please bare in mind that they don't cover the entire API's so please also look for features in the [documention](http://www.translationzone.com/openexchange/developer/sdk.html) or ask on our [developer community](https://community.sdl.com/developers/language-developers/).
+1. Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API's. This applications are really for good to get started with one of the API's but please bare in mind that they don't cover the entire API's so please also look for features in the [documention](http://www.translationzone.com/openexchange/developer/sdk.html) or ask on our [developer community](https://community.sdl.com/developers/language-developers/). You can find the samples located under the `c:\ProgramData\SDL\SDK {Version}\` folder.
     
-2. Microsoft Visual Studio project templates. This templates are very usefull when you start developing a new plugin for SDL Studio because you just select the template that is appropriate for the API you want to use
+2. Microsoft Visual Studio project templates. This templates are very useful when you start developing a new plugin for SDL Studio because you just select the template that is appropriate for the API you want to use.
+![sdl-project-vs-templates.png]({{site.baseurl}}/assets/images/posts/sdl-project-vs-templates.png)
+
 
 ### What is not part of the SDL Studio SDK? ###
 
@@ -55,13 +57,13 @@ If the **API libraries** are distributed with the product a valid questions pops
 
 I have to say that SDL Studio SDK is kind of slim in terms of the tooling that is providing to the developers and it doesn't make too much sense to keep it in the current form. There other better ways in which we can provide the current content so the future plans is as follows:
 
-1. Move sample applications to Github. This gives us a few benefits like better searchability, improvements and fixeses can be done by anyone interested not just SDL internal developers and of course it will still be available to download locally as a zip file.
+1. Move sample applications to Github. This gives us a few benefits like better search-ability, improvements and fixes can be done by anyone interested not just SDL internal developers and of course it will still be available to download locally as a zip file.
 
 2. Create more specific Visual Studio project templates.
 
 3. Provide Visual Studio project templates as Visual Studio extension. Initially this will probably be available only for Visual Studio 2015 and based on the need we will make it available for older versions.
 
-I believe this changes will make the SDK more open and closer to the developer. Of course when all the above points will be done the current installer will probably dissapear.
+I believe this changes will make the SDK more open and closer to the developer. Of course when all the above points will be done the current installer will probably disappear.
 
 Please let me know if you have any comments or questions.
 
