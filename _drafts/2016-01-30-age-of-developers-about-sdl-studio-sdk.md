@@ -30,7 +30,7 @@ As I release parts of this series I will update this page with links to the arti
 
 SDK stands for **software development kit** and typically is a set of software development tools that enable the creation of applications for certain software applications. What exactly an SDK contains differ between each target software applications. Sometimes it can be a set of libraries in certain programing languages, like [Microsoft .Net](https://www.microsoft.com/net) or [Java](https://www.java.com), or it can contain a bunch of supporting tools. Typically the SDK cames as separate download since not every user might be interested in using this type of capabilities.If you are interested in more details you can have a look [here](https://en.wikipedia.org/wiki/Software_development_kit). 
 
-### What can I find inside the SDL Studio SDK ###
+### What I can find inside the SDL Studio SDK? ###
 
 SDL Studio SDK comes as a separate download from the standard SDL Studio application. You can get it from the developer page located [here](http://www.translationzone.com/openexchange/developer/sdk.html). Here's the list of things that will be installed with the SDK:
 
@@ -38,7 +38,7 @@ SDL Studio SDK comes as a separate download from the standard SDL Studio applica
     
 2. Microsoft Visual Studio project templates. This templates are very usefull when you start developing a new plugin for SDL Studio because you just select the template that is appropriate for the API you want to use
 
-### What is not part of the SDL Studio SDK ###
+### What is not part of the SDL Studio SDK? ###
 
 At this point you might wonder a bit why the previous section didn't mention anything about the **API libraries** since typically this libraries come with the SDK. The reason I didn't mention them is because they are installed together with SDL Studio. There is a simple and good reason why they are distributed with the product and this is because some of the default features are developed using this API's. To give you some good examples all out-of-the-box filters are developed on top of the same [File Type Support Framework](http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/), also each translation provider is built using the same [Translation Memory API](http://producthelp.sdl.com/SDK/TranslationMemoryApi/4.0/).
 
@@ -46,11 +46,9 @@ Distributing the API libraries together with the product has some pros and cons.
 
 At this point I need to mention that not all API libraries are used for default features. For example the [Intergration API](http://producthelp.sdl.com/SDK/StudioIntegrationApi/4.0/) is just a wrapper on top of internal components.
 
-### Contribution ###
+### Do I need to install the SDK? ###
 
-GroupShareKit is open source and published under [MIT License](https://opensource.org/licenses/MIT) so if you would like to add a new feature or you find a bug please don't hesitate to use the [issue tracker](). Of course you can do more than that by actually implementing the feature or the fix your looking for. Also you might find issues that are already opened with which you might be able to help. More about that [here](https://github.com/sdl/groupsharekit.net/issues). 
-
-If you wonder why should you contribute to open source projects read this [article](http://opensource.about.com/od/what-is-open-source/fl/Why-Do-People-Contribute-to-Open-Source-Projects.htm).
+If the **API libraries** are distributed with the product a valid questions pops up and that is if I need to install the SDK. The answer is no but I highly recommend it. It is possible to develop a plugin for SDL Studio without having the SDK installed on your machine is just that it will take more time to setup your Visual Studio project. First of all you will have to specify all the SDL Studio API libraries you need. This is pretty straightforward task but the complicated bit is to create the `.sdlplugin` file. You will have to manually edit the Visual Studio project file and add the msbuild targets to create the `.sdlplugin` package. 
 
 ### Happy coding ###
 
