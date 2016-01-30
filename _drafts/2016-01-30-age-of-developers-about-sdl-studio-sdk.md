@@ -29,7 +29,7 @@ As I release parts of this series I will update this page with links to the arti
 
 ### What is an SDK? ###
 
-SDK stands for **software development kit** and typically is a set of software development tools that enable the creation of applications for certain software applications. What exactly an SDK contains differ between each target software applications. Sometimes it can be a set of libraries in certain programming languages, like [Microsoft .Net](https://www.microsoft.com/net) or [Java](https://www.java.com), or it can contain a bunch of supporting tools. Typically the SDK comes as a separate download since not every user might be interested in using this type of capabilities.If you are interested in more details you can have a look [here](https://en.wikipedia.org/wiki/Software_development_kit). 
+SDK stands for **software development kit** and typically is a set of software development tools that enable the creation of applications for certain software applications. What exactly an SDK contains differ between each target software applications. Sometimes it can be a set of libraries in certain programming languages, like [Microsoft .Net](https://www.microsoft.com/net) or [Java](https://www.java.com), or it can also contain a bunch of supporting tools. Typically the SDK comes as a separate download since not every user might be interested in using this type of capabilities.If you are interested to read more details you can have a look [here](https://en.wikipedia.org/wiki/Software_development_kit). 
 
 ### What I can find inside the SDL Studio SDK? ###
 
