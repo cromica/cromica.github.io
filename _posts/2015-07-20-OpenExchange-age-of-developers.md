@@ -1,12 +1,15 @@
 ---
 layout: post
-title:  "OpenExchange: Age of developers"
-date:   2015-07-20 10:00:00
-category: "SDL Studio"
-tags: "Studio OpenExchange plugin"
-excerpt: "OpenExchange was launched a few years back by SDL with the purpose to allow anyone to integrate their solutions or ideas with the SDL Language Platform. This gave everyone freedom to augment the SDL platform according to their needs. Because of this freedom, apps like Glossary Converter, MSWord Grammar Checker and many others where possible. It's pretty obvious that this brings great value to every SDL language platform user, but how about building those apps? From where should I start? I'm a translator do I need to program? I have no idea about the translation industry, what can I do?"
+title: "OpenExchange: Age of developers"
+date: {}
+category: 
+  - SDL Studio
+tags: Studio OpenExchange plugin
+excerpt: "OpenExchange was launched a few years back by SDL with the purpose to allow anyone to integrate their solutions or ideas with the SDL Language Platform. This gave everyone freedom to augment the SDL platform according to their needs. Because of this freedom, apps like Glossary Converter, MSWord Grammar Checker and many others where possible. It&#x27;s pretty obvious that this brings great value to every SDL language platform user, but how about building those apps? From where should I start? I&#x27;m a translator do I need to program? I have no idea about the translation industry, what can I do?"
 image: "age-of-developers-intro/age-of-developers-intro.jpg"
+published: true
 ---
+
 
 <img src="/assets/images/posts/age-of-developers-intro/age-of-developers-intro.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive">
 
@@ -24,5 +27,6 @@ As I release parts of this series I will update this page with links to the arti
 3. [I'm a developer, why bother with translation industry?](http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html)
 4. [Configure OpenExchange development environment](http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html)
 5. [OpenExchange:Where do I start?](http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html)
+6. [About SDL Studio SDK](http://romuluscrisan.com/sdl%20studio/2016/01/31/age-of-developers-about-sdl-studio-sdk.html)
 
 Please leave a comment if you have any questions.
