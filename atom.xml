@@ -4,13 +4,74 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2016-01-24T09:48:52+00:00</updated>
+ <updated>2016-01-30T16:15:36+00:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>About SDL Studio SDK</title>
+   <link href="http://www.romuluscrisan.com/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk.html"/>
+   <updated>2016-01-30T12:54:21+00:00</updated>
+   <id>http://www.romuluscrisan.com/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/about-sdl-studio-sdk.jpg&quot; alt=&quot;about-sdl-studio-sdk.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;This is the 5th part of the &lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html&quot; target=&quot;_blank&quot;&gt;OpenExchange: Age of Developers&lt;/a&gt; series. In the previous articles I talked about how to configure your development environment and also gave  some suggestion on how you can start the development for OpenExchange store. One of the steps from the development environment setup was to install the SDL Studio SDK and I think it&#39;s worth talking about it in a bit more detail.&lt;/p&gt;
+
+&lt;h3 id=&quot;age-of-developers---table-of-contents&quot;&gt;Age of developers - table of contents&lt;/h3&gt;
+
+&lt;p&gt;As I release parts of this series I will update this page with links to the articles.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html&quot;&gt;I’m a translator do I need to write code?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html&quot;&gt;I’m a developer, why bother with translation industry?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html&quot;&gt;Configure OpenExchange development environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html&quot;&gt;OpenExchange:Where do I start?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;About SDL Studio SDK&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;what-is-an-sdk&quot;&gt;What is an SDK?&lt;/h3&gt;
+
+&lt;p&gt;SDK stands for &lt;strong&gt;software development kit&lt;/strong&gt; and typically is a set of software development tools that enable the creation of applications for certain software applications. What exactly an SDK contains differ between each target software applications. Sometimes it can be a set of libraries in certain programing languages, like &lt;a href=&quot;https://www.microsoft.com/net&quot;&gt;Microsoft .Net&lt;/a&gt; or &lt;a href=&quot;https://www.java.com&quot;&gt;Java&lt;/a&gt;, or it can contain a bunch of supporting tools. Typically the SDK cames as separate download since not every user might be interested in using this type of capabilities.If you are interested in more details you can have a look &lt;a href=&quot;https://en.wikipedia.org/wiki/Software_development_kit&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-can-i-find-the-sdl-studio-sdk&quot;&gt;What can I find the SDL Studio SDK&lt;/h3&gt;
+
+&lt;p&gt;SDL Studio SDK comes as a separate download from the standard SDL Studio application. You can get it from the developer page located &lt;a href=&quot;http://www.translationzone.com/openexchange/developer/sdk.html&quot;&gt;here&lt;/a&gt;. Here’s the list of things that will be installed with the SDK:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API’s. This applications are really for good to get started with one of the API’s but please bare in mind that they don’t cover the entire API’s so please also look for features in the &lt;a href=&quot;http://www.translationzone.com/openexchange/developer/sdk.html&quot;&gt;documention&lt;/a&gt; or ask on our &lt;a href=&quot;https://community.sdl.com/developers/language-developers/&quot;&gt;developer community&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Microsoft Visual Studio project templates.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/introducing-groupsharekit/manage-nuget.png&quot; alt=&quot;Manage Nuget&quot; title=&quot;Manage Nuget&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;For more details please have a look &lt;a href=&quot;https://github.com/sdl/groupsharekit.net#groupsharekit---groupshare-rest-api-client-library-for-net-&quot;&gt;here&lt;/a&gt;. If you don’t find an answer don’t hesitate to ask a question on &lt;a href=&quot;https://community.sdl.com/developers/language-developers/&quot;&gt;language developer community&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;contribution&quot;&gt;Contribution&lt;/h3&gt;
+
+&lt;p&gt;GroupShareKit is open source and published under &lt;a href=&quot;https://opensource.org/licenses/MIT&quot;&gt;MIT License&lt;/a&gt; so if you would like to add a new feature or you find a bug please don’t hesitate to use the &lt;a href=&quot;&quot;&gt;issue tracker&lt;/a&gt;. Of course you can do more than that by actually implementing the feature or the fix your looking for. Also you might find issues that are already opened with which you might be able to help. More about that &lt;a href=&quot;https://github.com/sdl/groupsharekit.net/issues&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you wonder why should you contribute to open source projects read this &lt;a href=&quot;http://opensource.about.com/od/what-is-open-source/fl/Why-Do-People-Contribute-to-Open-Source-Projects.htm&quot;&gt;article&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;happy-coding&quot;&gt;Happy coding&lt;/h3&gt;
+
+&lt;p&gt;I’m really keen to hear about your experience with the library and what kind of integration you’ve done.&lt;/p&gt;
+
+&lt;p&gt;Please let me know if you have any comments or questions.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Picture: &lt;a href=&quot;https://flic.kr/p/Q4MPv&quot;&gt;kballo - SDK Bayonne&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Introducing GroupShareKit</title>
