@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://www.romuluscrisan.com/</loc>
-    <lastmod>2016-01-30T16:15:36+00:00</lastmod>
+    <lastmod>2016-01-31T15:06:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
     <url>
-      <loc>http://www.romuluscrisan.com/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk.html</loc>
+      <loc>http://www.romuluscrisan.com/sdl%20studio/2016/01/31/age-of-developers-about-sdl-studio-sdk.html</loc>
       
-        <lastmod>2016-01-30T12:54:21+00:00</lastmod>
+        <lastmod>2016-01-31T10:37:00+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -125,9 +125,9 @@
     </url>
   
     <url>
-      <loc>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html</loc>
+      <loc>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html</loc>
       
-        <lastmod>2015-07-20T10:00:00+00:00</lastmod>
+        <lastmod>2015-07-20T19:00:00+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -138,7 +138,7 @@
     </url>
   
     <url>
-      <loc>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html</loc>
+      <loc>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html</loc>
       
         <lastmod>2015-07-20T10:00:00+00:00</lastmod>
       
@@ -388,7 +388,7 @@
   <url>
     <loc>http://www.romuluscrisan.com/atom.xml</loc>
     
-      <lastmod>2016-01-30T16:15:36+00:00</lastmod>
+      <lastmod>2016-01-31T15:06:31+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -453,7 +453,7 @@
   <url>
     <loc>http://www.romuluscrisan.com/sitemap.xml</loc>
     
-      <lastmod>2016-01-30T16:15:36+00:00</lastmod>
+      <lastmod>2016-01-31T15:06:31+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -466,7 +466,7 @@
   <url>
     <loc>http://www.romuluscrisan.com//feed.xml</loc>
     
-      <lastmod>2016-01-30T16:15:36+00:00</lastmod>
+      <lastmod>2016-01-31T15:06:31+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>

@@ -5,8 +5,7 @@ date: 2016-01-31 10:37:00
 category: 
   - SDL Studio
 tags: Studio SDK
-excerpt: 
-  - object Object
+excerpt: "This is the 5th part of the OpenExchange: Age of Developers series. In the previous articles I talked about how to configure your development environment and also gave  some suggestion on how you can start the development for OpenExchange store. One of the steps from the development environment setup was to install the SDL Studio SDK and I think it's worth talking about it in a bit more detail."
 image: "about-sdl-studio-sdk.jpg"
 published: true
 ---

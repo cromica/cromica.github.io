@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OpenExchange: Age of developers"
-date: {}
+date: 2015-07-20 19:00:00
 category: 
   - SDL Studio
 tags: Studio OpenExchange plugin

@@ -21,6 +21,7 @@ As I release parts of this series I will update this page with links to the arti
 3. [I'm a developer, why bother with translation industry?](http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html)
 4. Configure OpenExchange development environment
 5. [OpenExchange:Where do I start?](http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html)
+6. [About SDL Studio SDK](http://romuluscrisan.com/sdl%20studio/2016/01/31/age-of-developers-about-sdl-studio-sdk.html)
 
 ### First things first  ###
 
