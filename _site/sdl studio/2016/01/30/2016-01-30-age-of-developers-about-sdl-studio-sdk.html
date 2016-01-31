@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="msvalidate.01" content="E3948E882CD0536965BAC602143B54BC" />
-    <title>The engine behind my blog</title>
+    <title>About SDL Studio SDK</title>
     
 
-    <meta content="The engine behind my blog" property="og:title">
-    <meta content="The engine behind my blog" name="twitter:title">
+    <meta content="About SDL Studio SDK" property="og:title">
+    <meta content="About SDL Studio SDK" name="twitter:title">
     <meta content="Software developer, trainer, speaker and more by Romulus Crisan" property="og:site_name">
     <meta content="Romulus Crisan is a software developer, trainer, speaker, agile." name="description">
     <meta content="Romulus Crisan is a software developer, trainer, speaker, agile." property="og:description">
@@ -22,21 +22,20 @@
 
     <link href="/atom.xml" rel="alternate" title="Atom" type="application/atom+xml">
     <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
-    <link href="http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html" rel="canonical">
+    <link href="http://www.romuluscrisan.com/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk.html" rel="canonical">
     <meta content="article" property="og:type">
     <meta content="summary" name="twitter:card">
-    <meta content="http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html" property="og:url">
-    <meta content="http://www.romuluscrisan.com/blog/2014/03/03/the-engine-behind-my-blog.html" name="twitter:url"> 
-    <meta content="2014-03-03T21:52:21+00:00" property="article:published_time">
+    <meta content="http://www.romuluscrisan.com/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk.html" property="og:url">
+    <meta content="http://www.romuluscrisan.com/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk.html" name="twitter:url"> 
+    <meta content="2016-01-30T12:54:21+00:00" property="article:published_time">
     <meta content="http://www.romuluscrisan.com/index.html#about" property="article:author"> 
     
     
-    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts/">
-    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts/">  
-    <meta property="article:section" content="blog">   
-    <meta property="article:tag" content="Jekyll">
-    <meta property="article:tag" content="Blogging">
-    <meta property="article:tag" content="Github"> 
+    <meta property="og:image" content="http://www.romuluscrisan.com/assets/images/posts/introducing-groupsharekit/introducing-groupsharekit.jpg">
+    <meta name="twitter:image:src" content="http://www.romuluscrisan.com/assets/images/posts/introducing-groupsharekit/introducing-groupsharekit.jpg">  
+    <meta property="article:section" content="sdl studio">   
+    <meta property="article:tag" content="Studio">
+    <meta property="article:tag" content="SDK"> 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="assets/plugins/lt-ie9/html5.js"></script>
     <script type="text/javascript" src="assets/plugins/lt-ie9/respond.min.js"></script>
@@ -107,53 +106,67 @@
             <div class="row">
                 <div class="left col-md-9">
                     <header>
-                        <h1 itemprop="name">The engine behind my blog</h1>
+                        <h1 itemprop="name">About SDL Studio SDK</h1>
                         <small class="fsize13">
-                            <a href="/blog/2014/03/03/the-engine-behind-my-blog.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> blog</a>
-                            <a href="/blog/2014/03/03/the-engine-behind-my-blog.html#disqus_thread" class="label label-default light">0 Comments</a>
-                            <span class="label label-default light" itemprop="datePublished" content="">3 March 2014</span>
+                            <a href="/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> sdl studio</a>
+                            <a href="/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk.html#disqus_thread" class="label label-default light">0 Comments</a>
+                            <span class="label label-default light" itemprop="datePublished" content="">30 January 2016</span>
                         </small>
                     </header>
                     <span itemprop="articleBody">    
-                    <p class="dropcap">I guess it's time to dive a bit more on what technology stands behind my blog. In the previous posts I've talked about the <a href="http://www.romuluscrisan.com/blog/2014/02/23/why-a-blog.html">reasons to start a blog</a>, <a href="http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html">why I choose github pages</a> to host it and now I will talk about Jekyll, the engine behind my blog.</p>
+                    <p><img src="/assets/images/posts/about-sdl-studio-sdk.jpg" alt="about-sdl-studio-sdk.jpg" /></p>
 
-<h3 id="what-is-jekyll-">What is Jekyll ?</h3>
+<p class="dropcap">This is the 5th part of the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series. In the previous articles I talked about how to configure your development environment and also gave  some suggestion on how you can start the development for OpenExchange store. One of the steps from the development environment setup was to install the SDL Studio SDK and I think it's worth talking about it in a bit more detail.</p>
 
-<p>Jekyll is a parsing engine which generates static html pages from dynamic components like template or markdown files. It uses a simple inline syntax which at build time is evaluated and replaced resulting a static page. Here is a short and very simple example:</p>
+<h3 id="age-of-developers---table-of-contents">Age of developers - table of contents</h3>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;title&gt;</span>{{ page.title }}<span class="nt">&lt;/title&gt;</span></code></pre></div>
+<p>As I release parts of this series I will update this page with links to the articles.</p>
 
-<p>In the above example the value for the title tag will be set with the value of the title property of the page object. Jekyll has a simple and limited syntax so it’s quit easy to learn it, but it has great flexibility with lots of options on how to build the site. Also you can have partial files which Jekyll will combine at build time.</p>
+<ol>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html">Introduction</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html">I’m a translator do I need to write code?</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html">I’m a developer, why bother with translation industry?</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html">Configure OpenExchange development environment</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html">OpenExchange:Where do I start?</a></li>
+  <li>About SDL Studio SDK</li>
+</ol>
 
-<p>Jekyll has a special folder structure which is used in order to generate the static website:</p>
+<h3 id="what-is-an-sdk">What is an SDK?</h3>
 
-<ul>
+<p>SDK stands for <strong>software development kit</strong> and typically is a set of software development tools that enable the creation of applications for certain software applications. What exactly an SDK contains differ between each target software applications. Sometimes it can be a set of libraries in certain programing languages, like <a href="https://www.microsoft.com/net">Microsoft .Net</a> or <a href="https://www.java.com">Java</a>, or it can contain a bunch of supporting tools. Typically the SDK cames as separate download since not every user might be interested in using this type of capabilities.If you are interested in more details you can have a look <a href="https://en.wikipedia.org/wiki/Software_development_kit">here</a>.</p>
+
+<h3 id="what-can-i-find-the-sdl-studio-sdk">What can I find the SDL Studio SDK</h3>
+
+<p>SDL Studio SDK comes as a separate download from the standard SDL Studio application. You can get it from the developer page located <a href="http://www.translationzone.com/openexchange/developer/sdk.html">here</a>. Here’s the list of things that will be installed with the SDK:</p>
+
+<ol>
   <li>
-    <p><strong>_includes</strong> folder is used to define partial files which can then be added to various pages. Some possible partial files might be the footer or header which for sure will be nice to define in one place and use on all pages.</p>
+    <p>Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API’s. This applications are really for good to get started with one of the API’s but please bare in mind that they don’t cover the entire API’s so please also look for features in the <a href="http://www.translationzone.com/openexchange/developer/sdk.html">documention</a> or ask on our <a href="https://community.sdl.com/developers/language-developers/">developer community</a>.</p>
   </li>
   <li>
-    <p><strong>_layout</strong> folder is pretty self explanatory and is the location where you will define the layouts of your pages.</p>
+    <p>Microsoft Visual Studio project templates.</p>
   </li>
-  <li>
-    <p><strong>_posts</strong> folder is the location from where dynamic content/posts will be saved. Jekyll uses a markup language like Markdown for this kind of files.</p>
-  </li>
-  <li>
-    <p><strong>_drafts</strong> folder is where the working in progress stuff will be held since this location will not be evaluated at build unless <code>--draft</code> is specified.</p>
-  </li>
-  <li>
-    <p><strong>_site</strong> folder is the location from where Jekyll will serve the static pages. During the build process Jekyll will combine partial files and evaluate the syntax producing a static html file which will be saved in this folder.</p>
-  </li>
-</ul>
+</ol>
 
-<h3 id="jekyll-and-github-pages">Jekyll and Github pages</h3>
+<p><img src="/assets/images/posts/introducing-groupsharekit/manage-nuget.png" alt="Manage Nuget" title="Manage Nuget" class="img-responsive" /></p>
 
-<p>Jekyll can be installed locally and since it has a small static webserver embedded it can be used in lots of ways to serve the website. Using <code>jekyll serve</code> you can build and browse the site. Beside this option you can use the site developed with Jekyll directly with Github pages since behind the scenes it uses Jekyll. So all you have to do is push your site developed with jekyll to a repository and Github will do the trick almost instant. Please be aware that this is not true for all Github repositories, it’s only valid for Github pages repositories which must be created according to this <a href="http://pages.github.com/">steps</a>.</p>
+<h3 id="documentation">Documentation</h3>
 
-<p>My intention with this article was to give a high overview of what Jekyll means and some basic principles. If you are looking for more details please have a look <a href="http://jekyllrb.com/">here</a> and <a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html">here</a>.</p>
+<p>For more details please have a look <a href="https://github.com/sdl/groupsharekit.net#groupsharekit---groupshare-rest-api-client-library-for-net-">here</a>. If you don’t find an answer don’t hesitate to ask a question on <a href="https://community.sdl.com/developers/language-developers/">language developer community</a>.</p>
 
-<p>If you have any questions please don’t hesitate and leave a comment.</p>
+<h3 id="contribution">Contribution</h3>
 
+<p>GroupShareKit is open source and published under <a href="https://opensource.org/licenses/MIT">MIT License</a> so if you would like to add a new feature or you find a bug please don’t hesitate to use the <a href="">issue tracker</a>. Of course you can do more than that by actually implementing the feature or the fix your looking for. Also you might find issues that are already opened with which you might be able to help. More about that <a href="https://github.com/sdl/groupsharekit.net/issues">here</a>.</p>
+
+<p>If you wonder why should you contribute to open source projects read this <a href="http://opensource.about.com/od/what-is-open-source/fl/Why-Do-People-Contribute-to-Open-Source-Projects.htm">article</a>.</p>
+
+<h3 id="happy-coding">Happy coding</h3>
+
+<p>I’m really keen to hear about your experience with the library and what kind of integration you’ve done.</p>
+
+<p>Please let me know if you have any comments or questions.</p>
+
+<p><em>Picture: <a href="https://flic.kr/p/Q4MPv">kballo - SDK Bayonne</a></em></p>
 
                     </span>
                <!--      <p class="fsize16">Tags: 
@@ -162,14 +175,10 @@
                     <br/>
                      
                         <div class="nav-previous">
-                          <a class="" href="http://www.romuluscrisan.com/blog/2014/02/24/why-i-choose-github-pages.html" rel="prev"><i class="fa fa-long-arrow-left nav-previous-link"></i>Why I choose Github pages</a>
+                          <a class="" href="http://www.romuluscrisan.com/sdl-groupshare/2015/11/15/introducing-groupsharekit.html" rel="prev"><i class="fa fa-long-arrow-left nav-previous-link"></i>Introducing GroupShareKit</a>
                         </div>
                       
                     
-                        <div class="nav-next">
-                          <a class="" href="http://www.romuluscrisan.com/jekyll/2014/03/06/install-jekyll-using-chocolatey.html" rel="next">Install Jekyll using Chocolatey<i class="fa fa-long-arrow-right nav-next-link"></i></a>
-                        </div>
-                       
                      
                       <br/>
                     <hr/>

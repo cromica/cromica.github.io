@@ -8,7 +8,70 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Sun, 15 Nov 2015 22:00:00 +0000</pubDate>
+    <pubDate>Sat, 30 Jan 2016 12:54:21 +0000</pubDate>
+    <item>
+      <title>About SDL Studio SDK</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk.html</link>
+      <description><![CDATA[I love small and simple things that help me be more productive with my work. This is the main reasons why some time ago I started to work on GroupShareKit and I&amp;amp;#x27;m now happy to say that this is now available for everyone to use it as they like. Not only that you can use it but is completely open source.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk.html#disqus_thread</comments>
+      <pubDate>Sat, 30 Jan 2016 12:54:21 +0000</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2016/01/30/2016-01-30-age-of-developers-about-sdl-studio-sdk.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/about-sdl-studio-sdk.jpg" alt="about-sdl-studio-sdk.jpg" /></p>
+
+<p class="dropcap">This is the 5th part of the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series. In the previous articles I talked about how to configure your development environment and also gave  some suggestion on how you can start the development for OpenExchange store. One of the steps from the development environment setup was to install the SDL Studio SDK and I think it's worth talking about it in a bit more detail.</p>
+
+<h3 id="age-of-developers---table-of-contents">Age of developers - table of contents</h3>
+
+<p>As I release parts of this series I will update this page with links to the articles.</p>
+
+<ol>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html">Introduction</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html">I’m a translator do I need to write code?</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html">I’m a developer, why bother with translation industry?</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html">Configure OpenExchange development environment</a></li>
+  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html">OpenExchange:Where do I start?</a></li>
+  <li>About SDL Studio SDK</li>
+</ol>
+
+<h3 id="what-is-an-sdk">What is an SDK?</h3>
+
+<p>SDK stands for <strong>software development kit</strong> and typically is a set of software development tools that enable the creation of applications for certain software applications. What exactly an SDK contains differ between each target software applications. Sometimes it can be a set of libraries in certain programing languages, like <a href="https://www.microsoft.com/net">Microsoft .Net</a> or <a href="https://www.java.com">Java</a>, or it can contain a bunch of supporting tools. Typically the SDK cames as separate download since not every user might be interested in using this type of capabilities.If you are interested in more details you can have a look <a href="https://en.wikipedia.org/wiki/Software_development_kit">here</a>.</p>
+
+<h3 id="what-can-i-find-the-sdl-studio-sdk">What can I find the SDL Studio SDK</h3>
+
+<p>SDL Studio SDK comes as a separate download from the standard SDL Studio application. You can get it from the developer page located <a href="http://www.translationzone.com/openexchange/developer/sdk.html">here</a>. Here’s the list of things that will be installed with the SDK:</p>
+
+<ol>
+  <li>
+    <p>Sample applications, developed in C#, to demonstrate the basic capabilities of SDL Studio API’s. This applications are really for good to get started with one of the API’s but please bare in mind that they don’t cover the entire API’s so please also look for features in the <a href="http://www.translationzone.com/openexchange/developer/sdk.html">documention</a> or ask on our <a href="https://community.sdl.com/developers/language-developers/">developer community</a>.</p>
+  </li>
+  <li>
+    <p>Microsoft Visual Studio project templates.</p>
+  </li>
+</ol>
+
+<p><img src="/assets/images/posts/introducing-groupsharekit/manage-nuget.png" alt="Manage Nuget" title="Manage Nuget" class="img-responsive" /></p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>For more details please have a look <a href="https://github.com/sdl/groupsharekit.net#groupsharekit---groupshare-rest-api-client-library-for-net-">here</a>. If you don’t find an answer don’t hesitate to ask a question on <a href="https://community.sdl.com/developers/language-developers/">language developer community</a>.</p>
+
+<h3 id="contribution">Contribution</h3>
+
+<p>GroupShareKit is open source and published under <a href="https://opensource.org/licenses/MIT">MIT License</a> so if you would like to add a new feature or you find a bug please don’t hesitate to use the <a href="">issue tracker</a>. Of course you can do more than that by actually implementing the feature or the fix your looking for. Also you might find issues that are already opened with which you might be able to help. More about that <a href="https://github.com/sdl/groupsharekit.net/issues">here</a>.</p>
+
+<p>If you wonder why should you contribute to open source projects read this <a href="http://opensource.about.com/od/what-is-open-source/fl/Why-Do-People-Contribute-to-Open-Source-Projects.htm">article</a>.</p>
+
+<h3 id="happy-coding">Happy coding</h3>
+
+<p>I’m really keen to hear about your experience with the library and what kind of integration you’ve done.</p>
+
+<p>Please let me know if you have any comments or questions.</p>
+
+<p><em>Picture: <a href="https://flic.kr/p/Q4MPv">kballo - SDK Bayonne</a></em></p>
+]]></content:encoded>
+      <dc:date>2016-01-30T12:54:21+00:00</dc:date>
+    </item>
     <item>
       <title>Introducing GroupShareKit</title>
       <link>http://www.romuluscrisan.com/sdl-groupshare/2015/11/15/introducing-groupsharekit.html</link>
@@ -478,35 +541,6 @@
 ]]></content:encoded>
       <dc:date>2015-07-20T10:00:00+00:00</dc:date>
     </item>
-    <item>
-      <title>OpenExchange: Age of developers</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html</link>
-      <description><![CDATA[OpenExchange was launched a few years back by SDL with the purpose to allow anyone to integrate their solutions or ideas with the SDL Language Platform. This gave everyone freedom to augment the SDL platform according to their needs. Because of this freedom, apps like Glossary Converter, MSWord Grammar Checker and many others where possible. It's pretty obvious that this brings great value to every SDL language platform user, but how about building those apps? From where should I start? I'm a translator do I need to program? I have no idea about the translation industry, what can I do?]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html#disqus_thread</comments>
-      <pubDate>Mon, 20 Jul 2015 10:00:00 +0000</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-intro/age-of-developers-intro.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
-
-<p class="dropcap">OpenExchange was launched a few years back by SDL with the purpose to allow anyone to integrate their solutions or ideas with the SDL language platform. This gave everyone freedom to augment the SDL language platform according to their needs. Because of this freedom, apps like <a href="http://www.translationzone.com/openexchange/app/glossaryconverter-476.html#46146" target="_blank">Glossary Converter</a>, <a href="http://www.translationzone.com/openexchange/app/mswordgrammarcheckerforstudio2015-796.html#85390">MSWord Grammar Checker</a> and many others where possible. It's pretty obvious that this brings great value to every SDL language platform user, but how about building those apps? From where should I start? I'm a translator do I need to write code? I have no idea about the translation industry, what can I do? </p>
-
-<h3 id="age-of-developers">Age of developers</h3>
-
-<p>This is the introduction article for a series of blog posts that I’m about to write about how you can develop apps or plugins for OpenExchange throughout which I will answer the above questions and many others. If you’re not a developer but you would like to be able to build something don’t worry I will show you how you can start learn programming, if you are a developer already but don’t have a clue about translation industry and what can you do I got you covered as well. I will start from ground zero providing step by step explanation on how you need to setup the development environment, what tools you need and from where you can get them. Throughout the series I will develop a plugin and share with you the steps I’m doing and also the source code.</p>
-
-<p>As I release parts of this series I will update this page with links to the articles.</p>
-
-<ol>
-  <li>Introduction</li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html">I’m a translator do I need to write code?</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html">I’m a developer, why bother with translation industry?</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html">Configure OpenExchange development environment</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html">OpenExchange:Where do I start?</a></li>
-</ol>
-
-<p>Please leave a comment if you have any questions.</p>
-]]></content:encoded>
-      <dc:date>2015-07-20T10:00:00+00:00</dc:date>
-    </item>
-    <dc:date>2015-11-15T22:00:00+00:00</dc:date>
+    <dc:date>2016-01-30T12:54:21+00:00</dc:date>
   </channel>
 </rss>

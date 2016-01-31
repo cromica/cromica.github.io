@@ -1,7 +1,7 @@
 ---
 layout: post
 title: About SDL Studio SDK
-date: {}
+date: 2016-01-31 10:37:00
 category: 
   - SDL Studio
 tags: Studio SDK
