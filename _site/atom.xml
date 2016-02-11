@@ -4,13 +4,44 @@
  <title>Romulus Crisan</title>
  <link type="application/atom+xml" href="http://romuluscrisan.com/atom.xml" rel="self"/>
  <link href="http://www.romuluscrisan.com/"/>
- <updated>2016-01-31T15:37:41+00:00</updated>
+ <updated>2016-02-11T20:32:44+00:00</updated>
  <id>http://www.romuluscrisan.com/</id>
  <author>
    <name>Romulus Crisan</name>
    <email>cromica@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>First 2016 ITCamp community event</title>
+   <link href="http://www.romuluscrisan.com/career/2016/02/11/first-2016-it-camp-community-event.html"/>
+   <updated>2016-02-11T22:37:00+00:00</updated>
+   <id>http://www.romuluscrisan.com/career/2016/02/11/first-2016-it-camp-community-event</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/first-itcamp-2016.jpg&quot; alt=&quot;First ITCamp 2016&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;dropcap&quot;&gt;We are already mid February 2016 and the IT events in Cluj are pilling up big time. This is going to be a really busy spring and of course really interesting. To name, chronologically, just a few of which I&#39;m aware &lt;a href=&quot;http://hellojs.org/&quot; target=&quot;_blank&quot;&gt;Hellojs&lt;/a&gt;, &lt;a href=&quot;http://cluj.codecamp.ro/&quot; target=&quot;_blank&quot;&gt;Codecamp&lt;/a&gt;, &lt;a href=&quot;http://devtalks.ro/&quot; target=&quot;_blank&quot;&gt;Devtalks&lt;/a&gt;, &lt;a href=&quot;http://www.romaniatesting.ro/&quot; target=&quot;_blank&quot;&gt;Romanian Testing Conference&lt;/a&gt;, &lt;a href=&quot;http://www.techsylvania.co/&quot; target=&quot;_blank&quot;&gt;Techsylvania&lt;/a&gt; and &lt;a href=&quot;http://itcamp.ro/&quot; target=&quot;_blank&quot;&gt;ITCamp&lt;/a&gt;. I won&#39;t be too surprised if I missed one or two ... . Surprisingly most of them are in may so till then I suggest to warm-up a bit with the first 2016 edtion of &lt;a href=&quot;http://www.eventbrite.com/e/itcamp-community-event-tickets-21433906391&quot; target=&quot;_blank&quot;&gt;ITCamp community event&lt;/a&gt; which will happen on the 24th of February. Click here to &lt;a href=&quot;http://www.eventbrite.com/e/itcamp-community-event-tickets-21433906391&quot; target=&quot;_blank&quot;&gt;register&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-should-i-come&quot;&gt;Why should I come?&lt;/h3&gt;
+
+&lt;p&gt;Well there are plenty of reasons to come, like meeting fellow developers from other companies (some of you might not be attracted by this but trust me it’s nice to learn about what others are doing), having a coffee (or beer shhhtt…) and maybe, just maybe, if you are not too tired by that time hear what the speakers have to say.&lt;/p&gt;
+
+&lt;h3 id=&quot;whos-speaking&quot;&gt;Who’s speaking?&lt;/h3&gt;
+
+&lt;p&gt;There are two session schedule for this event. One of the session is going to be presented by Radu Vunvulea, checkout his &lt;a href=&quot;http://vunvulearadu.blogspot.ro/&quot;&gt;Tech Wall&lt;/a&gt; for more details, and the second is going to be presented by me. I guess if you end up reading this article you probably know me but if you somehow find this by mistake just click around and you might get some info about me.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-sessions&quot;&gt;The sessions&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;First 13 steps to be able to design an application for Azure Service Fabric&lt;/strong&gt; - Radu Vunvulea&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;This presentation will introduce you in the most important concept of Azure Service Fabric with real life examples and demos. This is not a how to session, this is a session with the pillars of Azure Service Fabric.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Building my first mobile app with UWP&lt;/strong&gt; - Romulus Crisan&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Nowadays all sorts of devices are popping up into our lives and being a developer I’m intrigued by the idea of customizing or building apps for this type of devices. As you all know perfectly our time is limited and since I make my living out of Microsoft technology until recently the only real option to tinker with this devices was to learn a new technology. Personally I loved the idea of learning something completely new but my boss and my family decide against it. Last year Microsoft launched the new Universal Windows Platform and I thought that this is my “breakout” ticket since I already know most of the technology, or at least I thought I knew it … . So in this session I want to share my experience on building my first mobile application using Microsoft Universal Windows Platform. To be more specific I will talk about tools, data binding and layouts.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Hope to see you there.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>About SDL Studio SDK</title>
