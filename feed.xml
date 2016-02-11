@@ -8,7 +8,40 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Sun, 31 Jan 2016 10:37:00 +0000</pubDate>
+    <pubDate>Thu, 11 Feb 2016 22:37:00 +0000</pubDate>
+    <item>
+      <title>First 2016 ITCamp community event</title>
+      <link>http://www.romuluscrisan.com/career/2016/02/11/first-2016-it-camp-community-event.html</link>
+      <description><![CDATA[We are already mid february 2016 and the IT events in Cluj are pilling up big time. This is going to be a really busy spring and of course really intersting. To name, chronologicaly, just a few of which I'm aware Hellojs, Codecamp, Devtalks, Romanian Testing Conference, Techsylvania and ITCamp. I won't be too surprised if I missed one or two ... . Suprisingly most of them are in may so till then I suggest to warm-up a bit with the first 2016 edtion of ITCamp community event which will happen on the 24th of february.]]></description>
+      <comments>http://www.romuluscrisan.com/career/2016/02/11/first-2016-it-camp-community-event.html#disqus_thread</comments>
+      <pubDate>Thu, 11 Feb 2016 22:37:00 +0000</pubDate>
+      <guid>http://www.romuluscrisan.com/career/2016/02/11/first-2016-it-camp-community-event.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/first-itcamp-2016.jpg" alt="First ITCamp 2016" /></p>
+
+<p class="dropcap">We are already mid February 2016 and the IT events in Cluj are pilling up big time. This is going to be a really busy spring and of course really interesting. To name, chronologically, just a few of which I'm aware <a href="http://hellojs.org/" target="_blank">Hellojs</a>, <a href="http://cluj.codecamp.ro/" target="_blank">Codecamp</a>, <a href="http://devtalks.ro/" target="_blank">Devtalks</a>, <a href="http://www.romaniatesting.ro/" target="_blank">Romanian Testing Conference</a>, <a href="http://www.techsylvania.co/" target="_blank">Techsylvania</a> and <a href="http://itcamp.ro/" target="_blank">ITCamp</a>. I won't be too surprised if I missed one or two ... . Surprisingly most of them are in may so till then I suggest to warm-up a bit with the first 2016 edtion of <a href="http://www.eventbrite.com/e/itcamp-community-event-tickets-21433906391" target="_blank">ITCamp community event</a> which will happen on the 24th of February. Click here to <a href="http://www.eventbrite.com/e/itcamp-community-event-tickets-21433906391" target="_blank">register</a>.</p>
+
+<h3 id="why-should-i-come">Why should I come?</h3>
+
+<p>Well there are plenty of reasons to come, like meeting fellow developers from other companies (some of you might not be attracted by this but trust me it’s nice to learn about what others are doing), having a coffee (or beer shhhtt…) and maybe, just maybe, if you are not too tired by that time hear what the speakers have to say.</p>
+
+<h3 id="whos-speaking">Who’s speaking?</h3>
+
+<p>There are two session schedule for this event. One of the session is going to be presented by Radu Vunvulea, checkout his <a href="http://vunvulearadu.blogspot.ro/">Tech Wall</a> for more details, and the second is going to be presented by me. I guess if you end up reading this article you probably know me but if you somehow find this by mistake just click around and you might get some info about me.</p>
+
+<h3 id="the-sessions">The sessions</h3>
+
+<p><strong>First 13 steps to be able to design an application for Azure Service Fabric</strong> - Radu Vunvulea</p>
+
+<p><code>This presentation will introduce you in the most important concept of Azure Service Fabric with real life examples and demos. This is not a how to session, this is a session with the pillars of Azure Service Fabric.</code></p>
+
+<p><strong>Building my first mobile app with UWP</strong> - Romulus Crisan</p>
+
+<p><code>Nowadays all sorts of devices are popping up into our lives and being a developer I’m intrigued by the idea of customizing or building apps for this type of devices. As you all know perfectly our time is limited and since I make my living out of Microsoft technology until recently the only real option to tinker with this devices was to learn a new technology. Personally I loved the idea of learning something completely new but my boss and my family decide against it. Last year Microsoft launched the new Universal Windows Platform and I thought that this is my “breakout” ticket since I already know most of the technology, or at least I thought I knew it … . So in this session I want to share my experience on building my first mobile application using Microsoft Universal Windows Platform. To be more specific I will talk about tools, data binding and layouts.</code></p>
+
+<p>Hope to see you there.</p>
+]]></content:encoded>
+      <dc:date>2016-02-11T22:37:00+00:00</dc:date>
+    </item>
     <item>
       <title>About SDL Studio SDK</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2016/01/31/age-of-developers-about-sdl-studio-sdk.html</link>
@@ -493,36 +526,6 @@
 ]]></content:encoded>
       <dc:date>2015-08-05T10:00:00+00:00</dc:date>
     </item>
-    <item>
-      <title>OpenExchange: Age of developers</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html</link>
-      <description><![CDATA[OpenExchange was launched a few years back by SDL with the purpose to allow anyone to integrate their solutions or ideas with the SDL Language Platform. This gave everyone freedom to augment the SDL platform according to their needs. Because of this freedom, apps like Glossary Converter, MSWord Grammar Checker and many others where possible. It&#x27;s pretty obvious that this brings great value to every SDL language platform user, but how about building those apps? From where should I start? I&#x27;m a translator do I need to program? I have no idea about the translation industry, what can I do?]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html#disqus_thread</comments>
-      <pubDate>Mon, 20 Jul 2015 19:00:00 +0000</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-intro/age-of-developers-intro.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
-
-<p class="dropcap">OpenExchange was launched a few years back by SDL with the purpose to allow anyone to integrate their solutions or ideas with the SDL language platform. This gave everyone freedom to augment the SDL language platform according to their needs. Because of this freedom, apps like <a href="http://www.translationzone.com/openexchange/app/glossaryconverter-476.html#46146" target="_blank">Glossary Converter</a>, <a href="http://www.translationzone.com/openexchange/app/mswordgrammarcheckerforstudio2015-796.html#85390">MSWord Grammar Checker</a> and many others where possible. It's pretty obvious that this brings great value to every SDL language platform user, but how about building those apps? From where should I start? I'm a translator do I need to write code? I have no idea about the translation industry, what can I do? </p>
-
-<h3 id="age-of-developers">Age of developers</h3>
-
-<p>This is the introduction article for a series of blog posts that I’m about to write about how you can develop apps or plugins for OpenExchange throughout which I will answer the above questions and many others. If you’re not a developer but you would like to be able to build something don’t worry I will show you how you can start learn programming, if you are a developer already but don’t have a clue about translation industry and what can you do I got you covered as well. I will start from ground zero providing step by step explanation on how you need to setup the development environment, what tools you need and from where you can get them. Throughout the series I will develop a plugin and share with you the steps I’m doing and also the source code.</p>
-
-<p>As I release parts of this series I will update this page with links to the articles.</p>
-
-<ol>
-  <li>Introduction</li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html">I’m a translator do I need to write code?</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html">I’m a developer, why bother with translation industry?</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html">Configure OpenExchange development environment</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html">OpenExchange:Where do I start?</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2016/01/31/age-of-developers-about-sdl-studio-sdk.html">About SDL Studio SDK</a></li>
-</ol>
-
-<p>Please leave a comment if you have any questions.</p>
-]]></content:encoded>
-      <dc:date>2015-07-20T19:00:00+00:00</dc:date>
-    </item>
-    <dc:date>2016-01-31T10:37:00+00:00</dc:date>
+    <dc:date>2016-02-11T22:37:00+00:00</dc:date>
   </channel>
 </rss>
