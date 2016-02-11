@@ -20,11 +20,16 @@ There are two session schedule for this event. One of the session is going to be
 
 ### The sessions
 
-1. **First 13 steps to be able to design an application for Azure Service Fabric** - Radu Vunvulea
-> This presentation will introduce you in the most important concept of Azure Service Fabric with real life examples and demos. This is not a how to session, this is a session with the pillars of Azure Service Fabric.
+**First 13 steps to be able to design an application for Azure Service Fabric** - Radu Vunvulea
 
-2. **Building my first mobile app with UWP** - Romulus Crisan
-> Nowadays all sorts of devices are popping up into our lives and being a developer I’m intrigued by the idea of customizing or building apps for this type of devices. As you all know perfectly our time is limited and since I make my living out of Microsoft technology until recently the only real option to tinker with this devices was to learn a new technology. Personally I loved the idea of learning something completely new but my boss and my family decide against it. Last year Microsoft launched the new Universal Windows Platform and I thought that this is my “breakout” ticket since I already know most of the technology, or at least I thought I knew it … . So in this session I want to share my experience on building my first mobile application using Microsoft Universal Windows Platform. To be more specific I will talk about tools, data binding and layouts.
+`This presentation will introduce you in the most important concept of Azure Service Fabric with real life examples and demos. This is not a how to session, this is a session with the pillars of Azure Service Fabric.`
+
+
+**Building my first mobile app with UWP** - Romulus Crisan
+
+`Nowadays all sorts of devices are popping up into our lives and being a developer I’m intrigued by the idea of customizing or building apps for this type of devices. As you all know perfectly our time is limited and since I make my living out of Microsoft technology until recently the only real option to tinker with this devices was to learn a new technology. Personally I loved the idea of learning something completely new but my boss and my family decide against it. Last year Microsoft launched the new Universal Windows Platform and I thought that this is my “breakout” ticket since I already know most of the technology, or at least I thought I knew it … . So in this session I want to share my experience on building my first mobile application using Microsoft Universal Windows Platform. To be more specific I will talk about tools, data binding and layouts.`
+
+Hope to see you there.
 
 
 
