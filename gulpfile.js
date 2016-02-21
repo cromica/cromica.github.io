@@ -19,7 +19,6 @@ var source = {
 
     ],
     scripts: [
-        './site/js/search.min.js',
         assetSource + '/plugins/jquery-fitvids/jquery.fitvids.min.js',
         assetSource + '/plugins/jquery-appear/jquery.appear.js',
         assetSource + '/plugins/superslides/dist/jquery.superslides.min.js',
