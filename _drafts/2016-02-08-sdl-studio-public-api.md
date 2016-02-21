@@ -18,4 +18,17 @@ The internet is full on debates on this topic trying to figure out pros and cons
 
 SDL Studio comes with a public API wich I will explain in detail in a bit but you might ask yourself why aren't all the application components public? At the end of the day the product it's just a bunch of assemblies/dll's that I can easily consume from my code/application. From a stricly technical standpoint this absolutely correct but other things have to be taken in consideration. Certain parts, that are considered internals, are changing quit often and that means your application/plugin that depend on those components might be broken with every change made, also there areas that were not necesarly build to be extensible (at least not for the moment). For SDL Studio the benefit of having a clearly defined public API is the  guarantee that changes are done in a controlled manner. Of course bugs may still pop-up as in any piece of software but we won't remove or change things overnight just because we need them in a certain way to develop a new feature or fix a bug.
 
-### The SDL Studio API's
+### The SDL Studio public API's
+
+At the time I'm writing this article SDL Studio comes with six public API's. We are also at the point to release two new public API's ([More details](https://community.sdl.com/developers/language-developers/f/61/t/6451)). For a clear understanding of each of the available API's in the following lines I will enumerate them and give some details about each of them together with the corresponding assemblies that you need to include in your application:
+
+**[Core API](http://producthelp.sdl.com/SDK/Core/4.0/html/ecbcf309-0686-4cc0-85ef-a8963f73d369.htm)**
+
+`This is the foundation which provides the plug-in framework available in SDL Studio. This is used by other API's to [Define Extension Points](http://producthelp.sdl.com/SDK/Core/4.0/html/c26dc9f8-a68a-4977-a20a-82b25f69efaa.htm) inside the host application which in this case is SDL Studio. You can use this libraries inside another host application if you are looking for a plugin framework and you want to provide this type feature. Besides the plug-in framework this API provides also the engine besides the settings mechanism you find inside SDL Studio`
+
+In order to use the API you will need to reference the following assemblies:
+- Sdl.Core.Globalization.dll
+- Sdl.Core.PluginFramework.dll
+- Sdl.Core.Settings.dll
+
+
