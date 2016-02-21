@@ -11,12 +11,15 @@ title: SDL Studio public API
 
 
 
-<p class="dropcap"> I love writting code and most probably I said it before in other articles. Writting code means dealing with all sorts of API's all day long, starting from your development platform, in my case <a href="https://www.microsoft.com/net" target="_blank">Micrososft .Net</a>, to different application or platform API's. In my humble opinion in today's world it's all about API's and if I were to decide to buy a piece of software for a company I wouldn't consider any which doesn't come with some sort development experience. I might not needed it today but it's definetly going to pay of on a longer term. Who want's to buy or use a product that doesn't offer flexibility? Based on the type of product, API's can come in multiple forms, for example SAAS products tend to offer nowadays some sort of <a href="https://en.wikipedia.org/wiki/Representational_state_transferREST" target="_blank">REST API</a> which can be consumed in different ways and devices. For traditional, desktop type, products the API is composed from certain classes, events and contracts that allow you to either hook into a certain process or to extend their user interface to some degree. As you probably figured it out in this article I will talk about the SDL Studio API's but what about the public word from the title?</p>
+
+<p class="dropcap">I love writing code, something I’ve probably said before in other articles. Writing code means dealing with all sorts of API's all day long, starting from your development platform, in my case <a href="https://www.microsoft.com/net" target="_blank">Micrososft .Net</a>, to different applications or platform API's. In my humble opinion, in today's world it's all about API's and if I were deciding to buy a piece of software for a company I wouldn't consider any that didn't come with some sort development experience. I might not need it today but it's definitely going to pay off in the long term. After all, who wants to buy or use a product that doesn't offer flexibility? Based on the type of product, API's can come in multiple forms, for example these days SAAS products tend to offer some sort of <a href="https://en.wikipedia.org/wiki/Representational_state_transferREST" target="_blank">REST API</a> which can be consumed in different ways and devices. For the traditional, desktop type products the API is composed from certain classes, events and contracts that allow you to either hook into a particular process or to extend their user interface to some degree. As you probably figured out already, I’m going to talk about the SDL Studio API's in this article but let’s consider specifically that word "Public" … how does it differ from "Private"?</p>
 
 ### Public vs Private API
-The internet is full on debates on this topic trying to figure out pros and cons for this approach. My take on this is that there is no silver bullet solution and the decision should be made based on the specific context of the application/product, how the API is bringing value to the product and the impact on product delivery.
 
-SDL Studio comes with a public API which I will explain in detail in a bit but you might ask yourself why aren't all the application components public? At the end of the day the product it's just a bunch of assemblies/dll's that I can easily consume from my code/application. From a strictly technical standpoint this absolutely correct but other things have to be taken in consideration. Certain parts, that are considered internals, are changing quit often and that means your application/plugin that depend on those components might be broken with every change made, also there areas that were not necessarily build to be extensible (at least not for the moment). For SDL Studio the benefit of having a clearly defined public API is the  guarantee that changes are done in a controlled manner. Of course bugs may still pop-up as in any piece of software but we won't remove or change things overnight just because we need them in a certain way to develop a new feature or fix a bug.
+The internet is full of debates on this topic trying to figure out pros and cons for this approach. My take on this is that there is no silver bullet solution and the decision should be made based on the specific context of the application/product, how the API is bringing value to the product and the impact on product delivery.
+
+SDL Studio comes with a public API which I will explain in detail in a bit but you might ask yourself why aren't all the application components public? At the end of the day the product is just a bunch of assemblies/dll's that I can easily consume from my code/application. From a strictly technical standpoint this is absolutely correct but other things have to be taken in consideration. Certain parts, that are considered internal, are changing quite often and that means the application/plugin that depends on those components might be broken with every change that’s made, also there are areas that were not necessarily built to be extensible (at least not for the moment). For SDL Studio the benefit of having a clearly defined public API is the guarantee that changes are made in a controlled manner. Of course bugs may still pop-up as in any piece of software but we won't remove or change things overnight just because we need them in a certain way to develop a new feature or fix a bug.
+
 
 ### The SDL Studio public API's
 
@@ -43,7 +46,7 @@ In order to use the API you will need to reference the following assemblies:
 
 **[Project Automation API](http://producthelp.sdl.com/SDK/ProjectAutomationApi/4.0/html/b986e77a-82d2-4049-8610-5159c55fddd3.htm)**
 
-`There many activities that must be done as part of the translation process and this is why SDL Studio provides project management features such analysis, pre-translation, generation of finalized target documents,etc. Using the Project Automation API you can build a customized translation workflow based on activities specific to your needs.`
+`There are many activities that must be done as part of the translation process and this is why SDL Studio provides project management features such analysis, pre-translation, generation of finalized target documents,etc. Using the Project Automation API you can build a customized translation workflow based on activities specific to your needs.`
 
 In order to use the API you will need to reference the following assemblies:
 - Sdl.ProjectAutomation.Core.dll
@@ -97,6 +100,3 @@ In order to use the API you will need to reference the following assemblies:
 For each of the API's I've listed the corresponding assemblies but based on your needs you can combine them. A plugin might have dll's from Core API combined with dll's from Project Automation API.
 
 Please let me know if you have any questions.
-
-
-
