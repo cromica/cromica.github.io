@@ -41,4 +41,37 @@ In order to use the API you will need to reference the following assemblies:
 - Sdl.FileTypeSupport.Framework.Core.Settings.dll
 - Sdl.FileTypeSupport.Framework.PreviewControls.dll
 
+**[Project Automation API](http://producthelp.sdl.com/SDK/ProjectAutomationApi/4.0/html/b986e77a-82d2-4049-8610-5159c55fddd3.htm)**
+
+`There many activities that must be done as part of the translation process and this is why SDL Studio provides project management features such analysis, pre-translation, generation of finalized target documents,etc. Using the Project Automation API you can build a customized translation workflow based on activities specific to your needs.`
+
+In order to use the API you will need to reference the following assemblies:
+- Sdl.ProjectAutomation.Core.dll
+- Sdl.ProjectAutomation.FileBased.dll
+- Sdl.ProjectAutomation.Settings.dll
+
+**[Translation Memory API](http://producthelp.sdl.com/SDK/TranslationMemoryApi/4.0/html/790076c4-fb7c-4c3d-9ad5-e7691c317500.htm)**
+
+`Translation memories are an essenctial piece of technology for translators. Of course SDL Studio comes with this capabilities but in case you want to use a different piece of technology for translation memories you can enable that in SDL Studio by creating a new translation memory provider using the Translation Memory API.`
+
+In order to use the API you will need to reference the following assemblies:
+- Sdl.LanguagePlatform.Core.dll
+- Sdl.LanguagePlatform.TranslationMemory.dll
+- Sdl.LanguagePlatform.TranslationMemoryApi.dll
+- Sdl.LanguagePlatform.IO.dll
+
+**[Integration API](http://producthelp.sdl.com/SDK/StudioIntegrationApi/4.0/html/135dcb1c-535b-46a9-8063-b83be4a06d82.htm)**
+
+`This API enables 3rd party developers to extend or customize the user interface or create custom functionalities for SDL Studio. To be more specific you can create new views, new sections in the menu ribbon, new buttons in the menu ribbon, new options in the context menu or hook into the editor to create, update or delete certain informations or you can get notified when certain events happen.`
+
+In order to use the API you will need to reference the following assemblies:
+- Sdl.DesktopEditor.BasicControls.dll
+- Sdl.DesktopEditor.EditorApi.dll
+- Sdl.Desktop.IntegrationApi.dll
+- Sdl.Desktop.IntegrationApi.Extensions.dll
+- Sdl.TranslationStudioAutomation.Licensing.dll
+- Sdl.TranslationStudioAutomation.IntegrationApi.dll
+- Sdl.TranslationStudioAutomation.IntegrationApi.Extensions.dll
+
+
 
