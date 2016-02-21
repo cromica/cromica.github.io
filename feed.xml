@@ -8,7 +8,132 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Thu, 11 Feb 2016 22:37:00 +0000</pubDate>
+    <pubDate>Sun, 21 Feb 2016 10:37:00 +0000</pubDate>
+    <item>
+      <title>SDL Studio Public API</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2016/02/21/sdl-studio-public-api.html</link>
+      <description><![CDATA[I love writing code, something I’ve probably said before in other articles. Writing code means dealing with all sorts of API's all day long, starting from your development platform, in my case Micrososft .Net, to different applications or platform API's. In my humble opinion, in today's world it's all about API's and if I were deciding to buy a piece of software for a company I wouldn't consider any that didn't come with some sort of development experience. I might not need it today but it's definitely going to pay off in the long term. After all, who wants to buy or use a product that doesn't offer flexibility? Based on the type of product, API's can come in multiple forms, for example these days SAAS products tend to offer some sort of REST API which can be consumed in different ways and devices. For the traditional, desktop type products the API is composed from certain classes, events and contracts that allow you to either hook into a particular process or to extend their user interface to some degree. As you probably figured out already, I’m going to talk about the SDL Studio API's in this article but let’s consider specifically that word "Public" … how does it differ from "Private"?]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2016/02/21/sdl-studio-public-api.html#disqus_thread</comments>
+      <pubDate>Sun, 21 Feb 2016 10:37:00 +0000</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2016/02/21/sdl-studio-public-api.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/studio-public-api.jpg" alt="Studio public api" /></p>
+
+<p class="dropcap">I love writing code, something I’ve probably said before in other articles. Writing code means dealing with all sorts of API's all day long, starting from your development platform, in my case <a href="https://www.microsoft.com/net" target="_blank">Micrososft .Net</a>, to different applications or platform API's. In my humble opinion, in today's world it's all about API's and if I were deciding to buy a piece of software for a company I wouldn't consider any that didn't come with some sort of development experience. I might not need it today but it's definitely going to pay off in the long term. After all, who wants to buy or use a product that doesn't offer flexibility? Based on the type of product, API's can come in multiple forms, for example these days SAAS products tend to offer some sort of <a href="https://en.wikipedia.org/wiki/Representational_state_transferREST" target="_blank">REST API</a> which can be consumed in different ways and devices. For the traditional, desktop type products the API is composed from certain classes, events and contracts that allow you to either hook into a particular process or to extend their user interface to some degree. As you probably figured out already, I’m going to talk about the SDL Studio API's in this article but let’s consider specifically that word "Public" … how does it differ from "Private"?</p>
+
+<h3 id="public-vs-private-api">Public vs Private API</h3>
+
+<p>The internet is full of debates on this topic trying to figure out pros and cons for this approach. My take on this is that there is no silver bullet solution and the decision should be made based on the specific context of the application/product, how the API is bringing value to the product and the impact on product delivery.</p>
+
+<p>SDL Studio comes with a public API which I will explain in detail in a bit but you might ask yourself why aren’t all the application components public? At the end of the day the product is just a bunch of assemblies/dll’s that I can easily consume from my code/application. From a strictly technical standpoint this is absolutely correct but other things have to be taken in consideration. Certain parts, that are considered internal, are changing quite often and that means the application/plugin that depends on those components might be broken with every change that’s made, also there are areas that were not necessarily built to be extensible (at least not for the moment). For SDL Studio the benefit of having a clearly defined public API is the guarantee that changes are made in a controlled manner. Of course bugs may still pop-up as in any piece of software but we won’t remove or change things overnight just because we need them in a certain way to develop a new feature or fix a bug.</p>
+
+<h3 id="the-sdl-studio-public-apis">The SDL Studio public API’s</h3>
+
+<p>At the time I’m writing this article SDL Studio comes with six public API’s. We are also at the point to release two new public API’s (<a href="https://community.sdl.com/developers/language-developers/f/61/t/6451">More details</a>). For a clear understanding of each of the available API’s in the following lines I will enumerate them and give some details about each of them together with the corresponding assemblies that you need to include in your application:</p>
+
+<p><strong><a href="http://producthelp.sdl.com/SDK/Core/4.0/html/ecbcf309-0686-4cc0-85ef-a8963f73d369.htm">Core API</a></strong></p>
+
+<p><code>This is the foundation which provides the plug-in framework available in SDL Studio. This is used by other API's to define extension points inside the host application which in this case is SDL Studio. You can use this libraries inside another host application if you are looking for a plugin framework and you want to provide this type feature. Besides the plug-in framework this API provides also the engine besides the settings mechanism you find inside SDL Studio</code></p>
+
+<p>In order to use the API you will need to reference the following assemblies:</p>
+
+<ul>
+  <li>Sdl.Core.Globalization.dll</li>
+  <li>Sdl.Core.PluginFramework.dll</li>
+  <li>Sdl.Core.Settings.dll</li>
+</ul>
+
+<p><strong><a href="http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/html/1f5584af-9763-46ff-894b-08127a2421a7.htm">File Type Support API</a></strong></p>
+
+<p><code>In order to translate the content from a certain file type SDL Studio extracts the content into a billingual file type called SDLXliff. Out of the box SDL Studio comes with a comprehensive list of file types that are supported but in case you have a particular file type that is not supported you can use this API to extract the content and create the SDLXliff needed for translation. Also you can extend existing file type to handle certain use case that might not work as expected. This API is also used by the out of the box filters.</code></p>
+
+<p>In order to use the API you will need to reference the following assemblies:</p>
+
+<ul>
+  <li>Sdl.FileTypeSupport.Framework.Core.dll</li>
+  <li>Sdl.FileTypeSupport.Framework.Core.Utilities.dll</li>
+  <li>Sdl.FileTypeSupport.Framework.Core.Settings.dll</li>
+  <li>Sdl.FileTypeSupport.Framework.PreviewControls.dll</li>
+</ul>
+
+<p><strong><a href="http://producthelp.sdl.com/SDK/ProjectAutomationApi/4.0/html/b986e77a-82d2-4049-8610-5159c55fddd3.htm">Project Automation API</a></strong></p>
+
+<p><code>There are many activities that must be done as part of the translation process and this is why SDL Studio provides project management features such analysis, pre-translation, generation of finalized target documents,etc. Using the Project Automation API you can build a customized translation workflow based on activities specific to your needs.</code></p>
+
+<p>In order to use the API you will need to reference the following assemblies:</p>
+
+<ul>
+  <li>Sdl.ProjectAutomation.Core.dll</li>
+  <li>Sdl.ProjectAutomation.FileBased.dll</li>
+  <li>Sdl.ProjectAutomation.Settings.dll</li>
+</ul>
+
+<p><strong><a href="http://producthelp.sdl.com/SDK/TranslationMemoryApi/4.0/html/790076c4-fb7c-4c3d-9ad5-e7691c317500.htm">Translation Memory API</a></strong></p>
+
+<p><code>Translation memories are an essenctial piece of technology for translators. Of course SDL Studio comes with this capabilities but in case you want to use a different piece of technology for translation memories you can enable that in SDL Studio by creating a new translation memory provider using the Translation Memory API.</code></p>
+
+<p>In order to use the API you will need to reference the following assemblies:</p>
+
+<ul>
+  <li>Sdl.LanguagePlatform.Core.dll</li>
+  <li>Sdl.LanguagePlatform.TranslationMemory.dll</li>
+  <li>Sdl.LanguagePlatform.TranslationMemoryApi.dll</li>
+  <li>Sdl.LanguagePlatform.IO.dll</li>
+</ul>
+
+<p><strong><a href="http://producthelp.sdl.com/SDK/StudioIntegrationApi/4.0/html/135dcb1c-535b-46a9-8063-b83be4a06d82.htm">Integration API</a></strong></p>
+
+<p><code>This API enables 3rd party developers to extend or customize the user interface or create custom functionalities for SDL Studio. To be more specific you can create new views, new sections in the menu ribbon, new buttons in the menu ribbon, new options in the context menu or hook into the editor to create, update or delete certain informations or you can get notified when certain events happen.</code></p>
+
+<p>In order to use the API you will need to reference the following assemblies:</p>
+
+<ul>
+  <li>Sdl.DesktopEditor.BasicControls.dll</li>
+  <li>Sdl.DesktopEditor.EditorApi.dll</li>
+  <li>Sdl.Desktop.IntegrationApi.dll</li>
+  <li>Sdl.Desktop.IntegrationApi.Extensions.dll</li>
+  <li>Sdl.TranslationStudioAutomation.Licensing.dll</li>
+  <li>Sdl.TranslationStudioAutomation.IntegrationApi.dll</li>
+  <li>Sdl.TranslationStudioAutomation.IntegrationApi.Extensions.dll</li>
+</ul>
+
+<p><strong><a href="http://producthelp.sdl.com/SDK/Verification/4.0/html/4bc459fe-8ca2-4686-8764-616ebb5ce526.htm">Verification API</a></strong></p>
+
+<p><code>SDL Studio allows translators to check their work by runining verifiers during translation. There can be many ways to verify the quality of a translation and it can also become verify specific so to cope with that need SDL Studio allows custom verifiers to be build and run.</code></p>
+
+<p>In order to use the API you will need to reference the following assemblies:</p>
+
+<ul>
+  <li>Sdl.Verification.Api.dll</li>
+</ul>
+
+<p><strong><a href="https://community.sdl.com/developers/language-developers/f/61/t/6451">Batch Task API</a></strong></p>
+
+<p><code>As part of project management workflow there certain tasks that must happen, like pre-translation, analysis and so on. SDL Studio is coming with a predefined set of tasks but you also create your custom tasks that can be included in your workflows. This API is linked to the Project Automation API but since it's a new addition it's worth mention it separately.</code></p>
+
+<p>In order to use the API you will need to reference the following assemblies:</p>
+
+<ul>
+  <li>Sdl.ProjectAutomation.AutomaticTasks.dll</li>
+</ul>
+
+<p><strong><a href="https://community.sdl.com/developers/language-developers/f/61/t/6451">Terminology Provider API</a></strong></p>
+
+<p><code>Multiterm is the defacto technology for handling terminology in SDL Studio. This API allows 3rd party developers to enable different terminology technology in SDL Studio by creating new terminology providers.</code></p>
+
+<p>In order to use the API you will need to reference the following assemblies:</p>
+
+<ul>
+  <li>Sdl.Terminology.TerminologyProvider.Core.dll</li>
+</ul>
+
+<p>For each of the API’s I’ve listed the corresponding assemblies but based on your needs you can combine them. A plugin might have dll’s from Core API combined with dll’s from Project Automation API.</p>
+
+<p>Please let me know if you have any questions.</p>
+
+<p><em>Picture: <a href="https://flic.kr/p/5XidNz">Alexander Scheffelaar Klots - Connections</a></em></p>
+]]></content:encoded>
+      <dc:date>2016-02-21T10:37:00+00:00</dc:date>
+    </item>
     <item>
       <title>First 2016 ITCamp community event</title>
       <link>http://www.romuluscrisan.com/career/2016/02/11/first-2016-it-camp-community-event.html</link>
@@ -450,82 +575,6 @@
 ]]></content:encoded>
       <dc:date>2015-08-25T10:00:00+00:00</dc:date>
     </item>
-    <item>
-      <title>I'm a developer, why bother with translation industry?</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html</link>
-      <description><![CDATA[This is the second part of the OpenExchange: Age of Developers series and is meant to highlight a few benefits of getting involved in the translation industry as a developer.]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html#disqus_thread</comments>
-      <pubDate>Wed, 05 Aug 2015 10:00:00 +0000</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-developer-translation-industry/developer-translation-industry.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
-
-<p class="dropcap">This is the second part of the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series and is meant to highlight a few benefits of getting involved in the translation industry as a developer.</p>
-
-<h3 id="age-of-developers---table-of-contents">Age of developers - table of contents</h3>
-
-<p>As I release parts of this series I will update this page with links to the articles.</p>
-
-<ol>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html">Introduction</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html">I’m a translator do I need to write code?</a></li>
-  <li>I’m a developer, why bother with translation industry?</li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html">Configure OpenExchange development environment</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html">OpenExchange:Where do I start?</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2016/01/31/age-of-developers-about-sdl-studio-sdk.html">About SDL Studio SDK</a></li>
-</ol>
-
-<h3 id="translation-industry">Translation industry</h3>
-
-<p>I’m a developer, my heart beats 01010101…, so I’m not going to bore you with market shares, revenues and other big numbers about how big this industry is. If you are really curious about this have a look <a href="http://www.pangeanic.com/knowledge_center/size-of-the-translation-industry/#">here</a>. What I would like to say is how important this industry is in today’s world and to sustain my affirmation look at these numbers:</p>
-
-<ul>
-  <li>Only 27% of Internet users speak English</li>
-  <li>70% of internet traffic comes from non-English native countries</li>
-  <li>34% of Twitter messages are in English</li>
-  <li>75% of Facebook users are outside of US</li>
-</ul>
-
-<p>Interesting numbers I must say and they clearly show how relevant this industry is. Now some of you might have heard about <a href="https://en.wikipedia.org/wiki/Machine_translation">machine translation</a> but the translation industry is much more than that. It’s about language localization, interpretation and terminology.</p>
-
-<h3 id="technology">Technology</h3>
-
-<p>Now let’s get closer to what we as developers are interested in, which is the technology. Each industry has its own specific terminology so I would like to take this opportunity to briefly explain some of the terms:</p>
-
-<ol>
-  <li><a href="http://www.translationzone.com/products/cat-tools/">CAT tools (Computer-Assisted Translation)</a> - typically these are desktop applications that aid translators and linguists to increase their translation productivity. While these applications will continue to be predominant on the desktop, web solutions will slowly appear that will add new options for translators and linguists.</li>
-  <li><a href="http://www.translationzone.com/products/translation-memory/#tag1">Translation Memories</a> - this are databases that store segments, which can be sentences, paragraphs, headings, titles or elements, from any filetype, in a list that has been translated. CAT tools rely on translation memories to aid the translator during the translation.</li>
-  <li><a href="http://www.translationzone.com/products/terminology-management/#tag1">Termbase</a> - this is a central repository, like a database, which allows translators to systematically manage approved terms.</li>
-  <li><a href="http://www.translationzone.com/products/machine-translation/#tag1">Machine translation</a> - this is about automated translation of natural languages. Probably all of you have used <a href="http://www.freetranslation.com/">free translation</a> or <a href="https://translate.google.ro/">google translate</a> which are the great examples of machine translation at work. The examples I’ve given are just end-user products but each platform exposes machine translation capabilities through various api’s as part of a <a href="https://languagecloud.sdl.com/translation-toolkit/api-documentation">cloud offering</a>.</li>
-  <li><a href="https://en.wikipedia.org/wiki/Postediting">Post-editing</a> - this is the process of improving a machine generated translation and typically is done from a CAT tool.</li>
-</ol>
-
-<h3 id="why-bother">Why bother?</h3>
-
-<p>Now that I’ve given you a brief overview of the translation industry the big question is why should I, as a developer, bother getting into this. I already know desktop, web, mobile and/or cloud technologies and I also have to keep up with the fast pace of technology changes. That might be true but if you really want to be a great specialist it’s not enough just to know some technologies, you need to make them relevant. People expect solutions for their problems from developers and good solutions require industry expertise. If someone asks you to build them an accounting system you don’t need to be an expert accountant but you need to know a few things about accounting. I highly recommend reading the article from John Sonmez “<a href="http://simpleprogrammer.com/2015/04/23/im-not-sure-i-want-to-be-a-specialist/">I’m not sure I want to be a specialist</a>” which emphasizes on specializing as a developer.</p>
-
-<p>Becoming a specialist will help you become a better professional, find interesting job opportunities or even become a freelance developer if this is something you’re looking for.</p>
-
-<p>Specializing in a specific industry makes perfect sense and this why I consider that you as a developer should take into consideration the translation industry.</p>
-
-<h3 id="where-do-i-start">Where do I start?</h3>
-
-<p>A great way to learn about the translation industry is to start develop plugins and apps for existing products. The <a href="www.sdl.com/openexchange">SDL OpenExchange</a> app store is nice way to publish your work and maybe even earn some money. At the very best you will gain exposure as a developer to those translations companies looking for development expertise to help them integrate their own systems or gain some competitive advantage by asking you to implement some ideas of their own. To publish an app on SDL OpenExchange you need to become an SDL OpenExchange developer. This is a simple process you can follow from <a href="http://www.translationzone.com/openexchange/developer/">here</a>. You don’t need to worry about licenses since SDL can offer dedicated developer licenses:</p>
-
-<ol>
-  <li>CAT Tool - SDL’s CAT tool name is <a href="http://www.sdl.com/cxc/language/translation-productivity/trados-studio/">SDL Trados Studio 2015</a> and in order to develop anything on top if it you’ll need a license. In order to get a developer license please create an SDL OpenExchange developer account and then send an email to app-signing@sdl.com and this will be sorted out</li>
-  <li>Machine Translation - SDL’s machine translation cloud solution is named <a href="https://languagecloud.sdl.com/">Language Cloud</a> and you can sign-up for a developer account <a href="https://languagecloud.sdl.com/translation-toolkit/sign-up">here</a>.</li>
-</ol>
-
-<p>Every new journey might be a bit bumpy in the beginning and you should not hesitate to ask for help. I recommend to register in the <a href="https://community.sdl.com/developers/language-developers/">language developer community</a> and ask for help there.</p>
-
-<h3 id="conclusion">Conclusion</h3>
-
-<p>My best advice is to have patience, practice as much as possible and don’t be afraid to ask. I’m sure the results will come sooner or later. Happy coding.</p>
-
-<p>Please leave a comment if you have any questions.</p>
-]]></content:encoded>
-      <dc:date>2015-08-05T10:00:00+00:00</dc:date>
-    </item>
-    <dc:date>2016-02-11T22:37:00+00:00</dc:date>
+    <dc:date>2016-02-21T10:37:00+00:00</dc:date>
   </channel>
 </rss>
