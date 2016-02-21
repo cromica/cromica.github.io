@@ -73,5 +73,30 @@ In order to use the API you will need to reference the following assemblies:
 - Sdl.TranslationStudioAutomation.IntegrationApi.dll
 - Sdl.TranslationStudioAutomation.IntegrationApi.Extensions.dll
 
+**[Verification API](http://producthelp.sdl.com/SDK/Verification/4.0/html/4bc459fe-8ca2-4686-8764-616ebb5ce526.htm)**
+
+`SDL Studio allows translators to check their work by runining verifiers during translation. There can be many ways to verify the quality of a translation and it can also become verify specific so to cope with that need SDL Studio allows custom verifiers to be build and run.`
+
+In order to use the API you will need to reference the following assemblies:
+- Sdl.Verification.Api.dll
+
+**[Batch Task API](https://community.sdl.com/developers/language-developers/f/61/t/6451)**
+
+`As part of project management workflow there certain tasks that must happen, like pre-translation, analysis and so on. SDL Studio is coming with a predefined set of tasks but you also create your custom tasks that can be included in your workflows. This API is linked to the Project Automation API but since it's a new addition it's worth mention it separately.`
+
+In order to use the API you will need to reference the following assemblies:
+- Sdl.ProjectAutomation.AutomaticTasks.dll
+
+**[Terminology Provider API](https://community.sdl.com/developers/language-developers/f/61/t/6451)**
+
+`Multiterm is the defacto technology for handling terminology in SDL Studio. This API allows 3rd party developers to enable different terminology technology in SDL Studio by creating new terminology providers.`
+
+In order to use the API you will need to reference the following assemblies:
+- Sdl.Terminology.TerminologyProvider.Core.dll
+
+For each of the API's I've listed the corresponding assemblies but based on your needs you can combine them. A plugin might have dll's from Core API combined with dll's from Project Automation API.
+
+Please let me know if you have any questions.
+
 
 
