@@ -31,4 +31,14 @@ In order to use the API you will need to reference the following assemblies:
 - Sdl.Core.PluginFramework.dll
 - Sdl.Core.Settings.dll
 
+**[File Type Support API](http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/html/1f5584af-9763-46ff-894b-08127a2421a7.htm)**
+
+`In order to translate the content from a certain file type SDL Studio extracts the content into a billingual file type called [SDLXliff](http://producthelp.sdl.com/kb/Articles/4529.html). Out of the box SDL Studio comes with a comprehensive list of file types that are supported but in case you have a particular file type that is not supported you can use this API to extract the content and create the SDLXliff needed for translation. Also you can extend existing file type to handle certain use case that might not work as expected. This API is also used by the out of the box filters.`
+
+In order to use the API you will need to reference the following assemblies:
+- Sdl.FileTypeSupport.Framework.Core.dll
+- Sdl.FileTypeSupport.Framework.Core.Utilities.dll
+- Sdl.FileTypeSupport.Framework.Core.Settings.dll
+- Sdl.FileTypeSupport.Framework.PreviewControls.dll
+
 
