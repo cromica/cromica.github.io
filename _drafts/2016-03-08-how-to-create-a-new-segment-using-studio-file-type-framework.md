@@ -8,7 +8,7 @@ published: false
 title: How to create a new segment using Studio File Type Framework
 ---
 
-
+![create segments]({{site.baseurl}}/assets/images/posts/create-segments-file-type.jpg)
 <p class="dropcap">Until I started to work in the translation industry I lived with the impression that the translation of a certain content is just a mather of knowing the right languages. I never realised that when you translate something everyone expects the results to look and feel identical just with the text in another language. For example you expect to have the same headings, fonts, colours, paragraphs and so on. In my humble opinion I think this is one of the reasons (not the only one) why <a href="http://www.translationzone.com/products/cat-tools/" target="_blank">CAT tools</a> should be prefered to manual translation because this tools are able to keep the same look and feel between your source and target content and allow the translator to focus on the actual translation. How <a href="http://www.translationzone.com/products/cat-tools/" target="_blank">CAT tools</a> handle this is a really broad topic that is not fit for just a blog article but in the following lines I would like to talk a bit about how you can correctly add content in SDL Studio using it's file type framework. This means adding new content programatically rather than adding it from the user interface.</p>
 
 ### How SDL Studio brakes the content
@@ -41,6 +41,7 @@ This is quite a long example but I wanted to have a meaningfull example. Let me 
 I hope this clarifies a bit how CAT tool are actually handling billingual content and how you can take advantage of the SDL Studio file type framework to create new content.
 
 Please leave a comment if you have any questions.
+
 
 
 
