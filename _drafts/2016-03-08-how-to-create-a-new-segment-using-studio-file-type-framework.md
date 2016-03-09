@@ -21,3 +21,5 @@ As part of transforming a piece of content into an SDLXLIFF SDL Studio also brea
 
 I guess it's about time to show some code. In order to properly understand the code I'm going to share please make sure you are familiar with the Paragraph and Segment concepts from the file type framework.
 
+<script src="https://gist.github.com/cromica/7a2ae9e07687a1913b8b.js"></script>
+
