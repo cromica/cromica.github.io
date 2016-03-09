@@ -38,6 +38,10 @@ This is quite a long example but I wanted to have a meaningfull example. Let me 
 3. From line 13 up to line 87 I create a segmet with text and tag pair elements that have different formattings. The code is self explanatory so I'm not going to insist much on this.
 4. The last 2 lines from the sample are used to update the current segment in the editor. Because the Integration API works on clones of the actual segments we need to create a temporary segment pair that is then passed to the update method
 
+### Document item factory
+
+In my sample I'm creating the instance of the [Document Item Factory](http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/html/ec213843-28e2-c1a2-146c-691e67026710.htm) but if you are creating a new file type, custom batch task or extend and existing file type there is no need to create the instance on your own because this available as part of the [abstract content processor](http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/html/6d8b8094-0fd3-c557-7217-909ed952ca75.htm).
+
 ### Outro
 
 I hope this clarifies a bit how CAT tool are actually handling billingual content and how you can take advantage of the SDL Studio file type framework to create new content.
