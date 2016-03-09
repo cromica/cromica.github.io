@@ -8,7 +8,62 @@
     <title>Romulus Crisan</title>
     <link>http://www.romuluscrisan.com</link>
     <description>Romulus Crisan is a software developer, trainer, speaker, agile.</description>
-    <pubDate>Sun, 21 Feb 2016 10:37:00 +0000</pubDate>
+    <pubDate>Wed, 09 Mar 2016 10:37:00 +0000</pubDate>
+    <item>
+      <title>How to create a new segment using Studio File Type Framework</title>
+      <link>http://www.romuluscrisan.com/sdl%20studio/2016/03/09/how-to-create-a-new-segment-using-studio-file-type-framework.html</link>
+      <description><![CDATA[Until I started to work in the translation industry I lived with the impression that the translation of a certain content is just a mater of knowing the right languages. I never realized that when you translate something everyone expects the results to look and feel identical just with the text in another language. For example you expect to have the same headings, fonts, colors, paragraphs and so on. In my humble opinion I think this is one of the reasons (not the only one) why CAT tools should be preferred to manual translation because this tools are able to keep the same look and feel between your source and target content and allow the translator to focus on the actual translation. How CAT tools handle this is a really broad topic that is not fit for just a blog article but in the following lines I would like to talk a bit about how you can correctly add content in SDL Studio using it's file type framework. This means adding new content programatically rather than adding it from the user interface.]]></description>
+      <comments>http://www.romuluscrisan.com/sdl%20studio/2016/03/09/how-to-create-a-new-segment-using-studio-file-type-framework.html#disqus_thread</comments>
+      <pubDate>Wed, 09 Mar 2016 10:37:00 +0000</pubDate>
+      <guid>http://www.romuluscrisan.com/sdl%20studio/2016/03/09/how-to-create-a-new-segment-using-studio-file-type-framework.html</guid>
+      <content:encoded><![CDATA[<p><img src="/assets/images/posts/create-segments-file-type.jpg" alt="create segments" /></p>
+
+<p class="dropcap">Until I started to work in the translation industry I lived with the impression that the translation of a certain content is just a mater of knowing the right languages. I never realized that when you translate something everyone expects the results to look and feel identical just with the text in another language. For example you expect to have the same headings, fonts, colors, paragraphs and so on. In my humble opinion I think this is one of the reasons (not the only one) why <a href="http://www.translationzone.com/products/cat-tools/" target="_blank">CAT tools</a> should be preferred to manual translation because this tools are able to keep the same look and feel between your source and target content and allow the translator to focus on the actual translation. How <a href="http://www.translationzone.com/products/cat-tools/" target="_blank">CAT tools</a> handle this is a really broad topic that is not fit for just a blog article but in the following lines I would like to talk a bit about how you can correctly add content in SDL Studio using it's file type framework. This means adding new content programatically rather than adding it from the user interface.</p>
+
+<h3 id="how-sdl-studio-brakes-the-content">How SDL Studio brakes the content</h3>
+
+<p>To properly handle any type of content during the translation process SDL Studio transforms the source content into a bilingual format named SDLXLIFF. This format is actually an xml file based on the XLIFF standard which stands for XML Localisation Interchange file format. This sounds pretty good but if you try to humanly read an actual SDLXLIFF it might give you a few headaches since can be really hard to follow. Now there is no good reason to do such a thing but if you are trying to somehow parse this xml programatically you need to understand it before being able to implement you parser. This is why SDL Studio exposes the file type framework api which is an abstraction of the raw xml format that simplifies working with this type of bilingual format.</p>
+
+<p>As part of transforming a piece of content into an SDLXLIFF SDL Studio also breaks it into so called segments based on specific segmentation rules that are part of the product. For example such a segment can represent a paragraph or a sentence from the original content. What is important to understand here is that these segments, besides the actual text, contain also specific markup that is holding information about the look and feel (headings, fonts, tags). In this article I’m not going to explain in detail how all this is represented in the file type framework api but about a year ago I’ve written a blog article in which I explain this in detail so if you need more details please go <a href="http://romuluscrisan.com/sdl%20studio/2015/01/06/How%20to%20access%20segment%20tags%20using%20Studio%20File%20Type%20Framework%20.html#paragraphs-segments-and-more">here</a>, especially in the <strong>Paragraphs, Segments and more</strong> section.</p>
+
+<h3 id="create-a-segment-from-code">Create a segment from code</h3>
+
+<p>I guess it’s about time to show some code. In order to properly understand the code please make sure that you are at least familiar with the Paragraph and Segment concepts from the file type framework.</p>
+
+<p>The sample code I’m about to share is showing how to create a new segment that is added on the active segment in the editor. This is done using <a href="http://producthelp.sdl.com/SDK/StudioIntegrationApi/4.0/html/135dcb1c-535b-46a9-8063-b83be4a06d82.htm">Integration API</a> and <a href="http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/html/1f5584af-9763-46ff-894b-08127a2421a7.htm">File Type Support API</a>. The following text is added in the target segment:</p>
+
+<blockquote>
+  <p>Place the photo printer on a flat, clean and dust-free surface, <strong>in a dry location</strong>, and <em>out of direct sunlight</em>.</p>
+</blockquote>
+
+<script src="https://gist.github.com/cromica/7a2ae9e07687a1913b8b.js"></script>
+
+<h3 id="code-walk-trough">Code walk-trough</h3>
+
+<p>This is quite a long example but I wanted to have a meaningful example. Let me explain a bit what the code does:</p>
+
+<ol>
+  <li>The first 10 lines of code are used to obtain the current active segment from the SDL Studio Editor.</li>
+  <li>In order to create text, tags, comments and so on we need to use the <a href="http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/html/ec213843-28e2-c1a2-146c-691e67026710.htm">Document Item Factory</a> which is created at line 12.</li>
+  <li>From line 13 up to line 87 I create a segment with text and tag pair elements that have different formatting’s. The code is self explanatory so I’m not going to insist much on this.</li>
+  <li>The last 2 lines from the sample are used to update the current segment in the editor. Because the Integration API works on clones of the actual segments we need to create a temporary segment pair that is then passed to the update method</li>
+</ol>
+
+<h3 id="document-item-factory">Document item factory</h3>
+
+<p>In my sample I’m creating the instance of the <a href="http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/html/ec213843-28e2-c1a2-146c-691e67026710.htm">Document Item Factory</a> but if you are creating a new file type, custom batch task or extend and existing file type there is no need to create the instance on your own because this available as part of the <a href="http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/html/6d8b8094-0fd3-c557-7217-909ed952ca75.htm">abstract content processor</a>.</p>
+
+<h3 id="outro">Outro</h3>
+
+<p>I hope this clarifies a bit how CAT tool are actually handling bilingual content and how you can take advantage of the SDL Studio file type framework to create new content.</p>
+
+<p>Please leave a comment if you have any questions.</p>
+
+<p><em>Picture: <a href="https://flic.kr/p/brjbNM">misschristi1972 - Focus 52 Week Six</a></em></p>
+
+]]></content:encoded>
+      <dc:date>2016-03-09T10:37:00+00:00</dc:date>
+    </item>
     <item>
       <title>SDL Studio Public API</title>
       <link>http://www.romuluscrisan.com/sdl%20studio/2016/02/21/sdl-studio-public-api.html</link>
@@ -520,61 +575,6 @@
 ]]></content:encoded>
       <dc:date>2015-08-27T19:00:00+00:00</dc:date>
     </item>
-    <item>
-      <title>Configure OpenExchange development environment</title>
-      <link>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html</link>
-      <description><![CDATA[This is the third part of the OpenExchange: Age of Developers series and is meant to provide guideline on how to setup the development environment for OpenExchange.]]></description>
-      <comments>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html#disqus_thread</comments>
-      <pubDate>Tue, 25 Aug 2015 10:00:00 +0000</pubDate>
-      <guid>http://www.romuluscrisan.com/sdl%20studio/2015/08/25/OpenExchange-age-of-developers-build-environment.html</guid>
-      <content:encoded><![CDATA[<p><img src="/assets/images/posts/age-of-developers-build-ox-environment/age-of-developers-build-ox-environment.jpg" alt="Age Of Developers" title="Age of Developers" class="img-responsive" /></p>
-
-<p class="dropcap">This is the third part of the <a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html" target="_blank">OpenExchange: Age of Developers</a> series and is meant to provide guideline on how to setup the development environment for OpenExchange.</p>
-
-<h3 id="age-of-developers---table-of-contents">Age of developers - table of contents</h3>
-
-<p>As I release parts of this series I will update this page with links to the articles.</p>
-
-<ol>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers.html">Introduction</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/07/20/OpenExchange-age-of-developers-translator-code.html">I’m a translator do I need to write code?</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/08/05/OpenExchange-age-of-developers-developer-translation-industry.html">I’m a developer, why bother with translation industry?</a></li>
-  <li>Configure OpenExchange development environment</li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2015/10/09/OpenExchange-age-of-developers-where-do-i-start.html">OpenExchange:Where do I start?</a></li>
-  <li><a href="http://romuluscrisan.com/sdl%20studio/2016/01/31/age-of-developers-about-sdl-studio-sdk.html">About SDL Studio SDK</a></li>
-</ol>
-
-<h3 id="first-things-first">First things first</h3>
-
-<p>In my previous article I tried to articulate why developing applications or plugins for OpenExchange can bring you benefits regardless if you are a developer or not. Now it’s time to move on and start get our hands dirty. Before starting any development you need to prepare your machine/laptop and based on which Studio(2014 or 2015) version are you going to use the configuration might be a bit different but let’s take it step by step:</p>
-
-<ol>
-  <li><strong>Operating system</strong> - Since the development is done using Microsoft .NET at least for the moment this is only possible only on Windows operating systems. The minimum version you should use is Windows Vista SP2 but I highly recommend to try and use Windows 7 or later. If you want to develop on Windows server that’s fine but you need to have at least Windows Server 2008 SP2.</li>
-  <li><strong>SDL Product</strong> - At the moment you can build applications around a few SDL products like Multiterm, Passolo or Studio. Based on which plugin you want to build you will need a licensed product. Now if you don’t have a license don’t worry because if you register <a href="http://www.translationzone.com/openexchange/developer/">here</a> and join the SDL Developer Program we can help you with the licenses you need for development.</li>
-  <li><strong>SDK</strong> - You can download the SDK for the product you’re looking to develop from <a href="http://www.translationzone.com/openexchange/developer/sdk.html">here</a>. Now before going forward I would like to clarify what exactly you get and what you don’t get with this SDK’s. The main purpose for the SDK’s is to help the developer in building the application and this why with the SDK you get some code samples, documentation, Microsoft Visual Studio project templates (2012, 2013 and soon 2015) and build targets that are used by Microsoft Visual Studio to create your <em>sdlplugin</em> file at each build. You won’t get the product API with the SDK since this is already part of the application.</li>
-  <li><strong>Microsoft .Net</strong> - This depends on the SDL Studio version you are developing for. SDL Studio 2014 uses .Net framework 4.0.3 and SDL Studio 2015 uses .Net framewrok 4.5.2. Based on the operating system you might already have .net installed on your machine.</li>
-  <li><strong>Microsoft Visual Studio</strong> - For SDL Studio 2014 development you can use any version of Visual Studio starting from Visual Studio 2010 and for SDL Studio 2015 you need to use Visual Studio 2013 or later. I highly recommend to use Visual Studio 2013 or 2015. For this 2 versions you can use the community edition which is completely free and offers the same features like the professional version. More details about it <a href="https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx">here</a>.</li>
-</ol>
-
-<p>There aren’t a lot of things to be installed and configured but it might take some time to install all of them.</p>
-
-<h3 id="version-control">Version control</h3>
-
-<p>A version control system allows you to track the changes you’ve done to a file or a set of files. It is also backing up your files on some server/cloud. A few people might say that this is not necessary for small projects because it’s an overhead. This might be true but there are plenty of other reasons to do it:</p>
-
-<ol>
-  <li>Files are backed up on a server/cloud and in case your machine crashes you don’t loose all your work.</li>
-  <li>Every change you make to a file is tracked and version-ed. This means you can always rollback to a previous version if you’ve done something bad in your current version.</li>
-  <li>What do you do if you have multiple development machines, like a desktop and a laptop? Synchronizing between them can give you lot’s of headaches.</li>
-  <li>There are free solutions like <a href="https://github.com/">github</a> or <a href="https://www.visualstudio.com/en-us/products/visual-studio-online-pricing-vs.aspx">visual studio online</a>. Now github is free for as many users as you like as long as your project is public (you should consider open source licensing in this case). Visual Studio online is free but only for the 5 users. I’m pretty sure that one of this options will fit your needs.</li>
-</ol>
-
-<h3 id="conclusion">Conclusion</h3>
-
-<p>Please leave a comment if you have any questions.</p>
-]]></content:encoded>
-      <dc:date>2015-08-25T10:00:00+00:00</dc:date>
-    </item>
-    <dc:date>2016-02-21T10:37:00+00:00</dc:date>
+    <dc:date>2016-03-09T10:37:00+00:00</dc:date>
   </channel>
 </rss>
