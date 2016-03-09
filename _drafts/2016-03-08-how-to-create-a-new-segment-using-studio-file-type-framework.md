@@ -42,6 +42,7 @@ I hope this clarifies a bit how CAT tool are actually handling billingual conten
 
 Please leave a comment if you have any questions.
 
+*Picture: [misschristi1972 - Focus 52 Week Six](https://flic.kr/p/brjbNM)*
 
 
 
