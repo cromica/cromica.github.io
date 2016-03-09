@@ -21,5 +21,26 @@ As part of transforming a piece of content into an SDLXLIFF SDL Studio also brea
 
 I guess it's about time to show some code. In order to properly understand the code I'm going to share please make sure you are familiar with the Paragraph and Segment concepts from the file type framework.
 
+The sample code I'm about to share is showing how to create a new segment that is added on the active segment in the editor. This is done using [Integration API](http://producthelp.sdl.com/SDK/StudioIntegrationApi/4.0/html/135dcb1c-535b-46a9-8063-b83be4a06d82.htm) and [File Type Support API](http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/html/1f5584af-9763-46ff-894b-08127a2421a7.htm). The following text is added in the target segment:
+
+`Place the photo printer on a flat, clean and dust-free surface, **in a dry location**, and _out of direct sunlight_.`
+
 <script src="https://gist.github.com/cromica/7a2ae9e07687a1913b8b.js"></script>
+
+### Code walktrough
+
+This is quite a long example but I wanted to have a meaningfull example. Let me explain a bit what the code does:
+
+1. The first 10 lines of code are used to obtain the curent active segment from the SDL Studio Editor. 
+2. In order to create text, tags, comments and so on we need to use the [Document Item Factory](http://producthelp.sdl.com/SDK/FileTypeSupport/4.0/html/ec213843-28e2-c1a2-146c-691e67026710.htm) which is created at line 12
+3. From line 13 up to line 87 I create a segmet with text and tag pair elements that have different formattings. The code is self explanatory so I'm not going to insist much on this.
+4. The last 2 lines from the sample are used to update the current segment in the editor. Because the Integration API works on clones of the actual segments we need to create a temporary segment pair that is then passed to the update method
+
+### Outro
+
+I hope this clarifies a bit how CAT tool are actually handling billingual content and how you can take advantage of the SDL Studio file type framework to create new content.
+
+Please leave a comment if you have any questions.
+
+
 
