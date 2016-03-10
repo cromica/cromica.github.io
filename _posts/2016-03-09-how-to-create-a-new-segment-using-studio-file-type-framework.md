@@ -1,12 +1,12 @@
 ---
 layout: post
 title: How to create a new segment using Studio File Type Framework
-date: {}
+date: 2016-03-09 10:37:00
 category: 
   - SDL Studio
 tags: Studio SDK plugins OpenExchange Framework File
 image: "create-segments-file-type.jpg"
-excerpt: "Until I started to work in the translation industry I lived with the impression that the translation of a certain content is just a mater of knowing the right languages. I never realized that when you translate something everyone expects the results to look and feel identical just with the text in another language. For example you expect to have the same headings, fonts, colors, paragraphs and so on. In my humble opinion I think this is one of the reasons (not the only one) why CAT tools should be preferred to manual translation because this tools are able to keep the same look and feel between your source and target content and allow the translator to focus on the actual translation. How CAT tools handle this is a really broad topic that is not fit for just a blog article but in the following lines I would like to talk a bit about how you can correctly add content in SDL Studio using it&#x27;s file type framework. This means adding new content programatically rather than adding it from the user interface."
+excerpt: "Until I started to work in the translation industry I lived with the impression that the translation of content is just a matter of knowing the right languages. I never realized that when you translate something everyone expects the results to look and feel identical, just with the text in another language. For example you expect the translated text to have the same headings, fonts, colors, paragraphs and so on. In my humble opinion I think this is one of the reasons (not the only one) why CAT tools should be preferred to manual translation because these tools are able to maintain the same look and feel between your source and target content and allow the translator to focus on the actual translation of the text. How CAT tools handle this is a really broad topic that is not fit for just a blog article but in the following lines I would like to talk a bit about how you can correctly add content in SDL Studio using it's file type framework. This means adding new content programmatically rather than adding it from the user interface."
 published: true
 ---
 
