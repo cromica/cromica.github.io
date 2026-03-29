@@ -1,0 +1,240 @@
+Ghost Phase 0 Extraction Plan
+Owner: Sevro
+Status: Ready to execute once access is available
+
+Purpose
+- Extract and back up every migration-relevant Ghost artifact from the current DigitalOcean-hosted instance without changing live data.
+- Produce a rerunnable, auditable capture so Phase 2 migration work is not guessing from partial exports.
+
+Assumptions and guardrails
+- Do not assume credentials already exist.
+- Do not stop services, rotate configs, or make destructive changes.
+- If the site is still receiving edits, either freeze publishing during capture or repeat the admin export + DB dump at the end so the final set is internally consistent.
+
+Exact data categories to extract
+1. Ghost Admin content export
+   - Ghost JSON export from the Admin API or Labs export.
+   - Expected use: baseline source for posts, pages, tags, authors, post metadata, publish dates, slugs, and whatever Ghost exposes in its supported export format.
+2. Database backup (required safety net)
+   - MySQL/MariaDB SQL dump OR SQLite database file, depending on how Ghost is installed.
+   - Reason: Ghost JSON export is not a full-fidelity disaster backup and can omit migration-relevant data such as members/subscribers, newsletters, internal settings, and version-specific entities.
+3. Asset files
+   - /content/images/
+   - If present, also capture /content/media/ and /content/files/ because some Ghost versions/plugins use them.
+   - Reason: Ghost JSON export does not include binary assets.
+4. Config and routing artifacts
+   - Ghost production config (for example config.production.json)
+   - routes.yaml
+   - redirects.yaml if present; if the instance instead uses redirects.json or a Labs export file, capture that actual file and record the difference in the manifest
+   - Process/service context if available: systemd unit name, environment file path, and Nginx site config path
+5. Theme-related artifacts
+   - Active theme name
+   - Entire active theme directory from /content/themes/<active-theme>/
+   - package.json inside the active theme if present
+   - Any custom theme assets/helpers/partials and theme build outputs
+   - If multiple custom themes exist, capture the whole /content/themes/ directory and note which one is active
+6. Runtime inventory and evidence
+   - Ghost version
+   - Node version
+   - Installation path
+   - Current public site URL and canonical URL setting if visible
+   - Remote file counts for images/theme folders
+   - Timestamped manifest plus SHA-256 checksums for every captured artifact
+
+Recommended extraction order and why
+0. Prepare local capture tree and remote inventory
+   - Why: establish where files land, confirm install paths, and reduce operator improvisation.
+1. Export Ghost content JSON
+   - Why: this is the app-supported logical export and the cleanest baseline for later transforms.
+2. Capture routes/redirects/config/runtime metadata
+   - Why: these are tiny, critical, and easy to miss. They also tell Orion and Darrow how the live site is wired.
+3. Copy binary assets (/content/images/, plus media/files if they exist)
+   - Why: images are the highest-risk omission because Ghost export will not save them. Get them off the droplet early.
+4. Capture themes
+   - Why: Darrow needs exact theme structure, and theme customizations often live outside content exports.
+5. Dump the database
+   - Why: this is the forensic fallback when Ghost export misses entities or relationships. Run it after the lightweight capture steps so a slow DB dump is not blocking the irreplaceable file copy.
+6. Generate checksums, manifests, and count comparisons
+   - Why: a backup you cannot prove is complete is theater, not a backup.
+
+Suggested local directory layout in this repo
+- migration-data/phase0/ghost-extraction-plan.txt
+- migration-data/phase0/raw/admin/           # Ghost JSON export(s)
+- migration-data/phase0/raw/config/          # config.production.json, routes/redirects, service/nginx snapshots
+- migration-data/phase0/raw/content/         # images/, media/, files/
+- migration-data/phase0/raw/db/              # SQL dump or SQLite copy
+- migration-data/phase0/raw/themes/          # active theme or full themes dir
+- migration-data/phase0/manifests/           # inventory, counts, redacted notes, completion report
+- migration-data/phase0/checksums/           # SHA-256 checksum files
+- migration-data/phase0/logs/                # local command transcripts; gitignored
+
+Notes on repo handling
+- Raw captures under migration-data/phase0/raw/ are intentionally gitignored because they can contain secrets, PII, large binaries, or subscriber/member data.
+- What should be safe to track in git: this plan, redacted manifests, count reports, and checksum inventories if they do not leak secret values.
+
+Concrete command patterns
+Set local variables before running anything:
+- HOST=<ghost-host-or-ip>
+- SSH_USER=<ssh-user>
+- SSH_PORT=<ssh-port>
+- APP_DIR=<ghost-install-dir>                # example: /var/www/ghost
+- LOCAL_ROOT=/Users/romulus.crisan/blog-migration/migration-data/phase0
+- SITE_URL=https://<public-site-domain>
+- GHOST_ADMIN_API_KEY=<admin-api-key-if-available>
+- ACTIVE_THEME=<theme-name-once-discovered>
+
+1. Prepare local directories
+mkdir -p \
+  "$LOCAL_ROOT/raw/admin" \
+  "$LOCAL_ROOT/raw/config" \
+  "$LOCAL_ROOT/raw/content" \
+  "$LOCAL_ROOT/raw/db" \
+  "$LOCAL_ROOT/raw/themes" \
+  "$LOCAL_ROOT/manifests" \
+  "$LOCAL_ROOT/checksums" \
+  "$LOCAL_ROOT/logs"
+
+2. Capture remote inventory first (non-destructive)
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" '
+  set -eu
+  echo "timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  command -v ghost >/dev/null 2>&1 && ghost version || true
+  node -v || true
+  pwd
+  ls -la "'"$APP_DIR"'"
+  find "'"$APP_DIR"'/content" -maxdepth 2 -type d | sort
+' | tee "$LOCAL_ROOT/manifests/runtime-inventory.txt"
+
+3. Ghost Admin export via Admin API (preferred when an Admin API key exists)
+curl -fsSL \
+  -H "Authorization: Ghost $GHOST_ADMIN_API_KEY" \
+  -H "Accept-Version: v5.0" \
+  "$SITE_URL/ghost/api/admin/db/" \
+  -o "$LOCAL_ROOT/raw/admin/ghost-admin-export-$(date -u +%Y%m%dT%H%M%SZ).json"
+
+Fallback if API access is unavailable:
+- Use Ghost Admin -> Settings -> Labs -> Export your content
+- Save the downloaded file into migration-data/phase0/raw/admin/
+
+4. Capture config + routing + service metadata
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" "
+  sudo tar -C / -czf - \
+    ${APP_DIR#/}/config.production.json \
+    ${APP_DIR#/}/content/settings/routes.yaml \
+    ${APP_DIR#/}/content/settings/redirects.yaml \
+    etc/nginx \
+    etc/systemd/system
+" > "$LOCAL_ROOT/raw/config/ghost-config-bundle-$(date -u +%Y%m%dT%H%M%SZ).tgz"
+
+If redirects.yaml does not exist, rerun the tar command with the actual redirect file path present on the host and record that in manifests/runtime-inventory.txt.
+
+5. Copy assets
+rsync -aHAX --numeric-ids --info=progress2 \
+  -e "ssh -p $SSH_PORT" \
+  "$SSH_USER@$HOST:$APP_DIR/content/images/" \
+  "$LOCAL_ROOT/raw/content/images/"
+
+Optional if present on the host:
+rsync -aHAX --numeric-ids --info=progress2 \
+  -e "ssh -p $SSH_PORT" \
+  "$SSH_USER@$HOST:$APP_DIR/content/media/" \
+  "$LOCAL_ROOT/raw/content/media/"
+
+rsync -aHAX --numeric-ids --info=progress2 \
+  -e "ssh -p $SSH_PORT" \
+  "$SSH_USER@$HOST:$APP_DIR/content/files/" \
+  "$LOCAL_ROOT/raw/content/files/"
+
+6. Discover active theme and copy theme files
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" "
+  grep -R \"\\\"active_theme\\\"\" -n $APP_DIR/content/data 2>/dev/null || true
+  ls -la $APP_DIR/content/themes
+" | tee "$LOCAL_ROOT/manifests/theme-discovery.txt"
+
+rsync -aHAX --numeric-ids --info=progress2 \
+  -e "ssh -p $SSH_PORT" \
+  "$SSH_USER@$HOST:$APP_DIR/content/themes/" \
+  "$LOCAL_ROOT/raw/themes/"
+
+7. Database dump (choose one branch only)
+For MySQL/MariaDB:
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" '
+  set -eu
+  mysqldump --single-transaction --quick --routines --triggers \
+    --databases <ghost_database_name> \
+    --user=<ghost_db_user> \
+    --password=<ghost_db_password>
+' > "$LOCAL_ROOT/raw/db/ghost-db-$(date -u +%Y%m%dT%H%M%SZ).sql"
+
+For SQLite:
+rsync -aHAX --numeric-ids --info=progress2 \
+  -e "ssh -p $SSH_PORT" \
+  "$SSH_USER@$HOST:$APP_DIR/content/data/" \
+  "$LOCAL_ROOT/raw/db/sqlite-data/"
+
+8. Generate manifests and checksums
+find "$LOCAL_ROOT/raw" -type f | sort > "$LOCAL_ROOT/manifests/raw-file-list.txt"
+find "$LOCAL_ROOT/raw/content/images" -type f | wc -l | tee "$LOCAL_ROOT/manifests/local-image-count.txt"
+find "$LOCAL_ROOT/raw/themes" -type f | wc -l | tee "$LOCAL_ROOT/manifests/local-theme-file-count.txt"
+
+find "$LOCAL_ROOT/raw" -type f -print0 | \
+  xargs -0 shasum -a 256 > "$LOCAL_ROOT/checksums/phase0-sha256.txt"
+
+9. Capture remote counts for comparison
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" "
+  find $APP_DIR/content/images -type f | wc -l
+  find $APP_DIR/content/themes -type f | wc -l
+" | tee "$LOCAL_ROOT/manifests/remote-counts.txt"
+
+Validation checklist
+- [ ] Ghost admin export exists in raw/admin/, is non-zero bytes, and parses as JSON.
+- [ ] Database backup exists in raw/db/ and matches the actual DB engine in use.
+- [ ] routes.yaml captured, or an explicit note exists explaining the actual routing file path/version difference.
+- [ ] redirects.yaml or its version-specific equivalent is captured and called out in the manifest.
+- [ ] config bundle captured and any secret-bearing files are kept local/redacted before sharing.
+- [ ] images directory copied and remote vs local file counts match.
+- [ ] media/files directories were either copied or explicitly marked "not present".
+- [ ] themes directory copied and active theme identified in manifests/theme-discovery.txt.
+- [ ] SHA-256 checksum manifest exists for every captured file.
+- [ ] runtime-inventory.txt records Ghost version, Node version, install path, and capture timestamp.
+- [ ] A completion report exists in manifests/ noting any gaps, retries, or files not accessible due to permissions.
+- [ ] At least one spot check opens an exported post, an image, routes.yaml, and the active theme package.json or template file locally.
+
+Known failure modes / edge cases
+- Ghost export succeeds but images are missing because only JSON was captured.
+- Database engine is unknown; operator assumes MySQL but the install actually uses SQLite.
+- redirects file name/path differs by Ghost version or custom deployment.
+- Images are not local because the instance is using DigitalOcean Spaces/S3/CDN offload; rsync of content/images will look "complete" but still miss production assets.
+- Active theme is a stock theme modified in place; failing to copy the full theme directory loses custom templates/assets.
+- SSH user lacks sudo access to config files or DB credentials.
+- DB dump and admin export are taken hours apart while content is still changing, producing drift.
+- Private, draft, scheduled, or members-only content may not be obvious from the JSON export alone; check the DB and export contents before calling backup complete.
+- Large rsync operations can silently leave partials on interruption; rerun rsync until it exits cleanly, then verify counts.
+- Raw backups may contain subscriber/member data, email addresses, secrets, or integration keys; do not publish them blindly.
+
+Completion outputs and handoffs
+For Orion
+- manifests/runtime-inventory.txt
+- manifests/remote-counts.txt
+- redacted config notes identifying Ghost version, install path, Nginx/systemd locations, canonical domain, and redirect file location
+- raw/config/ bundle kept local for platform recovery reference
+- Output Orion needs: environment/path map, routing files, and any infra-specific quirks that affect GitHub Pages cutover
+
+For Darrow
+- manifests/theme-discovery.txt
+- raw/themes/ copy of the active theme (or whole themes directory if there is any doubt)
+- routes.yaml and redirect rules that affect page structure or URL expectations
+- Output Darrow needs: active theme name, template/layout inventory, and any custom assets/partials/helpers worth preserving visually
+
+For Holiday
+- manifests/raw-file-list.txt
+- manifests/remote-counts.txt
+- checksums/phase0-sha256.txt
+- completion report with captured counts, explicit missing items, and spot-check results
+- Output Holiday needs: proof the backup is complete enough to validate future migration runs against counts, slugs, assets, and route behavior
+
+Definition of Phase 0 done
+- Every required source artifact is captured or explicitly marked unavailable with reason.
+- The capture is rerunnable with the command patterns above.
+- Counts and checksums exist.
+- Orion, Darrow, and Holiday each have the specific handoff inputs they need without digging through the raw backup blindly.

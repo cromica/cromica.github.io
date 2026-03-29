@@ -1,0 +1,44 @@
+name: Hugo Build and Publish
+
+on:
+  pull_request:
+  push:
+    branches:
+      - source
+
+concurrency:
+  group: hugo-user-site-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TARGET_PAGES_REPO: ${{ github.repository }}
+      TARGET_PAGES_BRANCH: master
+      HUGO_BASEURL: https://romuluscrisan.com/
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Read pinned Hugo version
+        id: hugo-version
+        run: echo "version=$(cat .hugo-version)" >> "$GITHUB_OUTPUT"
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ steps.hugo-version.outputs.version }}
+          extended: true
+
+      - name: Build site
+        run: make build
+
+      - name: Deploy to publish branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/source'
+        run: |
+          ./scripts/deploy-user-site.sh

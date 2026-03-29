@@ -1,0 +1,8 @@
+Ghost → Hugo content migration
+Ghost version: 1.25.5
+Published posts: 41
+Published pages: 2
+Tags captured: 34
+Redirect aliases generated: 33
+Static images extracted: 65
+Unresolved internal links: 0

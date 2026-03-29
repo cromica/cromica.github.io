@@ -1,0 +1,94 @@
+baseURL = 'https://romuluscrisan.com/'
+languageCode = 'en-us'
+defaultContentLanguage = 'en-us'
+title = 'Romulus Crisan'
+theme = 'hugo-blog-awesome'
+enableRobotsTXT = true
+cleanDestinationDir = true
+summaryLength = 30
+copyright = 'Copyright © Romulus Crisan.'
+
+[author]
+  name = 'Romulus Crisan'
+  email = 'cromica@gmail.com'
+
+[permalinks]
+  posts = '/:slug/'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+    lineNos = true
+    lineNumbersInTable = false
+    codeFences = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+[outputs]
+  home = ['HTML', 'RSS']
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+[params]
+  sitename = 'Romulus Crisan'
+  defaultColor = 'auto'
+  description = 'I blog, create software and am a engineering leader.'
+  mainSections = ['posts']
+  toc = true
+  tocOpen = false
+  goToTop = true
+  dateFormat = '02 Jan, 2006'
+  rssFeedDescription = 'summary'
+
+  [params.author]
+    avatar = 'avatar.jpg'
+    intro = 'Romulus Crisan'
+    name = 'Romulus Crisan'
+    email = 'cromica@gmail.com'
+    description = 'I blog, create software and am a engineering leader.'
+
+[[params.socialIcons]]
+  name = 'email'
+  url = 'mailto:cromica@gmail.com'
+
+[[params.socialIcons]]
+  name = 'twitter'
+  url = 'https://twitter.com/cromica_82'
+
+[[params.socialIcons]]
+  name = 'linkedin'
+  url = 'https://www.linkedin.com/in/romuluscrisan'
+
+[[params.socialIcons]]
+  name = 'github'
+  url = 'https://github.com/cromica'
+
+[[params.socialIcons]]
+  name = 'rss'
+  url = '/index.xml'
+
+[menu]
+  [[menu.main]]
+    pageRef = '/'
+    name = 'Home'
+    url = '/'
+    weight = 10
+
+  [[menu.main]]
+    pageRef = 'posts'
+    name = 'Writing'
+    url = '/posts/'
+    weight = 20
+
+  [[menu.main]]
+    pageRef = 'about'
+    name = 'About'
+    url = '/about/'
+    weight = 30

@@ -1,0 +1,329 @@
+Ghost Phase 0 User Extraction Walkthrough
+Owner: Sevro
+Audience: Romulus (operator with production access)
+Status: Use this before Mustang starts scaffolding against real content
+
+What this is
+- If you are the only one with production Ghost/DigitalOcean access, you are the one who should perform the extraction.
+- The squad does not need your passwords. We need the captured artifacts and the verification evidence.
+- Do not start Hugo/content scaffolding against live data until this capture is done.
+
+What access you need before you start
+1. Ghost admin access OR an Admin API key.
+   - Minimum acceptable fallback: Ghost Admin UI access so you can use Labs export.
+2. SSH access to the server that runs Ghost.
+3. Read access to the Ghost install directory.
+4. Either:
+   - sudo/read access to Ghost config + routing files, and
+   - database backup access (MySQL/MariaDB credentials or access to the SQLite data directory),
+   OR you stop and ask for help because the backup will be incomplete.
+5. Enough free disk space on your machine for:
+   - the JSON export,
+   - all images/assets,
+   - theme files,
+   - the database dump,
+   - one compressed config bundle.
+6. A quiet content window if possible.
+   - If the site is actively being edited, schedule a quiet window.
+   - If you cannot freeze edits, rerun the Ghost export and DB dump at the end so they line up.
+
+Do not do these things
+- Do not stop Ghost.
+- Do not edit production files.
+- Do not rotate secrets just because you saw them.
+- Do not commit raw backups to git.
+- Do not paste credentials into any tracked repo file.
+
+Local working location
+Use the repo-local capture tree so the squad knows where everything belongs:
+- LOCAL_ROOT=/Users/romulus.crisan/blog-migration/migration-data/phase0
+
+Raw data stays local only (gitignored)
+- migration-data/phase0/raw/admin/
+- migration-data/phase0/raw/config/
+- migration-data/phase0/raw/content/
+- migration-data/phase0/raw/db/
+- migration-data/phase0/raw/themes/
+- migration-data/phase0/logs/
+
+Metadata/manifests that can go in the repo after a quick redaction pass
+- migration-data/phase0/manifests/runtime-inventory.txt
+- migration-data/phase0/manifests/theme-discovery.txt
+- migration-data/phase0/manifests/remote-counts.txt
+- migration-data/phase0/manifests/raw-file-list.txt
+- migration-data/phase0/manifests/capture-status.txt
+- migration-data/phase0/checksums/phase0-sha256.txt
+
+Before committing manifests, remove or redact anything you do not want tracked publicly/private-repo-wide:
+- raw secret values,
+- DB passwords,
+- API keys,
+- private IPs if you care about that exposure,
+- any config file contents copied by accident.
+
+Step 0 - Fill in your placeholders
+Open a terminal and set these first. Replace every placeholder before running later commands.
+
+export HOST="<ghost-host-or-ip>"
+export SSH_USER="<ssh-user>"
+export SSH_PORT="<ssh-port>"
+export APP_DIR="<ghost-install-dir>"          # example: /var/www/ghost
+export SITE_URL="https://<public-site-domain>"
+export LOCAL_ROOT="/Users/romulus.crisan/blog-migration/migration-data/phase0"
+
+Optional only if you already have them:
+export GHOST_ADMIN_API_KEY="<ghost-admin-api-key>"
+export GHOST_DB_NAME="<ghost-db-name>"
+export GHOST_DB_USER="<ghost-db-user>"
+export GHOST_DB_PASSWORD="<ghost-db-password>"
+
+Sanity check your local target first:
+mkdir -p \
+  "$LOCAL_ROOT/raw/admin" \
+  "$LOCAL_ROOT/raw/config" \
+  "$LOCAL_ROOT/raw/content" \
+  "$LOCAL_ROOT/raw/db" \
+  "$LOCAL_ROOT/raw/themes" \
+  "$LOCAL_ROOT/manifests" \
+  "$LOCAL_ROOT/checksums" \
+  "$LOCAL_ROOT/logs"
+
+Step 1 - Record a non-destructive runtime inventory
+Purpose: prove what server you touched and discover the real content/theme/config paths before copying anything heavy.
+
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" '
+  set -eu
+  echo "timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  command -v ghost >/dev/null 2>&1 && ghost version || true
+  node -v || true
+  echo "app_dir='"$APP_DIR"'"
+  ls -la "'"$APP_DIR"'"
+  find "'"$APP_DIR"'/content" -maxdepth 2 -type d | sort
+' | tee "$LOCAL_ROOT/manifests/runtime-inventory.txt"
+
+If that fails because APP_DIR is wrong, stop guessing and find the real install path first.
+
+Step 2 - Export Ghost content JSON
+Preferred path: Admin API export if you already have an Admin API key.
+
+if [ -n "${GHOST_ADMIN_API_KEY:-}" ]; then
+  curl -fsSL \
+    -H "Authorization: Ghost $GHOST_ADMIN_API_KEY" \
+    -H "Accept-Version: v5.0" \
+    "$SITE_URL/ghost/api/admin/db/" \
+    -o "$LOCAL_ROOT/raw/admin/ghost-admin-export-$(date -u +%Y%m%dT%H%M%SZ).json"
+fi
+
+Fallback if you do not have an Admin API key:
+1. Log into Ghost Admin.
+2. Go to Settings -> Labs.
+3. Use Export your content.
+4. Save the downloaded JSON file into:
+   migration-data/phase0/raw/admin/
+5. Do not rename it to something vague. Use a timestamp in the filename.
+
+Immediate check:
+ls -lh "$LOCAL_ROOT/raw/admin"
+python - <<PY2
+from pathlib import Path
+import json
+files = sorted(Path("$LOCAL_ROOT/raw/admin").glob("*.json"))
+assert files, "No admin export JSON found"
+with files[-1].open() as fh:
+    json.load(fh)
+print(f"JSON OK: {files[-1].name}")
+PY2
+
+Step 3 - Capture config, routing, and service metadata
+Purpose: save the ugly deployment details now so Orion does not have to reverse-engineer production later.
+
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" '
+  set -eu
+  echo "=== settings files ==="
+  ls -la "'"$APP_DIR"'/content/settings" || true
+  echo "=== theme dirs ==="
+  ls -la "'"$APP_DIR"'/content/themes" || true
+  echo "=== possible service files ==="
+  ls /etc/systemd/system 2>/dev/null | grep ghost || true
+' | tee "$LOCAL_ROOT/manifests/theme-discovery.txt"
+
+Bundle the actual files if you have the permissions:
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" '
+  sudo tar -czf - \
+    -C "'"$APP_DIR"'" config.production.json content/settings/routes.yaml content/settings/redirects.yaml \
+    -C / etc/nginx etc/systemd/system
+' > "$LOCAL_ROOT/raw/config/ghost-config-bundle-$(date -u +%Y%m%dT%H%M%SZ).tgz"
+
+If redirects.yaml does not exist, note the actual redirects file/path in:
+- migration-data/phase0/manifests/runtime-inventory.txt
+- migration-data/phase0/manifests/capture-status.txt
+
+If sudo is denied or config paths differ, stop and ask for help instead of pretending the config capture is complete.
+
+Step 4 - Copy assets first, because this is the easiest way to lose data
+Images are mandatory. media/ and files/ are optional but must be checked explicitly.
+
+rsync -aHAX --numeric-ids --info=progress2 \
+  -e "ssh -p $SSH_PORT" \
+  "$SSH_USER@$HOST:$APP_DIR/content/images/" \
+  "$LOCAL_ROOT/raw/content/images/"
+
+If these directories exist remotely, copy them too:
+rsync -aHAX --numeric-ids --info=progress2 \
+  -e "ssh -p $SSH_PORT" \
+  "$SSH_USER@$HOST:$APP_DIR/content/media/" \
+  "$LOCAL_ROOT/raw/content/media/"
+
+rsync -aHAX --numeric-ids --info=progress2 \
+  -e "ssh -p $SSH_PORT" \
+  "$SSH_USER@$HOST:$APP_DIR/content/files/" \
+  "$LOCAL_ROOT/raw/content/files/"
+
+If rsync says media/ or files/ do not exist, write "not present" into capture-status.txt. That is acceptable. Silent omission is not.
+
+Step 5 - Copy themes
+Purpose: Darrow needs the real theme, not your memory of the theme.
+
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" '
+  set -eu
+  echo "=== theme discovery ==="
+  grep -R '"active_theme"' -n "'"$APP_DIR"'/content/data" 2>/dev/null || true
+  ls -la "'"$APP_DIR"'/content/themes"
+' | tee -a "$LOCAL_ROOT/manifests/theme-discovery.txt"
+
+rsync -aHAX --numeric-ids --info=progress2 \
+  -e "ssh -p $SSH_PORT" \
+  "$SSH_USER@$HOST:$APP_DIR/content/themes/" \
+  "$LOCAL_ROOT/raw/themes/"
+
+If you know the active theme with certainty, note it in capture-status.txt. If you are not sure, do not guess; keep the full themes directory.
+
+Step 6 - Capture the database safety net
+Choose one branch only after you confirm the DB engine.
+
+First, try to identify the engine from config.production.json or Ghost config.
+- If config says mysql or mysql2, use the MySQL/MariaDB dump branch.
+- If you see SQLite content/data files, use the SQLite branch.
+- If you cannot tell, stop and ask for help.
+
+MySQL/MariaDB branch:
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" '
+  set -eu
+  mysqldump --single-transaction --quick --routines --triggers \
+    --databases "'"$GHOST_DB_NAME"'" \
+    --user="'"$GHOST_DB_USER"'" \
+    --password="'"$GHOST_DB_PASSWORD"'"
+' > "$LOCAL_ROOT/raw/db/ghost-db-$(date -u +%Y%m%dT%H%M%SZ).sql"
+
+SQLite branch:
+rsync -aHAX --numeric-ids --info=progress2 \
+  -e "ssh -p $SSH_PORT" \
+  "$SSH_USER@$HOST:$APP_DIR/content/data/" \
+  "$LOCAL_ROOT/raw/db/sqlite-data/"
+
+If DB credentials are stored server-side and you do not want them in shell history, open the config on the server and run the dump using those values directly there. Do not write secrets into repo files.
+
+Step 7 - Build manifests and checksums
+Purpose: prove the capture is complete enough to trust.
+
+find "$LOCAL_ROOT/raw" -type f | sort > "$LOCAL_ROOT/manifests/raw-file-list.txt"
+
+{
+  echo "capture_timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  echo "operator=Romulus"
+  echo "images_dir=$( [ -d "$LOCAL_ROOT/raw/content/images" ] && echo present || echo missing )"
+  echo "media_dir=$( [ -d "$LOCAL_ROOT/raw/content/media" ] && echo present || echo not-present-or-not-copied )"
+  echo "files_dir=$( [ -d "$LOCAL_ROOT/raw/content/files" ] && echo present || echo not-present-or-not-copied )"
+  echo "themes_dir=$( [ -d "$LOCAL_ROOT/raw/themes" ] && echo present || echo missing )"
+  if [ -d "$LOCAL_ROOT/raw/db/sqlite-data" ] || find "$LOCAL_ROOT/raw/db" -type f | grep -q .; then
+    echo "db_capture=present"
+  else
+    echo "db_capture=missing"
+  fi
+} > "$LOCAL_ROOT/manifests/capture-status.txt"
+
+find "$LOCAL_ROOT/raw" -type f -print0 | \
+  xargs -0 shasum -a 256 > "$LOCAL_ROOT/checksums/phase0-sha256.txt"
+
+Step 8 - Compare remote vs local counts
+Remote counts:
+ssh -p "$SSH_PORT" "$SSH_USER@$HOST" "
+  set -eu
+  echo -n 'remote_images='; find $APP_DIR/content/images -type f | wc -l
+  echo -n 'remote_themes='; find $APP_DIR/content/themes -type f | wc -l
+" | tee "$LOCAL_ROOT/manifests/remote-counts.txt"
+
+Local counts:
+{
+  echo -n 'local_images='; find "$LOCAL_ROOT/raw/content/images" -type f | wc -l
+  echo -n 'local_themes='; find "$LOCAL_ROOT/raw/themes" -type f | wc -l
+} | tee -a "$LOCAL_ROOT/manifests/remote-counts.txt"
+
+What success looks like:
+- local_images matches remote_images
+- local_themes matches remote_themes
+- admin export file exists and parses as JSON
+- DB capture exists
+- routes/redirects/config bundle exists, or any missing item is explicitly called out
+
+Step 9 - Spot-check the capture before handing it over
+Do not skip this. Open real files locally.
+
+Checklist:
+1. Open one exported JSON file and confirm it contains posts/pages data.
+2. Open 2-3 copied images from raw/content/images/.
+3. List the theme directory and open one real template or package.json file.
+4. Confirm the DB dump file is non-zero bytes, or the SQLite data directory contains real files.
+5. Confirm phase0-sha256.txt exists and is non-empty.
+
+Useful commands:
+ls -lh "$LOCAL_ROOT/raw/admin" "$LOCAL_ROOT/raw/db"
+find "$LOCAL_ROOT/raw/content/images" -type f | head -n 3
+find "$LOCAL_ROOT/raw/themes" -type f | head -n 5
+wc -l "$LOCAL_ROOT/checksums/phase0-sha256.txt"
+
+When to stop and ask for help immediately
+Stop and ask instead of improvising if any of these happen:
+- You do not know the Ghost install path.
+- SSH works but APP_DIR/content is not where Ghost actually lives.
+- You cannot get either a Ghost Admin export or an Admin API export.
+- You cannot identify the DB engine.
+- You do not have permission to read config/routing files or run a DB dump.
+- The server stores images in S3/DigitalOcean Spaces/CDN and local content/images looks suspiciously incomplete.
+- rsync keeps failing or counts do not match after a rerun.
+- The site is actively changing and you cannot get a stable quiet window.
+- You are about to copy secrets into git-tracked files.
+
+Exactly what to hand back to the squad after you finish
+Hand back two buckets: local-only raw capture and repo-safe manifests.
+
+A. Keep local only, but tell us you have them and where they live
+- migration-data/phase0/raw/admin/*.json
+- migration-data/phase0/raw/config/*.tgz
+- migration-data/phase0/raw/content/images/**
+- migration-data/phase0/raw/content/media/** (if present)
+- migration-data/phase0/raw/content/files/** (if present)
+- migration-data/phase0/raw/db/**
+- migration-data/phase0/raw/themes/**
+
+B. Put these in the repo or send them directly if you do not want to commit yet
+- migration-data/phase0/manifests/runtime-inventory.txt
+- migration-data/phase0/manifests/theme-discovery.txt
+- migration-data/phase0/manifests/remote-counts.txt
+- migration-data/phase0/manifests/raw-file-list.txt
+- migration-data/phase0/manifests/capture-status.txt
+- migration-data/phase0/checksums/phase0-sha256.txt
+- a short note telling us:
+  - whether content edits were frozen,
+  - which DB branch you used (MySQL or SQLite),
+  - whether media/ or files/ existed,
+  - whether any config file could not be captured,
+  - whether the site uses external object storage/CDN for assets.
+
+Minimal handoff message template
+"Phase 0 extraction complete. Raw capture is local under migration-data/phase0/raw/. Repo-safe manifests/checksums are updated. DB type used: <mysql|sqlite>. Frozen window: <yes|no>. External asset storage: <yes|no|unknown>. Missing items: <none or list>."
+
+If you want the low-risk answer to "who gets the actual content?"
+- You do the extraction if you hold production access.
+- Then you hand the evidence and raw capture location back to the squad.
+- Mustang should not move scaffolding against real content until this bundle exists and passes verification.

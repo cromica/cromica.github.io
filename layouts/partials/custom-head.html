@@ -1,0 +1,10 @@
+{{- $avatarPath := .Site.Params.author.avatar | default "avatar.jpg" -}}
+{{- with resources.Get $avatarPath -}}
+  {{- $appleTouch := .Process "fill 180x180 png q95" -}}
+  {{- $favicon32 := .Process "fill 32x32 png q95" -}}
+  {{- $favicon16 := .Process "fill 16x16 png q95" -}}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ $appleTouch.RelPermalink }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32.RelPermalink }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16.RelPermalink }}">
+  <link rel="shortcut icon" href="{{ $favicon32.RelPermalink }}">
+{{- end -}}

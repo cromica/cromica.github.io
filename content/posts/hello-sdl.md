@@ -1,0 +1,31 @@
++++
+title = "Hello SDL"
+date = 2014-10-01T11:15:00.000Z
+lastmod = 2016-09-07T17:48:58.000Z
+slug = "hello-sdl"
+tags = ["Career", "SDL"]
+aliases = ["/career/2014/10/01/hello-sdl.html"]
+featured = false
+featured_image = "/images/2016/09/sdl.jpg"
+ghost_id = "5a11ca067dd80546c26298c5"
+migration_source = "ghost"
++++
+<p class="dropcap">I now have two weeks since I joined SDL as a <i>Language Platform Evangelist Developer</i>. Almost everyone asked me what does that mean and what will I do so I decided that I better explain here in detail. If you are looking for a general definition of the position you can find one on wikipedia but it won't help you too much. In order to understand it better you really need to understand the context.</p>
+
+### Who is SDL?
+First off all let me tell you a few words about SDL and what is the company doing. It started as language translation service company and quickly become also a company providing software for language translation. For many years this was the only domain where SDL activated but new interesting opportunities arise and the company made new acquisitions on domains like e-commerce, social media monitoring, web content management, analytics and so on. All this new products allowed SDL to re-position itself recently as a [global customer experience management](http://www.sdl.com/solutions/business-need/global-customer-experience-management/) company. If you are looking for more details please have a look [here](http://www.sdl.com/aboutus/aboutsdl/history.html) for the history of the company and [here](http://www.sdl.com/aboutus/aboutsdl/vision-mission.html) for the new vision and mission.
+
+### What I'm going to do at SDL?
+As I previously said SDL is offering now [global customer experience management](http://www.sdl.com/solutions/business-need/global-customer-experience-management/) and as you might already think when you say global you immediately think of multiple languages, which means translation. 
+
+I'm going to be closely involved in [SDL Trados Studio](http://www.sdl.com/products/sdl-trados-studio/) and [Language Cloud](https://languagecloud.sdl.com/) and probably some other products depending on the needs. Most of my work will be around creating and growing the development community for this products, but I will also offer support and consultancy to clients and help the sale process when is necessary. Growing the development community can mean many things but here are some of they key things I will do:
+
+1. Explain better the current Studio API's and in what product areas it can be used.
+2. Improve and simplify the current API based on community and clients feedback.
+3. Contribute to the new Language Cloud SDK.
+4. Simplify how we can use develop against the API's. The most important bit will be to have them open to all possible developers.
+5. Speak at developer conferences and discuss about the API's and SDK's. If you have any suggestion or you want me at a conference just leave a comment.
+6. Contribute and help develop the new community platform which we will launch in the near future.
+7. Develop plugins based on customer needs. This will also act as examples for other developers.
+
+I think this is very interesting and I'm really keen to see how things will evolve since there are many other things that I would like to do as part of my new role. Also SDL has some interesting plans around the community so stay tuned.
