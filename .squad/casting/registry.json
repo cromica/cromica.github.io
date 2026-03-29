@@ -1,0 +1,51 @@
+[
+  {
+    "persistent_name": "Mustang",
+    "universe": "red-rising",
+    "created_at": "2026-03-29T18:30:11Z",
+    "legacy_named": false,
+    "status": "active"
+  },
+  {
+    "persistent_name": "Theodora",
+    "universe": "red-rising",
+    "created_at": "2026-03-29T18:30:11Z",
+    "legacy_named": false,
+    "status": "active"
+  },
+  {
+    "persistent_name": "Sevro",
+    "universe": "red-rising",
+    "created_at": "2026-03-29T18:30:11Z",
+    "legacy_named": false,
+    "status": "active"
+  },
+  {
+    "persistent_name": "Roque",
+    "universe": "red-rising",
+    "created_at": "2026-03-29T18:30:11Z",
+    "legacy_named": false,
+    "status": "active"
+  },
+  {
+    "persistent_name": "Dancer",
+    "universe": "red-rising",
+    "created_at": "2026-03-29T18:30:11Z",
+    "legacy_named": false,
+    "status": "active"
+  },
+  {
+    "persistent_name": "Scribe",
+    "universe": "core",
+    "created_at": "2026-03-29T18:30:11Z",
+    "legacy_named": false,
+    "status": "active"
+  },
+  {
+    "persistent_name": "Ralph",
+    "universe": "core",
+    "created_at": "2026-03-29T18:30:11Z",
+    "legacy_named": false,
+    "status": "active"
+  }
+]
