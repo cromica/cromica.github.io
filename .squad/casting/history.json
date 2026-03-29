@@ -1,0 +1,26 @@
+{
+  "universe_usage_history": [
+    {
+      "assignment_id": "blog-migration-20260329",
+      "universe": "Red Rising",
+      "selected_at": "2026-03-29T12:20:09.937Z",
+      "reason": "User explicitly requested a Red Rising-inspired squad for the blog migration project."
+    }
+  ],
+  "assignment_cast_snapshots": {
+    "blog-migration-20260329": {
+      "project": "blog-migration",
+      "selected_at": "2026-03-29T12:20:09.937Z",
+      "user": "Romulus Crisan",
+      "universe": "Red Rising",
+      "shape": "lead-frontend-backend-platform-test",
+      "members": [
+        "Mustang",
+        "Darrow",
+        "Sevro",
+        "Orion",
+        "Holiday"
+      ]
+    }
+  }
+}
