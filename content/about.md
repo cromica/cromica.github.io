@@ -1,7 +1,7 @@
 +++
 title = "About Me"
 slug = "about"
-description = "I blog, create software and am a engineering leader."
+description = "Principal Engineering Manager at Microsoft writing about identity platforms, software craftsmanship, and engineering leadership."
 featured = false
 featured_image = "/images/2016/09/about-image.jpg"
 ghost_id = "5a11ca067dd80546c26298bd"

@@ -242,3 +242,7 @@ Adding unique 140-160 character meta descriptions to the 5 most-visited blog pos
 **Key Learnings:**
 - When local and remote both bootstrap `.squad/` from different squad models, the safest reconciliation is: stash local work, merge remote, keep the local versions for overlapping identity/routing/charter files, then reapply local working-tree edits.
 - For this repo, remote bootstrap additions can land alongside the local editorial-first squad state as long as append-only history/decision files and `content/about.md` are preserved.
+- Social preview metadata now lives in root Hugo overrides at `layouts/partials/meta/{resolved,standard,post}.html`, with `layouts/partials/head.html` suppressing the theme's internal Open Graph/Twitter partials so the site emits one consistent metadata set.
+- Per-page social summaries should resolve in this order: explicit front matter `description`, Hugo page description/summary, cleaned body excerpt, then site-level description; this keeps rerunnable migrated posts shareable without hand-editing every file.
+- Site-wide social fallback art now comes from `params.socialImage` in `hugo.toml` (currently `avatar.jpg`) and is rendered through Hugo's image pipeline into a 1200x630 card-sized asset for LinkedIn, Slack, and X.
+- Key files for social preview behavior: `hugo.toml`, `content/_index.md`, `content/about.md`, `content/posts/_index.md`, `layouts/partials/head.html`, and `layouts/partials/meta/*.html`.

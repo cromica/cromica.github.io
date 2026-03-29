@@ -39,9 +39,10 @@ copyright = 'Copyright © Romulus Crisan.'
 [params]
   sitename = 'Romulus Crisan'
   defaultColor = 'auto'
-  description = 'I blog, create software and am a engineering leader.'
+  description = 'Engineering leader writing about identity platforms, software craftsmanship, and developer tooling.'
   mainSections = ['posts']
   toc = true
+  socialImage = 'avatar.jpg'
   tocOpen = false
   goToTop = true
   dateFormat = '02 Jan, 2006'
@@ -52,7 +53,7 @@ copyright = 'Copyright © Romulus Crisan.'
     intro = 'Romulus Crisan'
     name = 'Romulus Crisan'
     email = 'cromica@gmail.com'
-    description = 'I blog, create software and am a engineering leader.'
+    description = 'Engineering leader writing about identity platforms, software craftsmanship, and developer tooling.'
 
 [[params.socialIcons]]
   name = 'email'
