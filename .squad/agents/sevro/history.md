@@ -210,3 +210,35 @@ Migration and backend implementation owner for the blog migration squad.
 - `scripts/migrate_ghost_to_hugo.py` now treats `custom_excerpt` / `meta_description` as the only valid migrated descriptions; it no longer synthesizes summaries or consumes `migration-data/phase2/post-description-overrides.json`.
 - Minimal section scaffolding is acceptable when no raw Ghost source exists: `content/_index.md` now reflects Ghost site title/description only, and `content/posts/_index.md` is title-only.
 - Raw-source verification path for this repo: rerun `python3 scripts/migrate_ghost_to_hugo.py`, inspect diffs in `content/`, then validate with `make build`.
+
+## Session: Growth Audit (2026-03-29T18:41:53Z)
+**Work:** Conducted platform audit for 5 discoverability/outreach improvements.
+
+**Key Learnings:**
+- The hugo-blog-awesome theme is well-structured but lacks social-sharing optimization. Meta tags are generic across all pages.
+- The about.md content is rich (3+ career phases) but homepage strategy is pure-chronological, burying high-value older posts.
+- Posts have `featured` flag in frontmatter (used for Ghost migration) but it's not exposed in homepage template.
+- No cross-post linking or related-posts widget means readers exit after one article. Low repeat engagement.
+- Newsletter/email capture is absent—all discovery is one-time referral traffic.
+- The site is architecturally sound for growth: sitemap + RSS work, responsive design, dark mode. Infrastructure is not the blocker.
+
+**Audit Findings (5 Opportunities):**
+1. Social sharing cards (og:image, twitter:image) — high impact, low effort
+2. Featured posts section on homepage — medium impact, low effort
+3. Related posts sidebar widget — medium impact, medium effort
+4. Unique meta descriptions per post — high impact, low effort
+5. Newsletter signup integration — medium impact, higher effort
+
+**Safe, Low-Risk Win Identified:**
+Adding unique 140-160 character meta descriptions to the 5 most-visited blog posts. Improves search CTR, requires only frontmatter edits, aligns with editorial-first mission of content quality.
+
+**Decision Filed:** `.squad/decisions.md` with phased execution roadmap. Merged to team memory 2026-03-29T18:41:53Z.
+
+**Status:** Phased plan ready for implementation prioritization. Next: coordination with Roque and Theodora on content strategy before homepage/newsletter features.
+
+## Session: Remote source reconciliation (2026-03-29T18:51:13Z)
+**Work:** Integrated `origin/source` into local `source` without pushing, preserved the local about-page rewrite, and restored local `.squad` history/decision edits after the merge.
+
+**Key Learnings:**
+- When local and remote both bootstrap `.squad/` from different squad models, the safest reconciliation is: stash local work, merge remote, keep the local versions for overlapping identity/routing/charter files, then reapply local working-tree edits.
+- For this repo, remote bootstrap additions can land alongside the local editorial-first squad state as long as append-only history/decision files and `content/about.md` are preserved.

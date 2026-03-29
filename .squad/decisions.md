@@ -134,3 +134,32 @@
 - All meaningful changes require team consensus
 - Document architectural decisions here
 - Keep history focused on work, decisions focused on direction
+
+### 2026-03-29T18:37:32Z: User directive: Do not push changes before review
+**By:** Romulus Crisan (via Copilot)
+**What:** Halt commit/push operations until author explicitly reviews changes.
+**Why:** User preference for gated deployment. All drafts remain local until approved.
+
+### 2026-03-29T18:41:53Z: About page rewrite — current role + trajectory focus
+**By:** Theodora (Senior Editor)
+**What:** Rewrote `/content/about.md` to reflect Microsoft Principal Engineering Manager role in identity/security; removed outdated SDL/Endava descriptions; reframed from product specifics to leadership & architecture themes; applied conservative scope language.
+**Why:** Original page was 5+ years stale and created credibility gap with current professional role. Modernization maintains authentic voice while reflecting current impact and scope.
+**Status:** Draft awaiting author review.
+
+### 2026-03-29T18:41:53Z: About page positioning strategy for executive credibility
+**By:** Dancer (Leadership & Career Positioning)
+**What:** Recommended reframing about page as leadership trajectory demonstrating scale, domain expertise (identity/security), strategic judgment, and independent thought leadership. Identified credibility gap between outdated personal brand and current LinkedIn profile.
+**Why:** Current narrative reads as job list, not strategic arc. Executive/recruiter audiences require compound authority signals and through-line coherence.
+**Status:** Recommendation pending author clarification on 3 questions: Microsoft scope, specific achievements, narrative bridge to earlier work.
+
+### 2026-03-29T18:41:53Z: Personal brand repositioning for identity/leadership authority
+**By:** Roque (Growth & Outreach)
+**What:** Recommended multi-phase repositioning of romuluscrisan.com: (1) About page leads with Microsoft identity leadership; (2) Add Speaking/Talks page; (3) Create Writing landing page; (4) Add email signup infrastructure. Updates site metadata to reflect current authority.
+**Why:** Current positioning emphasizes outdated Trados/SDL developer tooling (2011–2019). Reposition to lead with principal-level identity/auth domain expertise for hiring teams, peers, thought leaders, and conference organizers.
+**Status:** Awaiting user prioritization of About page + Writing page in editorial sprint.
+
+### 2026-03-29T18:41:53Z: Hugo platform — 5 SEO/UX improvements with phased rollout
+**By:** Sevro (Platform & SEO)
+**What:** Identified 5 platform improvements for outreach & discoverability: (1) Social sharing meta tags (og:image, twitter:card); (2) Featured posts homepage section; (3) Related posts sidebar widget; (4) Unique meta descriptions per post; (5) Newsletter signup integration. Proposed 4-week phased execution. Quick win: unique meta descriptions on top 5 posts (30 min, low risk).
+**Why:** Platform gaps reduce discoverability and audience retention. Social sharing weak signals; no featured content path; content isolated; generic descriptions; no email capture mechanism.
+**Status:** Audit complete, phased plan ready for implementation prioritization.
