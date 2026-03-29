@@ -1,7 +1,5 @@
 +++
 title = "About Me"
-date = 2016-09-01T17:56:57.000Z
-lastmod = 2020-11-26T10:57:06.000Z
 slug = "about"
 description = "I blog, create software and am a engineering leader."
 featured = false
