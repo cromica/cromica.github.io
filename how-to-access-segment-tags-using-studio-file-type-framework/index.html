@@ -1,0 +1,83 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="How to read and manipulate segment tags with the Studio File Type Framework when plugin workflows need deeper document control."><title>How to access segment tags using Studio File Type Framework · Romulus Crisan</title><link rel=icon href=/images/2017/11/favicon.ico><link rel=stylesheet href=/css/site.css></head><body><div class=page><aside class=rail><div class=rail__inner><a class=site-title href=/>Romulus Crisan</a><p class=site-tagline>I blog, create software and am a Director of Engineering.</p><nav class=site-nav aria-label=Primary><a href=/>Home</a>
+<a href=/posts/ class=is-active aria-current=page>Writing</a>
+<a href=/about/>About</a>
+<a href=/contact/>Contact</a></nav><p class=rail-note>Software notes, engineering lessons, and long-form writing from Romulus Crisan.</p></div></aside><div class=content-wrap><main class=content id=content><article class=article><a class=back-link href=/posts/>← Back to writing</a><header class=article-header><h1>How to access segment tags using Studio File Type Framework</h1><div class=article-meta><time datetime=2015-01-06T14:20:00Z>January 6, 2015</time>
+<span>5 min read</span><ul class=tag-list><li><a href=/tags/filetypesupport-framework/>#FileTypeSupport Framework</a></li><li><a href=/tags/sdl-appstore/>#SDL AppStore</a></li><li><a href=/tags/sdl-studio/>#SDL Studio</a></li></ul></div></header><div class="prose article-body"><p class=dropcap>Accessing segment tags might not be something you have to do everyday but there might be some scenarios where you need to manipulate the tags of your segments. This can be done using Studio File Type Framework which is part of the Studio SDK. The documentation is providing an overview of the entire framework and also includes high level overview of what I'm going to discuss in this article.</p><h3 id=visitor-pattern>Visitor Pattern</h3><p>Before jumping into the problem I recommend you to get familiarized with the visitor pattern since this is used as part of the Studio File Type Framework and you will need apply it in order to get the tags. To get familiarized you can read the theory on <a href=http://en.wikipedia.org/wiki/Visitor_pattern>wikipedia</a> or if you want a practical example you can have a look <a href=http://www.codeproject.com/Articles/588882/TheplusVisitorplusPatternplusExplained>here</a>.</p><p>In Studio File Type Framework visitor pattern is made available via <em>IMarkupDataVisitor</em> interface.</p><h3 id=paragraphs-segments-and-more>Paragraphs, Segments and more</h3><p>When a document is opened for translation Studio brakes it into segments. This is done by the segmentation engine using the segmentation rules defined in Studio. A segment can be a paragraph or a sentence length but what is important to understand is that for Studio a segment represents a piece of localizable content for which existing translations can possibly be used. Besides localizable content there are other elements, like formatting, that Studio needs to take into considerations.</p><p>Now that we have a better understanding of how Studio is handling the content let me highlight how this is reflected in the File Type Framework:</p><p><code>IParagraph</code> represents the entire content that is displayed on one Studio editor row. This can contain multiple elements like tags or segments.</p><p><code>IParagraphUnit</code> a unit of source language content and the localized target language content. Source and Target can be accessed using the corresponding properties which will return an <em>IParagraph</em> object instance with the information described above. One thing to keep in mind is that there are two type of paragraph units:</p><ol><li>Structure paragraph units will contain only structure tags that are not localizable. In this case the Target will be null.</li><li>Localizable paragraph units will contain localizable content.</li></ol><p><code>ISegment</code> represents a piece of localizable content.</p><p><code>ISegmentPair</code> segments exists in source and target language versions which are bot accessible using <em>ISegmentPair</em>.</p><p>Segments and Paragraphs are considered containers of other elements like text, comments, revisions and so on. All containers share common behavior and that&rsquo;s why in the File Type Framework both are abstracted using <em>IAbstractMarkupDataContainer</em>. An <em>IAbstractMarkupDataContainer</em> contains multiple <em>IAbstractMarkupData</em> elements. This means that text, comments and other similar elements are represented in the framework using <em>IAbstractMarkupData</em> interface. One very important aspect of this structure is the fact that a segment can be considered as an element of the paragraph but also as a container for other elements which means that it can be manipulated as an <em>IAbstractMarkupDataContainer</em> or as an <em>IAbstractMarkupData</em>.</p><p>Here&rsquo;s a diagram which describes the structure:</p><p><img src=/images/2016/09/abstractmarkupdatacontainer.png alt></p><h3 id=access-segment-tags>Access segment tags</h3><p>All paragraph elements are like a tree structure that must be traversed using visitor pattern. For each paragraph unit we can look at the Source property which is an <em>IParagraph</em>. Thinking at the abstraction I was talking earlier an <em>IParagraph</em> is in essence an <em>IAbstractMarkupDataContainer</em> which in turn is an enumeration of <em>IAbstractMarkupData</em>. Here&rsquo;s a sample code on how you can iterate paragraph unit elements:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=line><span class=cl><span class=n>IEnumerable</span><span class=p>&lt;</span><span class=n>IAbstractMarkupData</span><span class=p>&gt;</span> <span class=n>container</span> <span class=p>=</span> <span class=n>paragraphUnit</span><span class=p>.</span><span class=n>Source</span><span class=p>;</span>
+</span></span><span class=line><span class=cl> 
+</span></span><span class=line><span class=cl><span class=k>foreach</span> <span class=p>(</span><span class=kt>var</span> <span class=n>contentItem</span> <span class=k>in</span> <span class=n>container</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//structure tag is not supported by IMarkupDataVisitor and you should ignore it</span>
+</span></span><span class=line><span class=cl>    <span class=n>IStructureTag</span> <span class=n>stag</span> <span class=p>=</span> <span class=n>contentItem</span> <span class=k>as</span> <span class=n>IStructureTag</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=p>(</span><span class=n>stag</span> <span class=p>!=</span> <span class=kc>null</span><span class=p>)</span> <span class=k>continue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                       
+</span></span><span class=line><span class=cl>      <span class=n>contentItem</span><span class=p>.</span><span class=n>AcceptVisitor</span><span class=p>(</span><span class=k>new</span> <span class=n>MarkupDataVisitor</span><span class=p>());</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>	
+</span></span></code></pre></div><p>There is one new thing in the above sample which I didn&rsquo;t discuss about.This is <em>MarkupDataVisitor</em> which is an implementation of the interface <em>IMarkupDataVisitor</em> I was mentioning in the visitor pattern section. Here&rsquo;s how the interface looks like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=line><span class=cl><span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=cs>/// Interface for the visitor in the visitor pattern implementation for translatable source / target </span>
+</span></span><span class=line><span class=cl><span class=cs>/// content items in a localizable paragraph unit.</span>
+</span></span><span class=line><span class=cl><span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=k>interface</span> <span class=nc>IMarkupDataVisitor</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// Called by tag pair instances.</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;param name=&#34;tagPair&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=k>void</span> <span class=n>VisitTagPair</span><span class=p>(</span><span class=n>ITagPair</span> <span class=n>tagPair</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// Called by placeholder tag instances.</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;param name=&#34;tag&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=k>void</span> <span class=n>VisitPlaceholderTag</span><span class=p>(</span><span class=n>IPlaceholderTag</span> <span class=n>tag</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// Called by text instances.</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;param name=&#34;text&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=k>void</span> <span class=n>VisitText</span><span class=p>(</span><span class=n>IText</span> <span class=n>text</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// Called by segment instances.</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;param name=&#34;segment&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=k>void</span> <span class=n>VisitSegment</span><span class=p>(</span><span class=n>ISegment</span> <span class=n>segment</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// Called by location marker instances.</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;param name=&#34;location&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=k>void</span> <span class=n>VisitLocationMarker</span><span class=p>(</span><span class=n>ILocationMarker</span> <span class=n>location</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// Called by comment marker instances.</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;param name=&#34;commentMarker&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=k>void</span> <span class=n>VisitCommentMarker</span><span class=p>(</span><span class=n>ICommentMarker</span> <span class=n>commentMarker</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// Called by other marker instances.</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;param name=&#34;marker&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=k>void</span> <span class=n>VisitOtherMarker</span><span class=p>(</span><span class=n>IOtherMarker</span> <span class=n>marker</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// Called by locked content instances.</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;param name=&#34;lockedContent&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=k>void</span> <span class=n>VisitLockedContent</span><span class=p>(</span><span class=n>ILockedContent</span> <span class=n>lockedContent</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// Called by revision marker instances.</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;/summary&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=cs>/// &lt;param name=&#34;revisionMarker&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=k>void</span> <span class=n>VisitRevisionMarker</span><span class=p>(</span><span class=n>IRevisionMarker</span> <span class=n>revisionMarker</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>As you can see you are now able manipulate each element type. For example if you need formatting information you can get it from the <em>ITagPair</em> interface.</p><p><strong>Don&rsquo;t forget</strong> that segments are containers as well so on <em>VisitSegement</em> method you need to traverse his structure in the same way as for the paragraph unit.</p><p>Please leave a comment if you have any questions or feedback.</p></div></article><section class=article-footer><p>The archive stays chronological, readable, and easy to scan.</p><a href=/posts/>Browse all posts</a></section></main><footer class=site-footer><p>© 2026 Romulus Crisan. Fast pages, plain HTML, and room for the writing to do the work.</p><a href=/index.xml>RSS</a></footer></div></div></body></html>
