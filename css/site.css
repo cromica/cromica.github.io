@@ -1,0 +1,95 @@
+:root {
+  color-scheme: light;
+  --bg: #fbfbf9;
+  --fg: #1c1c1a;
+  --muted: #6b6b68;
+  --border: #deded8;
+  --link: #0b57d0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 18px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.site-header,
+.post-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header {
+  align-items: baseline;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.site-title,
+nav a,
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 1.25rem;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.post-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.meta,
+.post-list span,
+.site-footer {
+  color: var(--muted);
+}
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .site-header,
+  .post-list li {
+    flex-direction: column;
+  }
+}
