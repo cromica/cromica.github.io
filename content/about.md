@@ -12,11 +12,13 @@ seo_title = "Romulus Crisan: About"
 +++
 **This is my personal blog.** Everything written here is written by me, and is my opinion. This is my content, and I am the person responsible. Not the company I work for right now, not my colleagues, not anyone else.
 
+**[Director of Engineering](https://www.trados.com/)**
+
 I'm Romulus Crisan, Director of Engineering at SDL. I'm heading up translation productivity engineering, a backend, web, native desktop applications group. Building Trados Studio, Trados Live, Trados GroupShare, MultiTerm and Passolo.
 
 Challenges include building and growing the team by 30% in 2 years, building an easy-enough to extend platform, building new cloud offering, having a great UX that keeps familiarity and is easy to use, and delivering more, and faster, while dealing with both legacy and new codebases.
 
-**[Developer Evangelist](http://developer-evangelism.com/)**
+**[Developer Evangelist](https://developer-advocacy.com/)**
 
 As a developer evangelist at SDL my focus was split between various activities and initiatives, like:
 
